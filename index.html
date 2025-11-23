@@ -78,6 +78,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-寻找两数之和-leecode-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/" class="article-date">
+  <time class="dt-published" datetime="2025-11-23T12:59:25.000Z" itemprop="datePublished">2025-11-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/">寻找两数之和-leecode-1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>今天是<em><strong>2025.11.23</strong></em>，今天一天和xjz在自习教室度过，下午复习了C语言和CET4还有一些高等数学，</p>
+<p>效率并不是很高吧，但是总比坐在宿舍里混日子强吧qvq，晚上回来又决心搞了一下leecode的第1题，</p>
+<p>但是我实在搞不懂题目里说的给定只能表示，到底需不需要scanf_s呢，额，有待考究! !</p>
+<p>先奉上一段错误示范吧，这是我写的第一版</p>
+<p><img src="/.com//Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20251123210623131.png" alt="image-20251123210623131"></p>
+<h1 id="然后是我觉得的正确示范（先奉上源代码）："><a href="#然后是我觉得的正确示范（先奉上源代码）：" class="headerlink" title="然后是我觉得的正确示范（先奉上源代码）："></a><strong>然后是我觉得的正确示范（先奉上源代码）：</strong></h1><p><code>#include &lt;stdio.h&gt;</code><br><code>int main()</code><br><code>{</code><br>    <code>int a[10];</code><br>    <code>printf(&quot;请输入10个数字&quot;);</code><br>    <code>for (int i = 0; i &lt;= 9; i++)</code><br>    <code>{</code><br>        <code>scanf_s(&quot;%d&quot;, &amp;a[i]);</code><br>    <code>}</code><br>    <code>int target = 0;</code><br>    <code>printf(&quot;请输入目标值:&quot;);</code><br>    <code>scanf_s(&quot;%d&quot;, &amp;target);</code><br>    <code>for (int j = 0; j &lt; 10; j++)</code><br>    <code>{</code><br>        <code>for (int k = 0; k &lt; 10; k++)</code><br>        <code>{</code><br>            <code>if ((a[j] + a[k]) == target)</code><br>            <code>{</code><br>                <code>printf(&quot;%d %d\n&quot;, j, k);</code><br>                <code>break;</code><br>            <code>}</code><br>        <code>}</code><br>    <code>}</code><br>    <code>return 0;</code><br><code>}</code></p>
+<h1 id="然后是代码截图："><a href="#然后是代码截图：" class="headerlink" title="然后是代码截图："></a>然后是代码截图：</h1><p><img src="/.com//Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20251123210650210.png" alt="image-20251123210650210"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/" data-id="cuidcNHghxH4keOal2BYCv_0N" data-title="寻找两数之和-leecode-1" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leecode-1/" rel="tag">leecode-1</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-冒泡排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" class="article-date">
@@ -111,7 +158,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="cuid4YDW5YjIKOkfPr0VE6aJ1" data-title="冒泡排序" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="cuidyrnRcrNJF8mmv4M-b0nKs" data-title="冒泡排序" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -152,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/20/11-20/" data-id="cuidj_GBTP4STMaR00bqSw8Rd" data-title="11.2" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/20/11-20/" data-id="cuidRnWbdj5hnWVVKnu_8DaYx" data-title="11.2" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -191,7 +238,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/13/11-13/" data-id="cuidHtnxZ-T-RLo3AK7iYrmt9" data-title="11.13" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/13/11-13/" data-id="cuidPXQXCOv3xHIXeYWT5EYVZ" data-title="11.13" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -244,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/13/hello-world/" data-id="cuidzUohnUS8PS18Fp5CeSNuz" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/13/hello-world/" data-id="cuidNMoYP7O2kEH1_yFRI5slf" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -269,7 +316,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%8A%E5%A4%A9%E7%AC%AC%E4%B8%80%E5%A4%A9%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%EF%BC%8Chello-world/" rel="tag">今天第一天搭建成功，hello world</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%B9%E4%BA%8E%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/" rel="tag">对于冒泡排序的一些见解</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/leecode-1/" rel="tag">leecode-1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%8A%E5%A4%A9%E7%AC%AC%E4%B8%80%E5%A4%A9%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%EF%BC%8Chello-world/" rel="tag">今天第一天搭建成功，hello world</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%B9%E4%BA%8E%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/" rel="tag">对于冒泡排序的一些见解</a></li></ul>
     </div>
   </div>
 
@@ -279,7 +326,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/%E4%BB%8A%E5%A4%A9%E7%AC%AC%E4%B8%80%E5%A4%A9%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%EF%BC%8Chello-world/" style="font-size: 10px;">今天第一天搭建成功，hello world</a> <a href="/tags/%E5%AF%B9%E4%BA%8E%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/" style="font-size: 10px;">对于冒泡排序的一些见解</a>
+      <a href="/tags/leecode-1/" style="font-size: 10px;">leecode-1</a> <a href="/tags/%E4%BB%8A%E5%A4%A9%E7%AC%AC%E4%B8%80%E5%A4%A9%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%EF%BC%8Chello-world/" style="font-size: 10px;">今天第一天搭建成功，hello world</a> <a href="/tags/%E5%AF%B9%E4%BA%8E%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/" style="font-size: 10px;">对于冒泡排序的一些见解</a>
     </div>
   </div>
 
@@ -299,6 +346,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/">寻找两数之和-leecode-1</a>
+          </li>
         
           <li>
             <a href="/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">冒泡排序</a>
