@@ -6,15 +6,15 @@
   
   <title>冒泡排序 | Hello New world</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="11.22，首次在C语言中完成冒泡排序的编写，编写过程中带有瑕疵，借助ai修改了一次，完成代码如下 #include &lt;stdio.h&gt;int main(){	int a[10];	int i &#x3D; 0;	int k &#x3D; 0;  &#x2F;&#x2F;交换中值	int n &#x3D; 0;	int m &#x3D; 0;	for (i &#x3D; 0; i &lt; 10; i++)	{		scanf_s(&quot;%d&amp;quo">
+  <meta name="description" content="11.22，首次在C语言中完成冒泡排序的编写，编写过程中带有瑕疵，借助ai修改了一次，完成代码如下 12345678910111213141516171819202122232425262728&#96;#include &lt;stdio.h&gt;&#96;&#96;int main()&#96;&#96;&#123;&#96;	&#96;int a[10];&#96;	&#96;int i &#x3D; 0;&#96;	&#96;int k &#x3D; 0;  &#x2F;&#x2F;交换中值&#96;	&#96;int n &#x3D;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="冒泡排序">
 <meta property="og:url" content="http://example.com/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="Hello New world">
-<meta property="og:description" content="11.22，首次在C语言中完成冒泡排序的编写，编写过程中带有瑕疵，借助ai修改了一次，完成代码如下 #include &lt;stdio.h&gt;int main(){	int a[10];	int i &#x3D; 0;	int k &#x3D; 0;  &#x2F;&#x2F;交换中值	int n &#x3D; 0;	int m &#x3D; 0;	for (i &#x3D; 0; i &lt; 10; i++)	{		scanf_s(&quot;%d&amp;quo">
+<meta property="og:description" content="11.22，首次在C语言中完成冒泡排序的编写，编写过程中带有瑕疵，借助ai修改了一次，完成代码如下 12345678910111213141516171819202122232425262728&#96;#include &lt;stdio.h&gt;&#96;&#96;int main()&#96;&#96;&#123;&#96;	&#96;int a[10];&#96;	&#96;int i &#x3D; 0;&#96;	&#96;int k &#x3D; 0;  &#x2F;&#x2F;交换中值&#96;	&#96;int n &#x3D;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-11-22T04:20:42.000Z">
-<meta property="article:modified_time" content="2025-11-22T13:11:53.226Z">
+<meta property="article:modified_time" content="2025-11-26T02:15:27.397Z">
 <meta property="article:author" content="南风知我意">
 <meta property="article:tag" content="对于冒泡排序的一些见解">
 <meta name="twitter:card" content="summary">
@@ -101,7 +101,8 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p>11.22，首次在C语言中完成冒泡排序的编写，编写过程中带有瑕疵，借助ai修改了一次，完成代码如下</p>
-<p><code>#include &lt;stdio.h&gt;</code><br><code>int main()</code><br><code>{</code><br>	<code>int a[10];</code><br>	<code>int i = 0;</code><br>	<code>int k = 0;  //交换中值</code><br>	<code>int n = 0;</code><br>	<code>int m = 0;</code><br>	<code>for (i = 0; i &lt; 10; i++)</code><br>	<code>{</code><br>		<code>scanf_s(&quot;%d&quot;, &amp;a[i]);</code><br>	<code>}</code><br>	<code>while (n &lt; 9)</code><br>	<code>{</code><br>		<code>for (m = 0; m &lt; 9-n; m++)</code><br>		<code>{</code><br>			<code>if (a[m] &gt; a[m + 1])</code><br>			<code>{</code><br>				<code>k = a[m];</code><br>				<code>a[m] = a[m + 1];</code><br>				<code>a[m + 1] = k;</code><br>			<code>}</code><br>		<code>}</code><br>		<code>n++;</code><br>	<code>}</code><br>	<code>printf(&quot;排序后为： &quot;);</code><br>	<code>for (int x = 0; x &lt; 10; x++)</code><br>		<code>printf(&quot;%d &quot;, a[x]);</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">`<span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span>`</span></span><br><span class="line">`<span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>`</span><br><span class="line">`&#123;`</span><br><span class="line">	`<span class="type">int</span> a[<span class="number">10</span>];`</span><br><span class="line">	`<span class="type">int</span> i = <span class="number">0</span>;`</span><br><span class="line">	`<span class="type">int</span> k = <span class="number">0</span>;  <span class="comment">//交换中值`</span></span><br><span class="line">	`<span class="type">int</span> n = <span class="number">0</span>;`</span><br><span class="line">	`<span class="type">int</span> m = <span class="number">0</span>;`</span><br><span class="line">	`<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)`</span><br><span class="line">	`&#123;`</span><br><span class="line">		`scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;a[i]);`</span><br><span class="line">	`&#125;`</span><br><span class="line">	`<span class="keyword">while</span> (n &lt; <span class="number">9</span>)`</span><br><span class="line">	`&#123;`</span><br><span class="line">		`<span class="keyword">for</span> (m = <span class="number">0</span>; m &lt; <span class="number">9</span>-n; m++)`</span><br><span class="line">		`&#123;`</span><br><span class="line">			`<span class="keyword">if</span> (a[m] &gt; a[m + <span class="number">1</span>])`</span><br><span class="line">			`&#123;`</span><br><span class="line">				`k = a[m];`</span><br><span class="line">				`a[m] = a[m + <span class="number">1</span>];`</span><br><span class="line">				`a[m + <span class="number">1</span>] = k;`</span><br><span class="line">			`&#125;`</span><br><span class="line">		`&#125;`</span><br><span class="line">		`n++;`</span><br><span class="line">	`&#125;`</span><br><span class="line">	`<span class="built_in">printf</span>(<span class="string">&quot;排序后为： &quot;</span>);`</span><br><span class="line">	`<span class="keyword">for</span> (<span class="type">int</span> x = <span class="number">0</span>; x &lt; <span class="number">10</span>; x++)`</span><br><span class="line">		`<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, a[x]);`</span><br></pre></td></tr></table></figure>
+
 <p><code>}</code></p>
 <p>![屏幕截图 2025-11-22 122435](C:\Users\ZhuanZ\Pictures\Screenshots\屏幕截图 2025-11-22 122435.png)</p>
 <p>![屏幕截图 2025-11-22 122302](C:\Users\ZhuanZ\Pictures\Screenshots\屏幕截图 2025-11-22 122302.png)</p>
@@ -111,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="cuidDclcLreM4Rct9Bq-T_t_W" data-title="冒泡排序" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="cuidH3Cg35Xb0cX78jWfhbgBt" data-title="冒泡排序" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
