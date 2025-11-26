@@ -78,6 +78,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-整数倒转-leecode-7" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/" class="article-date">
+  <time class="dt-published" datetime="2025-11-26T02:01:23.000Z" itemprop="datePublished">2025-11-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/">整数倒转-leecode-7</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"> //正确案例</span><br><span class="line"> #include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    int x = 0;</span><br><span class="line">    printf(&quot;输入一个有符号整数：&quot;);</span><br><span class="line">    scanf_s(&quot;%d&quot;, &amp;x);</span><br><span class="line"></span><br><span class="line">int reversed = 0;</span><br><span class="line">int temp = x;</span><br><span class="line">if (temp &lt; 0) &#123;</span><br><span class="line">    temp = -temp;  </span><br><span class="line">&#125;</span><br><span class="line">while (temp &gt; 0) &#123;</span><br><span class="line">    reversed = reversed * 10 + temp % 10; </span><br><span class="line">    temp /= 10;</span><br><span class="line">&#125;</span><br><span class="line">if (x &lt; 0) </span><br><span class="line">&#123;</span><br><span class="line">    reversed = -reversed;  </span><br><span class="line">&#125;</span><br><span class="line">printf(&quot;反转结果：%d\n&quot;, reversed);</span><br><span class="line">return 0;</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;&#x2F;错误案例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;math.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int x = 0;</span><br><span class="line">    printf(&quot;输入一个有符号整数：&quot;);</span><br><span class="line">    scanf_s(&quot;%d&quot;, &amp;x);</span><br><span class="line">    if (x &gt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        int n = 0; //除以的次数</span><br><span class="line">        int x1 = x;</span><br><span class="line">        for (n = 0; x1 &gt; 10; n++)</span><br><span class="line">        &#123;</span><br><span class="line">            x1 = x / 10;</span><br><span class="line">        &#125;</span><br><span class="line">        int a[10];</span><br><span class="line">        x1 = x;</span><br><span class="line">        int i = 0; //储存到数组的位数</span><br><span class="line">        for (i = 0; x1 &gt; 1; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            a[i] = x1 / pow(10, n);</span><br><span class="line">            n--;</span><br><span class="line">            x1 = x1 - a[i] * pow(10, n);</span><br><span class="line">        &#125;</span><br><span class="line">        for (; i &gt;= 1; i--)</span><br><span class="line">        &#123;</span><br><span class="line">            printf(&quot;%d&quot;, a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>if（x&gt;0）是后加的情况，但是意识到整个代码的逻辑错误后就没有补充if（x&lt;0）的情况</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/" data-id="cuidNyLuqEVvIXs6WSPqcqEIq" data-title="整数倒转-leecode-7" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-寻找两数之和-leecode-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/" class="article-date">
@@ -111,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/" data-id="cuidSM9wrc9gUtRYMgjqSycBZ" data-title="寻找两数之和-leecode-1" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/" data-id="cuidUS73agmaz3-IYkgSlpwFK" data-title="寻找两数之和-leecode-1" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -158,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="cuidlJNHuopP4ih9JMZ4J_jXL" data-title="冒泡排序" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="cuidDclcLreM4Rct9Bq-T_t_W" data-title="冒泡排序" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -199,7 +243,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/20/11-20/" data-id="cuidsCZXHu7YU6APDuyJ3d3Fp" data-title="11.2" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/20/11-20/" data-id="cuidDrssjod9bxEvodGGuCc7d" data-title="11.2" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -238,7 +282,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/13/11-13/" data-id="cuidJ_inyG2JHgD5BxZ1YcEem" data-title="11.13" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/13/11-13/" data-id="cuidvCMmHDSThobtH0JVPLO7d" data-title="11.13" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -291,7 +335,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/13/hello-world/" data-id="cuidKtONzFVvP73YRs4UmdxS7" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/13/hello-world/" data-id="cuidCR0RdNhG-xgdo4JySLJfq" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -348,6 +392,10 @@
       <ul>
         
           <li>
+            <a href="/2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/">整数倒转-leecode-7</a>
+          </li>
+        
+          <li>
             <a href="/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/">寻找两数之和-leecode-1</a>
           </li>
         
@@ -361,10 +409,6 @@
         
           <li>
             <a href="/2025/11/13/11-13/">11.13</a>
-          </li>
-        
-          <li>
-            <a href="/2025/11/13/hello-world/">Hello World</a>
           </li>
         
       </ul>
