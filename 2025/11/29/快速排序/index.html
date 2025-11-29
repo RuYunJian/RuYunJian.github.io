@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>快速排序 | Hello New world</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="快速排序1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include &lt;stdio.h&gt;&#x2F;&#x2F; 交换两个元素void swap(int *a, int *b) &#123;    int temp &#x3D; *a;    *a &#x3D; *b;    *b &#x3D; t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快速排序">
+<meta property="og:url" content="http://example.com/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:site_name" content="Hello New world">
+<meta property="og:description" content="快速排序1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include &lt;stdio.h&gt;&#x2F;&#x2F; 交换两个元素void swap(int *a, int *b) &#123;    int temp &#x3D; *a;    *a &#x3D; *b;    *b &#x3D; t">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-11-29T07:19:14.000Z">
+<meta property="article:modified_time" content="2025-11-29T07:29:19.880Z">
+<meta property="article:author" content="南风知我意">
+<meta property="article:tag" content="快速排序">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hello New world" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hello New world</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">NFZWY&#39;s way</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-快速排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="article-date">
+  <time class="dt-published" datetime="2025-11-29T07:19:14.000Z" itemprop="datePublished">2025-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      快速排序
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a><strong>快速排序</strong></h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 交换两个元素</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span> *a, <span class="type">int</span> *b)</span> &#123;</span><br><span class="line">    <span class="type">int</span> temp = *a;</span><br><span class="line">    *a = *b;</span><br><span class="line">    *b = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 分区函数：以最后一个元素为基准，返回基准的最终位置</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">partition</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> low, <span class="type">int</span> high)</span> &#123;</span><br><span class="line">    <span class="type">int</span> pivot = arr[high];  <span class="comment">// 基准值</span></span><br><span class="line">    <span class="type">int</span> i = low - <span class="number">1</span>;        <span class="comment">// 小于基准的元素边界</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = low; j &lt; high; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[j] &lt;= pivot) &#123;</span><br><span class="line">            i++;</span><br><span class="line">            swap(&amp;arr[i], &amp;arr[j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    swap(&amp;arr[i + <span class="number">1</span>], &amp;arr[high]);  <span class="comment">// 把基准放到正确位置</span></span><br><span class="line">    <span class="keyword">return</span> i + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 快速排序递归函数</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">quickSort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> low, <span class="type">int</span> high)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="type">int</span> pi = partition(arr, low, high);  <span class="comment">// 基准位置</span></span><br><span class="line">        quickSort(arr, low, pi - <span class="number">1</span>);        <span class="comment">// 排序左半部分</span></span><br><span class="line">        quickSort(arr, pi + <span class="number">1</span>, high);       <span class="comment">// 排序右半部分</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印数组</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">printArray</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, arr[i]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> arr[] = &#123;<span class="number">10</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="type">int</span> n = <span class="keyword">sizeof</span>(arr) / <span class="keyword">sizeof</span>(arr[<span class="number">0</span>]);</span><br><span class="line">    quickSort(arr, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;排序后数组：&quot;</span>);</span><br><span class="line">    printArray(arr, n);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>今天是2025年11月29日，又来和xjz泡教室了，这一篇的诞生源自于leecode15三数之和的解答，其中说的排序问题，之前在11月20左右写过一篇有关冒泡排序的文章，作为最基础的排序方式，放在大量数据中，时间复杂度和空间复杂度都极其的高，作为最佳排序的快速排序（quicksort），其中大量的原理我真的不太理解，尤其是其中的分区函数以及快速排序函数的调用，其中的元素是我无法理解的，我觉得这个需要问问杨sir，豆包的解答让我一头雾水，但也能从中看出作为最优排序方式的精妙之处，静待我的解释吧，本篇未完待续！</p>
+<h2 id="以下是对快速排序的详细理解"><a href="#以下是对快速排序的详细理解" class="headerlink" title="以下是对快速排序的详细理解"></a><em><strong>以下是对快速排序的详细理解</strong></em></h2><ol>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" data-id="cuid9lE-f7NUovzIrVjGFtO1B" data-title="快速排序" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" rel="tag">快速排序</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">整数倒转-leecode-7</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/leecode-1/" rel="tag">leecode-1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%8A%E5%A4%A9%E7%AC%AC%E4%B8%80%E5%A4%A9%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%EF%BC%8Chello-world/" rel="tag">今天第一天搭建成功，hello world</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%B9%E4%BA%8E%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/" rel="tag">对于冒泡排序的一些见解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" rel="tag">快速排序</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/leecode-1/" style="font-size: 10px;">leecode-1</a> <a href="/tags/%E4%BB%8A%E5%A4%A9%E7%AC%AC%E4%B8%80%E5%A4%A9%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%EF%BC%8Chello-world/" style="font-size: 10px;">今天第一天搭建成功，hello world</a> <a href="/tags/%E5%AF%B9%E4%BA%8E%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/" style="font-size: 10px;">对于冒泡排序的一些见解</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">快速排序</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">快速排序</a>
+          </li>
+        
+          <li>
+            <a href="/2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/">整数倒转-leecode-7</a>
+          </li>
+        
+          <li>
+            <a href="/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/">寻找两数之和-leecode-1</a>
+          </li>
+        
+          <li>
+            <a href="/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">冒泡排序</a>
+          </li>
+        
+          <li>
+            <a href="/2025/11/20/11-20/">11.2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 南风知我意<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
