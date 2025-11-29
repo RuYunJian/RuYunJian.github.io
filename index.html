@@ -78,6 +78,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-数组元素个数的动态分配" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/" class="article-date">
+  <time class="dt-published" datetime="2025-11-29T09:18:53.000Z" itemprop="datePublished">2025-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/">数组元素个数的动态分配</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>产率很高啊，一下子解决了两个心头大患，嘿嘿嘿嘿嘿嘿</p>
+<p>对于数组，之前有如下的问题：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">scanf_s(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> arr[n];</span><br></pre></td></tr></table></figure>
+
+<p><strong>首先要明确：以上写法是完全错误的！！！！！！！</strong></p>
+<h6 id="那么正确的形式如下："><a href="#那么正确的形式如下：" class="headerlink" title="那么正确的形式如下："></a>那么正确的形式如下：</h6><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> n=<span class="number">0</span>;</span><br><span class="line">scanf_s(“%d”,&amp;n);</span><br><span class="line"><span class="type">int</span> *nums=(<span class="type">int</span> *)<span class="built_in">malloc</span>(n *<span class="keyword">sizeof</span>(<span class="type">int</span>));</span><br><span class="line"><span class="keyword">if</span>(nums==<span class="literal">NULL</span>)&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;内存分配失败&quot;</span>)；</span><br><span class="line">        scanf_s(<span class="string">&quot;%d&quot;</span>,nums[i]);</span><br><span class="line">    <span class="built_in">free</span>(nums);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/" data-id="cuidwe1yVn3WJ1Tb3Wz6-7x9B" data-title="数组元素个数的动态分配" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-快速排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="article-date">
@@ -115,7 +160,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" data-id="cuide07IfjBRMaBC4vTaTJ4Yg" data-title="快速排序" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" data-id="cuidfnfXXAfRCDgx0fp9D_WPc" data-title="快速排序" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -161,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/" data-id="cuid2CyzGXy0xNp8ag78pI67t" data-title="整数倒转-leecode-7" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/" data-id="cuidl4aI93KyBi8l4pXTyVokV" data-title="整数倒转-leecode-7" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -209,7 +254,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/" data-id="cuidtq5Rj5AH-_Wnklf4zC985" data-title="寻找两数之和-leecode-1" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/" data-id="cuidKSn6u_CXZxy1Xrtt25isd" data-title="寻找两数之和-leecode-1" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -257,7 +302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="cuidli2ruiiZilxcMHmN1kNYZ" data-title="冒泡排序" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-id="cuidvMAbcQqJTR0pe6n6t9WWp" data-title="冒泡排序" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -298,7 +343,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/20/11-20/" data-id="cuidta5lyzMHCUNAvwo14da14" data-title="11.2" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/20/11-20/" data-id="cuiduvtFiN9lXwSq0DSEPgrEW" data-title="11.2" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -337,7 +382,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/13/11-13/" data-id="cuidiqf7D1QlwfKdkoW4IXWjx" data-title="11.13" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/13/11-13/" data-id="cuidX3xD7pGpVPinkIjZV_YqG" data-title="11.13" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -390,7 +435,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/13/hello-world/" data-id="cuidVRhIxv43B0nP38AaaH9PI" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/13/hello-world/" data-id="cuid_-UCOXsvhVXm9pFPrnGkF" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -447,6 +492,10 @@
       <ul>
         
           <li>
+            <a href="/2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/">数组元素个数的动态分配</a>
+          </li>
+        
+          <li>
             <a href="/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">快速排序</a>
           </li>
         
@@ -460,10 +509,6 @@
         
           <li>
             <a href="/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">冒泡排序</a>
-          </li>
-        
-          <li>
-            <a href="/2025/11/20/11-20/">11.2</a>
           </li>
         
       </ul>
