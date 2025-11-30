@@ -1,117 +1,261 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>快速排序 | Hello New world</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="快速排序123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;&#x2F;&#x2F; 交换函数void swap(int* a, int* b) &#123;">
-<meta property="og:type" content="article">
-<meta property="og:title" content="快速排序">
-<meta property="og:url" content="http://example.com/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/index.html">
-<meta property="og:site_name" content="Hello New world">
-<meta property="og:description" content="快速排序123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;&#x2F;&#x2F; 交换函数void swap(int* a, int* b) &#123;">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-11-29T07:19:14.000Z">
-<meta property="article:modified_time" content="2025-11-30T15:01:58.875Z">
-<meta property="article:author" content="南风知我意">
-<meta property="article:tag" content="快速排序">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hello New world" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+    <meta charset="utf-8" />
+    <title>快速排序 | Hello New world</title>
+    <meta name="author" content="南风知我意" />
+    <meta name="description" content="It is a webside where record my university life" />
+    <meta name="keywords" content="吹梦到西周" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
 
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
 
-<meta name="generator" content="Hexo 8.1.1"></head>
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
 
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hello New world</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">NFZWY&#39;s way</a>
-        </h2>
-      
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>HELLO NEW WORLD</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;HELLO NEW WORLD</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>快速排序</h1>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/11/29
+        </span>
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" style="color: #00a596">
+                    快速排序
+                </a>
+            </span>
+            
+        </span>
         
-        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-快速排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="article-date">
-  <time class="dt-published" datetime="2025-11-29T07:19:14.000Z" itemprop="datePublished">2025-11-29</time>
-</a>
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      快速排序
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a><strong>快速排序</strong></h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="comment">// 交换函数</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span>* a, <span class="type">int</span>* b)</span> &#123;</span><br><span class="line">    <span class="type">int</span> temp = *a;</span><br><span class="line">    *a = *b;</span><br><span class="line">    *b = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 分区函数：返回基准元素的最终位置</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">partition</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> low, <span class="type">int</span> high)</span> &#123;</span><br><span class="line">    <span class="type">int</span> pivot = arr[high]; <span class="comment">// 选最后一个元素为基准</span></span><br><span class="line">    <span class="type">int</span> i = low - <span class="number">1</span>;       <span class="comment">// 小于基准元素的区域右边界</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = low; j &lt; high; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[j] &lt;= pivot) &#123;</span><br><span class="line">            i++;</span><br><span class="line">            swap(&amp;arr[i], &amp;arr[j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    swap(&amp;arr[i + <span class="number">1</span>], &amp;arr[high]); <span class="comment">// 将基准元素放到正确位置</span></span><br><span class="line">    <span class="keyword">return</span> i + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 快速排序递归函数</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">quickSort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> low, <span class="type">int</span> high)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="type">int</span> pi = partition(arr, low, high); <span class="comment">// 分区后基准的位置</span></span><br><span class="line">        quickSort(arr, low, pi - <span class="number">1</span>);        <span class="comment">// 左子数组排序</span></span><br><span class="line">        quickSort(arr, pi + <span class="number">1</span>, high);       <span class="comment">// 右子数组排序</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 打印数组</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">printArray</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入数组元素个数：&quot;</span>);</span><br><span class="line">    scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="type">int</span>* arr = (<span class="type">int</span>*)<span class="built_in">malloc</span>(n * <span class="keyword">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="keyword">if</span> (arr == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;内存分配失败\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入数组元素：&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;排序前：&quot;</span>);</span><br><span class="line">    printArray(arr, n);</span><br><span class="line">    quickSort(arr, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;排序后：&quot;</span>);</span><br><span class="line">    printArray(arr, n);</span><br><span class="line">    <span class="built_in">free</span>(arr); <span class="comment">// 释放动态分配的内存</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+    <div class="content" v-pre>
+        <h4 id="快速排序"><a class="anchor" href="#快速排序">#</a> <strong>快速排序</strong></h4>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c"><span class="line"><span style="color:#999999;--shiki-dark:#666666">#</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">stdio.h</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">#</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">stdlib.h</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">// 交换函数</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">void</span><span style="color:#59873A;--shiki-dark:#80A665"> swap</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int*</span><span style="color:#B07D48;--shiki-dark:#BD976A"> a</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> int*</span><span style="color:#B07D48;--shiki-dark:#BD976A"> b</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> temp </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">a</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    *</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">a </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">b</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    *</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">b </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> temp</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">// 分区函数：返回基准元素的最终位置</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#59873A;--shiki-dark:#80A665"> partition</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> arr</span><span style="color:#1e754f;--shiki-dark:#4d9375">[</span><span style="color:#1e754f;--shiki-dark:#4d9375">]</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> low</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> high</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pivot </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#B07D48;--shiki-dark:#BD976A"> arr</span><span style="color:#1e754f;--shiki-dark:#4d9375">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">high</span><span style="color:#1e754f;--shiki-dark:#4d9375">]</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD"> // 选最后一个元素为基准</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> low </span><span style="color:#AB5959;--shiki-dark:#CB7676">-</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">       // 小于基准元素的区域右边界</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    for</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> j </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> low</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> j </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> high</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> j</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        if</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#a13865;--shiki-dark:#d9739f">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">j</span><span style="color:#a13865;--shiki-dark:#d9739f">]</span><span style="color:#AB5959;--shiki-dark:#CB7676"> </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pivot</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#a65e2b;--shiki-dark:#d4976c">&#123;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">            i</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">            swap</span><span style="color:#a13865;--shiki-dark:#d9739f">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#bda437;--shiki-dark:#e6cc77">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i</span><span style="color:#bda437;--shiki-dark:#e6cc77">]</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> &#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#bda437;--shiki-dark:#e6cc77">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">j</span><span style="color:#bda437;--shiki-dark:#e6cc77">]</span><span style="color:#a13865;--shiki-dark:#d9739f">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">        </span><span style="color:#a65e2b;--shiki-dark:#d4976c">&#125;</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    swap</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#a65e2b;--shiki-dark:#d4976c">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i </span><span style="color:#AB5959;--shiki-dark:#CB7676">+</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#a65e2b;--shiki-dark:#d4976c">]</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> &#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#a65e2b;--shiki-dark:#d4976c">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">high</span><span style="color:#a65e2b;--shiki-dark:#d4976c">]</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD"> // 将基准元素放到正确位置</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    return</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i </span><span style="color:#AB5959;--shiki-dark:#CB7676">+</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">// 快速排序递归函数</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">void</span><span style="color:#59873A;--shiki-dark:#80A665"> quickSort</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> arr</span><span style="color:#1e754f;--shiki-dark:#4d9375">[</span><span style="color:#1e754f;--shiki-dark:#4d9375">]</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> low</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> high</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    if</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">low </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> high</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">        int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pi </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#59873A;--shiki-dark:#80A665"> partition</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> low</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> high</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD"> // 分区后基准的位置</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        quickSort</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> low</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pi </span><span style="color:#AB5959;--shiki-dark:#CB7676">-</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">        // 左子数组排序</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        quickSort</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pi </span><span style="color:#AB5959;--shiki-dark:#CB7676">+</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> high</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">       // 右子数组排序</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">// 打印数组</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">void</span><span style="color:#59873A;--shiki-dark:#80A665"> printArray</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> arr</span><span style="color:#1e754f;--shiki-dark:#4d9375">[</span><span style="color:#1e754f;--shiki-dark:#4d9375">]</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> n</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    for</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        printf</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#A65E2B;--shiki-dark:#C99076">%d</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B07D48;--shiki-dark:#BD976A"> arr</span><span style="color:#a13865;--shiki-dark:#d9739f">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i</span><span style="color:#a13865;--shiki-dark:#d9739f">]</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    printf</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#A65E2B;--shiki-dark:#C99076">\n</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#59873A;--shiki-dark:#80A665"> main</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    printf</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">请输入数组元素个数：</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    scanf_s</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#A65E2B;--shiki-dark:#C99076">%d</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> &#x26;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    int*</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> arr </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int*</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#59873A;--shiki-dark:#80A665">malloc</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n </span><span style="color:#AB5959;--shiki-dark:#CB7676">*</span><span style="color:#AB5959;--shiki-dark:#CB7676"> sizeof</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    if</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr </span><span style="color:#AB5959;--shiki-dark:#CB7676">==</span><span style="color:#1E754F;--shiki-dark:#4D9375"> NULL</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        printf</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">内存分配失败</span><span style="color:#A65E2B;--shiki-dark:#C99076">\n</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        return</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    printf</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">请输入数组元素：</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    for</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        scanf_s</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#A65E2B;--shiki-dark:#C99076">%d</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> &#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#a13865;--shiki-dark:#d9739f">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i</span><span style="color:#a13865;--shiki-dark:#d9739f">]</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    printf</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">排序前：</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    printArray</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    quickSort</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n </span><span style="color:#AB5959;--shiki-dark:#CB7676">-</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    printf</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">排序后：</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    printArray</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    free</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD"> // 释放动态分配的内存</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    return</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span></code></pre>
 <p>今天是2025年11月29日，又来和<em>xjz</em>泡教室了，这一篇的诞生源自于leecode15三数之和的解答，其中说的排序问题，之前在11月20左右写过一篇有关冒泡排序的文章，作为最基础的排序方式，放在大量数据中，时间复杂度和空间复杂度都极其的高，作为最佳排序的快速排序（quicksort），其中大量的原理我真的不太理解，尤其是其中的分区函数以及快速排序函数的调用，其中的元素是我无法理解的，我觉得这个需要问问杨sir，豆包的解答让我一头雾水，但也能从中看出作为最优排序方式的精妙之处，静待我的解释吧，本篇未完待续！(完结撒花!)</p>
 <p><strong>快速排序作为我研究算法的第一例，重要性不言而喻，也是花了几天时间才理解透彻，但是对接下来的哈希表等内容依旧像一个小白</strong></p>
 <hr>
-<h2 id="以下是对快速排序的详细理解"><a href="#以下是对快速排序的详细理解" class="headerlink" title="以下是对快速排序的详细理解"></a><em><strong>以下是对快速排序的详细理解</strong></em></h2><p>在经历了将近1个小时的理解，我基本懂了（杨sir太忙了没空被我提问QvQ）</p>
+<h2 id="以下是对快速排序的详细理解"><a class="anchor" href="#以下是对快速排序的详细理解">#</a> <em><strong>以下是对快速排序的详细理解</strong></em></h2>
+<p>在经历了将近1个小时的理解，我基本懂了（杨sir太忙了没空被我提问QvQ）</p>
 <p>1.首先对于第一个<code>swap</code>函数，就是交换两个变量的值，这里也不过多解释了</p>
 <p>2.然后对于分区函数，它的意思是选定最后一个数值作为基准变量<code>pivot</code>，比<code>pivot</code>大的放在右边，比<code>pivot</code>小的放在它的左边</p>
 <p>3.对于快速排序递归函数，相当于多次选取基准数值，然后用等同于分区函数的方式继续进行排序，直到确定每个值的位置</p>
 <p><em><strong>明确partition这项自定义函数的运行逻辑</strong></em></p>
 <ol>
-<li><h3 id="明确分区目标"><a href="#明确分区目标" class="headerlink" title="明确分区目标"></a>明确分区目标</h3></li>
+<li>
+<h3 id="明确分区目标"><a class="anchor" href="#明确分区目标">#</a> 明确分区目标</h3>
+</li>
 </ol>
 <p>快速排序的 partition 函数要做的是：选一个基准元素（这里是 arr[high] ），把数组分成两部分——左边所有元素 ≤ 基准，右边所有元素 ＞ 基准，最后返回基准的最终位置。</p>
 <ol start="2">
@@ -119,31 +263,37 @@
 </ol>
 <ul>
 <li><code>pivot = arr[high]</code> ：基准元素（比如数组最后一个元素）。</li>
-<li>i &#x3D; low - 1 ：小于等于基准区域的“右边界”（初始时这个区域为空，所以 i 在 low 左边）。</li>
+<li>i = low - 1 ：小于等于基准区域的“右边界”（初始时这个区域为空，所以 i 在 low 左边）。</li>
 <li>j ：遍历指针，从 low 到 high-1 （因为 <code>arr[high]</code> 是基准，不需要遍历自己）。</li>
 </ul>
 <ol start="3">
 <li>for循环逐行解析</li>
 </ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> j = low; j &lt; high; j++) </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (arr[j] &lt;= pivot) </span><br><span class="line">    &#123;</span><br><span class="line">        i++;</span><br><span class="line">        swap(&amp;arr[i], &amp;arr[j]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c"><span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">for</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> j </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> low</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> j </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> high</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> j</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    if</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#a65e2b;--shiki-dark:#d4976c">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">j</span><span style="color:#a65e2b;--shiki-dark:#d4976c">]</span><span style="color:#AB5959;--shiki-dark:#CB7676"> </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pivot</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">        i</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        swap</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#a13865;--shiki-dark:#d9739f">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i</span><span style="color:#a13865;--shiki-dark:#d9739f">]</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> &#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#a13865;--shiki-dark:#d9739f">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">j</span><span style="color:#a13865;--shiki-dark:#d9739f">]</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span></code></pre>
 <ul>
-<li><em>步骤1：j遍历数组元素</em><br> j 从 low 开始，逐个检查 <code>arr[j]</code> 与 <code>pivot</code> 的大小。</li>
-<li><em>步骤2：判断是否≤基准</em><br>如果 <code>arr[j] ≤ pivot</code> ，说明这个元素应该放到左边区域：</li>
+<li><em>步骤1：j遍历数组元素</em><br>
+j 从 low 开始，逐个检查 <code>arr[j]</code> 与 <code>pivot</code> 的大小。</li>
+<li><em>步骤2：判断是否≤基准</em><br>
+如果 <code>arr[j] ≤ pivot</code> ，说明这个元素应该放到左边区域：</li>
 <li><code>i++</code> ：把“小于等于基准区域”的右边界右移一位（扩大区域）。</li>
 <li><code>swap(&amp;arr[i], &amp;arr[j])</code> ：把当前元素 <code>arr[j]</code> 交换到“小于等于基准区域”的末尾（即 <code>arr[i]</code> 的位置）。</li>
-<li><em>步骤3：遍历结束后，放置基准元素</em><br>循环结束后， i+1 的位置就是基准元素的最终位置（因为 i 是“小于等于基准区域”的右边界，右边的元素都＞基准）。此时交换 <code>arr[i+1]</code> 和 <code>arr[high]</code> （基准元素），完成分区。</li>
+<li><em>步骤3：遍历结束后，放置基准元素</em><br>
+循环结束后， i+1 的位置就是基准元素的最终位置（因为 i 是“小于等于基准区域”的右边界，右边的元素都＞基准）。此时交换 <code>arr[i+1]</code> 和 <code>arr[high]</code> （基准元素），完成分区。</li>
 </ul>
 <p>举个例子（更直观）</p>
-<p>假设数组是 [5, 3, 8, 2, 7] ，选 high&#x3D;4 （基准 pivot&#x3D;7 ）， low&#x3D;0 ， i&#x3D;-1 </p>
+<p>假设数组是 [5, 3, 8, 2, 7] ，选 high=4 （基准 pivot=7 ）， low=0 ， i=-1</p>
 <ul>
-<li><code>j=0</code> ： <code>arr[0]</code>&#x3D;5 ≤7  →  i&#x3D;0 ，交换 <code>arr[0]</code> 和 <code>arr[0]</code> （无变化）</li>
-<li>j&#x3D;1 ： <code>arr[1]</code>&#x3D;3 ≤7  →  i&#x3D;1 ，交换 <code>arr[1]</code> 和 <code>arr[1]</code> （无变化）</li>
-<li>j&#x3D;2 ： <code>arr[2]</code>&#x3D;8 ＞7  → 不操作。（所以到此处的时候<code>i</code>没有变化，因为<code>if</code>中的<code>i++</code>没有运行）</li>
-<li>j&#x3D;3 ： <code>arr[3]</code>&#x3D;2 ≤7  →  i&#x3D;2 ，交换 <code>arr[2]</code> 和 <code>arr[3]</code>  → 数组变成 [5, 3, 2, 8, 7]</li>
+<li><code>j=0</code> ： <code>arr[0]</code>=5 ≤7  →  i=0 ，交换 <code>arr[0]</code> 和 <code>arr[0]</code> （无变化）</li>
+<li>j=1 ： <code>arr[1]</code>=3 ≤7  →  i=1 ，交换 <code>arr[1]</code> 和 <code>arr[1]</code> （无变化）</li>
+<li>j=2 ： <code>arr[2]</code>=8 ＞7  → 不操作。（所以到此处的时候<code>i</code>没有变化，因为<code>if</code>中的<code>i++</code>没有运行）</li>
+<li>j=3 ： <code>arr[3]</code>=2 ≤7  →  i=2 ，交换 <code>arr[2]</code> 和 <code>arr[3]</code>  → 数组变成 [5, 3, 2, 8, 7]</li>
 </ul>
 <p>循环结束后，交换 <code>arr[i+1]=arr[3]</code> 和 <code>arr[high]=arr[4]</code> 也就是<code>swap(arr[3],arr[4])</code> → 数组变成 [5, 3, 2, 7, 8] 。此时基准 7 的位置是 3 ，左边 [5,3,2] 都≤7，右边 [8] ＞7，分区完成</p>
 <p>要详细理解这段快速排序递归函数，我们可以从分治思想、执行流程、递归逻辑三个维度拆解：</p>
@@ -154,16 +304,25 @@
 <li>治：递归地对左、右子数组重复“分区→递归”的过程，直到子数组长度为1（无需排序）。</li>
 </ul>
 <p><em>二、代码逐行解析</em></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">quickSort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> low, <span class="type">int</span> high)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (low &lt; high)   <span class="comment">// ① 递归终止条件：子数组只有1个或0个元素时，无需排序</span></span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="type">int</span> pi = partition(arr, low, high);  <span class="comment">// ② 分区：得到基准元素的最终位置pi</span></span><br><span class="line">        quickSort(arr, low, pi - <span class="number">1</span>);        <span class="comment">// ③ 递归排序左子数组（[low, pi-1]）</span></span><br><span class="line">        quickSort(arr, pi + <span class="number">1</span>, high);       <span class="comment">// ④ 递归排序右子数组（[pi+1, high]）</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c"><span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">void</span><span style="color:#59873A;--shiki-dark:#80A665"> quickSort</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> arr</span><span style="color:#1e754f;--shiki-dark:#4d9375">[</span><span style="color:#1e754f;--shiki-dark:#4d9375">]</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> low</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> high</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    if</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">low </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> high</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">   // ① 递归终止条件：子数组只有1个或0个元素时，无需排序</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">  </span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">        int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pi </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#59873A;--shiki-dark:#80A665"> partition</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> low</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> high</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">  // ② 分区：得到基准元素的最终位置pi</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        quickSort</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> low</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pi </span><span style="color:#AB5959;--shiki-dark:#CB7676">-</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">        // ③ 递归排序左子数组（[low, pi-1]）</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        quickSort</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pi </span><span style="color:#AB5959;--shiki-dark:#CB7676">+</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> high</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">       // ④ 递归排序右子数组（[pi+1, high]）</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span></code></pre>
 <ol>
-<li>递归终止条件  <code>if (low &lt; high)</code><br>当  <code>low &gt;= high</code>  时，说明子数组只有1个元素<code>（ low == high ）</code>或0个元素<code>（ low &gt; high ）</code>，此时数组天然有序，直接返回</li>
-<li>分区操作  <code>int pi = partition(arr, low, high)</code><br>调用之前的  <code>partition</code>  函数（选基准、划分子数组），返回基准元素的最终位置  <code>pi</code><br>此时数组结构： <code>arr[low...pi-1] ≤ arr[pi] &lt; arr[pi+1...high]</code> </li>
-<li>递归排序左子数组  <code>quickSort(arr, low, pi - 1)</code><br>对“基准左边的子数组” [low, pi-1]  再次调用  <code>quickSort</code> ，重复“分区→递归”的过程，直到左子数组完全有序。</li>
-<li>递归排序右子数组  <code>quickSort(arr, pi + 1, high)</code><br>对“基准右边的子数组” [pi+1, high]  再次调用  <code>quickSort</code> ，直到右子数组完全有序。</li>
+<li>递归终止条件  <code>if (low &lt; high)</code><br>
+当  <code>low &gt;= high</code>  时，说明子数组只有1个元素<code>（ low == high ）</code>或0个元素<code>（ low &gt; high ）</code>，此时数组天然有序，直接返回</li>
+<li>分区操作  <code>int pi = partition(arr, low, high)</code><br>
+调用之前的  <code>partition</code>  函数（选基准、划分子数组），返回基准元素的最终位置  <code>pi</code><br>
+此时数组结构： <code>arr[low...pi-1] ≤ arr[pi] &lt; arr[pi+1...high]</code></li>
+<li>递归排序左子数组  <code>quickSort(arr, low, pi - 1)</code><br>
+对“基准左边的子数组” [low, pi-1]  再次调用  <code>quickSort</code> ，重复“分区→递归”的过程，直到左子数组完全有序。</li>
+<li>递归排序右子数组  <code>quickSort(arr, pi + 1, high)</code><br>
+对“基准右边的子数组” [pi+1, high]  再次调用  <code>quickSort</code> ，直到右子数组完全有序。</li>
 </ol>
 <p><em><strong>三、举个例子：模拟执行流程</strong></em></p>
 <p>以数组  [5, 3, 8, 2, 7]  为例，初始  <code>low=0 ， high=4 ：</code></p>
@@ -171,14 +330,14 @@
 <li>第一次调用  <code>quickSort(arr, 0, 4)</code></li>
 </ol>
 <ul>
-<li>low &lt; high  成立，执行  partition ，得到基准位置  pi&#x3D;3 （数组变为  [5,3,2,7,8] ）。</li>
+<li>low &lt; high  成立，执行  partition ，得到基准位置  pi=3 （数组变为  [5,3,2,7,8] ）。</li>
 <li>递归调用  <code>quickSort(arr, 0, 2)</code> （左子数组  [5,3,2] ）和  <code>quickSort(arr, 4, 4)</code> （右子数组  [8] ）。</li>
 </ul>
 <ol start="2">
 <li>处理左子数组  <code>quickSort(arr, 0, 2)</code></li>
 </ol>
 <ul>
-<li>low &lt; high  成立，执行  <code>partition</code> ，假设得到  pi&#x3D;2 （数组变为  [2,3,5,7,8] ）。</li>
+<li>low &lt; high  成立，执行  <code>partition</code> ，假设得到  pi=2 （数组变为  [2,3,5,7,8] ）。</li>
 <li>递归调用  <code>quickSort(arr, 0, 1)</code> （左子数组  [2,3] ）和  <code>quickSort(arr, 3, 2)</code> （无元素，直接返回）。</li>
 </ul>
 <ol start="3">
@@ -201,153 +360,56 @@
 <hr>
 <p><strong>重要内容：</strong></p>
 <p>确定一个数组中元素的个数，可以用如下方法</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> arr[]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"></span><br><span class="line">n=<span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(arr[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c"><span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91">0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> arr</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span><span style="color:#2F798A;--shiki-dark:#4C9A91">1</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">2</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">3</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">4</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">5</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">6</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">7</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">8</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">9</span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#AB5959;--shiki-dark:#CB7676">sizeof</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#AB5959;--shiki-dark:#CB7676">/sizeof</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#1e754f;--shiki-dark:#4d9375">[</span><span style="color:#2F798A;--shiki-dark:#4C9A91">0</span><span style="color:#1e754f;--shiki-dark:#4d9375">]</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span></code></pre>
 
-
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" data-id="cuid7y76d7i5e0JSekoYBrJ3P" data-title="快速排序" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" rel="tag">快速排序</a></li></ul>
-
-    </footer>
-  </div>
-  
     
-<nav id="article-nav">
-  
-    <a href="/2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          数组元素个数的动态分配
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">整数倒转-leecode-7</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
     
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/leecode-1/" rel="tag">leecode-1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%8A%E5%A4%A9%E7%AC%AC%E4%B8%80%E5%A4%A9%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%EF%BC%8Chello-world/" rel="tag">今天第一天搭建成功，hello world</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%B9%E4%BA%8E%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/" rel="tag">对于冒泡排序的一些见解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" rel="tag">快速排序</a></li></ul>
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Hello New world
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;南风知我意
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
     </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/leecode-1/" style="font-size: 10px;">leecode-1</a> <a href="/tags/%E4%BB%8A%E5%A4%A9%E7%AC%AC%E4%B8%80%E5%A4%A9%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%EF%BC%8Chello-world/" style="font-size: 10px;">今天第一天搭建成功，hello world</a> <a href="/tags/%E5%AF%B9%E4%BA%8E%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/" style="font-size: 10px;">对于冒泡排序的一些见解</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">快速排序</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/">数组元素个数的动态分配</a>
-          </li>
-        
-          <li>
-            <a href="/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">快速排序</a>
-          </li>
-        
-          <li>
-            <a href="/2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/">整数倒转-leecode-7</a>
-          </li>
-        
-          <li>
-            <a href="/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/">寻找两数之和-leecode-1</a>
-          </li>
-        
-          <li>
-            <a href="/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">冒泡排序</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2025 南风知我意<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
 </footer>
 
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+    <script src="/js/main.js"></script>
+    
     
 
 
-<script src="/js/jquery-3.6.4.min.js"></script>
 
 
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
+    
 </body>
 </html>
