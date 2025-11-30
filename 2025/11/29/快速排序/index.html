@@ -14,7 +14,7 @@
 <meta property="og:description" content="快速排序123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;&#x2F;&#x2F; 交换函数void swap(int* a, int* b) &#123;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-11-29T07:19:14.000Z">
-<meta property="article:modified_time" content="2025-11-29T11:52:56.365Z">
+<meta property="article:modified_time" content="2025-11-30T15:01:58.875Z">
 <meta property="article:author" content="南风知我意">
 <meta property="article:tag" content="快速排序">
 <meta name="twitter:card" content="summary">
@@ -102,11 +102,103 @@
       
         <h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a><strong>快速排序</strong></h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="comment">// 交换函数</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span>* a, <span class="type">int</span>* b)</span> &#123;</span><br><span class="line">    <span class="type">int</span> temp = *a;</span><br><span class="line">    *a = *b;</span><br><span class="line">    *b = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 分区函数：返回基准元素的最终位置</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">partition</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> low, <span class="type">int</span> high)</span> &#123;</span><br><span class="line">    <span class="type">int</span> pivot = arr[high]; <span class="comment">// 选最后一个元素为基准</span></span><br><span class="line">    <span class="type">int</span> i = low - <span class="number">1</span>;       <span class="comment">// 小于基准元素的区域右边界</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = low; j &lt; high; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[j] &lt;= pivot) &#123;</span><br><span class="line">            i++;</span><br><span class="line">            swap(&amp;arr[i], &amp;arr[j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    swap(&amp;arr[i + <span class="number">1</span>], &amp;arr[high]); <span class="comment">// 将基准元素放到正确位置</span></span><br><span class="line">    <span class="keyword">return</span> i + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 快速排序递归函数</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">quickSort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> low, <span class="type">int</span> high)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="type">int</span> pi = partition(arr, low, high); <span class="comment">// 分区后基准的位置</span></span><br><span class="line">        quickSort(arr, low, pi - <span class="number">1</span>);        <span class="comment">// 左子数组排序</span></span><br><span class="line">        quickSort(arr, pi + <span class="number">1</span>, high);       <span class="comment">// 右子数组排序</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 打印数组</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">printArray</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入数组元素个数：&quot;</span>);</span><br><span class="line">    scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="type">int</span>* arr = (<span class="type">int</span>*)<span class="built_in">malloc</span>(n * <span class="keyword">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="keyword">if</span> (arr == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;内存分配失败\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入数组元素：&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;排序前：&quot;</span>);</span><br><span class="line">    printArray(arr, n);</span><br><span class="line">    quickSort(arr, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;排序后：&quot;</span>);</span><br><span class="line">    printArray(arr, n);</span><br><span class="line">    <span class="built_in">free</span>(arr); <span class="comment">// 释放动态分配的内存</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>今天是2025年11月29日，又来和xjz泡教室了，这一篇的诞生源自于leecode15三数之和的解答，其中说的排序问题，之前在11月20左右写过一篇有关冒泡排序的文章，作为最基础的排序方式，放在大量数据中，时间复杂度和空间复杂度都极其的高，作为最佳排序的快速排序（quicksort），其中大量的原理我真的不太理解，尤其是其中的分区函数以及快速排序函数的调用，其中的元素是我无法理解的，我觉得这个需要问问杨sir，豆包的解答让我一头雾水，但也能从中看出作为最优排序方式的精妙之处，静待我的解释吧，本篇未完待续！</p>
+<p>今天是2025年11月29日，又来和<em>xjz</em>泡教室了，这一篇的诞生源自于leecode15三数之和的解答，其中说的排序问题，之前在11月20左右写过一篇有关冒泡排序的文章，作为最基础的排序方式，放在大量数据中，时间复杂度和空间复杂度都极其的高，作为最佳排序的快速排序（quicksort），其中大量的原理我真的不太理解，尤其是其中的分区函数以及快速排序函数的调用，其中的元素是我无法理解的，我觉得这个需要问问杨sir，豆包的解答让我一头雾水，但也能从中看出作为最优排序方式的精妙之处，静待我的解释吧，本篇未完待续！(完结撒花!)</p>
+<p><strong>快速排序作为我研究算法的第一例，重要性不言而喻，也是花了几天时间才理解透彻，但是对接下来的哈希表等内容依旧像一个小白</strong></p>
+<hr>
 <h2 id="以下是对快速排序的详细理解"><a href="#以下是对快速排序的详细理解" class="headerlink" title="以下是对快速排序的详细理解"></a><em><strong>以下是对快速排序的详细理解</strong></em></h2><p>在经历了将近1个小时的理解，我基本懂了（杨sir太忙了没空被我提问QvQ）</p>
 <p>1.首先对于第一个<code>swap</code>函数，就是交换两个变量的值，这里也不过多解释了</p>
 <p>2.然后对于分区函数，它的意思是选定最后一个数值作为基准变量<code>pivot</code>，比<code>pivot</code>大的放在右边，比<code>pivot</code>小的放在它的左边</p>
 <p>3.对于快速排序递归函数，相当于多次选取基准数值，然后用等同于分区函数的方式继续进行排序，直到确定每个值的位置</p>
+<p><em><strong>明确partition这项自定义函数的运行逻辑</strong></em></p>
+<ol>
+<li><h3 id="明确分区目标"><a href="#明确分区目标" class="headerlink" title="明确分区目标"></a>明确分区目标</h3></li>
+</ol>
+<p>快速排序的 partition 函数要做的是：选一个基准元素（这里是 arr[high] ），把数组分成两部分——左边所有元素 ≤ 基准，右边所有元素 ＞ 基准，最后返回基准的最终位置。</p>
+<ol start="2">
+<li>变量角色</li>
+</ol>
+<ul>
+<li><code>pivot = arr[high]</code> ：基准元素（比如数组最后一个元素）。</li>
+<li>i &#x3D; low - 1 ：小于等于基准区域的“右边界”（初始时这个区域为空，所以 i 在 low 左边）。</li>
+<li>j ：遍历指针，从 low 到 high-1 （因为 <code>arr[high]</code> 是基准，不需要遍历自己）。</li>
+</ul>
+<ol start="3">
+<li>for循环逐行解析</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> j = low; j &lt; high; j++) </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (arr[j] &lt;= pivot) </span><br><span class="line">    &#123;</span><br><span class="line">        i++;</span><br><span class="line">        swap(&amp;arr[i], &amp;arr[j]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<ul>
+<li><em>步骤1：j遍历数组元素</em><br> j 从 low 开始，逐个检查 <code>arr[j]</code> 与 <code>pivot</code> 的大小。</li>
+<li><em>步骤2：判断是否≤基准</em><br>如果 <code>arr[j] ≤ pivot</code> ，说明这个元素应该放到左边区域：</li>
+<li><code>i++</code> ：把“小于等于基准区域”的右边界右移一位（扩大区域）。</li>
+<li><code>swap(&amp;arr[i], &amp;arr[j])</code> ：把当前元素 <code>arr[j]</code> 交换到“小于等于基准区域”的末尾（即 <code>arr[i]</code> 的位置）。</li>
+<li><em>步骤3：遍历结束后，放置基准元素</em><br>循环结束后， i+1 的位置就是基准元素的最终位置（因为 i 是“小于等于基准区域”的右边界，右边的元素都＞基准）。此时交换 <code>arr[i+1]</code> 和 <code>arr[high]</code> （基准元素），完成分区。</li>
+</ul>
+<p>举个例子（更直观）</p>
+<p>假设数组是 [5, 3, 8, 2, 7] ，选 high&#x3D;4 （基准 pivot&#x3D;7 ）， low&#x3D;0 ， i&#x3D;-1 </p>
+<ul>
+<li><code>j=0</code> ： <code>arr[0]</code>&#x3D;5 ≤7  →  i&#x3D;0 ，交换 <code>arr[0]</code> 和 <code>arr[0]</code> （无变化）</li>
+<li>j&#x3D;1 ： <code>arr[1]</code>&#x3D;3 ≤7  →  i&#x3D;1 ，交换 <code>arr[1]</code> 和 <code>arr[1]</code> （无变化）</li>
+<li>j&#x3D;2 ： <code>arr[2]</code>&#x3D;8 ＞7  → 不操作。（所以到此处的时候<code>i</code>没有变化，因为<code>if</code>中的<code>i++</code>没有运行）</li>
+<li>j&#x3D;3 ： <code>arr[3]</code>&#x3D;2 ≤7  →  i&#x3D;2 ，交换 <code>arr[2]</code> 和 <code>arr[3]</code>  → 数组变成 [5, 3, 2, 8, 7]</li>
+</ul>
+<p>循环结束后，交换 <code>arr[i+1]=arr[3]</code> 和 <code>arr[high]=arr[4]</code> 也就是<code>swap(arr[3],arr[4])</code> → 数组变成 [5, 3, 2, 7, 8] 。此时基准 7 的位置是 3 ，左边 [5,3,2] 都≤7，右边 [8] ＞7，分区完成</p>
+<p>要详细理解这段快速排序递归函数，我们可以从分治思想、执行流程、递归逻辑三个维度拆解：</p>
+<p><em>一、分治思想：快速排序的核心逻辑</em></p>
+<p>快速排序是“分治算法”的经典应用，核心是**“分区→递归处理子问题”**：</p>
+<ul>
+<li>分：通过  partition  函数将数组划分为“左子数组（≤基准）”和“右子数组（＞基准）”。</li>
+<li>治：递归地对左、右子数组重复“分区→递归”的过程，直到子数组长度为1（无需排序）。</li>
+</ul>
+<p><em>二、代码逐行解析</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">quickSort</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> low, <span class="type">int</span> high)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (low &lt; high)   <span class="comment">// ① 递归终止条件：子数组只有1个或0个元素时，无需排序</span></span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="type">int</span> pi = partition(arr, low, high);  <span class="comment">// ② 分区：得到基准元素的最终位置pi</span></span><br><span class="line">        quickSort(arr, low, pi - <span class="number">1</span>);        <span class="comment">// ③ 递归排序左子数组（[low, pi-1]）</span></span><br><span class="line">        quickSort(arr, pi + <span class="number">1</span>, high);       <span class="comment">// ④ 递归排序右子数组（[pi+1, high]）</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<ol>
+<li>递归终止条件  <code>if (low &lt; high)</code><br>当  <code>low &gt;= high</code>  时，说明子数组只有1个元素<code>（ low == high ）</code>或0个元素<code>（ low &gt; high ）</code>，此时数组天然有序，直接返回</li>
+<li>分区操作  <code>int pi = partition(arr, low, high)</code><br>调用之前的  <code>partition</code>  函数（选基准、划分子数组），返回基准元素的最终位置  <code>pi</code><br>此时数组结构： <code>arr[low...pi-1] ≤ arr[pi] &lt; arr[pi+1...high]</code> </li>
+<li>递归排序左子数组  <code>quickSort(arr, low, pi - 1)</code><br>对“基准左边的子数组” [low, pi-1]  再次调用  <code>quickSort</code> ，重复“分区→递归”的过程，直到左子数组完全有序。</li>
+<li>递归排序右子数组  <code>quickSort(arr, pi + 1, high)</code><br>对“基准右边的子数组” [pi+1, high]  再次调用  <code>quickSort</code> ，直到右子数组完全有序。</li>
+</ol>
+<p><em><strong>三、举个例子：模拟执行流程</strong></em></p>
+<p>以数组  [5, 3, 8, 2, 7]  为例，初始  <code>low=0 ， high=4 ：</code></p>
+<ol>
+<li>第一次调用  <code>quickSort(arr, 0, 4)</code></li>
+</ol>
+<ul>
+<li>low &lt; high  成立，执行  partition ，得到基准位置  pi&#x3D;3 （数组变为  [5,3,2,7,8] ）。</li>
+<li>递归调用  <code>quickSort(arr, 0, 2)</code> （左子数组  [5,3,2] ）和  <code>quickSort(arr, 4, 4)</code> （右子数组  [8] ）。</li>
+</ul>
+<ol start="2">
+<li>处理左子数组  <code>quickSort(arr, 0, 2)</code></li>
+</ol>
+<ul>
+<li>low &lt; high  成立，执行  <code>partition</code> ，假设得到  pi&#x3D;2 （数组变为  [2,3,5,7,8] ）。</li>
+<li>递归调用  <code>quickSort(arr, 0, 1)</code> （左子数组  [2,3] ）和  <code>quickSort(arr, 3, 2)</code> （无元素，直接返回）。</li>
+</ul>
+<ol start="3">
+<li>处理左子数组的左子数组  <code>quickSort(arr, 0, 1)</code></li>
+</ol>
+<ul>
+<li>low &lt; high  成立，执行  <code>partition</code> ，得到  <code>pi=0</code> （数组不变）。</li>
+<li>递归调用  <code>quickSort(arr, 0, -1)</code> （无元素，返回）和  <code>quickSort(arr, 1, 1)</code> （单元素，返回）。</li>
+</ul>
+<ol start="4">
+<li>所有递归返回后，数组完全有序： [2, 3, 5, 7, 8] 。</li>
+</ol>
+<p><em>四、时间复杂度与适用场景</em></p>
+<ul>
+<li>平均时间复杂度：O(n\log n)（每次分区将数组规模缩小一半，共递归 \log n 层，每层操作 O(n)）</li>
+<li>最坏时间复杂度：O(n^2)（如数组已完全有序，每次分区只能将规模减1）</li>
+<li>适用场景：数据量较大且无序的场景，是工业界常用的排序算法之一（如C++标准库的  sort  默认实现）</li>
+</ul>
+<p>通过“分治→递归→分区”的层层拆解，应该能彻底理解这段代码的逻辑了~ 如果还有细节疑问，可以再针对某一步深入分析。</p>
+<hr>
 <p><strong>重要内容：</strong></p>
 <p>确定一个数组中元素的个数，可以用如下方法</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> arr[]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"></span><br><span class="line">n=<span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(arr[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
@@ -115,7 +207,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" data-id="cuidub-jiU1I41xcsj1PBWJxD" data-title="快速排序" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" data-id="cuid7y76d7i5e0JSekoYBrJ3P" data-title="快速排序" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -159,7 +251,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/leecode-1/" rel="tag">leecode-1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%8A%E5%A4%A9%E7%AC%AC%E4%B8%80%E5%A4%A9%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%EF%BC%8Chello-world/" rel="tag">今天第一天搭建成功，hello world</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%93%88%E5%B8%8C/" rel="tag">哈希</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%B9%E4%BA%8E%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/" rel="tag">对于冒泡排序的一些见解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" rel="tag">快速排序</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/leecode-1/" rel="tag">leecode-1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%8A%E5%A4%A9%E7%AC%AC%E4%B8%80%E5%A4%A9%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%EF%BC%8Chello-world/" rel="tag">今天第一天搭建成功，hello world</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%B9%E4%BA%8E%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/" rel="tag">对于冒泡排序的一些见解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" rel="tag">快速排序</a></li></ul>
     </div>
   </div>
 
@@ -169,7 +261,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/leecode-1/" style="font-size: 10px;">leecode-1</a> <a href="/tags/%E4%BB%8A%E5%A4%A9%E7%AC%AC%E4%B8%80%E5%A4%A9%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%EF%BC%8Chello-world/" style="font-size: 10px;">今天第一天搭建成功，hello world</a> <a href="/tags/%E5%93%88%E5%B8%8C/" style="font-size: 10px;">哈希</a> <a href="/tags/%E5%AF%B9%E4%BA%8E%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/" style="font-size: 10px;">对于冒泡排序的一些见解</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">快速排序</a>
+      <a href="/tags/leecode-1/" style="font-size: 10px;">leecode-1</a> <a href="/tags/%E4%BB%8A%E5%A4%A9%E7%AC%AC%E4%B8%80%E5%A4%A9%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%EF%BC%8Chello-world/" style="font-size: 10px;">今天第一天搭建成功，hello world</a> <a href="/tags/%E5%AF%B9%E4%BA%8E%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%81%E8%A7%A3/" style="font-size: 10px;">对于冒泡排序的一些见解</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">快速排序</a>
     </div>
   </div>
 
@@ -191,10 +283,6 @@
       <ul>
         
           <li>
-            <a href="/2025/11/29/%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95/">哈希算法</a>
-          </li>
-        
-          <li>
             <a href="/2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/">数组元素个数的动态分配</a>
           </li>
         
@@ -208,6 +296,10 @@
         
           <li>
             <a href="/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/">寻找两数之和-leecode-1</a>
+          </li>
+        
+          <li>
+            <a href="/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">冒泡排序</a>
           </li>
         
       </ul>
