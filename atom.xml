@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://example.com</id>
-    <title>Hello New world</title>
+    <title>新世界</title>
     <link href="http://example.com" />
     <updated>2025-11-29T09:18:53.000Z</updated>
     <category term="今天第一天搭建成功，hello world" />
