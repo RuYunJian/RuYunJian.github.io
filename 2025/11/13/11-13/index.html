@@ -232,5 +232,24 @@
 
 
     
-</body>
+</body><!-- 隐藏式本地背景音乐 -->
+<audio id="bgMusic" autoplay loop preload="auto" style="display: none;">
+  <source src="/audios/bgmusic.mp3" type="audio/mpeg">
+  你的浏览器不支持音频播放，请更新浏览器
+
+<script>
+const bgMusic = document.getElementById('bgMusic');
+let isPlayed = false;
+function triggerPlay() {
+  if (!isPlayed && bgMusic.paused) {
+    bgMusic.play().then(() => {
+      isPlayed = true;
+    }).catch(err => {
+      console.log('音频播放失败:', err);
+    });
+    document.removeEventListener('click', triggerPlay);
+  }
+}
+document.addEventListener('click', triggerPlay);
+</script>
 </html>
