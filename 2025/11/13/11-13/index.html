@@ -175,7 +175,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E4%BB%8A%E5%A4%A9%E7%AC%AC%E4%B8%80%E5%A4%A9%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%EF%BC%8Chello-world/" style="color: #ff7d73">
+                <a href="/tags/%E4%BB%8A%E5%A4%A9%E7%AC%AC%E4%B8%80%E5%A4%A9%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%EF%BC%8Chello-world/" style="color: #00a596">
                     今天第一天搭建成功，hello world
                 </a>
             </span>
@@ -232,24 +232,5 @@
 
 
     
-</body><!-- 隐藏式本地背景音乐 -->
-<audio id="bgMusic" autoplay loop preload="auto" style="display: none;">
-  <source src="/audios/bgmusic.mp3" type="audio/mpeg">
-  你的浏览器不支持音频播放，请更新浏览器
-
-<script>
-const bgMusic = document.getElementById('bgMusic');
-let isPlayed = false;
-function triggerPlay() {
-  if (!isPlayed && bgMusic.paused) {
-    bgMusic.play().then(() => {
-      isPlayed = true;
-    }).catch(err => {
-      console.log('音频播放失败:', err);
-    });
-    document.removeEventListener('click', triggerPlay);
-  }
-}
-document.addEventListener('click', triggerPlay);
-</script>
+</body>
 </html>
