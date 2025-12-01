@@ -5,14 +5,14 @@
     <link href="http://example.com" />
     <updated>2025-11-29T07:19:14.000Z</updated>
     <category term="今天第一天搭建成功，hello world" />
-    <category term="对于冒泡排序的一些见解" />
     <category term="leecode-1" />
+    <category term="对于冒泡排序的一些见解" />
     <category term="快速排序" />
     <entry>
         <id>http://example.com/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</id>
         <title>快速排序</title>
         <link rel="alternate" href="http://example.com/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
-        <content type="html">&lt;h4 id=&#34;快速排序&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#快速排序&#34;&gt;#&lt;/a&gt; &lt;strong&gt;快速排序&lt;/strong&gt;&lt;/h4&gt;
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;h4 id=&#34;快速排序&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#快速排序&#34;&gt;#&lt;/a&gt; &lt;strong&gt;快速排序&lt;/strong&gt;&lt;/h4&gt;
 &lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;#&lt;/span&gt;&lt;span style=&#34;color:#1E754F;--shiki-dark:#4D9375&#34;&gt;include&lt;/span&gt;&lt;span style=&#34;color:#B5695977;--shiki-dark:#C98A7D77&#34;&gt; &amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#B56959;--shiki-dark:#C98A7D&#34;&gt;stdio.h&lt;/span&gt;&lt;span style=&#34;color:#B5695977;--shiki-dark:#C98A7D77&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;#&lt;/span&gt;&lt;span style=&#34;color:#1E754F;--shiki-dark:#4D9375&#34;&gt;include&lt;/span&gt;&lt;span style=&#34;color:#B5695977;--shiki-dark:#C98A7D77&#34;&gt; &amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#B56959;--shiki-dark:#C98A7D&#34;&gt;stdlib.h&lt;/span&gt;&lt;span style=&#34;color:#B5695977;--shiki-dark:#C98A7D77&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#A0ADA0;--shiki-dark:#758575DD&#34;&gt;// 交换函数&lt;/span&gt;&lt;/span&gt;
