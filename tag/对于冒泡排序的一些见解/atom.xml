@@ -5,9 +5,9 @@
     <link href="http://example.com" />
     <updated>2025-11-22T04:20:42.000Z</updated>
     <category term="今天第一天搭建成功，hello world" />
+    <category term="对于冒泡排序的一些见解" />
     <category term="leecode-1" />
     <category term="快速排序" />
-    <category term="对于冒泡排序的一些见解" />
     <entry>
         <id>http://example.com/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</id>
         <title>冒泡排序</title>
