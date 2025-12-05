@@ -9,7 +9,7 @@
             "url": "http://example.com/2025/11/13/11-13/",
             "title": "11.13",
             "date_published": "2025-11-13T04:46:46.538Z",
-            "content_html": "<link rel=\"stylesheet\" class=\"aplayer-secondary-style-marker\" href=\"\\assets\\css\\APlayer.min.css\"><script src=\"\\assets\\js\\APlayer.min.js\" class=\"aplayer-secondary-script-marker\"></script><script class=\"meting-secondary-script-marker\" src=\"\\assets\\js\\Meting.min.js\"></script><p>记录一下，<code>2025.11.13</code>第一次小窝搭建成功</p>\n",
+            "content_html": "<link rel=\"stylesheet\" class=\"aplayer-secondary-style-marker\" href=\"\\assets\\css\\APlayer.min.css\"><script src=\"\\assets\\js\\APlayer.min.js\" class=\"aplayer-secondary-script-marker\"></script><script class=\"meting-secondary-script-marker\" src=\"\\assets\\js\\Meting.min.js\"></script><p>记录一下，<code>2025.11.13</code>第一次小窝搭建成功</p>\n<p><img src=\"/.com//D:%5C%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5hexo%5Csource%5Cimages%5C2cdbf297a8ab6da6c8cdcd1ae91a04b8-17649095490142.jpg\" alt></p>\n",
             "tags": [
                 "今天第一天搭建成功，hello world"
             ]
