@@ -3,11 +3,37 @@
     <id>http://example.com</id>
     <title>新世界</title>
     <link href="http://example.com" />
-    <updated>2025-12-02T09:23:28.000Z</updated>
+    <updated>2025-12-06T15:19:10.000Z</updated>
     <category term="今天第一天搭建成功，hello world" />
-    <category term="leecode-1" />
     <category term="对于冒泡排序的一些见解" />
+    <category term="leecode-1" />
     <category term="快速排序" />
+    <entry>
+        <id>http://example.com/2025/12/06/%E5%9B%9B%E7%BA%A7%E5%A4%8D%E4%B9%A0%E8%AE%B0%E5%BD%9512-6/</id>
+        <title>四级复习记录12,6</title>
+        <link rel="alternate" href="http://example.com/2025/12/06/%E5%9B%9B%E7%BA%A7%E5%A4%8D%E4%B9%A0%E8%AE%B0%E5%BD%9512-6/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;一.翻译题（106.5）&lt;/strong&gt;&lt;/em&gt;【25min】&lt;/p&gt;
+&lt;p&gt;距离四级考试还有一周，本周的复习重点在于翻译题的词汇积累，以及可能考的重点的预测，对其词汇一固定句式搭配都有所记录，在下周的水课上应该着重复习，&lt;code&gt;留存的几个翻译题可以作为每天的一个练手&lt;/code&gt;，这个不能断，一定要保持手感，模拟题最高写出来过90分的翻译，正式上场起码要保证75&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;二.听力（248.5）&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;听力这方面挺头疼的，按照网上说的听到什么选什么确实可以保证较高的正确率，差不多能有个177.5分左右，但是错的都是后面14.2的大分值题，但是完全只靠听原文说了什么就选什么我觉得这并不现实，如果遇到陷阱是没有办法应对的，我觉得在男女对话上有必要记录一下每句话对应是男性还是女性说的，我会在下周一或者二，或者这周日就进行尝试，听力作为重点拿分项目，也是最不稳定的，必须保证正确率，听力在考试之前不能断，每天哪怕只听一半也必须继续，&lt;code&gt;务必记得边听边涂卡&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;三.阅读题（248.5）&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;选词填空【剩余时间】&lt;/code&gt;，我真是没得话说，这玩意看天命吧，反正让我自己去做对不了几个的，我承认你赢了，我拿你一点办法没有&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;段落匹配【15min】&lt;/code&gt;，&lt;strong&gt;正确率保证在两个以内&lt;/strong&gt;，时间上必须精准把握，分数非常好拿，做到不失误不心急就可以了&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;仔细阅读【25min】&lt;/code&gt;分数很高，尽量还是每篇只错一题，速度可以慢一点，毕竟分值非常大&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;四.作文（106.5）&lt;/strong&gt;&lt;/em&gt;【25min】&lt;/p&gt;
+&lt;p&gt;下周的后几天要回头复习语法知识，&lt;code&gt;确保作文内不会出现非常低级的语法错误&lt;/code&gt;，在保证语法正确的情况下再去使用高级句式，作文的分数要保证在70，冲80，&lt;code&gt;保证作文段落与段落，句与句之间的连接不生硬&lt;/code&gt;，模板不再背诵，精力可以放在同义词的高级替换上，有必要多积累一点&lt;/p&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;就到此为止了，祝福自己的四级高分通过，wish you and believe yourself !&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+    &lt;div id=&#34;aplayer-zomxnePo&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1417055605&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+</content>
+        <updated>2025-12-06T15:19:10.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2025/12/02/%E9%97%B2%E8%A8%8012-2/</id>
         <title>闲言12.2</title>
@@ -59,7 +85,7 @@
 &lt;p&gt;1.写到这里其实也没有什么可以说的了，我不清楚未来的自己会不会对自己的大学生活记忆犹新，也来到学校快4个月了，阐述一下校园生活，室友虽然不像网上传的那样奇葩，但是也不咋地吧，枪皇还是认真学习的，逼哥就算了，来混日子的，还有一个天天只玩二游的垃圾留级生&lt;/p&gt;
 &lt;p&gt;2.你是否记得入校时的第一次高数考试考了78，是否记得四级模拟考的裸分为461全班第二呢，正在备战考研的你看到这里是否想起了你大一也是个自律学习，周末泡教室学习的人，如果你连考研的自律性都无法保证，我想上述的规划，以及你现在的规划也只是满纸荒唐言罢了，希望你能扛得住压力，砥砺前行吧！&lt;/p&gt;
 &lt;p&gt;
-    &lt;div id=&#34;aplayer-TEnGKawb&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1372188635&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+    &lt;div id=&#34;aplayer-ZXSIPlyp&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1372188635&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
 </content>
         <updated>2025-12-02T09:23:28.000Z</updated>
     </entry>
@@ -280,7 +306,7 @@ j 从 low 开始，逐个检查 &lt;code&gt;arr[j]&lt;/code&gt; 与 &lt;code&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;sizeof&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;arr&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;/sizeof&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;arr&lt;/span&gt;&lt;span style=&#34;color:#1e754f;--shiki-dark:#4d9375&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#1e754f;--shiki-dark:#4d9375&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;
-    &lt;div id=&#34;aplayer-wdGejNUj&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1436961077&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+    &lt;div id=&#34;aplayer-hPUvFGYq&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1436961077&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
 </content>
         <category term="快速排序" />
         <updated>2025-11-29T07:19:14.000Z</updated>
