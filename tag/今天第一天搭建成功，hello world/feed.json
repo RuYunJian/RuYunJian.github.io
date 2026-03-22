@@ -2,11 +2,11 @@
     "version": "https://jsonfeed.org/version/1",
     "title": "新世界 • All posts by \"今天第一天搭建成功，hello world\" tag",
     "description": "别弯腰 接受时间躲不开的那一刀",
-    "home_page_url": "http://example.com",
+    "home_page_url": "https://ruyunjian.github.io",
     "items": [
         {
-            "id": "http://example.com/2025/11/13/11-13/",
-            "url": "http://example.com/2025/11/13/11-13/",
+            "id": "https://ruyunjian.github.io/2025/11/13/11-13/",
+            "url": "https://ruyunjian.github.io/2025/11/13/11-13/",
             "title": "11.13",
             "date_published": "2025-11-13T04:46:46.538Z",
             "content_html": "<link rel=\"stylesheet\" class=\"aplayer-secondary-style-marker\" href=\"\\assets\\css\\APlayer.min.css\"><script src=\"\\assets\\js\\APlayer.min.js\" class=\"aplayer-secondary-script-marker\"></script><script class=\"meting-secondary-script-marker\" src=\"\\assets\\js\\Meting.min.js\"></script><p>记录一下，<code>2025.11.13</code>第一次小窝搭建成功</p>\n",

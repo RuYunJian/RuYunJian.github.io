@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>https://ruyunjian.github.io</id>
     <title>新世界 • Posts by &#34;leecode-1&#34; tag</title>
-    <link href="http://example.com" />
+    <link href="https://ruyunjian.github.io" />
     <updated>2025-11-23T12:59:25.000Z</updated>
     <category term="今天第一天搭建成功，hello world" />
     <category term="对于冒泡排序的一些见解" />
-    <category term="leecode-1" />
     <category term="快速排序" />
+    <category term="leecode-1" />
     <entry>
-        <id>http://example.com/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/</id>
+        <id>https://ruyunjian.github.io/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/</id>
         <title>寻找两数之和-leecode-1</title>
-        <link rel="alternate" href="http://example.com/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/"/>
+        <link rel="alternate" href="https://ruyunjian.github.io/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;今天是&lt;em&gt;&lt;strong&gt;2025.11.23&lt;/strong&gt;&lt;/em&gt;，今天一天和xjz在自习教室度过，下午复习了C语言和CET4还有一些高等数学，&lt;/p&gt;
 &lt;p&gt;效率并不是很高吧，但是总比坐在宿舍里混日子强吧qvq，晚上回来又决心搞了一下leecode的第1题，&lt;/p&gt;
 &lt;p&gt;但是我实在搞不懂题目里说的给定只能表示，到底需不需要scanf_s呢，额，有待考究! !&lt;/p&gt;
 &lt;p&gt;先奉上一段错误示范吧，这是我写的第一版&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/.com//2.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/2.png&#34; alt&gt;&lt;/p&gt;
 &lt;h1 id=&#34;然后是我觉得的正确示范先奉上源代码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#然后是我觉得的正确示范先奉上源代码&#34;&gt;#&lt;/a&gt; &lt;strong&gt;然后是我觉得的正确示范（先奉上源代码）：&lt;/strong&gt;&lt;/h1&gt;
 &lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`#include &lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;stdio.h&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;&gt;&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt; main&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`&lt;/span&gt;&lt;/span&gt;

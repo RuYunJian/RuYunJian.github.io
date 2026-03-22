@@ -2,19 +2,19 @@
 <rss version="2.0">
     <channel>
         <title>新世界 • Posts by &#34;对于冒泡排序的一些见解&#34; tag</title>
-        <link>http://example.com</link>
+        <link>https://ruyunjian.github.io</link>
         <description>别弯腰 接受时间躲不开的那一刀</description>
         <language>zh-CN</language>
         <pubDate>Sat, 22 Nov 2025 12:20:42 +0800</pubDate>
         <lastBuildDate>Sat, 22 Nov 2025 12:20:42 +0800</lastBuildDate>
         <category>今天第一天搭建成功，hello world</category>
         <category>对于冒泡排序的一些见解</category>
-        <category>leecode-1</category>
         <category>快速排序</category>
+        <category>leecode-1</category>
         <item>
-            <guid isPermalink="true">http://example.com/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</guid>
+            <guid isPermalink="true">https://ruyunjian.github.io/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</guid>
             <title>冒泡排序</title>
-            <link>http://example.com/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</link>
+            <link>https://ruyunjian.github.io/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</link>
             <category>对于冒泡排序的一些见解</category>
             <pubDate>Sat, 22 Nov 2025 12:20:42 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;11.22，首次在C语言中完成冒泡排序的编写，编写过程中带有瑕疵，借助ai修改了一次，完成代码如下&lt;/p&gt;

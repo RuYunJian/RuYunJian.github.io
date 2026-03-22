@@ -1,27 +1,52 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>https://ruyunjian.github.io</id>
     <title>新世界</title>
-    <link href="http://example.com" />
-    <updated>2026-03-21T13:38:04.000Z</updated>
+    <link href="https://ruyunjian.github.io" />
+    <updated>2026-03-22T14:19:13.000Z</updated>
     <category term="今天第一天搭建成功，hello world" />
     <category term="对于冒泡排序的一些见解" />
-    <category term="leecode-1" />
     <category term="快速排序" />
+    <category term="leecode-1" />
     <entry>
-        <id>http://example.com/2026/03/21/C-%E5%85%A5%E9%97%A8/</id>
+        <id>https://ruyunjian.github.io/2026/03/22/Cpp%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</id>
+        <title>Cpp两数之和</title>
+        <link rel="alternate" href="https://ruyunjian.github.io/2026/03/22/Cpp%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;leecode 1 的两数之和使用Cpp的map更好写，也更易于思考&lt;/p&gt;
+&lt;p&gt;首先是Cpp中自带map（键值对）类型的变量，只需要&lt;code&gt;#include &amp;lt;map&amp;gt;&lt;/code&gt;即可&lt;/p&gt;
+&lt;p&gt;在迭代器中学过一个方法名叫find，完整形式为&lt;code&gt;arr.find(date)&lt;/code&gt;唯一需要明确的一个点是这个方法的返回值是一个&lt;strong&gt;指针&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;相比于C语言的hash_map,它不具备find的方法，在映射追踪方面难以实现，导致在C语言完成两数之和使用哈希表方法的时候非常难理解&lt;/p&gt;
+&lt;p&gt;Cpp使用hash_map可以将双循环的O（n2）降低成O（n）&lt;/p&gt;
+&lt;p&gt;class sulotion应该是作为封装，但是还没有学到，后续需要跟进&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;/../Cpp%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-03-22%20221823.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;3.22  完成函数与操作符重载（简单来说就是同函数名不同类型的参数）&lt;/p&gt;
+&lt;p&gt;类似于int_swap(int,int)&amp;amp;double_swap(double,double)，函数名都是swap，而后面的参数类型可以不同，感觉很方便（第六感）&lt;/p&gt;
+</content>
+        <updated>2026-03-22T14:19:13.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://ruyunjian.github.io/2026/03/21/test/</id>
+        <title>test</title>
+        <link rel="alternate" href="https://ruyunjian.github.io/2026/03/21/test/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;&lt;img src=&#34;/../test/C%20%E8%BD%AC%20C++.png&#34; alt&gt;&lt;/p&gt;
+</content>
+        <updated>2026-03-21T14:07:02.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://ruyunjian.github.io/2026/03/21/C-%E5%85%A5%E9%97%A8/</id>
         <title>C++入门</title>
-        <link rel="alternate" href="http://example.com/2026/03/21/C-%E5%85%A5%E9%97%A8/"/>
+        <link rel="alternate" href="https://ruyunjian.github.io/2026/03/21/C-%E5%85%A5%E9%97%A8/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;1&lt;/p&gt;
-&lt;p&gt;![](D:\个人主页hexo\source\images\C 转 C++.png)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/../C-%E5%85%A5%E9%97%A8/C%20%E8%BD%AC%20C++.png&#34; alt&gt;&lt;/p&gt;
 &lt;p&gt;3.21 stl完结&lt;/p&gt;
 </content>
         <updated>2026-03-21T13:38:04.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2026/01/17/1-17/</id>
+        <id>https://ruyunjian.github.io/2026/01/17/1-17/</id>
         <title>1.17</title>
-        <link rel="alternate" href="http://example.com/2026/01/17/1-17/"/>
+        <link rel="alternate" href="https://ruyunjian.github.io/2026/01/17/1-17/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;h3 id=&#34;leetcode-3最长不重复子串&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#leetcode-3最长不重复子串&#34;&gt;#&lt;/a&gt; &lt;strong&gt;Leetcode-3最长不重复子串&lt;/strong&gt;&lt;/h3&gt;
 &lt;hr&gt;
 &lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;#&lt;/span&gt;&lt;span style=&#34;color:#1E754F;--shiki-dark:#4D9375&#34;&gt;include&lt;/span&gt;&lt;span style=&#34;color:#B5695977;--shiki-dark:#C98A7D77&#34;&gt; &amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#B56959;--shiki-dark:#C98A7D&#34;&gt;stdio.h&lt;/span&gt;&lt;span style=&#34;color:#B5695977;--shiki-dark:#C98A7D77&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
@@ -74,9 +99,9 @@
         <updated>2026-01-17T09:37:21.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2026/01/15/1-15/</id>
+        <id>https://ruyunjian.github.io/2026/01/15/1-15/</id>
         <title>1.15</title>
-        <link rel="alternate" href="http://example.com/2026/01/15/1-15/"/>
+        <link rel="alternate" href="https://ruyunjian.github.io/2026/01/15/1-15/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;闲置了将近一个月的主页，终于复出了，一个月过的不比高三舒服多少，从之后的四级复习到后来的期末考试复习，快忙死了！！！！&lt;/p&gt;
 &lt;p&gt;一月之后疯狂的泡在图书馆里，好在最后考试感觉考的还不错，英语四级保佑我过500吧，反正我是不想上大学英语课了，要多无聊有多无聊，今天是大学寒假的第一天，是的，把期末考试写在C语言里的屎山代码转移到了电脑上并且尝试运行，发现错误不少，没招了！寒假准备攻克一下C++，OK到此为止吧&lt;/p&gt;
 &lt;h1 id=&#34;qwq我想小蛋糕了我已经27小时没见到他了现在是20251151535&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#qwq我想小蛋糕了我已经27小时没见到他了现在是20251151535&#34;&gt;#&lt;/a&gt; QWQ，我想小蛋糕了!!!（我已经27小时没见到他了!!!现在是2025/1/15/15:35）&lt;/h1&gt;
@@ -84,9 +109,9 @@
         <updated>2026-01-15T07:28:07.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2025/12/06/%E5%9B%9B%E7%BA%A7%E5%A4%8D%E4%B9%A0%E8%AE%B0%E5%BD%9512-6/</id>
+        <id>https://ruyunjian.github.io/2025/12/06/%E5%9B%9B%E7%BA%A7%E5%A4%8D%E4%B9%A0%E8%AE%B0%E5%BD%9512-6/</id>
         <title>四级复习记录12,6</title>
-        <link rel="alternate" href="http://example.com/2025/12/06/%E5%9B%9B%E7%BA%A7%E5%A4%8D%E4%B9%A0%E8%AE%B0%E5%BD%9512-6/"/>
+        <link rel="alternate" href="https://ruyunjian.github.io/2025/12/06/%E5%9B%9B%E7%BA%A7%E5%A4%8D%E4%B9%A0%E8%AE%B0%E5%BD%9512-6/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;一.翻译题（106.5）&lt;/strong&gt;&lt;/em&gt;【25min】&lt;/p&gt;
 &lt;p&gt;距离四级考试还有一周，本周的复习重点在于翻译题的词汇积累，以及可能考的重点的预测，对其词汇一固定句式搭配都有所记录，在下周的水课上应该着重复习，&lt;code&gt;留存的几个翻译题可以作为每天的一个练手&lt;/code&gt;，这个不能断，一定要保持手感，模拟题最高写出来过90分的翻译，正式上场起码要保证75&lt;/p&gt;
 &lt;hr&gt;
@@ -105,14 +130,14 @@
 &lt;p&gt;就到此为止了，祝福自己的四级高分通过，wish you and believe yourself !&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;
-    &lt;div id=&#34;aplayer-KrYSNGaY&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1417055605&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+    &lt;div id=&#34;aplayer-OErPUURK&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1417055605&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
 </content>
         <updated>2025-12-06T15:19:10.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2025/12/02/%E9%97%B2%E8%A8%8012-2/</id>
+        <id>https://ruyunjian.github.io/2025/12/02/%E9%97%B2%E8%A8%8012-2/</id>
         <title>闲言12.2</title>
-        <link rel="alternate" href="http://example.com/2025/12/02/%E9%97%B2%E8%A8%8012-2/"/>
+        <link rel="alternate" href="https://ruyunjian.github.io/2025/12/02/%E9%97%B2%E8%A8%8012-2/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;​                                                                                                    &lt;strong&gt;一些闲言碎语&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;[TOC]&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;一.关于英语四级&lt;/em&gt;&lt;/p&gt;
@@ -156,14 +181,14 @@
 &lt;p&gt;有时间还是尽量参加竞赛，但是我个人觉得最基础的大创和大挑就可以算了，我并不觉得这两个竞赛有多高的含金量，对于我这个专业，我觉得&lt;code&gt;数学建模，数学竞赛，物理竞赛，ACM，蓝桥杯&lt;/code&gt;等更具备含金量&lt;/p&gt;
 &lt;p&gt;不过相比盲目的准备竞赛，我觉得还是得先在此声明一下准备竞赛的意义：为了让自己在考研复试的时候更具备竞争优势，让面试的老师觉得自己更具备科研能力，更重要的是准备竞赛的过程，可能是未来面对考研，面对研究生生活的一种早日的习惯，毕竟我现在觉得研究生的压力不亚于备战高考时的压力（这句话也送给未来的自己，如果未来的我觉得压力过大，觉得迷茫了，不妨回来再看看这篇文章，说不定未来的我会因为当时大一的自己的无知而感到可笑，也可能因为大一就已经为自己的未来铺好了后路而感到骄傲，我不知道未来的我看到这篇文章是什么反应，我无从考究，我也不得而知，我只知道写这篇文章的时候：2025年12月2日17点53，此时我的目标明确，但也正是因为我对自己的熟知，我不知道未来我是否能把以上的规划都实现，但我希望自己的人生中能有几个亮点）&lt;/p&gt;
 &lt;p&gt;
-    &lt;div id=&#34;aplayer-PPWtlmNl&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1372188635&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+    &lt;div id=&#34;aplayer-QunHWAFs&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1372188635&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
 </content>
         <updated>2025-12-02T09:23:28.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/</id>
+        <id>https://ruyunjian.github.io/2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/</id>
         <title>数组元素个数的动态分配</title>
-        <link rel="alternate" href="http://example.com/2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/"/>
+        <link rel="alternate" href="https://ruyunjian.github.io/2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;产率很高啊，一下子解决了两个心头大患，嘿嘿嘿嘿嘿嘿&lt;/p&gt;
 &lt;p&gt;对于数组，之前有如下的问题：&lt;/p&gt;
 &lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt; n&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;;&lt;/span&gt;&lt;/span&gt;
@@ -193,9 +218,9 @@
         <updated>2025-11-29T09:18:53.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</id>
+        <id>https://ruyunjian.github.io/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</id>
         <title>快速排序</title>
-        <link rel="alternate" href="http://example.com/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
+        <link rel="alternate" href="https://ruyunjian.github.io/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;h4 id=&#34;快速排序&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#快速排序&#34;&gt;#&lt;/a&gt; &lt;strong&gt;快速排序&lt;/strong&gt;&lt;/h4&gt;
 &lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;#&lt;/span&gt;&lt;span style=&#34;color:#1E754F;--shiki-dark:#4D9375&#34;&gt;include&lt;/span&gt;&lt;span style=&#34;color:#B5695977;--shiki-dark:#C98A7D77&#34;&gt; &amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#B56959;--shiki-dark:#C98A7D&#34;&gt;stdio.h&lt;/span&gt;&lt;span style=&#34;color:#B5695977;--shiki-dark:#C98A7D77&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;#&lt;/span&gt;&lt;span style=&#34;color:#1E754F;--shiki-dark:#4D9375&#34;&gt;include&lt;/span&gt;&lt;span style=&#34;color:#B5695977;--shiki-dark:#C98A7D77&#34;&gt; &amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#B56959;--shiki-dark:#C98A7D&#34;&gt;stdlib.h&lt;/span&gt;&lt;span style=&#34;color:#B5695977;--shiki-dark:#C98A7D77&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
@@ -377,15 +402,15 @@ j 从 low 开始，逐个检查 &lt;code&gt;arr[j]&lt;/code&gt; 与 &lt;code&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;sizeof&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;arr&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;/sizeof&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;arr&lt;/span&gt;&lt;span style=&#34;color:#1e754f;--shiki-dark:#4d9375&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#1e754f;--shiki-dark:#4d9375&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;
-    &lt;div id=&#34;aplayer-wgXksixY&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1436961077&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+    &lt;div id=&#34;aplayer-WTFVcclo&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1436961077&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
 </content>
         <category term="快速排序" />
         <updated>2025-11-29T07:19:14.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/</id>
+        <id>https://ruyunjian.github.io/2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/</id>
         <title>整数倒转-leecode-7</title>
-        <link rel="alternate" href="http://example.com/2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/"/>
+        <link rel="alternate" href="https://ruyunjian.github.io/2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#A0ADA0;--shiki-dark:#758575DD&#34;&gt; //正确案例&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt; #&lt;/span&gt;&lt;span style=&#34;color:#1E754F;--shiki-dark:#4D9375&#34;&gt;include&lt;/span&gt;&lt;span style=&#34;color:#B5695977;--shiki-dark:#C98A7D77&#34;&gt; &amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#B56959;--shiki-dark:#C98A7D&#34;&gt;stdio.h&lt;/span&gt;&lt;span style=&#34;color:#B5695977;--shiki-dark:#C98A7D77&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;/span&gt;
@@ -446,14 +471,14 @@ j 从 low 开始，逐个检查 &lt;code&gt;arr[j]&lt;/code&gt; 与 &lt;code&gt;
         <updated>2025-11-26T02:01:23.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/</id>
+        <id>https://ruyunjian.github.io/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/</id>
         <title>寻找两数之和-leecode-1</title>
-        <link rel="alternate" href="http://example.com/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/"/>
+        <link rel="alternate" href="https://ruyunjian.github.io/2025/11/23/%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-leecode-1/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;今天是&lt;em&gt;&lt;strong&gt;2025.11.23&lt;/strong&gt;&lt;/em&gt;，今天一天和xjz在自习教室度过，下午复习了C语言和CET4还有一些高等数学，&lt;/p&gt;
 &lt;p&gt;效率并不是很高吧，但是总比坐在宿舍里混日子强吧qvq，晚上回来又决心搞了一下leecode的第1题，&lt;/p&gt;
 &lt;p&gt;但是我实在搞不懂题目里说的给定只能表示，到底需不需要scanf_s呢，额，有待考究! !&lt;/p&gt;
 &lt;p&gt;先奉上一段错误示范吧，这是我写的第一版&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/.com//2.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/2.png&#34; alt&gt;&lt;/p&gt;
 &lt;h1 id=&#34;然后是我觉得的正确示范先奉上源代码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#然后是我觉得的正确示范先奉上源代码&#34;&gt;#&lt;/a&gt; &lt;strong&gt;然后是我觉得的正确示范（先奉上源代码）：&lt;/strong&gt;&lt;/h1&gt;
 &lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`#include &lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;stdio.h&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;&gt;&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt; main&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`&lt;/span&gt;&lt;/span&gt;
@@ -485,9 +510,9 @@ j 从 low 开始，逐个检查 &lt;code&gt;arr[j]&lt;/code&gt; 与 &lt;code&gt;
         <updated>2025-11-23T12:59:25.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</id>
+        <id>https://ruyunjian.github.io/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</id>
         <title>冒泡排序</title>
-        <link rel="alternate" href="http://example.com/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/"/>
+        <link rel="alternate" href="https://ruyunjian.github.io/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;11.22，首次在C语言中完成冒泡排序的编写，编写过程中带有瑕疵，借助ai修改了一次，完成代码如下&lt;/p&gt;
 &lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`#include &lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;stdio.h&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;&gt;&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt; main&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`&lt;/span&gt;&lt;/span&gt;
@@ -525,26 +550,26 @@ j 从 low 开始，逐个检查 &lt;code&gt;arr[j]&lt;/code&gt; 与 &lt;code&gt;
         <updated>2025-11-22T04:20:42.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2025/11/20/11-20/</id>
+        <id>https://ruyunjian.github.io/2025/11/20/11-20/</id>
         <title>11.2</title>
-        <link rel="alternate" href="http://example.com/2025/11/20/11-20/"/>
+        <link rel="alternate" href="https://ruyunjian.github.io/2025/11/20/11-20/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;感觉还不太会写这个，额QvQ&lt;/p&gt;
 </content>
         <updated>2025-11-20T11:10:42.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2025/11/13/11-13/</id>
+        <id>https://ruyunjian.github.io/2025/11/13/11-13/</id>
         <title>11.13</title>
-        <link rel="alternate" href="http://example.com/2025/11/13/11-13/"/>
+        <link rel="alternate" href="https://ruyunjian.github.io/2025/11/13/11-13/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;记录一下，&lt;code&gt;2025.11.13&lt;/code&gt;第一次小窝搭建成功&lt;/p&gt;
 </content>
         <category term="今天第一天搭建成功，hello world" />
         <updated>2025-11-13T04:46:46.538Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2025/11/13/hello-world/</id>
+        <id>https://ruyunjian.github.io/2025/11/13/hello-world/</id>
         <title>Hello World</title>
-        <link rel="alternate" href="http://example.com/2025/11/13/hello-world/"/>
+        <link rel="alternate" href="https://ruyunjian.github.io/2025/11/13/hello-world/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;Welcome to &lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&#34;https://hexo.io/docs/&#34;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&#34;https://hexo.io/docs/troubleshooting.html&#34;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&#34;https://github.com/hexojs/hexo/issues&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
 &lt;h3 id=&#34;create-a-new-post&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#create-a-new-post&#34;&gt;#&lt;/a&gt; Create a new post&lt;/h3&gt;
