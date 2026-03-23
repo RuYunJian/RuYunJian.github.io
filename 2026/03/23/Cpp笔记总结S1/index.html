@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>Cpp笔记总结S1 | 新世界</title>
+    <meta name="author" content="南风知我意" />
+    <meta name="description" content="别弯腰 接受时间躲不开的那一刀" />
+    <meta name="keywords" content="吹梦到西周" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="../../../../images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="../../../../js/lib/highlight.js"></script>
+
+
+
+<script src="../../../../js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="../../../../css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="../../../../images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>新世界</span>
+        </a>
+        
+        <a href="../../../../index.html">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="../../../../about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="../../../../archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="../../../../categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="../../../../tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;新世界</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="../../../../index.html">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="../../../../about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="../../../../archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="../../../../categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="../../../../tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>Cpp笔记总结S1</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/3/23
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h3 id="一string类型"><a class="anchor" href="#一string类型">#</a> 一.string类型</h3>
+<hr>
+<p>1.求长度：arr.length()或者是arr.size()</p>
+<p>2.字符串的连接可以直接使用+号，形如c=a+b（eg：a=hello,b=world,c=a+b=hello world）</p>
+<p>3.=和普通变量一样赋值，但是是拷贝的副本</p>
+<h3 id="二for循环与auto迭代器"><a class="anchor" href="#二for循环与auto迭代器">#</a> <strong>二.for循环与auto迭代器</strong></h3>
+<hr>
+<p>1.auto可以转化为任意数据类型(eg:string a=&quot;abc&quot;;auto b=a;)</p>
+<p>2.定义一个数组arr[]，有如下语法：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> arr</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#2F798A;--shiki-dark:#4C9A91">5</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span><span style="color:#2F798A;--shiki-dark:#4C9A91">1</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">2</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">3</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">4</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">5</span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">for</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">auto</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> x</span><span style="color:#999999;--shiki-dark:#666666">:</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    cout</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">x</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">endl</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span></code></pre>
+<p>可以依次打印数组中的元素，输出结果就是12345，代替了三分号的步骤</p>
+<h3 id="三引用"><a class="anchor" href="#三引用">#</a> 三,引用</h3>
+<hr>
+<p>引用就是<em>取别名</em> ，具体如下</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> a</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91">10</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#AB5959;--shiki-dark:#CB7676"> &#x26;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">p</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">a</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">P </span><span style="color:#AB5959;--shiki-dark:#CB7676">+=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 5</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">cout</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">a</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">endl</span><span style="color:#999999;--shiki-dark:#666666">;</span></span></code></pre>
+<p>此时的输出结果为<code>a=15</code>,也就是说P在发生改变时a也会同时发生改变，就是相当于a的别名为p</p>
+<h3 id="四常用库函数"><a class="anchor" href="#四常用库函数">#</a> <strong>四.常用库函数</strong></h3>
+<hr>
+<p>I.<code>reverse翻转</code></p>
+<p>假定有一个vector容器储存的arr，则</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">reverse（</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">begin</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">end</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">）</span></span></code></pre>
+<p>可以倒转整个vector容器</p>
+<p>II.<code>unique去重</code></p>
+<p>作用是去除容器或数组中相邻元素的重复出现的元素，返回值是去重之后的尾地址</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> m</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">unique（</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">begin</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">end</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">）</span><span style="color:#AB5959;--shiki-dark:#CB7676">-</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">begin</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#A0ADA0;--shiki-dark:#758575DD"> //m返回的是去重后的元素个数</span></span></code></pre>
+<blockquote>
+<p>需要重点注意的是，<em>unique去重的是相邻元素的重复元素，而不是整个容器或数组中的重复元素，所有使用unique的时候一般要对整个容器或者数组进行sort排序（见下文）</em></p>
+</blockquote>
+<p>III.sort排序</p>
+<p>1.sort排序是类似于快速排序的一种排序方式，时间复杂度为n*log2(n),执行效率比较高，一般首选sort</p>
+<p>2.sort的使用方法<br>
+sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）的数组的首元素的指针，end为指向待sort（）的数组的<em>尾元素的下一位指针</em>（不是尾元素，是尾元素的下一位！！）</p>
+<blockquote>
+<p>cmp：自定义排序函数，返回bool类型，是一个布尔值函数</p>
+<p><code>bool</code> 是 C++ 的<strong>布尔类型</strong>，只有两个取值：</p>
+<ul>
+<li><code>true</code>（真，等价于 1）</li>
+<li><code>false</code>（假，等价于 0）</li>
+</ul>
+<p>bool 函数的核心作用：<strong>返回判断结果</strong>（是 / 否、对 / 错）</p>
+<h3 id="正确写法"><a class="anchor" href="#正确写法">#</a> ✅ 正确写法</h3>
+<ul>
+<li>升序：<code>return a &lt; b</code></li>
+<li>降序：<code>return a &gt; b</code></li>
+</ul>
+<h3 id="绝对不能写"><a class="anchor" href="#绝对不能写">#</a> ❌ 绝对不能写</h3>
+<ul>
+<li>
+<p><code>return a &lt;= b</code></p>
+</li>
+<li>
+<p><code>return a &gt;= b</code></p>
+</li>
+<li>
+<p><strong>bool 函数就是只返回 true 或 false</strong></p>
+<p><code>a &lt; b</code> 本身，<strong>本来就是一个布尔表达式</strong>，若a &lt; b，则true，否则返回false</p>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="五容器基础笔记备份"><a class="anchor" href="#五容器基础笔记备份">#</a> <strong>五.容器基础&amp;&amp;笔记备份</strong></h3>
+<p><img src="/../Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/1cb363a0240a849696a7f6457744f77a.jpg" alt></p>
+<p><img src="/../Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/1266b250bbd962a3cfe02aff6bc8d1f3.jpg" alt="1266b250bbd962a3cfe02aff6bc8d1f3"></p>
+<p><img src="/../Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/3849496e2a9d9cba41a99d5295dff58c.jpg" alt="3849496e2a9d9cba41a99d5295dff58c"></p>
+<p><img src="/../Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/bfe508c05447f35fae53d0425c5c8e50.jpg" alt="bfe508c05447f35fae53d0425c5c8e50"></p>
+<p><img src="/../Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/ef88628f71026bd26ec4c808558360b6.jpg" alt="ef88628f71026bd26ec4c808558360b6"></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2026 新世界
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;南风知我意
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+     <div id="music_player">
+	<div class="aplayer no-destroy" data-id="17504027519" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-lrcType="-1"> </div>
+     </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="../../../../js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

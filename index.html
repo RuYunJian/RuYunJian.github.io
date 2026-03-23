@@ -184,6 +184,109 @@
         
 
 <div class="post">
+    <a href="2026/03/23/Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/">
+        <h2 class="post-title">Cpp笔记总结S1</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/3/23
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h3 id="一string类型"><a class="anchor" href="#一string类型">#</a> 一.string类型</h3>
+<hr>
+<p>1.求长度：arr.length()或者是arr.size()</p>
+<p>2.字符串的连接可以直接使用+号，形如c=a+b（eg：a=hello,b=world,c=a+b=hello world）</p>
+<p>3.=和普通变量一样赋值，但是是拷贝的副本</p>
+<h3 id="二for循环与auto迭代器"><a class="anchor" href="#二for循环与auto迭代器">#</a> <strong>二.for循环与auto迭代器</strong></h3>
+<hr>
+<p>1.auto可以转化为任意数据类型(eg:string a=&quot;abc&quot;;auto b=a;)</p>
+<p>2.定义一个数组arr[]，有如下语法：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> arr</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#2F798A;--shiki-dark:#4C9A91">5</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span><span style="color:#2F798A;--shiki-dark:#4C9A91">1</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">2</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">3</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">4</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">5</span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">for</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">auto</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> x</span><span style="color:#999999;--shiki-dark:#666666">:</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    cout</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">x</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">endl</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span></code></pre>
+<p>可以依次打印数组中的元素，输出结果就是12345，代替了三分号的步骤</p>
+<h3 id="三引用"><a class="anchor" href="#三引用">#</a> 三,引用</h3>
+<hr>
+<p>引用就是<em>取别名</em> ，具体如下</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> a</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91">10</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#AB5959;--shiki-dark:#CB7676"> &#x26;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">p</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">a</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">P </span><span style="color:#AB5959;--shiki-dark:#CB7676">+=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 5</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">cout</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">a</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">endl</span><span style="color:#999999;--shiki-dark:#666666">;</span></span></code></pre>
+<p>此时的输出结果为<code>a=15</code>,也就是说P在发生改变时a也会同时发生改变，就是相当于a的别名为p</p>
+<h3 id="四常用库函数"><a class="anchor" href="#四常用库函数">#</a> <strong>四.常用库函数</strong></h3>
+<hr>
+<p>I.<code>reverse翻转</code></p>
+<p>假定有一个vector容器储存的arr，则</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">reverse（</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">begin</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">end</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">）</span></span></code></pre>
+<p>可以倒转整个vector容器</p>
+<p>II.<code>unique去重</code></p>
+<p>作用是去除容器或数组中相邻元素的重复出现的元素，返回值是去重之后的尾地址</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> m</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">unique（</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">begin</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">end</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">）</span><span style="color:#AB5959;--shiki-dark:#CB7676">-</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">begin</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#A0ADA0;--shiki-dark:#758575DD"> //m返回的是去重后的元素个数</span></span></code></pre>
+<blockquote>
+<p>需要重点注意的是，<em>unique去重的是相邻元素的重复元素，而不是整个容器或数组中的重复元素，所有使用unique的时候一般要对整个容器或者数组进行sort排序（见下文）</em></p>
+</blockquote>
+<p>III.sort排序</p>
+<p>1.sort排序是类似于快速排序的一种排序方式，时间复杂度为n*log2(n),执行效率比较高，一般首选sort</p>
+<p>2.sort的使用方法<br>
+sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）的数组的首元素的指针，end为指向待sort（）的数组的<em>尾元素的下一位指针</em>（不是尾元素，是尾元素的下一位！！）</p>
+<blockquote>
+<p>cmp：自定义排序函数，返回bool类型，是一个布尔值函数</p>
+<p><code>bool</code> 是 C++ 的<strong>布尔类型</strong>，只有两个取值：</p>
+<ul>
+<li><code>true</code>（真，等价于 1）</li>
+<li><code>false</code>（假，等价于 0）</li>
+</ul>
+<p>bool 函数的核心作用：<strong>返回判断结果</strong>（是 / 否、对 / 错）</p>
+<h3 id="正确写法"><a class="anchor" href="#正确写法">#</a> ✅ 正确写法</h3>
+<ul>
+<li>升序：<code>return a &lt; b</code></li>
+<li>降序：<code>return a &gt; b</code></li>
+</ul>
+<h3 id="绝对不能写"><a class="anchor" href="#绝对不能写">#</a> ❌ 绝对不能写</h3>
+<ul>
+<li>
+<p><code>return a &lt;= b</code></p>
+</li>
+<li>
+<p><code>return a &gt;= b</code></p>
+</li>
+<li>
+<p><strong>bool 函数就是只返回 true 或 false</strong></p>
+<p><code>a &lt; b</code> 本身，<strong>本来就是一个布尔表达式</strong>，若a &lt; b，则true，否则返回false</p>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="五容器基础笔记备份"><a class="anchor" href="#五容器基础笔记备份">#</a> <strong>五.容器基础&amp;&amp;笔记备份</strong></h3>
+<p><img src="/../Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/1cb363a0240a849696a7f6457744f77a.jpg" alt></p>
+<p><img src="/../Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/1266b250bbd962a3cfe02aff6bc8d1f3.jpg" alt="1266b250bbd962a3cfe02aff6bc8d1f3"></p>
+<p><img src="/../Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/3849496e2a9d9cba41a99d5295dff58c.jpg" alt="3849496e2a9d9cba41a99d5295dff58c"></p>
+<p><img src="/../Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/bfe508c05447f35fae53d0425c5c8e50.jpg" alt="bfe508c05447f35fae53d0425c5c8e50"></p>
+<p><img src="/../Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/ef88628f71026bd26ec4c808558360b6.jpg" alt="ef88628f71026bd26ec4c808558360b6"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="2026/03/23/Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="2026/03/22/Cpp%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">
         <h2 class="post-title">Cpp两数之和</h2>
     </a>
@@ -434,7 +537,7 @@
 <p>就到此为止了，祝福自己的四级高分通过，wish you and believe yourself !</p>
 </blockquote>
 <p>
-    <div id="aplayer-OErPUURK" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1417055605" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
+    <div id="aplayer-cUuDIHfb" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1417055605" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
 
             
         </div>
@@ -508,7 +611,7 @@
 <p>有时间还是尽量参加竞赛，但是我个人觉得最基础的大创和大挑就可以算了，我并不觉得这两个竞赛有多高的含金量，对于我这个专业，我觉得<code>数学建模，数学竞赛，物理竞赛，ACM，蓝桥杯</code>等更具备含金量</p>
 <p>不过相比盲目的准备竞赛，我觉得还是得先在此声明一下准备竞赛的意义：为了让自己在考研复试的时候更具备竞争优势，让面试的老师觉得自己更具备科研能力，更重要的是准备竞赛的过程，可能是未来面对考研，面对研究生生活的一种早日的习惯，毕竟我现在觉得研究生的压力不亚于备战高考时的压力（这句话也送给未来的自己，如果未来的我觉得压力过大，觉得迷茫了，不妨回来再看看这篇文章，说不定未来的我会因为当时大一的自己的无知而感到可笑，也可能因为大一就已经为自己的未来铺好了后路而感到骄傲，我不知道未来的我看到这篇文章是什么反应，我无从考究，我也不得而知，我只知道写这篇文章的时候：2025年12月2日17点53，此时我的目标明确，但也正是因为我对自己的熟知，我不知道未来我是否能把以上的规划都实现，但我希望自己的人生中能有几个亮点）</p>
 <p>
-    <div id="aplayer-QunHWAFs" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1372188635" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
+    <div id="aplayer-XqzXkHxr" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1372188635" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
 
             
         </div>
@@ -775,7 +878,7 @@ j 从 low 开始，逐个检查 <code>arr[j]</code> 与 <code>pivot</code> 的�
 <span class="line"></span>
 <span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#AB5959;--shiki-dark:#CB7676">sizeof</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#AB5959;--shiki-dark:#CB7676">/sizeof</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#1e754f;--shiki-dark:#4d9375">[</span><span style="color:#2F798A;--shiki-dark:#4C9A91">0</span><span style="color:#1e754f;--shiki-dark:#4d9375">]</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span></code></pre>
 <p>
-    <div id="aplayer-WTFVcclo" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1436961077" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
+    <div id="aplayer-FfWZpylM" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1436961077" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
 
             
         </div>
@@ -795,92 +898,6 @@ j 从 low 开始，逐个检查 <code>arr[j]</code> 与 <code>pivot</code> 的�
         
     </div>
     <a href="2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/">
-        <h2 class="post-title">整数倒转-leecode-7</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/11/26
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c"><span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD"> //正确案例</span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666"> #</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">stdio.h</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#59873A;--shiki-dark:#80A665"> main</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:rgba(255, 18, 18, 0.8);--shiki-dark:rgba(255, 18, 18, 0.8)">&#123;</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> x </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    printf</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">输入一个有符号整数：</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    scanf_s</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#A65E2B;--shiki-dark:#C99076">%d</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> &#x26;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">x</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> reversed </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> temp </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> x</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">if</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">temp </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
-<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    temp </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#AB5959;--shiki-dark:#CB7676"> -</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">temp</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">  </span></span>
-<span class="line"><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">while</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">temp </span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
-<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    reversed </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> reversed </span><span style="color:#AB5959;--shiki-dark:#CB7676">*</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 10</span><span style="color:#AB5959;--shiki-dark:#CB7676"> +</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> temp </span><span style="color:#AB5959;--shiki-dark:#CB7676">%</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 10</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
-<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    temp </span><span style="color:#AB5959;--shiki-dark:#CB7676">/=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 10</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">if</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">x </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
-<span class="line"><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
-<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    reversed </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#AB5959;--shiki-dark:#CB7676"> -</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">reversed</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">  </span></span>
-<span class="line"><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">printf</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">反转结果：</span><span style="color:#A65E2B;--shiki-dark:#C99076">%d\n</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> reversed</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">return</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span></code></pre>
-<p>//错误案例：</p>
-<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c"><span class="line"><span style="color:#999999;--shiki-dark:#666666">#</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">stdio.h</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">#</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">math.h</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#59873A;--shiki-dark:#80A665"> main</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
-<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> x </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    printf</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">输入一个有符号整数：</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    scanf_s</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#A65E2B;--shiki-dark:#C99076">%d</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> &#x26;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">x</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    if</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">x </span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">        int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD"> //除以的次数</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">        int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> x1 </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> x</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        for</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> x1 </span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 10</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">        </span><span style="color:#a65e2b;--shiki-dark:#d4976c">&#123;</span></span>
-<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">            x1 </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> x </span><span style="color:#AB5959;--shiki-dark:#CB7676">/</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 10</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">        </span><span style="color:#a65e2b;--shiki-dark:#d4976c">&#125;</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">        int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> a</span><span style="color:#a65e2b;--shiki-dark:#d4976c">[</span><span style="color:#2F798A;--shiki-dark:#4C9A91">10</span><span style="color:#a65e2b;--shiki-dark:#d4976c">]</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">        x1 </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> x</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">        int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD"> //储存到数组的位数</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        for</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> x1 </span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">        </span><span style="color:#a65e2b;--shiki-dark:#d4976c">&#123;</span></span>
-<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">            a</span><span style="color:#a13865;--shiki-dark:#d9739f">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i</span><span style="color:#a13865;--shiki-dark:#d9739f">]</span><span style="color:#999999;--shiki-dark:#666666"> =</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> x1 </span><span style="color:#AB5959;--shiki-dark:#CB7676">/</span><span style="color:#59873A;--shiki-dark:#80A665"> pow</span><span style="color:#a13865;--shiki-dark:#d9739f">(</span><span style="color:#2F798A;--shiki-dark:#4C9A91">10</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n</span><span style="color:#a13865;--shiki-dark:#d9739f">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">            n</span><span style="color:#AB5959;--shiki-dark:#CB7676">--</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">            x1 </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> x1 </span><span style="color:#AB5959;--shiki-dark:#CB7676">-</span><span style="color:#B07D48;--shiki-dark:#BD976A"> a</span><span style="color:#a13865;--shiki-dark:#d9739f">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i</span><span style="color:#a13865;--shiki-dark:#d9739f">]</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#59873A;--shiki-dark:#80A665"> pow</span><span style="color:#a13865;--shiki-dark:#d9739f">(</span><span style="color:#2F798A;--shiki-dark:#4C9A91">10</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n</span><span style="color:#a13865;--shiki-dark:#d9739f">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">        </span><span style="color:#a65e2b;--shiki-dark:#d4976c">&#125;</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        for</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i </span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#AB5959;--shiki-dark:#CB7676">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i</span><span style="color:#AB5959;--shiki-dark:#CB7676">--</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">        </span><span style="color:#a65e2b;--shiki-dark:#d4976c">&#123;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">            printf</span><span style="color:#a13865;--shiki-dark:#d9739f">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#A65E2B;--shiki-dark:#C99076">%d</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B07D48;--shiki-dark:#BD976A"> a</span><span style="color:#bda437;--shiki-dark:#e6cc77">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i</span><span style="color:#bda437;--shiki-dark:#e6cc77">]</span><span style="color:#a13865;--shiki-dark:#d9739f">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">        </span><span style="color:#a65e2b;--shiki-dark:#d4976c">&#125;</span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    return</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span></code></pre>
-<p>if（x&gt;0）是后加的情况，但是意识到整个代码的逻辑错误后就没有补充if（x&lt;0）的情况</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/" class="go-post">阅读全文</a>
 </div>
 
 
