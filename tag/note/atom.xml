@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://ruyunjian.github.io</id>
+    <title>新世界 • Posts by &#34;note&#34; tag</title>
+    <link href="https://ruyunjian.github.io" />
+    <updated>2026-03-23T09:18:03.000Z</updated>
+    <category term="今天第一天搭建成功，hello world" />
+    <category term="note" />
+    <category term="leetcode" />
+    <category term="对于冒泡排序的一些见解" />
+    <category term="Algorithm" />
+    <entry>
+        <id>https://ruyunjian.github.io/2026/03/23/Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/</id>
+        <title>Cpp笔记总结S1</title>
+        <link rel="alternate" href="https://ruyunjian.github.io/2026/03/23/Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;h3 id=&#34;一string类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一string类型&#34;&gt;#&lt;/a&gt; 一.string类型&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;1.求长度：arr.length()或者是arr.size()&lt;/p&gt;
+&lt;p&gt;2.字符串的连接可以直接使用+号，形如c=a+b（eg：a=hello,b=world,c=a+b=hello world）&lt;/p&gt;
+&lt;p&gt;3.=和普通变量一样赋值，但是是拷贝的副本&lt;/p&gt;
+&lt;h3 id=&#34;二for循环与auto迭代器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#二for循环与auto迭代器&#34;&gt;#&lt;/a&gt; &lt;strong&gt;二.for循环与auto迭代器&lt;/strong&gt;&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;1.auto可以转化为任意数据类型(eg:string a=&amp;quot;abc&amp;quot;;auto b=a;)&lt;/p&gt;
+&lt;p&gt;2.定义一个数组arr[]，有如下语法：&lt;/p&gt;
+&lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt; arr&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#1E754F;--shiki-dark:#4D9375&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;auto&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt; x&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;arr&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;    cout&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;x&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;endl&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以依次打印数组中的元素，输出结果就是12345，代替了三分号的步骤&lt;/p&gt;
+&lt;h3 id=&#34;三引用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三引用&#34;&gt;#&lt;/a&gt; 三,引用&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;引用就是&lt;em&gt;取别名&lt;/em&gt; ，具体如下&lt;/p&gt;
+&lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt; a&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;a&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;P &lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;+=&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt; 5&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;cout&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;a&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;endl&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;此时的输出结果为&lt;code&gt;a=15&lt;/code&gt;,也就是说P在发生改变时a也会同时发生改变，就是相当于a的别名为p&lt;/p&gt;
+&lt;h3 id=&#34;四常用库函数&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#四常用库函数&#34;&gt;#&lt;/a&gt; &lt;strong&gt;四.常用库函数&lt;/strong&gt;&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;I.&lt;code&gt;reverse翻转&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;假定有一个vector容器储存的arr，则&lt;/p&gt;
+&lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;reverse（&lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;arr&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;begin&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;arr&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;end&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;）&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以倒转整个vector容器&lt;/p&gt;
+&lt;p&gt;II.&lt;code&gt;unique去重&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;作用是去除容器或数组中相邻元素的重复出现的元素，返回值是去重之后的尾地址&lt;/p&gt;
+&lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt; m&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;unique（&lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;arr&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;begin&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;arr&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;end&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;）&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;arr&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;begin&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#A0ADA0;--shiki-dark:#758575DD&#34;&gt; //m返回的是去重后的元素个数&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;需要重点注意的是，&lt;em&gt;unique去重的是相邻元素的重复元素，而不是整个容器或数组中的重复元素，所有使用unique的时候一般要对整个容器或者数组进行sort排序（见下文）&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;III.sort排序&lt;/p&gt;
+&lt;p&gt;1.sort排序是类似于快速排序的一种排序方式，时间复杂度为n*log2(n),执行效率比较高，一般首选sort&lt;/p&gt;
+&lt;p&gt;2.sort的使用方法&lt;br&gt;
+sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）的数组的首元素的指针，end为指向待sort（）的数组的&lt;em&gt;尾元素的下一位指针&lt;/em&gt;（不是尾元素，是尾元素的下一位！！）&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;cmp：自定义排序函数，返回bool类型，是一个布尔值函数&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bool&lt;/code&gt; 是 C++ 的&lt;strong&gt;布尔类型&lt;/strong&gt;，只有两个取值：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;true&lt;/code&gt;（真，等价于 1）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;false&lt;/code&gt;（假，等价于 0）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;bool 函数的核心作用：&lt;strong&gt;返回判断结果&lt;/strong&gt;（是 / 否、对 / 错）&lt;/p&gt;
+&lt;h3 id=&#34;正确写法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#正确写法&#34;&gt;#&lt;/a&gt; ✅ 正确写法&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;升序：&lt;code&gt;return a &amp;lt; b&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;降序：&lt;code&gt;return a &amp;gt; b&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;绝对不能写&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#绝对不能写&#34;&gt;#&lt;/a&gt; ❌ 绝对不能写&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;return a &amp;lt;= b&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;return a &amp;gt;= b&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;bool 函数就是只返回 true 或 false&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;a &amp;lt; b&lt;/code&gt; 本身，&lt;strong&gt;本来就是一个布尔表达式&lt;/strong&gt;，若a &amp;lt; b，则true，否则返回false&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;五容器基础笔记备份&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#五容器基础笔记备份&#34;&gt;#&lt;/a&gt; &lt;strong&gt;五.容器基础&amp;amp;&amp;amp;笔记备份&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;/../Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/1cb363a0240a849696a7f6457744f77a.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/../Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/1266b250bbd962a3cfe02aff6bc8d1f3.jpg&#34; alt=&#34;1266b250bbd962a3cfe02aff6bc8d1f3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/../Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/3849496e2a9d9cba41a99d5295dff58c.jpg&#34; alt=&#34;3849496e2a9d9cba41a99d5295dff58c&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/../Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/bfe508c05447f35fae53d0425c5c8e50.jpg&#34; alt=&#34;bfe508c05447f35fae53d0425c5c8e50&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/../Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/ef88628f71026bd26ec4c808558360b6.jpg&#34; alt=&#34;ef88628f71026bd26ec4c808558360b6&#34;&gt;&lt;/p&gt;
+</content>
+        <category term="note" />
+        <updated>2026-03-23T09:18:03.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://ruyunjian.github.io/2026/03/21/Cpp%E5%85%A5%E9%97%A8/</id>
+        <title>Cpp入门</title>
+        <link rel="alternate" href="https://ruyunjian.github.io/2026/03/21/Cpp%E5%85%A5%E9%97%A8/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;&lt;img src=&#34;/../test/C%20%E8%BD%AC%20C++.png&#34; alt&gt;&lt;/p&gt;
+</content>
+        <category term="note" />
+        <updated>2026-03-21T14:07:02.000Z</updated>
+    </entry>
+</feed>

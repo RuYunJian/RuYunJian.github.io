@@ -5,10 +5,10 @@
     <link href="https://ruyunjian.github.io" />
     <updated>2026-03-24T10:08:04.000Z</updated>
     <category term="今天第一天搭建成功，hello world" />
-    <category term="Algorithm" />
-    <category term="对于冒泡排序的一些见解" />
-    <category term="快速排序" />
+    <category term="note" />
     <category term="leetcode" />
+    <category term="对于冒泡排序的一些见解" />
+    <category term="Algorithm" />
     <entry>
         <id>https://ruyunjian.github.io/2026/03/24/%E8%B7%AF%E5%8A%B2%E8%A7%84%E5%88%92/</id>
         <title>路径规划</title>
@@ -44,6 +44,24 @@
 </content>
         <category term="leetcode" />
         <updated>2026-03-24T10:08:04.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://ruyunjian.github.io/2026/03/22/Cpp%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</id>
+        <title>Cpp两数之和</title>
+        <link rel="alternate" href="https://ruyunjian.github.io/2026/03/22/Cpp%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;leecode 1 的两数之和使用Cpp的map更好写，也更易于思考&lt;/p&gt;
+&lt;p&gt;首先是Cpp中自带map（键值对）类型的变量，只需要&lt;code&gt;#include &amp;lt;map&amp;gt;&lt;/code&gt;即可&lt;/p&gt;
+&lt;p&gt;在迭代器中学过一个方法名叫find，完整形式为&lt;code&gt;arr.find(date)&lt;/code&gt;唯一需要明确的一个点是这个方法的返回值是一个&lt;strong&gt;指针&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;相比于C语言的hash_map,它不具备find的方法，在映射追踪方面难以实现，导致在C语言完成两数之和使用哈希表方法的时候非常难理解&lt;/p&gt;
+&lt;p&gt;Cpp使用hash_map可以将双循环的O（n2）降低成O（n）&lt;/p&gt;
+&lt;p&gt;class sulotion应该是作为封装，但是还没有学到，后续需要跟进&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;/../Cpp%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-03-22%20221823.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;3.22  完成函数与操作符重载（简单来说就是同函数名不同类型的参数）&lt;/p&gt;
+&lt;p&gt;类似于int_swap(int,int)&amp;amp;double_swap(double,double)，函数名都是swap，而后面的参数类型可以不同，感觉很方便（第六感）&lt;/p&gt;
+</content>
+        <category term="leetcode" />
+        <updated>2026-03-22T14:19:13.000Z</updated>
     </entry>
     <entry>
         <id>https://ruyunjian.github.io/2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/</id>

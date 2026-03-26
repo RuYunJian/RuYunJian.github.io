@@ -15,6 +15,16 @@
             ]
         },
         {
+            "id": "https://ruyunjian.github.io/2026/03/22/Cpp%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/",
+            "url": "https://ruyunjian.github.io/2026/03/22/Cpp%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/",
+            "title": "Cpp两数之和",
+            "date_published": "2026-03-22T14:19:13.000Z",
+            "content_html": "<link rel=\"stylesheet\" class=\"aplayer-secondary-style-marker\" href=\"\\assets\\css\\APlayer.min.css\"><script src=\"\\assets\\js\\APlayer.min.js\" class=\"aplayer-secondary-script-marker\"></script><script class=\"meting-secondary-script-marker\" src=\"\\assets\\js\\Meting.min.js\"></script><p>leecode 1 的两数之和使用Cpp的map更好写，也更易于思考</p>\n<p>首先是Cpp中自带map（键值对）类型的变量，只需要<code>#include &lt;map&gt;</code>即可</p>\n<p>在迭代器中学过一个方法名叫find，完整形式为<code>arr.find(date)</code>唯一需要明确的一个点是这个方法的返回值是一个<strong>指针</strong></p>\n<p>相比于C语言的hash_map,它不具备find的方法，在映射追踪方面难以实现，导致在C语言完成两数之和使用哈希表方法的时候非常难理解</p>\n<p>Cpp使用hash_map可以将双循环的O（n2）降低成O（n）</p>\n<p>class sulotion应该是作为封装，但是还没有学到，后续需要跟进</p>\n<hr>\n<p><img src=\"/../Cpp%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-03-22%20221823.png\" alt></p>\n<p>3.22  完成函数与操作符重载（简单来说就是同函数名不同类型的参数）</p>\n<p>类似于int_swap(int,int)&amp;double_swap(double,double)，函数名都是swap，而后面的参数类型可以不同，感觉很方便（第六感）</p>\n",
+            "tags": [
+                "leetcode"
+            ]
+        },
+        {
             "id": "https://ruyunjian.github.io/2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/",
             "url": "https://ruyunjian.github.io/2025/11/26/%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC-leecode-7/",
             "title": "整数倒转",
