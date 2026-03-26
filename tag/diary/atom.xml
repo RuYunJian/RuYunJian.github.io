@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://ruyunjian.github.io</id>
+    <title>新世界 • Posts by &#34;diary&#34; tag</title>
+    <link href="https://ruyunjian.github.io" />
+    <updated>2026-01-15T07:28:07.000Z</updated>
+    <category term="diary" />
+    <category term="leetcode" />
+    <category term="dairy" />
+    <category term="note" />
+    <category term="对于冒泡排序的一些见解" />
+    <category term="Algorithm" />
+    <entry>
+        <id>https://ruyunjian.github.io/2026/01/15/1-15/</id>
+        <title>1.15</title>
+        <link rel="alternate" href="https://ruyunjian.github.io/2026/01/15/1-15/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;闲置了将近一个月的主页，终于复出了，一个月过的不比高三舒服多少，从之后的四级复习到后来的期末考试复习，快忙死了！！！！&lt;/p&gt;
+&lt;p&gt;一月之后疯狂的泡在图书馆里，好在最后考试感觉考的还不错，英语四级保佑我过500吧，反正我是不想上大学英语课了，要多无聊有多无聊，今天是大学寒假的第一天，是的，把期末考试写在C语言里的屎山代码转移到了电脑上并且尝试运行，发现错误不少，没招了！寒假准备攻克一下C++，OK到此为止吧&lt;/p&gt;
+&lt;h1 id=&#34;qwq我想小蛋糕了我已经27小时没见到他了现在是20251151535&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#qwq我想小蛋糕了我已经27小时没见到他了现在是20251151535&#34;&gt;#&lt;/a&gt; QWQ，我想小蛋糕了!!!（我已经27小时没见到他了!!!现在是2025/1/15/15:35）&lt;/h1&gt;
+</content>
+        <category term="diary" />
+        <updated>2026-01-15T07:28:07.000Z</updated>
+    </entry>
+</feed>
