@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>哈希表详解 | 新世界</title>
+    <meta name="author" content="南风知我意" />
+    <meta name="description" content="别弯腰 接受时间躲不开的那一刀" />
+    <meta name="keywords" content="吹梦到西周" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="../../../../images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="../../../../js/lib/highlight.js"></script>
+
+
+
+<script src="../../../../js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="../../../../css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="../../../../images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>新世界</span>
+        </a>
+        
+        <a href="../../../../index.html">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="../../../../about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="../../../../archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="../../../../categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="../../../../tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;新世界</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="../../../../index.html">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="../../../../about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="../../../../archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="../../../../categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="../../../../tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>哈希表详解</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/3/26
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="../../../../tags/Algorithm/" style="color: #ff7d73">
+                    Algorithm
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="哈希表"><a class="anchor" href="#哈希表">#</a> 哈希表</h1>
+<hr>
+<h3 id="map简介"><a class="anchor" href="#map简介">#</a> map简介</h3>
+<p>map是STL的一个关联容器，它提供一对一的hash。</p>
+<p>第一个可以称为关键字(key)，每个关键字只能在map中出现一次；<br>
+第二个可能称为该关键字的值(value)；map以模板(泛型)方式实现，可以存储 任意类型的数据，包括使用者自定义的数据类型。Map主要用于资料一对一映射(one-to-one)的情況，map內部的实现自建一颗红黑树，这颗树具有对数据自动排序的功能。在map内部所有的数据都是有序的，后边我们会见识到有序的好处。比如一个班级中，每个学生的学号跟他的姓名就存在著一对一映射的关系。</p>
+<hr>
+<h3 id="map的构造函数"><a class="anchor" href="#map的构造函数">#</a> map的构造函数</h3>
+<p>map共提供了6个构造函数，这块涉及到内存分配器这些东西，略过不表，在下面我们将接触到一些map的构造方法，这里要说下的就是，我们通常用如下方法构造一个map：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">map</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> string</span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> mapStudent</span><span style="color:#999999;--shiki-dark:#666666">;</span></span></code></pre>
+<h3 id="map相关函数"><a class="anchor" href="#map相关函数">#</a> map相关函数</h3>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">    // 定义一个map对象</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    map</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> string</span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> mapStudent</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">     </span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">    // 第一种 用insert函數插入pair</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">    mapStudent</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">insert</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#59873A;--shiki-dark:#80A665">pair</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> string</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">0</span><span style="color:#2F798A;--shiki-dark:#4C9A91">00</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">student_zero</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">     </span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">    // 第二种 用insert函数插入value_type数据</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">    mapStudent</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">insert</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#59873A;--shiki-dark:#80A665">map</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> string</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#59873A;--shiki-dark:#80A665">value_type</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">0</span><span style="color:#2F798A;--shiki-dark:#4C9A91">01</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">student_one</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">// 第三种 用"array"方式插入</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">mapStudent</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#2F798A;--shiki-dark:#4C9A91">123</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#999999;--shiki-dark:#666666"> =</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">student_first</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">mapStudent</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#2F798A;--shiki-dark:#4C9A91">456</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#999999;--shiki-dark:#666666"> =</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">student_second</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">以上三种用法，虽然都可以实现数据的插入，但是它们是有区别的，当然了第一种和第二种在效果上是完成一样的，用insert函数插入数据，在数据的 插入上涉及到集合的唯一性这个概念，即当map中有这个关键字时，insert操作是不能在插入数据的，但是用数组方式就不同了，它可以覆盖以前该关键字对 应的值，用程序说明如下：</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">```cpp</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">    mapStudent</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">insert</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#59873A;--shiki-dark:#80A665">map</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> string</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#59873A;--shiki-dark:#80A665">value_type</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">0</span><span style="color:#2F798A;--shiki-dark:#4C9A91">01</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">student_one</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">     </span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">    mapStudent</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">insert</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#59873A;--shiki-dark:#80A665">map</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> string</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#59873A;--shiki-dark:#80A665">value_type</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">0</span><span style="color:#2F798A;--shiki-dark:#4C9A91">01</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">student_two</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">上面这两条语句执行后，map中001这个关键字对应的值是“student_one”，第二条语句并没有生效，那么这就涉及到我们怎么知道insert语句是否插入成功的问题了，可以用pair来获得是否插入成功，程序如下</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">```cpp</span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">    // 构造定义，返回一个pair对象</span></span>
+<span class="line"><span style="color:#2E8F82;--shiki-dark:#5DA994">    pair</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#2E8F82;--shiki-dark:#5DA994">iterator</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676">bool</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#59873A;--shiki-dark:#80A665"> insert</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">const</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> value_type</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A"> val</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">     </span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    pair</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#59873A;--shiki-dark:#80A665">map</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> string</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">iterator</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> bool</span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> Insert_Pair</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">     </span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    Insert_Pair </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#B07D48;--shiki-dark:#BD976A"> mapStudent</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">insert</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#59873A;--shiki-dark:#80A665">map</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> string</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#59873A;--shiki-dark:#80A665">value_type</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">0</span><span style="color:#2F798A;--shiki-dark:#4C9A91">01</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">student_one</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">     </span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    if</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">!</span><span style="color:#B07D48;--shiki-dark:#BD976A">Insert_Pair</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#B07D48;--shiki-dark:#BD976A">second</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">        cout </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> ""</span><span style="color:#1E754F;--shiki-dark:#4D9375">Error</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> insert </span><span style="color:#AB5959;--shiki-dark:#CB7676">new</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> element</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D"> &#x3C;&#x3C; endl;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">我们通过pair的第二个变量来知道是否插入成功，它的第一个变量返回的是一个map的迭代器，如果插入成功的话Insert_Pair.second应该是true的，否则为false。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">## 6， 查找元素</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">当所查找的关键key出现时，它返回数据所在对象的位置，如果沒有，返回iter与end函数的值相同。</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">```cpp</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    // find 返回迭代器指向当前查找元素的位置否则返回map::end()位置</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    iter = mapStudent.find(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#2F798A;--shiki-dark:#4C9A91">123</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">);</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     </span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    if(iter != mapStudent.end())</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">           cout&#x3C;&#x3C;</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1E754F;--shiki-dark:#4D9375">Find</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> the value is</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">&#x3C;&#x3C;iter->second&#x3C;&#x3C;endl;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    else</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">       cout&#x3C;&#x3C;</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1E754F;--shiki-dark:#4D9375">Do</span><span style="color:#AB5959;--shiki-dark:#CB7676"> not</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> Find</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">&#x3C;&#x3C;endl;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">## 7， 刪除与清空元素</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">```cpp</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    //迭代器刪除</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    iter = mapStudent.find(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#2F798A;--shiki-dark:#4C9A91">123</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">);</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    mapStudent.erase(iter);</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     </span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    //用关键字刪除</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    int n = mapStudent.erase(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#2F798A;--shiki-dark:#4C9A91">123</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">); //如果刪除了會返回1，否則返回0</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     </span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    //用迭代器范围刪除 : 把整个map清空</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    mapStudent.erase(mapStudent.begin(), mapStudent.end());</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    //等同于mapStudent.clear()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">## 8，map的大小</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">在往map里面插入了数据，我们怎么知道当前已经插入了多少数据呢，可以用size函数，用法如下：</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    int nSize = mapStudent.size();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D"> </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">##  9，map的基本操作函数：</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    C++ maps是一种关联式容器，包含“关键字/值”对</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     begin()         返回指向map头部的迭代器</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     clear(）        删除所有元素</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     count()         返回指定元素出现的次数</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     empty()         如果map为空则返回true</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     end()           返回指向map末尾的迭代器</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     equal_range()   返回特殊条目的迭代器对</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     erase()         删除一个元素</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     find()          查找一个元素</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     get_allocator() 返回map的配置器</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     insert()        插入元素</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     key_comp()      返回比较元素key的函数</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     lower_bound()   返回键值>=给定元素的第一个位置</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     max_size()      返回可以容纳的最大元素个数</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     rbegin()        返回一个指向map尾部的逆向迭代器</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     rend()          返回一个指向map头部的逆向迭代器</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     size()          返回map中元素的个数</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     swap()           交换两个map</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     upper_bound()    返回键值>给定元素的第一个位置</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     value_comp()     返回比较元素value的函数</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">--------------------- </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D"># hash_map原理简介</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">这是一节让你深入理解hash_map的介绍，如果你只是想囫囵吞枣，不想理解其原理，你倒是可以略过这一节，但我还是建议你看看，多了解一些没有坏处。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">hash_map基于hash table（哈希表）。 哈希表最大的优点，就是把数据的存储和查找消耗的时间大大降低，几乎可以看成是常数时间；而代价仅仅是消耗比较多的内存。然而在当前可利用内存越来越多的情况下，用空间换时间的做法是值得的。另外，编码比较容易也是它的特点之一。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">其基本原理是：使用一个下标范围比较大的数组来存储元素。可以设计一个函数（哈希函数，也叫做散列函数），使得每个元素的关键字都与一个函数值（即数组下标，hash值）相对应，于是用这个数组单元来存储这个元素；也可以简单的理解为，按照关键字为每一个元素“分类”，然后将这个元素存储在相应“类”所对应的地方，称为桶。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">但是，不能够保证每个元素的关键字与函数值是一一对应的，因此极有可能出现对于不同的元素，却计算出了相同的函数值，这样就产生了“冲突”，换句话说，就是把不同的元素分在了相同的“类”之中。 总的来说，“直接定址”与“解决冲突”是哈希表的两大特点。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">hash_map，首先分配一大片内存，形成许多桶。是利用hash函数，对key进行映射到不同区域（桶）进行保存。其插入过程是：</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">得到key</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">通过hash函数得到hash值</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">得到桶号(一般都为hash值对桶数求模)</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">存放key和value在桶内。</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">其取值过程是:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">得到key</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">通过hash函数得到hash值</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">得到桶号(一般都为hash值对桶数求模)</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">比较桶的内部元素是否与key相等，若都不相等，则没有找到。</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">取出相等的记录的value。</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">hash_map中直接地址用hash函数生成，解决冲突，用比较函数解决。这里可以看出，如果每个桶内部只有一个元素，那么查找的时候只有一次比较。当许多桶内没有值时，许多查询就会更快了(指查不到的时候).</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">由此可见，要实现哈希表, 和用户相关的是：**hash函数**和**比较函数**。这两个参数刚好是我们在使用hash_map时需要指定的参数。</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">例子</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">```cpp</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    #include &#x3C;hash_map></span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    #include &#x3C;string></span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    using namespace std;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    int main()&#123;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            hash_map&#x3C;int, string> mymap;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            mymap[9527]=</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">唐伯虎点秋香</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            mymap[1000000]=</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">百万富翁的生活</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            mymap[10000]=</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">白领的工资底线</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            ...</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            if(mymap.find(10000) != mymap.end())&#123;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">                    ...</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            &#125;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">你没有指定hash函数和比较函数的时候，你会有一个缺省的函数，看看hash_map的声明，你会更加明白。下面是SGI STL的声明：</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">```cpp</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    template &#x3C;class _Key, class _Tp, class _HashFcn = hash&#x3C;_Key>,</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    class _EqualKey = equal_to&#x3C;_Key>,</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    class _Alloc = __STL_DEFAULT_ALLOCATOR(_Tp) ></span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    class hash_map</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    &#123;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            ...</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    &#125;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">也就是说，在上例中，有以下等同关系：</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">```cpp</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    hash_map&#x3C;int, string> mymap;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    //等同于:</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    hash_map&#x3C;int, string, hash&#x3C;int>, equal_to&#x3C;int> > mymap;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">## hash_map 的hash函数</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">hash&#x3C; int>到底是什么样子？看看源码:</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">```cpp</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;int> &#123;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            size_t operator()(int __x) const &#123; return __x; &#125;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    &#125;;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">原来是个函数对象。在SGI STL中，提供了以下hash函数：</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">```cpp</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;char*></span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;const char*></span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;char> </span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;unsigned char> </span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;signed char></span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;short></span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;unsigned short> </span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;int> </span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;unsigned int></span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;long> </span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;unsigned long></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">也就是说，如果你的key使用的是以上类型中的一种，你都可以使用缺省的hash函数。当然你自己也可以定义自己的hash函数。对于自定义变量，你只能如此，例如对于string，就必须自定义hash函数。例如：</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">```cpp</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct str_hash&#123;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            size_t operator()(const string&#x26; str) const</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            &#123;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">                    unsigned long __h = 0;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">                    for (size_t i = 0 ; i &#x3C; str.size() ; i ++)</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">                    __h = 5*__h + str[i];</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">                    return size_t(__h);</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            &#125;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    &#125;;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    //如果你希望利用系统定义的字符串hash函数，你可以这样写：</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct str_hash&#123;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            size_t operator()(const string&#x26; str) const</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            &#123;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">                    return __stl_hash_string(str.c_str());</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            &#125;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    &#125;;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">在声明自己的哈希函数时要注意以下几点：</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">1、使用struct，然后重载operator().</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">2、返回是size_t</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">3、参数是你要hash的key的类型。</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">4、函数是const类型的。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">现在可以对开头的string 进行哈希化了 . 直接替换成下面的声明即可：</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">```cpp</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    map&#x3C;string, string> namemap; </span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    //改为：</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    hash_map&#x3C;string, string, str_hash> namemap;</span></span></code></pre>
+<hr>
+<h3 id="hash_map-的比较函数"><a class="anchor" href="#hash_map-的比较函数">#</a> hash_map 的比较函数</h3>
+<p>在map中的比较函数，需要提供less 函数。如果没有提供，缺省的也是<code>less&lt; Key&gt;</code> 在<code>hash_map</code>中，要比较桶内的数据和<code>key</code>是否相等，因此需要的是是否等于的函数:<code>equal_to&lt; Key&gt;</code> 先看看<code>equal_to</code>的源码</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">//代码可以从SGI STL</span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">//先看看binary_function 函数声明，其实只是定义一些类型而已。</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">template</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">class</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> _Arg1</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> class</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> _Arg2</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> class</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> _Result</span><span style="color:#999999;--shiki-dark:#666666">></span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">struct</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> binary_function</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        typedef</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> _Arg1 first_argument_type</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        typedef</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> _Arg2 second_argument_type</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        typedef</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> _Result result_type</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">//看看equal_to的定义：</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">template</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">class</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> _Tp</span><span style="color:#999999;--shiki-dark:#666666">></span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">struct</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> equal_to</span><span style="color:#999999;--shiki-dark:#666666"> :</span><span style="color:#AB5959;--shiki-dark:#CB7676"> public</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> binary_function</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#2E8F82;--shiki-dark:#5DA994">_Tp</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2E8F82;--shiki-dark:#5DA994">_Tp</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676">bool</span><span style="color:#999999;--shiki-dark:#666666">></span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">        bool</span><span style="color:#1E754F;--shiki-dark:#4D9375"> operator</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">const</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> _Tp</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A"> __x</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> const</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> _Tp</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A"> __y</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#AB5959;--shiki-dark:#CB7676"> const</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span><span style="color:#1E754F;--shiki-dark:#4D9375"> return</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> __x </span><span style="color:#AB5959;--shiki-dark:#CB7676">==</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> __y</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h3 id="什么时候需要用hash_map什么时候需要用map"><a class="anchor" href="#什么时候需要用hash_map什么时候需要用map">#</a> 什么时候需要用hash_map，什么时候需要用map</h3>
+<p>总体来说，hash_map 查找速度会比map快，而且查找速度基本和数据数据量大小，属于常数级别;而map的查找速度是log (n)级别。并不一定常数就比log(n)小，hash还有hash函数的耗时，明白了吧，如果你考虑效率，特别是在元素达到一定数量级时，考虑考虑hash_map。但若你对内存使用特别严格，希望程序尽可能少消耗内存，那么一定要小心，hash_map可能会让你陷入尴尬，特别是当你的hash_map对象特别多时，你就更无法控制了，而且hash_map的构造速度较慢。</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2026 新世界
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;南风知我意
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+     <div id="music_player">
+	<div class="aplayer no-destroy" data-id="17504027519" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-lrcType="-1"> </div>
+     </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="../../../../js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

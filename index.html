@@ -184,6 +184,296 @@
         
 
 <div class="post">
+    <a href="2026/03/26/%E5%93%88%E5%B8%8C%E8%A1%A8%E8%AF%A6%E8%A7%A3/">
+        <h2 class="post-title">哈希表详解</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/3/26
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="哈希表"><a class="anchor" href="#哈希表">#</a> 哈希表</h1>
+<hr>
+<h3 id="map简介"><a class="anchor" href="#map简介">#</a> map简介</h3>
+<p>map是STL的一个关联容器，它提供一对一的hash。</p>
+<p>第一个可以称为关键字(key)，每个关键字只能在map中出现一次；<br>
+第二个可能称为该关键字的值(value)；map以模板(泛型)方式实现，可以存储 任意类型的数据，包括使用者自定义的数据类型。Map主要用于资料一对一映射(one-to-one)的情況，map內部的实现自建一颗红黑树，这颗树具有对数据自动排序的功能。在map内部所有的数据都是有序的，后边我们会见识到有序的好处。比如一个班级中，每个学生的学号跟他的姓名就存在著一对一映射的关系。</p>
+<hr>
+<h3 id="map的构造函数"><a class="anchor" href="#map的构造函数">#</a> map的构造函数</h3>
+<p>map共提供了6个构造函数，这块涉及到内存分配器这些东西，略过不表，在下面我们将接触到一些map的构造方法，这里要说下的就是，我们通常用如下方法构造一个map：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">map</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> string</span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> mapStudent</span><span style="color:#999999;--shiki-dark:#666666">;</span></span></code></pre>
+<h3 id="map相关函数"><a class="anchor" href="#map相关函数">#</a> map相关函数</h3>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">    // 定义一个map对象</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    map</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> string</span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> mapStudent</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">     </span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">    // 第一种 用insert函數插入pair</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">    mapStudent</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">insert</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#59873A;--shiki-dark:#80A665">pair</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> string</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">0</span><span style="color:#2F798A;--shiki-dark:#4C9A91">00</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">student_zero</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">     </span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">    // 第二种 用insert函数插入value_type数据</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">    mapStudent</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">insert</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#59873A;--shiki-dark:#80A665">map</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> string</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#59873A;--shiki-dark:#80A665">value_type</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">0</span><span style="color:#2F798A;--shiki-dark:#4C9A91">01</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">student_one</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">// 第三种 用"array"方式插入</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">mapStudent</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#2F798A;--shiki-dark:#4C9A91">123</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#999999;--shiki-dark:#666666"> =</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">student_first</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">mapStudent</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#2F798A;--shiki-dark:#4C9A91">456</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#999999;--shiki-dark:#666666"> =</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">student_second</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">以上三种用法，虽然都可以实现数据的插入，但是它们是有区别的，当然了第一种和第二种在效果上是完成一样的，用insert函数插入数据，在数据的 插入上涉及到集合的唯一性这个概念，即当map中有这个关键字时，insert操作是不能在插入数据的，但是用数组方式就不同了，它可以覆盖以前该关键字对 应的值，用程序说明如下：</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">```cpp</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">    mapStudent</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">insert</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#59873A;--shiki-dark:#80A665">map</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> string</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#59873A;--shiki-dark:#80A665">value_type</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">0</span><span style="color:#2F798A;--shiki-dark:#4C9A91">01</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">student_one</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">     </span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">    mapStudent</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">insert</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#59873A;--shiki-dark:#80A665">map</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> string</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#59873A;--shiki-dark:#80A665">value_type</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">0</span><span style="color:#2F798A;--shiki-dark:#4C9A91">01</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">student_two</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">上面这两条语句执行后，map中001这个关键字对应的值是“student_one”，第二条语句并没有生效，那么这就涉及到我们怎么知道insert语句是否插入成功的问题了，可以用pair来获得是否插入成功，程序如下</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">```cpp</span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">    // 构造定义，返回一个pair对象</span></span>
+<span class="line"><span style="color:#2E8F82;--shiki-dark:#5DA994">    pair</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#2E8F82;--shiki-dark:#5DA994">iterator</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676">bool</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#59873A;--shiki-dark:#80A665"> insert</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">const</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> value_type</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A"> val</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">     </span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    pair</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#59873A;--shiki-dark:#80A665">map</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> string</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">iterator</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> bool</span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> Insert_Pair</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">     </span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    Insert_Pair </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#B07D48;--shiki-dark:#BD976A"> mapStudent</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">insert</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#59873A;--shiki-dark:#80A665">map</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> string</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#59873A;--shiki-dark:#80A665">value_type</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">0</span><span style="color:#2F798A;--shiki-dark:#4C9A91">01</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">student_one</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">     </span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    if</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">!</span><span style="color:#B07D48;--shiki-dark:#BD976A">Insert_Pair</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#B07D48;--shiki-dark:#BD976A">second</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">        cout </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> ""</span><span style="color:#1E754F;--shiki-dark:#4D9375">Error</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> insert </span><span style="color:#AB5959;--shiki-dark:#CB7676">new</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> element</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D"> &#x3C;&#x3C; endl;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">我们通过pair的第二个变量来知道是否插入成功，它的第一个变量返回的是一个map的迭代器，如果插入成功的话Insert_Pair.second应该是true的，否则为false。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">## 6， 查找元素</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">当所查找的关键key出现时，它返回数据所在对象的位置，如果沒有，返回iter与end函数的值相同。</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">```cpp</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    // find 返回迭代器指向当前查找元素的位置否则返回map::end()位置</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    iter = mapStudent.find(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#2F798A;--shiki-dark:#4C9A91">123</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">);</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     </span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    if(iter != mapStudent.end())</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">           cout&#x3C;&#x3C;</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1E754F;--shiki-dark:#4D9375">Find</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> the value is</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">&#x3C;&#x3C;iter->second&#x3C;&#x3C;endl;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    else</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">       cout&#x3C;&#x3C;</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1E754F;--shiki-dark:#4D9375">Do</span><span style="color:#AB5959;--shiki-dark:#CB7676"> not</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> Find</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">&#x3C;&#x3C;endl;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">## 7， 刪除与清空元素</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">```cpp</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    //迭代器刪除</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    iter = mapStudent.find(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#2F798A;--shiki-dark:#4C9A91">123</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">);</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    mapStudent.erase(iter);</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     </span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    //用关键字刪除</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    int n = mapStudent.erase(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#2F798A;--shiki-dark:#4C9A91">123</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">); //如果刪除了會返回1，否則返回0</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     </span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    //用迭代器范围刪除 : 把整个map清空</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    mapStudent.erase(mapStudent.begin(), mapStudent.end());</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    //等同于mapStudent.clear()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">## 8，map的大小</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">在往map里面插入了数据，我们怎么知道当前已经插入了多少数据呢，可以用size函数，用法如下：</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    int nSize = mapStudent.size();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D"> </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">##  9，map的基本操作函数：</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    C++ maps是一种关联式容器，包含“关键字/值”对</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     begin()         返回指向map头部的迭代器</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     clear(）        删除所有元素</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     count()         返回指定元素出现的次数</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     empty()         如果map为空则返回true</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     end()           返回指向map末尾的迭代器</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     equal_range()   返回特殊条目的迭代器对</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     erase()         删除一个元素</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     find()          查找一个元素</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     get_allocator() 返回map的配置器</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     insert()        插入元素</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     key_comp()      返回比较元素key的函数</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     lower_bound()   返回键值>=给定元素的第一个位置</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     max_size()      返回可以容纳的最大元素个数</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     rbegin()        返回一个指向map尾部的逆向迭代器</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     rend()          返回一个指向map头部的逆向迭代器</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     size()          返回map中元素的个数</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     swap()           交换两个map</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     upper_bound()    返回键值>给定元素的第一个位置</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">     value_comp()     返回比较元素value的函数</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">--------------------- </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D"># hash_map原理简介</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">这是一节让你深入理解hash_map的介绍，如果你只是想囫囵吞枣，不想理解其原理，你倒是可以略过这一节，但我还是建议你看看，多了解一些没有坏处。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">hash_map基于hash table（哈希表）。 哈希表最大的优点，就是把数据的存储和查找消耗的时间大大降低，几乎可以看成是常数时间；而代价仅仅是消耗比较多的内存。然而在当前可利用内存越来越多的情况下，用空间换时间的做法是值得的。另外，编码比较容易也是它的特点之一。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">其基本原理是：使用一个下标范围比较大的数组来存储元素。可以设计一个函数（哈希函数，也叫做散列函数），使得每个元素的关键字都与一个函数值（即数组下标，hash值）相对应，于是用这个数组单元来存储这个元素；也可以简单的理解为，按照关键字为每一个元素“分类”，然后将这个元素存储在相应“类”所对应的地方，称为桶。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">但是，不能够保证每个元素的关键字与函数值是一一对应的，因此极有可能出现对于不同的元素，却计算出了相同的函数值，这样就产生了“冲突”，换句话说，就是把不同的元素分在了相同的“类”之中。 总的来说，“直接定址”与“解决冲突”是哈希表的两大特点。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">hash_map，首先分配一大片内存，形成许多桶。是利用hash函数，对key进行映射到不同区域（桶）进行保存。其插入过程是：</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">得到key</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">通过hash函数得到hash值</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">得到桶号(一般都为hash值对桶数求模)</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">存放key和value在桶内。</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">其取值过程是:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">得到key</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">通过hash函数得到hash值</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">得到桶号(一般都为hash值对桶数求模)</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">比较桶的内部元素是否与key相等，若都不相等，则没有找到。</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">取出相等的记录的value。</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">hash_map中直接地址用hash函数生成，解决冲突，用比较函数解决。这里可以看出，如果每个桶内部只有一个元素，那么查找的时候只有一次比较。当许多桶内没有值时，许多查询就会更快了(指查不到的时候).</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">由此可见，要实现哈希表, 和用户相关的是：**hash函数**和**比较函数**。这两个参数刚好是我们在使用hash_map时需要指定的参数。</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">例子</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">```cpp</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    #include &#x3C;hash_map></span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    #include &#x3C;string></span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    using namespace std;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    int main()&#123;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            hash_map&#x3C;int, string> mymap;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            mymap[9527]=</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">唐伯虎点秋香</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            mymap[1000000]=</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">百万富翁的生活</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            mymap[10000]=</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">白领的工资底线</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            ...</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            if(mymap.find(10000) != mymap.end())&#123;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">                    ...</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            &#125;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">你没有指定hash函数和比较函数的时候，你会有一个缺省的函数，看看hash_map的声明，你会更加明白。下面是SGI STL的声明：</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">```cpp</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    template &#x3C;class _Key, class _Tp, class _HashFcn = hash&#x3C;_Key>,</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    class _EqualKey = equal_to&#x3C;_Key>,</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    class _Alloc = __STL_DEFAULT_ALLOCATOR(_Tp) ></span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    class hash_map</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    &#123;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            ...</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    &#125;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">也就是说，在上例中，有以下等同关系：</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">```cpp</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    hash_map&#x3C;int, string> mymap;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    //等同于:</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    hash_map&#x3C;int, string, hash&#x3C;int>, equal_to&#x3C;int> > mymap;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">## hash_map 的hash函数</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">hash&#x3C; int>到底是什么样子？看看源码:</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">```cpp</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;int> &#123;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            size_t operator()(int __x) const &#123; return __x; &#125;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    &#125;;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">原来是个函数对象。在SGI STL中，提供了以下hash函数：</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">```cpp</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;char*></span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;const char*></span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;char> </span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;unsigned char> </span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;signed char></span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;short></span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;unsigned short> </span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;int> </span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;unsigned int></span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;long> </span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct hash&#x3C;unsigned long></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">也就是说，如果你的key使用的是以上类型中的一种，你都可以使用缺省的hash函数。当然你自己也可以定义自己的hash函数。对于自定义变量，你只能如此，例如对于string，就必须自定义hash函数。例如：</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">```cpp</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct str_hash&#123;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            size_t operator()(const string&#x26; str) const</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            &#123;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">                    unsigned long __h = 0;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">                    for (size_t i = 0 ; i &#x3C; str.size() ; i ++)</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">                    __h = 5*__h + str[i];</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">                    return size_t(__h);</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            &#125;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    &#125;;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    //如果你希望利用系统定义的字符串hash函数，你可以这样写：</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    struct str_hash&#123;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            size_t operator()(const string&#x26; str) const</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            &#123;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">                    return __stl_hash_string(str.c_str());</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">            &#125;</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    &#125;;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">在声明自己的哈希函数时要注意以下几点：</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">1、使用struct，然后重载operator().</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">2、返回是size_t</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">3、参数是你要hash的key的类型。</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">4、函数是const类型的。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">现在可以对开头的string 进行哈希化了 . 直接替换成下面的声明即可：</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">```cpp</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    map&#x3C;string, string> namemap; </span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    //改为：</span></span>
+<span class="line"><span style="color:#B56959;--shiki-dark:#C98A7D">    hash_map&#x3C;string, string, str_hash> namemap;</span></span></code></pre>
+<hr>
+<h3 id="hash_map-的比较函数"><a class="anchor" href="#hash_map-的比较函数">#</a> hash_map 的比较函数</h3>
+<p>在map中的比较函数，需要提供less 函数。如果没有提供，缺省的也是<code>less&lt; Key&gt;</code> 在<code>hash_map</code>中，要比较桶内的数据和<code>key</code>是否相等，因此需要的是是否等于的函数:<code>equal_to&lt; Key&gt;</code> 先看看<code>equal_to</code>的源码</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">//代码可以从SGI STL</span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">//先看看binary_function 函数声明，其实只是定义一些类型而已。</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">template</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">class</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> _Arg1</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> class</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> _Arg2</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> class</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> _Result</span><span style="color:#999999;--shiki-dark:#666666">></span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">struct</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> binary_function</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        typedef</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> _Arg1 first_argument_type</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        typedef</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> _Arg2 second_argument_type</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        typedef</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> _Result result_type</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">//看看equal_to的定义：</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">template</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">class</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> _Tp</span><span style="color:#999999;--shiki-dark:#666666">></span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">struct</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> equal_to</span><span style="color:#999999;--shiki-dark:#666666"> :</span><span style="color:#AB5959;--shiki-dark:#CB7676"> public</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> binary_function</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#2E8F82;--shiki-dark:#5DA994">_Tp</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2E8F82;--shiki-dark:#5DA994">_Tp</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676">bool</span><span style="color:#999999;--shiki-dark:#666666">></span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">        bool</span><span style="color:#1E754F;--shiki-dark:#4D9375"> operator</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">const</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> _Tp</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A"> __x</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> const</span><span style="color:#2E8F82;--shiki-dark:#5DA994"> _Tp</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A"> __y</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#AB5959;--shiki-dark:#CB7676"> const</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span><span style="color:#1E754F;--shiki-dark:#4D9375"> return</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> __x </span><span style="color:#AB5959;--shiki-dark:#CB7676">==</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> __y</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h3 id="什么时候需要用hash_map什么时候需要用map"><a class="anchor" href="#什么时候需要用hash_map什么时候需要用map">#</a> 什么时候需要用hash_map，什么时候需要用map</h3>
+<p>总体来说，hash_map 查找速度会比map快，而且查找速度基本和数据数据量大小，属于常数级别;而map的查找速度是log (n)级别。并不一定常数就比log(n)小，hash还有hash函数的耗时，明白了吧，如果你考虑效率，特别是在元素达到一定数量级时，考虑考虑hash_map。但若你对内存使用特别严格，希望程序尽可能少消耗内存，那么一定要小心，hash_map可能会让你陷入尴尬，特别是当你的hash_map对象特别多时，你就更无法控制了，而且hash_map的构造速度较慢。</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="tags/Algorithm/" style="color: #ff7d73">Algorithm</a>
+        </span>
+        
+    </div>
+    <a href="2026/03/26/%E5%93%88%E5%B8%8C%E8%A1%A8%E8%AF%A6%E8%A7%A3/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="2026/03/24/%E8%B7%AF%E5%8A%B2%E8%A7%84%E5%88%92/">
         <h2 class="post-title">路劲规划</h2>
     </a>
@@ -562,7 +852,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
 <p>就到此为止了，祝福自己的四级高分通过，wish you and believe yourself !</p>
 </blockquote>
 <p>
-    <div id="aplayer-dvGxEmHR" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1417055605" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
+    <div id="aplayer-UBajObkX" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1417055605" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
 
             
         </div>
@@ -636,7 +926,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
 <p>有时间还是尽量参加竞赛，但是我个人觉得最基础的大创和大挑就可以算了，我并不觉得这两个竞赛有多高的含金量，对于我这个专业，我觉得<code>数学建模，数学竞赛，物理竞赛，ACM，蓝桥杯</code>等更具备含金量</p>
 <p>不过相比盲目的准备竞赛，我觉得还是得先在此声明一下准备竞赛的意义：为了让自己在考研复试的时候更具备竞争优势，让面试的老师觉得自己更具备科研能力，更重要的是准备竞赛的过程，可能是未来面对考研，面对研究生生活的一种早日的习惯，毕竟我现在觉得研究生的压力不亚于备战高考时的压力（这句话也送给未来的自己，如果未来的我觉得压力过大，觉得迷茫了，不妨回来再看看这篇文章，说不定未来的我会因为当时大一的自己的无知而感到可笑，也可能因为大一就已经为自己的未来铺好了后路而感到骄傲，我不知道未来的我看到这篇文章是什么反应，我无从考究，我也不得而知，我只知道写这篇文章的时候：2025年12月2日17点53，此时我的目标明确，但也正是因为我对自己的熟知，我不知道未来我是否能把以上的规划都实现，但我希望自己的人生中能有几个亮点）</p>
 <p>
-    <div id="aplayer-vyrRiHIA" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1372188635" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
+    <div id="aplayer-xAyOQBsD" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1372188635" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
 
             
         </div>
@@ -702,227 +992,6 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         
     </div>
     <a href="2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
-        <h2 class="post-title">快速排序</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/11/29
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h4 id="快速排序"><a class="anchor" href="#快速排序">#</a> <strong>快速排序</strong></h4>
-<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c"><span class="line"><span style="color:#999999;--shiki-dark:#666666">#</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">stdio.h</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">#</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">stdlib.h</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
-<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">// 交换函数</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">void</span><span style="color:#59873A;--shiki-dark:#80A665"> swap</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int*</span><span style="color:#B07D48;--shiki-dark:#BD976A"> a</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> int*</span><span style="color:#B07D48;--shiki-dark:#BD976A"> b</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> temp </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">a</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    *</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">a </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">b</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    *</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">b </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> temp</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span>
-<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">// 分区函数：返回基准元素的最终位置</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#59873A;--shiki-dark:#80A665"> partition</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> arr</span><span style="color:#1e754f;--shiki-dark:#4d9375">[</span><span style="color:#1e754f;--shiki-dark:#4d9375">]</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> low</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> high</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pivot </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#B07D48;--shiki-dark:#BD976A"> arr</span><span style="color:#1e754f;--shiki-dark:#4d9375">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">high</span><span style="color:#1e754f;--shiki-dark:#4d9375">]</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD"> // 选最后一个元素为基准</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> low </span><span style="color:#AB5959;--shiki-dark:#CB7676">-</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">       // 小于基准元素的区域右边界</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    for</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> j </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> low</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> j </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> high</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> j</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        if</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#a13865;--shiki-dark:#d9739f">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">j</span><span style="color:#a13865;--shiki-dark:#d9739f">]</span><span style="color:#AB5959;--shiki-dark:#CB7676"> </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pivot</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#a65e2b;--shiki-dark:#d4976c">&#123;</span></span>
-<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">            i</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">            swap</span><span style="color:#a13865;--shiki-dark:#d9739f">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#bda437;--shiki-dark:#e6cc77">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i</span><span style="color:#bda437;--shiki-dark:#e6cc77">]</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> &#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#bda437;--shiki-dark:#e6cc77">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">j</span><span style="color:#bda437;--shiki-dark:#e6cc77">]</span><span style="color:#a13865;--shiki-dark:#d9739f">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">        </span><span style="color:#a65e2b;--shiki-dark:#d4976c">&#125;</span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    swap</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#a65e2b;--shiki-dark:#d4976c">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i </span><span style="color:#AB5959;--shiki-dark:#CB7676">+</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#a65e2b;--shiki-dark:#d4976c">]</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> &#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#a65e2b;--shiki-dark:#d4976c">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">high</span><span style="color:#a65e2b;--shiki-dark:#d4976c">]</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD"> // 将基准元素放到正确位置</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    return</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i </span><span style="color:#AB5959;--shiki-dark:#CB7676">+</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span>
-<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">// 快速排序递归函数</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">void</span><span style="color:#59873A;--shiki-dark:#80A665"> quickSort</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> arr</span><span style="color:#1e754f;--shiki-dark:#4d9375">[</span><span style="color:#1e754f;--shiki-dark:#4d9375">]</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> low</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> high</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    if</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">low </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> high</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">        int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pi </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#59873A;--shiki-dark:#80A665"> partition</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> low</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> high</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD"> // 分区后基准的位置</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        quickSort</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> low</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pi </span><span style="color:#AB5959;--shiki-dark:#CB7676">-</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">        // 左子数组排序</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        quickSort</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pi </span><span style="color:#AB5959;--shiki-dark:#CB7676">+</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> high</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">       // 右子数组排序</span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
-<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span>
-<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">// 打印数组</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">void</span><span style="color:#59873A;--shiki-dark:#80A665"> printArray</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> arr</span><span style="color:#1e754f;--shiki-dark:#4d9375">[</span><span style="color:#1e754f;--shiki-dark:#4d9375">]</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> n</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    for</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        printf</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#A65E2B;--shiki-dark:#C99076">%d</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B07D48;--shiki-dark:#BD976A"> arr</span><span style="color:#a13865;--shiki-dark:#d9739f">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i</span><span style="color:#a13865;--shiki-dark:#d9739f">]</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    printf</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#A65E2B;--shiki-dark:#C99076">\n</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#59873A;--shiki-dark:#80A665"> main</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    printf</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">请输入数组元素个数：</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    scanf_s</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#A65E2B;--shiki-dark:#C99076">%d</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> &#x26;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    int*</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> arr </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int*</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#59873A;--shiki-dark:#80A665">malloc</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n </span><span style="color:#AB5959;--shiki-dark:#CB7676">*</span><span style="color:#AB5959;--shiki-dark:#CB7676"> sizeof</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    if</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr </span><span style="color:#AB5959;--shiki-dark:#CB7676">==</span><span style="color:#1E754F;--shiki-dark:#4D9375"> NULL</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        printf</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">内存分配失败</span><span style="color:#A65E2B;--shiki-dark:#C99076">\n</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        return</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    printf</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">请输入数组元素：</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    for</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        scanf_s</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#A65E2B;--shiki-dark:#C99076">%d</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> &#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#a13865;--shiki-dark:#d9739f">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i</span><span style="color:#a13865;--shiki-dark:#d9739f">]</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    printf</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">排序前：</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    printArray</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    quickSort</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n </span><span style="color:#AB5959;--shiki-dark:#CB7676">-</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    printf</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">排序后：</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    printArray</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    free</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD"> // 释放动态分配的内存</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    return</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span></code></pre>
-<p>今天是2025年11月29日，又来和<em>xjz</em>泡教室了，这一篇的诞生源自于leecode15三数之和的解答，其中说的排序问题，之前在11月20左右写过一篇有关冒泡排序的文章，作为最基础的排序方式，放在大量数据中，时间复杂度和空间复杂度都极其的高，作为最佳排序的快速排序（quicksort），其中大量的原理我真的不太理解，尤其是其中的分区函数以及快速排序函数的调用，其中的元素是我无法理解的，我觉得这个需要问问杨sir，豆包的解答让我一头雾水，但也能从中看出作为最优排序方式的精妙之处，静待我的解释吧，本篇未完待续！(完结撒花!)</p>
-<p><strong>快速排序作为我研究算法的第一例，重要性不言而喻，也是花了几天时间才理解透彻，但是对接下来的哈希表等内容依旧像一个小白</strong></p>
-<hr>
-<h2 id="以下是对快速排序的详细理解"><a class="anchor" href="#以下是对快速排序的详细理解">#</a> <em><strong>以下是对快速排序的详细理解</strong></em></h2>
-<p>在经历了将近1个小时的理解，我基本懂了（杨sir太忙了没空被我提问QvQ）</p>
-<p>1.首先对于第一个<code>swap</code>函数，就是交换两个变量的值，这里也不过多解释了</p>
-<p>2.然后对于分区函数，它的意思是选定最后一个数值作为基准变量<code>pivot</code>，比<code>pivot</code>大的放在右边，比<code>pivot</code>小的放在它的左边</p>
-<p>3.对于快速排序递归函数，相当于多次选取基准数值，然后用等同于分区函数的方式继续进行排序，直到确定每个值的位置</p>
-<p><em><strong>明确partition这项自定义函数的运行逻辑</strong></em></p>
-<ol>
-<li>
-<h3 id="明确分区目标"><a class="anchor" href="#明确分区目标">#</a> 明确分区目标</h3>
-</li>
-</ol>
-<p>快速排序的 partition 函数要做的是：选一个基准元素（这里是 arr[high] ），把数组分成两部分——左边所有元素 ≤ 基准，右边所有元素 ＞ 基准，最后返回基准的最终位置。</p>
-<ol start="2">
-<li>变量角色</li>
-</ol>
-<ul>
-<li><code>pivot = arr[high]</code> ：基准元素（比如数组最后一个元素）。</li>
-<li>i = low - 1 ：小于等于基准区域的“右边界”（初始时这个区域为空，所以 i 在 low 左边）。</li>
-<li>j ：遍历指针，从 low 到 high-1 （因为 <code>arr[high]</code> 是基准，不需要遍历自己）。</li>
-</ul>
-<ol start="3">
-<li>for循环逐行解析</li>
-</ol>
-<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c"><span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">for</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> j </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> low</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> j </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> high</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> j</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
-<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    if</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#a65e2b;--shiki-dark:#d4976c">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">j</span><span style="color:#a65e2b;--shiki-dark:#d4976c">]</span><span style="color:#AB5959;--shiki-dark:#CB7676"> </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">=</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pivot</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
-<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">        i</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        swap</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#a13865;--shiki-dark:#d9739f">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i</span><span style="color:#a13865;--shiki-dark:#d9739f">]</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> &#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#a13865;--shiki-dark:#d9739f">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">j</span><span style="color:#a13865;--shiki-dark:#d9739f">]</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
-<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span></code></pre>
-<ul>
-<li><em>步骤1：j遍历数组元素</em><br>
-j 从 low 开始，逐个检查 <code>arr[j]</code> 与 <code>pivot</code> 的大小。</li>
-<li><em>步骤2：判断是否≤基准</em><br>
-如果 <code>arr[j] ≤ pivot</code> ，说明这个元素应该放到左边区域：</li>
-<li><code>i++</code> ：把“小于等于基准区域”的右边界右移一位（扩大区域）。</li>
-<li><code>swap(&amp;arr[i], &amp;arr[j])</code> ：把当前元素 <code>arr[j]</code> 交换到“小于等于基准区域”的末尾（即 <code>arr[i]</code> 的位置）。</li>
-<li><em>步骤3：遍历结束后，放置基准元素</em><br>
-循环结束后， i+1 的位置就是基准元素的最终位置（因为 i 是“小于等于基准区域”的右边界，右边的元素都＞基准）。此时交换 <code>arr[i+1]</code> 和 <code>arr[high]</code> （基准元素），完成分区。</li>
-</ul>
-<p>举个例子（更直观）</p>
-<p>假设数组是 [5, 3, 8, 2, 7] ，选 high=4 （基准 pivot=7 ）， low=0 ， i=-1</p>
-<ul>
-<li><code>j=0</code> ： <code>arr[0]</code>=5 ≤7  →  i=0 ，交换 <code>arr[0]</code> 和 <code>arr[0]</code> （无变化）</li>
-<li>j=1 ： <code>arr[1]</code>=3 ≤7  →  i=1 ，交换 <code>arr[1]</code> 和 <code>arr[1]</code> （无变化）</li>
-<li>j=2 ： <code>arr[2]</code>=8 ＞7  → 不操作。（所以到此处的时候<code>i</code>没有变化，因为<code>if</code>中的<code>i++</code>没有运行）</li>
-<li>j=3 ： <code>arr[3]</code>=2 ≤7  →  i=2 ，交换 <code>arr[2]</code> 和 <code>arr[3]</code>  → 数组变成 [5, 3, 2, 8, 7]</li>
-</ul>
-<p>循环结束后，交换 <code>arr[i+1]=arr[3]</code> 和 <code>arr[high]=arr[4]</code> 也就是<code>swap(arr[3],arr[4])</code> → 数组变成 [5, 3, 2, 7, 8] 。此时基准 7 的位置是 3 ，左边 [5,3,2] 都≤7，右边 [8] ＞7，分区完成</p>
-<p>要详细理解这段快速排序递归函数，我们可以从分治思想、执行流程、递归逻辑三个维度拆解：</p>
-<p><em>一、分治思想：快速排序的核心逻辑</em></p>
-<p>快速排序是“分治算法”的经典应用，核心是**“分区→递归处理子问题”**：</p>
-<ul>
-<li>分：通过  partition  函数将数组划分为“左子数组（≤基准）”和“右子数组（＞基准）”。</li>
-<li>治：递归地对左、右子数组重复“分区→递归”的过程，直到子数组长度为1（无需排序）。</li>
-</ul>
-<p><em>二、代码逐行解析</em></p>
-<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c"><span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">void</span><span style="color:#59873A;--shiki-dark:#80A665"> quickSort</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> arr</span><span style="color:#1e754f;--shiki-dark:#4d9375">[</span><span style="color:#1e754f;--shiki-dark:#4d9375">]</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> low</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676"> int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> high</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
-<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    if</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">low </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> high</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">   // ① 递归终止条件：子数组只有1个或0个元素时，无需排序</span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">  </span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">        int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pi </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#59873A;--shiki-dark:#80A665"> partition</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> low</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> high</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">  // ② 分区：得到基准元素的最终位置pi</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        quickSort</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> low</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pi </span><span style="color:#AB5959;--shiki-dark:#CB7676">-</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">        // ③ 递归排序左子数组（[low, pi-1]）</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        quickSort</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pi </span><span style="color:#AB5959;--shiki-dark:#CB7676">+</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> high</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">       // ④ 递归排序右子数组（[pi+1, high]）</span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
-<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span></code></pre>
-<ol>
-<li>递归终止条件  <code>if (low &lt; high)</code><br>
-当  <code>low &gt;= high</code>  时，说明子数组只有1个元素<code>（ low == high ）</code>或0个元素<code>（ low &gt; high ）</code>，此时数组天然有序，直接返回</li>
-<li>分区操作  <code>int pi = partition(arr, low, high)</code><br>
-调用之前的  <code>partition</code>  函数（选基准、划分子数组），返回基准元素的最终位置  <code>pi</code><br>
-此时数组结构： <code>arr[low...pi-1] ≤ arr[pi] &lt; arr[pi+1...high]</code></li>
-<li>递归排序左子数组  <code>quickSort(arr, low, pi - 1)</code><br>
-对“基准左边的子数组” [low, pi-1]  再次调用  <code>quickSort</code> ，重复“分区→递归”的过程，直到左子数组完全有序。</li>
-<li>递归排序右子数组  <code>quickSort(arr, pi + 1, high)</code><br>
-对“基准右边的子数组” [pi+1, high]  再次调用  <code>quickSort</code> ，直到右子数组完全有序。</li>
-</ol>
-<p><em><strong>三、举个例子：模拟执行流程</strong></em></p>
-<p>以数组  [5, 3, 8, 2, 7]  为例，初始  <code>low=0 ， high=4 ：</code></p>
-<ol>
-<li>第一次调用  <code>quickSort(arr, 0, 4)</code></li>
-</ol>
-<ul>
-<li>low &lt; high  成立，执行  partition ，得到基准位置  pi=3 （数组变为  [5,3,2,7,8] ）。</li>
-<li>递归调用  <code>quickSort(arr, 0, 2)</code> （左子数组  [5,3,2] ）和  <code>quickSort(arr, 4, 4)</code> （右子数组  [8] ）。</li>
-</ul>
-<ol start="2">
-<li>处理左子数组  <code>quickSort(arr, 0, 2)</code></li>
-</ol>
-<ul>
-<li>low &lt; high  成立，执行  <code>partition</code> ，假设得到  pi=2 （数组变为  [2,3,5,7,8] ）。</li>
-<li>递归调用  <code>quickSort(arr, 0, 1)</code> （左子数组  [2,3] ）和  <code>quickSort(arr, 3, 2)</code> （无元素，直接返回）。</li>
-</ul>
-<ol start="3">
-<li>处理左子数组的左子数组  <code>quickSort(arr, 0, 1)</code></li>
-</ol>
-<ul>
-<li>low &lt; high  成立，执行  <code>partition</code> ，得到  <code>pi=0</code> （数组不变）。</li>
-<li>递归调用  <code>quickSort(arr, 0, -1)</code> （无元素，返回）和  <code>quickSort(arr, 1, 1)</code> （单元素，返回）。</li>
-</ul>
-<ol start="4">
-<li>所有递归返回后，数组完全有序： [2, 3, 5, 7, 8] 。</li>
-</ol>
-<p><em>四、时间复杂度与适用场景</em></p>
-<ul>
-<li>平均时间复杂度：O(n\log n)（每次分区将数组规模缩小一半，共递归 \log n 层，每层操作 O(n)）</li>
-<li>最坏时间复杂度：O(n^2)（如数组已完全有序，每次分区只能将规模减1）</li>
-<li>适用场景：数据量较大且无序的场景，是工业界常用的排序算法之一（如C++标准库的  sort  默认实现）</li>
-</ul>
-<p>通过“分治→递归→分区”的层层拆解，应该能彻底理解这段代码的逻辑了~ 如果还有细节疑问，可以再针对某一步深入分析。</p>
-<hr>
-<p><strong>重要内容：</strong></p>
-<p>确定一个数组中元素的个数，可以用如下方法</p>
-<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c"><span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91">0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> arr</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span><span style="color:#2F798A;--shiki-dark:#4C9A91">1</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">2</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">3</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">4</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">5</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">6</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">7</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">8</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91">9</span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#AB5959;--shiki-dark:#CB7676">sizeof</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#AB5959;--shiki-dark:#CB7676">/sizeof</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#1e754f;--shiki-dark:#4d9375">[</span><span style="color:#2F798A;--shiki-dark:#4C9A91">0</span><span style="color:#1e754f;--shiki-dark:#4d9375">]</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span></code></pre>
-<p>
-    <div id="aplayer-umxIPjQb" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1436961077" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" style="color: #ffa2c4">快速排序</a>
-        </span>
-        
-    </div>
-    <a href="2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="go-post">阅读全文</a>
 </div>
 
 
