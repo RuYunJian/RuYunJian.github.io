@@ -9,9 +9,7 @@
         <lastBuildDate>Thu, 26 Mar 2026 21:58:59 +0800</lastBuildDate>
         <category>diary</category>
         <category>leetcode</category>
-        <category>dairy</category>
         <category>note</category>
-        <category>对于冒泡排序的一些见解</category>
         <category>Algorithm</category>
         <item>
             <guid isPermalink="true">https://ruyunjian.github.io/2026/03/26/%E5%93%88%E5%B8%8C%E8%A1%A8%E8%AF%A6%E8%A7%A3/</guid>
@@ -487,7 +485,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
             <guid isPermalink="true">https://ruyunjian.github.io/2025/12/06/%E5%9B%9B%E7%BA%A7%E5%A4%8D%E4%B9%A0%E8%AE%B0%E5%BD%9512-6/</guid>
             <title>四级复习记录12,6</title>
             <link>https://ruyunjian.github.io/2025/12/06/%E5%9B%9B%E7%BA%A7%E5%A4%8D%E4%B9%A0%E8%AE%B0%E5%BD%9512-6/</link>
-            <category>dairy</category>
+            <category>diary</category>
             <pubDate>Sat, 06 Dec 2025 23:19:10 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;一.翻译题（106.5）&lt;/strong&gt;&lt;/em&gt;【25min】&lt;/p&gt;
 &lt;p&gt;距离四级考试还有一周，本周的复习重点在于翻译题的词汇积累，以及可能考的重点的预测，对其词汇一固定句式搭配都有所记录，在下周的水课上应该着重复习，&lt;code&gt;留存的几个翻译题可以作为每天的一个练手&lt;/code&gt;，这个不能断，一定要保持手感，模拟题最高写出来过90分的翻译，正式上场起码要保证75&lt;/p&gt;
@@ -507,14 +505,14 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
 &lt;p&gt;就到此为止了，祝福自己的四级高分通过，wish you and believe yourself !&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;
-    &lt;div id=&#34;aplayer-BJJfPOgA&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1417055605&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+    &lt;div id=&#34;aplayer-iGePlkfd&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1417055605&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://ruyunjian.github.io/2025/12/02/%E9%97%B2%E8%A8%8012-2/</guid>
             <title>闲言12.2</title>
             <link>https://ruyunjian.github.io/2025/12/02/%E9%97%B2%E8%A8%8012-2/</link>
-            <category>dairy</category>
+            <category>diary</category>
             <pubDate>Tue, 02 Dec 2025 17:23:28 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;​                                                                                                    &lt;strong&gt;一些闲言碎语&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;[TOC]&lt;/p&gt;
@@ -559,7 +557,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
 &lt;p&gt;有时间还是尽量参加竞赛，但是我个人觉得最基础的大创和大挑就可以算了，我并不觉得这两个竞赛有多高的含金量，对于我这个专业，我觉得&lt;code&gt;数学建模，数学竞赛，物理竞赛，ACM，蓝桥杯&lt;/code&gt;等更具备含金量&lt;/p&gt;
 &lt;p&gt;不过相比盲目的准备竞赛，我觉得还是得先在此声明一下准备竞赛的意义：为了让自己在考研复试的时候更具备竞争优势，让面试的老师觉得自己更具备科研能力，更重要的是准备竞赛的过程，可能是未来面对考研，面对研究生生活的一种早日的习惯，毕竟我现在觉得研究生的压力不亚于备战高考时的压力（这句话也送给未来的自己，如果未来的我觉得压力过大，觉得迷茫了，不妨回来再看看这篇文章，说不定未来的我会因为当时大一的自己的无知而感到可笑，也可能因为大一就已经为自己的未来铺好了后路而感到骄傲，我不知道未来的我看到这篇文章是什么反应，我无从考究，我也不得而知，我只知道写这篇文章的时候：2025年12月2日17点53，此时我的目标明确，但也正是因为我对自己的熟知，我不知道未来我是否能把以上的规划都实现，但我希望自己的人生中能有几个亮点）&lt;/p&gt;
 &lt;p&gt;
-    &lt;div id=&#34;aplayer-MWMTSoiN&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1372188635&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+    &lt;div id=&#34;aplayer-jLMmGbNJ&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1372188635&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -782,7 +780,7 @@ j 从 low 开始，逐个检查 &lt;code&gt;arr[j]&lt;/code&gt; 与 &lt;code&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;sizeof&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;arr&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;/sizeof&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;arr&lt;/span&gt;&lt;span style=&#34;color:#1e754f;--shiki-dark:#4d9375&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#1e754f;--shiki-dark:#4d9375&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;
-    &lt;div id=&#34;aplayer-gfFHZKvX&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1436961077&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+    &lt;div id=&#34;aplayer-NBuKzoaq&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1436961077&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -892,7 +890,7 @@ j 从 low 开始，逐个检查 &lt;code&gt;arr[j]&lt;/code&gt; 与 &lt;code&gt;
             <guid isPermalink="true">https://ruyunjian.github.io/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</guid>
             <title>冒泡排序</title>
             <link>https://ruyunjian.github.io/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</link>
-            <category>对于冒泡排序的一些见解</category>
+            <category>note</category>
             <pubDate>Sat, 22 Nov 2025 12:20:42 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;11.22，首次在C语言中完成冒泡排序的编写，编写过程中带有瑕疵，借助ai修改了一次，完成代码如下&lt;/p&gt;
 &lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`#include &lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;stdio.h&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;&gt;&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`&lt;/span&gt;&lt;/span&gt;
@@ -932,7 +930,7 @@ j 从 low 开始，逐个检查 &lt;code&gt;arr[j]&lt;/code&gt; 与 &lt;code&gt;
             <guid isPermalink="true">https://ruyunjian.github.io/2025/11/20/11-20/</guid>
             <title>11.2</title>
             <link>https://ruyunjian.github.io/2025/11/20/11-20/</link>
-            <category>dairy</category>
+            <category>diary</category>
             <pubDate>Thu, 20 Nov 2025 19:10:42 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;感觉还不太会写这个，额QvQ&lt;/p&gt;
  ]]></description>
@@ -941,7 +939,7 @@ j 从 low 开始，逐个检查 &lt;code&gt;arr[j]&lt;/code&gt; 与 &lt;code&gt;
             <guid isPermalink="true">https://ruyunjian.github.io/2025/11/13/11-13/</guid>
             <title>11.13</title>
             <link>https://ruyunjian.github.io/2025/11/13/11-13/</link>
-            <category>dairy</category>
+            <category>diary</category>
             <pubDate>Thu, 13 Nov 2025 12:46:46 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;记录一下，&lt;code&gt;2025.11.13&lt;/code&gt;第一次小窝搭建成功&lt;/p&gt;
  ]]></description>

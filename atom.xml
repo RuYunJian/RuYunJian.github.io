@@ -6,9 +6,7 @@
     <updated>2026-03-26T13:58:59.000Z</updated>
     <category term="diary" />
     <category term="leetcode" />
-    <category term="dairy" />
     <category term="note" />
-    <category term="对于冒泡排序的一些见解" />
     <category term="Algorithm" />
     <entry>
         <id>https://ruyunjian.github.io/2026/03/26/%E5%93%88%E5%B8%8C%E8%A1%A8%E8%AF%A6%E8%A7%A3/</id>
@@ -502,9 +500,9 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
 &lt;p&gt;就到此为止了，祝福自己的四级高分通过，wish you and believe yourself !&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;
-    &lt;div id=&#34;aplayer-BJJfPOgA&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1417055605&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+    &lt;div id=&#34;aplayer-iGePlkfd&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1417055605&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
 </content>
-        <category term="dairy" />
+        <category term="diary" />
         <updated>2025-12-06T15:19:10.000Z</updated>
     </entry>
     <entry>
@@ -554,9 +552,9 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
 &lt;p&gt;有时间还是尽量参加竞赛，但是我个人觉得最基础的大创和大挑就可以算了，我并不觉得这两个竞赛有多高的含金量，对于我这个专业，我觉得&lt;code&gt;数学建模，数学竞赛，物理竞赛，ACM，蓝桥杯&lt;/code&gt;等更具备含金量&lt;/p&gt;
 &lt;p&gt;不过相比盲目的准备竞赛，我觉得还是得先在此声明一下准备竞赛的意义：为了让自己在考研复试的时候更具备竞争优势，让面试的老师觉得自己更具备科研能力，更重要的是准备竞赛的过程，可能是未来面对考研，面对研究生生活的一种早日的习惯，毕竟我现在觉得研究生的压力不亚于备战高考时的压力（这句话也送给未来的自己，如果未来的我觉得压力过大，觉得迷茫了，不妨回来再看看这篇文章，说不定未来的我会因为当时大一的自己的无知而感到可笑，也可能因为大一就已经为自己的未来铺好了后路而感到骄傲，我不知道未来的我看到这篇文章是什么反应，我无从考究，我也不得而知，我只知道写这篇文章的时候：2025年12月2日17点53，此时我的目标明确，但也正是因为我对自己的熟知，我不知道未来我是否能把以上的规划都实现，但我希望自己的人生中能有几个亮点）&lt;/p&gt;
 &lt;p&gt;
-    &lt;div id=&#34;aplayer-MWMTSoiN&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1372188635&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+    &lt;div id=&#34;aplayer-jLMmGbNJ&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1372188635&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
 </content>
-        <category term="dairy" />
+        <category term="diary" />
         <updated>2025-12-02T09:23:28.000Z</updated>
     </entry>
     <entry>
@@ -777,7 +775,7 @@ j 从 low 开始，逐个检查 &lt;code&gt;arr[j]&lt;/code&gt; 与 &lt;code&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;sizeof&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;arr&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;/sizeof&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;arr&lt;/span&gt;&lt;span style=&#34;color:#1e754f;--shiki-dark:#4d9375&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#1e754f;--shiki-dark:#4d9375&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;
-    &lt;div id=&#34;aplayer-gfFHZKvX&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1436961077&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+    &lt;div id=&#34;aplayer-NBuKzoaq&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1436961077&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
 </content>
         <category term="Algorithm" />
         <updated>2025-11-29T07:19:14.000Z</updated>
@@ -922,7 +920,7 @@ j 从 low 开始，逐个检查 &lt;code&gt;arr[j]&lt;/code&gt; 与 &lt;code&gt;
 &lt;p&gt;能需要再问问豆包或者杨sir&lt;/p&gt;
 &lt;p&gt;ps：今天是2025.11.22，周六，下午约了xjz去学校图书馆，想去复习一下CET4和工程制图，我应该能做到静心学习吧，嘿嘿&lt;/p&gt;
 </content>
-        <category term="对于冒泡排序的一些见解" />
+        <category term="note" />
         <updated>2025-11-22T04:20:42.000Z</updated>
     </entry>
     <entry>
@@ -931,7 +929,7 @@ j 从 low 开始，逐个检查 &lt;code&gt;arr[j]&lt;/code&gt; 与 &lt;code&gt;
         <link rel="alternate" href="https://ruyunjian.github.io/2025/11/20/11-20/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;感觉还不太会写这个，额QvQ&lt;/p&gt;
 </content>
-        <category term="dairy" />
+        <category term="diary" />
         <updated>2025-11-20T11:10:42.000Z</updated>
     </entry>
     <entry>
@@ -940,7 +938,7 @@ j 从 low 开始，逐个检查 &lt;code&gt;arr[j]&lt;/code&gt; 与 &lt;code&gt;
         <link rel="alternate" href="https://ruyunjian.github.io/2025/11/13/11-13/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;记录一下，&lt;code&gt;2025.11.13&lt;/code&gt;第一次小窝搭建成功&lt;/p&gt;
 </content>
-        <category term="dairy" />
+        <category term="diary" />
         <updated>2025-11-13T04:46:46.538Z</updated>
     </entry>
     <entry>
