@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>Stl-vector | 新世界</title>
+    <meta name="author" content="南风知我意" />
+    <meta name="description" content="别弯腰 接受时间躲不开的那一刀" />
+    <meta name="keywords" content="吹梦到西周" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="../../../../images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="../../../../js/lib/highlight.js"></script>
+
+
+
+<script src="../../../../js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="../../../../css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="../../../../images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>新世界</span>
+        </a>
+        
+        <a href="../../../../index.html">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="../../../../about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="../../../../archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="../../../../categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="../../../../tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;新世界</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="../../../../index.html">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="../../../../about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="../../../../archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="../../../../categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="../../../../tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>Stl-vector</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/3/27
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="../../../../tags/stl/" style="color: #ffa2c4">
+                    stl
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="vector"><a class="anchor" href="#vector">#</a> Vector</h1>
+<hr>
+<p>向量（Vector）是一个封装了动态大小数组的顺序容器（Sequence Container）,跟任意其它类型容器一样，它能够存放各种类型的对象。可以简单的认为，向量是一个能够存放任意类型的动态数组</p>
+<p><strong>Vector</strong>的数据安排以及操作方式，与<strong>array(数组)<strong>非常</strong>相似</strong>，两者的<strong>唯一差别</strong>在于<strong>空间的运用的灵活性</strong>。</p>
+<ul>
+<li><strong>Array是静态空间</strong>，一旦配置了就不能改变，要换大一点或者小一点的空间，可以，一切琐碎得由自己来，首先配置一块新的空间，然后将旧空间的数据搬往新空间，再释放原来的空间。</li>
+<li><strong>Vector是动态空间</strong>，随着元素的加入，它的内部机制会自动扩充空间以容纳新元素。因此vector的运用对于内存的合理利用与运用的灵活性有很大的帮助，我们再也不必害怕空间不足而一开始就要求一个大块头的array（数组）了</li>
+<li><em><strong>Vector的实现技术，关键在于其对大小的控制以及重新配置时的数据移动效率</strong>，一旦vector旧空间满了，如果客户每新增一个元素，vector内部只是扩充一个元素的空间，实为不智，因为所谓的扩充空间(不论多大)，一如刚所说，是”配置新空间-数据移动-释放旧空间”的大工程,时间成本很高，应该加入某种未雨绸缪的考虑，稍后我们便可以看到vector的空间配置策略</em></li>
+</ul>
+<p><img src="/../Stl-vector/vector%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png" alt></p>
+<hr>
+<p><strong>begin和end</strong></p>
+<p>通过begin函数可以得到容器中第一个元素的正向迭代器，通过end函数可以得到容器中最后一个元素的后一个位置的正向迭代器。</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#999999;--shiki-dark:#666666">#</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">iostream</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">#</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">vector</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">using</span><span style="color:#AB5959;--shiki-dark:#CB7676"> namespace</span><span style="color:#59873A;--shiki-dark:#80A665"> std</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#59873A;--shiki-dark:#80A665"> main</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">	vector</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#59873A;--shiki-dark:#80A665"> v</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#2F798A;--shiki-dark:#4C9A91">10</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 2</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">	//正向迭代器遍历容器</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">	vector</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">iterator it </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#B07D48;--shiki-dark:#BD976A"> v</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">begin</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">	while</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">it </span><span style="color:#AB5959;--shiki-dark:#CB7676">!=</span><span style="color:#B07D48;--shiki-dark:#BD976A"> v</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">end</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">	</span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">		cout </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">it </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">		it</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">	</span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">	cout </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> endl</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">	return</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span></code></pre>
+<p><strong>rbegin和rend</strong></p>
+<p>通过rbegin函数可以得到容器中最后一个元素的反向迭代器，通过rend函数可以得到容器中第一个元素的前一个位置的反向迭代器。</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#999999;--shiki-dark:#666666">#</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">iostream</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">#</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">vector</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">using</span><span style="color:#AB5959;--shiki-dark:#CB7676"> namespace</span><span style="color:#59873A;--shiki-dark:#80A665"> std</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#59873A;--shiki-dark:#80A665"> main</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">	vector</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#59873A;--shiki-dark:#80A665"> v</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#2F798A;--shiki-dark:#4C9A91">10</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 2</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">	//反向迭代器遍历容器</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">	vector</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">reverse_iterator rit </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#B07D48;--shiki-dark:#BD976A"> v</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">rbegin</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">	while</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">rit </span><span style="color:#AB5959;--shiki-dark:#CB7676">!=</span><span style="color:#B07D48;--shiki-dark:#BD976A"> v</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">rend</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">	</span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">		cout </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">rit </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">		rit</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">	</span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">	cout </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> endl</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">	return</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span></code></pre>
+<p><img src="/../Stl-vector/%E6%AD%A3%E5%8F%8D%E5%90%91%E8%BF%AD%E4%BB%A3%E5%99%A8.png" alt></p>
+<hr>
+<h3 id="vector的常见访问操作"><a class="anchor" href="#vector的常见访问操作">#</a> <strong>vector的常见访问操作</strong></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>接口名称</strong></th>
+<th style="text-align:right"><strong>接口说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>back</strong></td>
+<td style="text-align:right">返回容器中最后的一个元素的引用</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>front</strong></td>
+<td style="text-align:right">返回容器中第一个元素的引用</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="vector的常见访问操作-2"><a class="anchor" href="#vector的常见访问操作-2">#</a> <strong>vector的常见访问操作</strong></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>接口名称</strong></th>
+<th style="text-align:right"><strong>接口说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">push_back</td>
+<td style="text-align:right">在末尾添加一个元素，有效元素个数加1</td>
+</tr>
+<tr>
+<td style="text-align:center">pop_back</td>
+<td style="text-align:right">删除最后一个元素，有效元素个数减1</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2026 新世界
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;南风知我意
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+     <div id="music_player">
+	<div class="aplayer no-destroy" data-id="17504027519" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-lrcType="-1"> </div>
+     </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="../../../../js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

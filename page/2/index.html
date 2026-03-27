@@ -184,6 +184,70 @@
         
 
 <div class="post">
+    <a href="../../2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/">
+        <h2 class="post-title">数组元素个数的动态分配</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/11/29
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>产率很高啊，一下子解决了两个心头大患，嘿嘿嘿嘿嘿嘿</p>
+<p>对于数组，之前有如下的问题：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c"><span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91">0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">scanf_s</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#A65E2B;--shiki-dark:#C99076">%d</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A">n</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> arr</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#999999;--shiki-dark:#666666">;</span></span></code></pre>
+<p><strong>首先要明确：以上写法是完全错误的！！！！！！！</strong></p>
+<h6 id="那么正确的形式如下"><a class="anchor" href="#那么正确的形式如下">#</a> 那么正确的形式如下：</h6>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c"><span class="line"><span style="color:#999999;--shiki-dark:#666666">#</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">stdlib.h</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">#</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">stdio.h</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#59873A;--shiki-dark:#80A665"> main</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91">0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91">0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">scanf_s</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">“</span><span style="color:#AB5959;--shiki-dark:#CB7676">%</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">d”</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x26;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">nums</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#59873A;--shiki-dark:#80A665">malloc</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n </span><span style="color:#AB5959;--shiki-dark:#CB7676">*sizeof</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">if</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">nums</span><span style="color:#AB5959;--shiki-dark:#CB7676">==</span><span style="color:#1E754F;--shiki-dark:#4D9375">NULL</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    printf</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">内存分配失败</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">；</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        scanf_s</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#A65E2B;--shiki-dark:#C99076">%d</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B07D48;--shiki-dark:#BD976A">nums</span><span style="color:#a13865;--shiki-dark:#d9739f">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i</span><span style="color:#a13865;--shiki-dark:#d9739f">]</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    free</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">nums</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">return</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span></code></pre>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="../../tags/note/" style="color: #ff7d73">note</a>
+        </span>
+        
+    </div>
+    <a href="../../2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="../../2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
         <h2 class="post-title">快速排序</h2>
     </a>
@@ -382,7 +446,7 @@ j 从 low 开始，逐个检查 <code>arr[j]</code> 与 <code>pivot</code> 的�
 <span class="line"></span>
 <span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#AB5959;--shiki-dark:#CB7676">sizeof</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#AB5959;--shiki-dark:#CB7676">/sizeof</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#1e754f;--shiki-dark:#4d9375">[</span><span style="color:#2F798A;--shiki-dark:#4C9A91">0</span><span style="color:#1e754f;--shiki-dark:#4d9375">]</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span></code></pre>
 <p>
-    <div id="aplayer-OEtmtcKy" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1436961077" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
+    <div id="aplayer-YazimtDh" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1436961077" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
 
             
         </div>
@@ -397,7 +461,7 @@ j 从 low 开始，逐个检查 <code>arr[j]</code> 与 <code>pivot</code> 的�
         
         <span class="tag">
             
-            <a href="../../tags/Algorithm/" style="color: #ff7d73">Algorithm</a>
+            <a href="../../tags/Algorithm/" style="color: #03a9f4">Algorithm</a>
         </span>
         
     </div>
@@ -492,7 +556,7 @@ j 从 low 开始，逐个检查 <code>arr[j]</code> 与 <code>pivot</code> 的�
         
         <span class="tag">
             
-            <a href="../../tags/leetcode/" style="color: #00a596">leetcode</a>
+            <a href="../../tags/leetcode/" style="color: #00bcd4">leetcode</a>
         </span>
         
     </div>
@@ -562,7 +626,7 @@ j 从 low 开始，逐个检查 <code>arr[j]</code> 与 <code>pivot</code> 的�
         
         <span class="tag">
             
-            <a href="../../tags/leetcode/" style="color: #00bcd4">leetcode</a>
+            <a href="../../tags/leetcode/" style="color: #03a9f4">leetcode</a>
         </span>
         
     </div>
@@ -633,7 +697,7 @@ j 从 low 开始，逐个检查 <code>arr[j]</code> 与 <code>pivot</code> 的�
         
         <span class="tag">
             
-            <a href="../../tags/note/" style="color: #ff7d73">note</a>
+            <a href="../../tags/note/" style="color: #00a596">note</a>
         </span>
         
     </div>
@@ -673,7 +737,7 @@ j 从 low 开始，逐个检查 <code>arr[j]</code> 与 <code>pivot</code> 的�
         
         <span class="tag">
             
-            <a href="../../tags/diary/" style="color: #00bcd4">diary</a>
+            <a href="../../tags/diary/" style="color: #ffa2c4">diary</a>
         </span>
         
     </div>
@@ -713,7 +777,7 @@ j 从 low 开始，逐个检查 <code>arr[j]</code> 与 <code>pivot</code> 的�
         
         <span class="tag">
             
-            <a href="../../tags/diary/" style="color: #ffa2c4">diary</a>
+            <a href="../../tags/diary/" style="color: #ff7d73">diary</a>
         </span>
         
     </div>

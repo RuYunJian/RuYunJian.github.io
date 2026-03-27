@@ -184,6 +184,136 @@
         
 
 <div class="post">
+    <a href="2026/03/27/Stl-vector/">
+        <h2 class="post-title">Stl-vector</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/3/27
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="vector"><a class="anchor" href="#vector">#</a> Vector</h1>
+<hr>
+<p>向量（Vector）是一个封装了动态大小数组的顺序容器（Sequence Container）,跟任意其它类型容器一样，它能够存放各种类型的对象。可以简单的认为，向量是一个能够存放任意类型的动态数组</p>
+<p><strong>Vector</strong>的数据安排以及操作方式，与<strong>array(数组)<strong>非常</strong>相似</strong>，两者的<strong>唯一差别</strong>在于<strong>空间的运用的灵活性</strong>。</p>
+<ul>
+<li><strong>Array是静态空间</strong>，一旦配置了就不能改变，要换大一点或者小一点的空间，可以，一切琐碎得由自己来，首先配置一块新的空间，然后将旧空间的数据搬往新空间，再释放原来的空间。</li>
+<li><strong>Vector是动态空间</strong>，随着元素的加入，它的内部机制会自动扩充空间以容纳新元素。因此vector的运用对于内存的合理利用与运用的灵活性有很大的帮助，我们再也不必害怕空间不足而一开始就要求一个大块头的array（数组）了</li>
+<li><em><strong>Vector的实现技术，关键在于其对大小的控制以及重新配置时的数据移动效率</strong>，一旦vector旧空间满了，如果客户每新增一个元素，vector内部只是扩充一个元素的空间，实为不智，因为所谓的扩充空间(不论多大)，一如刚所说，是”配置新空间-数据移动-释放旧空间”的大工程,时间成本很高，应该加入某种未雨绸缪的考虑，稍后我们便可以看到vector的空间配置策略</em></li>
+</ul>
+<p><img src="/../Stl-vector/vector%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png" alt></p>
+<hr>
+<p><strong>begin和end</strong></p>
+<p>通过begin函数可以得到容器中第一个元素的正向迭代器，通过end函数可以得到容器中最后一个元素的后一个位置的正向迭代器。</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#999999;--shiki-dark:#666666">#</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">iostream</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">#</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">vector</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">using</span><span style="color:#AB5959;--shiki-dark:#CB7676"> namespace</span><span style="color:#59873A;--shiki-dark:#80A665"> std</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#59873A;--shiki-dark:#80A665"> main</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">	vector</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#59873A;--shiki-dark:#80A665"> v</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#2F798A;--shiki-dark:#4C9A91">10</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 2</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">	//正向迭代器遍历容器</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">	vector</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">iterator it </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#B07D48;--shiki-dark:#BD976A"> v</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">begin</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">	while</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">it </span><span style="color:#AB5959;--shiki-dark:#CB7676">!=</span><span style="color:#B07D48;--shiki-dark:#BD976A"> v</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">end</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">	</span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">		cout </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">it </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">		it</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">	</span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">	cout </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> endl</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">	return</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span></code></pre>
+<p><strong>rbegin和rend</strong></p>
+<p>通过rbegin函数可以得到容器中最后一个元素的反向迭代器，通过rend函数可以得到容器中第一个元素的前一个位置的反向迭代器。</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#999999;--shiki-dark:#666666">#</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">iostream</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">#</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">vector</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">using</span><span style="color:#AB5959;--shiki-dark:#CB7676"> namespace</span><span style="color:#59873A;--shiki-dark:#80A665"> std</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#59873A;--shiki-dark:#80A665"> main</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">	vector</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#59873A;--shiki-dark:#80A665"> v</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#2F798A;--shiki-dark:#4C9A91">10</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 2</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">	//反向迭代器遍历容器</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">	vector</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">reverse_iterator rit </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#B07D48;--shiki-dark:#BD976A"> v</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">rbegin</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">	while</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">rit </span><span style="color:#AB5959;--shiki-dark:#CB7676">!=</span><span style="color:#B07D48;--shiki-dark:#BD976A"> v</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">rend</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">	</span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">		cout </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">rit </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">		rit</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">	</span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">	cout </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> endl</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">	return</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span></code></pre>
+<p><img src="/../Stl-vector/%E6%AD%A3%E5%8F%8D%E5%90%91%E8%BF%AD%E4%BB%A3%E5%99%A8.png" alt></p>
+<hr>
+<h3 id="vector的常见访问操作"><a class="anchor" href="#vector的常见访问操作">#</a> <strong>vector的常见访问操作</strong></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>接口名称</strong></th>
+<th style="text-align:right"><strong>接口说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>back</strong></td>
+<td style="text-align:right">返回容器中最后的一个元素的引用</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>front</strong></td>
+<td style="text-align:right">返回容器中第一个元素的引用</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="vector的常见访问操作-2"><a class="anchor" href="#vector的常见访问操作-2">#</a> <strong>vector的常见访问操作</strong></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>接口名称</strong></th>
+<th style="text-align:right"><strong>接口说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">push_back</td>
+<td style="text-align:right">在末尾添加一个元素，有效元素个数加1</td>
+</tr>
+<tr>
+<td style="text-align:center">pop_back</td>
+<td style="text-align:right">删除最后一个元素，有效元素个数减1</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="tags/stl/" style="color: #00a596">stl</a>
+        </span>
+        
+    </div>
+    <a href="2026/03/27/Stl-vector/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="2026/03/26/%E5%93%88%E5%B8%8C%E8%A1%A8%E8%AF%A6%E8%A7%A3/">
         <h2 class="post-title">哈希表详解</h2>
     </a>
@@ -466,7 +596,7 @@
         
         <span class="tag">
             
-            <a href="tags/Algorithm/" style="color: #ffa2c4">Algorithm</a>
+            <a href="tags/Algorithm/" style="color: #00a596">Algorithm</a>
         </span>
         
     </div>
@@ -533,7 +663,7 @@
         
         <span class="tag">
             
-            <a href="tags/leetcode/" style="color: #03a9f4">leetcode</a>
+            <a href="tags/leetcode/" style="color: #ffa2c4">leetcode</a>
         </span>
         
     </div>
@@ -694,7 +824,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         
         <span class="tag">
             
-            <a href="tags/leetcode/" style="color: #03a9f4">leetcode</a>
+            <a href="tags/leetcode/" style="color: #00bcd4">leetcode</a>
         </span>
         
     </div>
@@ -734,7 +864,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         
         <span class="tag">
             
-            <a href="tags/note/" style="color: #00bcd4">note</a>
+            <a href="tags/note/" style="color: #03a9f4">note</a>
         </span>
         
     </div>
@@ -863,7 +993,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         
         <span class="tag">
             
-            <a href="tags/diary/" style="color: #00bcd4">diary</a>
+            <a href="tags/diary/" style="color: #03a9f4">diary</a>
         </span>
         
     </div>
@@ -906,7 +1036,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
 <p>就到此为止了，祝福自己的四级高分通过，wish you and believe yourself !</p>
 </blockquote>
 <p>
-    <div id="aplayer-ugwnyxFb" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1417055605" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
+    <div id="aplayer-WdxQqWrJ" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1417055605" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
 
             
         </div>
@@ -989,7 +1119,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
 <p>有时间还是尽量参加竞赛，但是我个人觉得最基础的大创和大挑就可以算了，我并不觉得这两个竞赛有多高的含金量，对于我这个专业，我觉得<code>数学建模，数学竞赛，物理竞赛，ACM，蓝桥杯</code>等更具备含金量</p>
 <p>不过相比盲目的准备竞赛，我觉得还是得先在此声明一下准备竞赛的意义：为了让自己在考研复试的时候更具备竞争优势，让面试的老师觉得自己更具备科研能力，更重要的是准备竞赛的过程，可能是未来面对考研，面对研究生生活的一种早日的习惯，毕竟我现在觉得研究生的压力不亚于备战高考时的压力（这句话也送给未来的自己，如果未来的我觉得压力过大，觉得迷茫了，不妨回来再看看这篇文章，说不定未来的我会因为当时大一的自己的无知而感到可笑，也可能因为大一就已经为自己的未来铺好了后路而感到骄傲，我不知道未来的我看到这篇文章是什么反应，我无从考究，我也不得而知，我只知道写这篇文章的时候：2025年12月2日17点53，此时我的目标明确，但也正是因为我对自己的熟知，我不知道未来我是否能把以上的规划都实现，但我希望自己的人生中能有几个亮点）</p>
 <p>
-    <div id="aplayer-pLiXyfRc" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1372188635" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
+    <div id="aplayer-hzDnnxiU" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1372188635" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
 
             
         </div>
@@ -1009,70 +1139,6 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         
     </div>
     <a href="2025/12/02/12-2/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/">
-        <h2 class="post-title">数组元素个数的动态分配</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/11/29
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>产率很高啊，一下子解决了两个心头大患，嘿嘿嘿嘿嘿嘿</p>
-<p>对于数组，之前有如下的问题：</p>
-<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c"><span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91">0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">scanf_s</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#A65E2B;--shiki-dark:#C99076">%d</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x26;</span><span style="color:#B07D48;--shiki-dark:#BD976A">n</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#B07D48;--shiki-dark:#BD976A"> arr</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#999999;--shiki-dark:#666666">;</span></span></code></pre>
-<p><strong>首先要明确：以上写法是完全错误的！！！！！！！</strong></p>
-<h6 id="那么正确的形式如下"><a class="anchor" href="#那么正确的形式如下">#</a> 那么正确的形式如下：</h6>
-<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c"><span class="line"><span style="color:#999999;--shiki-dark:#666666">#</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">stdlib.h</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
-<span class="line"><span style="color:#999999;--shiki-dark:#666666">#</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">stdio.h</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#59873A;--shiki-dark:#80A665"> main</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
-<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
-<span class="line"></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91">0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> n</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91">0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">scanf_s</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">“</span><span style="color:#AB5959;--shiki-dark:#CB7676">%</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">d”</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x26;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">nums</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#59873A;--shiki-dark:#80A665">malloc</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n </span><span style="color:#AB5959;--shiki-dark:#CB7676">*sizeof</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">if</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">nums</span><span style="color:#AB5959;--shiki-dark:#CB7676">==</span><span style="color:#1E754F;--shiki-dark:#4D9375">NULL</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    printf</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#B56959;--shiki-dark:#C98A7D">内存分配失败</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">；</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        scanf_s</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#A65E2B;--shiki-dark:#C99076">%d</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#B07D48;--shiki-dark:#BD976A">nums</span><span style="color:#a13865;--shiki-dark:#d9739f">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i</span><span style="color:#a13865;--shiki-dark:#d9739f">]</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    free</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">nums</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
-<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">return</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span></code></pre>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="tags/note/" style="color: #03a9f4">note</a>
-        </span>
-        
-    </div>
-    <a href="2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/" class="go-post">阅读全文</a>
 </div>
 
 
