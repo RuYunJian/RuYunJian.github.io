@@ -46,10 +46,7 @@
 
 <link rel="stylesheet" href="/css/main.css" />
 
-<meta name="generator" content="Hexo 7.3.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
-<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
-<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
-</head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 <body>
     <div id="layout">
         <transition name="fade">
@@ -184,6 +181,195 @@
         
 
 <div class="post">
+    <a href="2026/03/28/Stl-set/">
+        <h2 class="post-title">Stl-set</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/3/28
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="set"><a class="anchor" href="#set">#</a> set</h1>
+<hr>
+<p>**集合（set）**是一个内部自动有序且不含重复元素的容器，它可以在需要删除重复元素的情况下大放异彩，节省时间，减少思维量。</p>
+<p>set 就是关键字的简单集合，当只是想知道一个值是否存在时，set 是最有用的。set 内部采用的是一种非常高效的平衡检索二叉树 ：红黑树（Red-Black Tree），也称为 RB 树，RB 树的统计性能要好于一般平衡二叉树。在 set 中每个元素的值都唯一，而且系统能根据元素的值自动进行排序，set 中元素的值不能直接被改变。</p>
+<p>标准库提供 set 关联容器分为：</p>
+<p>按关键字有序保存元素：set（关键字即值，即只保存关键字的容器）、multiset（关键字可重复出现的 set）；<br>
+无序集合：unordered_set（用哈希函数组织的 set）、unordered_multiset（用哈希函数组织的 set，关键字可以重复出现）</p>
+<h2 id="set-容器内的元素访问"><a class="anchor" href="#set-容器内的元素访问">#</a> set 容器内的元素访问</h2>
+<p>注意：除了 vector 和 string 以外的 STL 容器都不支持 *(it + i) 的访问方式</p>
+<hr>
+<ul>
+<li>
+<p>**find()：**find(value) <strong>返回 set 中 value 所对应的迭代器</strong>，即 value 的指针（地址），如果没找到则返回 end()</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#999999;--shiki-dark:#666666">    #</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">iostream</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">    #</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">set</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    using</span><span style="color:#AB5959;--shiki-dark:#CB7676"> namespace</span><span style="color:#59873A;--shiki-dark:#80A665"> std</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    int</span><span style="color:#59873A;--shiki-dark:#80A665"> main</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">        set</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> st</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        for</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 3</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">        </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">            st</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">insert</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">        </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        set</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">iterator it </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#B07D48;--shiki-dark:#BD976A"> st</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">find</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#2F798A;--shiki-dark:#4C9A91">2</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD"> // 在set中查找2，返回其迭代器</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">        cout </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">it </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> endl</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">        // 以上可以直接写成</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">        cout </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B07D48;--shiki-dark:#BD976A">st</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">find</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#2F798A;--shiki-dark:#4C9A91">2</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#AB5959;--shiki-dark:#CB7676"> </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> endl</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        return</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">    // 输出结果</span></span>
+<span class="line"><span style="color:#2F798A;--shiki-dark:#4C9A91">    2</span></span>
+<span class="line"><span style="color:#2F798A;--shiki-dark:#4C9A91">    2</span></span></code></pre>
+</li>
+<li>
+<p><strong>erase()：可以删除单个元素或删除一个区间内的所有元素</strong></p>
+<ol>
+<li><code>st.erase(it)</code>，其中 it 为所需要删除元素的迭代器。时间复杂度为 <strong>O(1)</strong>，可以结合 find() 函数来使用。</li>
+<li><code>st.erase(value)</code>，其中 value 为所需要删除元素的值。时间复杂度为 <strong>O(logN)</strong>，N 为 set 内的元素个数。</li>
+</ol>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#999999;--shiki-dark:#666666">    #</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">iostream</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">    #</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">set</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    using</span><span style="color:#AB5959;--shiki-dark:#CB7676"> namespace</span><span style="color:#59873A;--shiki-dark:#80A665"> std</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    int</span><span style="color:#59873A;--shiki-dark:#80A665"> main</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">        set</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> st</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">        st</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">insert</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#2F798A;--shiki-dark:#4C9A91">100</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">        st</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">insert</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#2F798A;--shiki-dark:#4C9A91">200</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">        st</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">insert</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#2F798A;--shiki-dark:#4C9A91">100</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">        st</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">insert</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#2F798A;--shiki-dark:#4C9A91">300</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">        st</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">insert</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#2F798A;--shiki-dark:#4C9A91">500</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">        // 删除单个元素</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">        st</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">erase</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B07D48;--shiki-dark:#BD976A">st</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">find</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#2F798A;--shiki-dark:#4C9A91">100</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD"> // 利用find()函数找到100,然后用erase删除它</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">        st</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">erase</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#2F798A;--shiki-dark:#4C9A91">200</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">          // 删除值为200的元素</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        for</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#59873A;--shiki-dark:#80A665">set</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">iterator it </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#B07D48;--shiki-dark:#BD976A"> st</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">begin</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> it </span><span style="color:#AB5959;--shiki-dark:#CB7676">!=</span><span style="color:#B07D48;--shiki-dark:#BD976A"> st</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">end</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> it</span><span style="color:#AB5959;--shiki-dark:#CB7676">++</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">        </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">            cout </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">it </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">        </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        return</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">    // 输出结果</span></span>
+<span class="line"><span style="color:#2F798A;--shiki-dark:#4C9A91">    300</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 500</span></span></code></pre>
+</li>
+<li>
+<p>**equal_range()：**返回一对迭代器，<strong>分别表示第一个大于或等于给定关键值的元素和第一个大于给定关键值的元素</strong>。这个返回值是一个 pair 类型，第一个是键的 <strong><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/cpp/standard-library/set-class?view=msvc-170&amp;source=docs#lower_bound"><code>lower_bound</code></a></strong>，第二个是键的 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/cpp/standard-library/set-class?view=msvc-170&amp;source=docs#upper_bound">upper_bound</a>。如果这一对定位器中哪个返回失败，则返回 end()</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#999999;--shiki-dark:#666666">    #</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">iostream</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">    #</span><span style="color:#1E754F;--shiki-dark:#4D9375">include</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> &#x3C;</span><span style="color:#B56959;--shiki-dark:#C98A7D">set</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">></span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">    using</span><span style="color:#AB5959;--shiki-dark:#CB7676"> namespace</span><span style="color:#59873A;--shiki-dark:#80A665"> std</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">    int</span><span style="color:#59873A;--shiki-dark:#80A665"> main</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">        set</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> s</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">        set</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">iterator it</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        for</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:#999999;--shiki-dark:#666666"> ;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> i </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">=</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 5</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#AB5959;--shiki-dark:#CB7676"> ++</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">        </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
+<span class="line"><span style="color:#B07D48;--shiki-dark:#BD976A">            s</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">insert</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">i</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">        </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        for</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">it </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#B07D48;--shiki-dark:#BD976A"> s</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">begin</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666"> ;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> it </span><span style="color:#AB5959;--shiki-dark:#CB7676">!=</span><span style="color:#B07D48;--shiki-dark:#BD976A"> s</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">end</span><span style="color:#a65e2b;--shiki-dark:#d4976c">(</span><span style="color:#a65e2b;--shiki-dark:#d4976c">)</span><span style="color:#999999;--shiki-dark:#666666"> ;</span><span style="color:#AB5959;--shiki-dark:#CB7676"> ++</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">it</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">        </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">            cout </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">it </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">        </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">        cout </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> endl</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">        pair</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#59873A;--shiki-dark:#80A665">set</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">const_iterator</span><span style="color:#999999;--shiki-dark:#666666">,</span><span style="color:#59873A;--shiki-dark:#80A665"> set</span><span style="color:#999999;--shiki-dark:#666666">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">int</span><span style="color:#999999;--shiki-dark:#666666">></span><span style="color:#999999;--shiki-dark:#666666">::</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">const_iterator</span><span style="color:#AB5959;--shiki-dark:#CB7676">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> pr</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">        pr </span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#B07D48;--shiki-dark:#BD976A"> s</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#59873A;--shiki-dark:#80A665">equal_range</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#2F798A;--shiki-dark:#4C9A91">3</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">        cout </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">第一个大于等于3的数是：</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#B07D48;--shiki-dark:#BD976A">pr</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#B07D48;--shiki-dark:#BD976A">first</span><span style="color:#AB5959;--shiki-dark:#CB7676"> </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> endl</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">        cout </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">第一个大于3的数是：</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676"> *</span><span style="color:#B07D48;--shiki-dark:#BD976A">pr</span><span style="color:#999999;--shiki-dark:#666666">.</span><span style="color:#B07D48;--shiki-dark:#BD976A">second</span><span style="color:#AB5959;--shiki-dark:#CB7676"> </span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">endl</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#1E754F;--shiki-dark:#4D9375">        return</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 0</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">    </span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"><span style="color:#A0ADA0;--shiki-dark:#758575DD">    // 输出结果</span></span>
+<span class="line"><span style="color:#2F798A;--shiki-dark:#4C9A91">    1</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 2</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 3</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 4</span><span style="color:#2F798A;--shiki-dark:#4C9A91"> 5</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    第一个大于等于3的数是：</span><span style="color:#2F798A;--shiki-dark:#4C9A91">3</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    第一个大于3的数是：</span><span style="color:#2F798A;--shiki-dark:#4C9A91">4</span></span></code></pre>
+</li>
+</ul>
+<p><strong>其他方法</strong></p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-c++"><span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    begin</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">            // 返回指向第一个元素的迭代器</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    end</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">              // 返回指向最后一个元素的后一个位置的迭代器</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    clear</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">            // 清除所有元素</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    count</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">            // 返回某个值元素的个数，用于判断set中是否有该元素</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    size</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">             // 返回集合中元素的数目</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    empty</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">            // 如果集合为空，返回true，否则返回false</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    equal_range</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">      // 返回集合中与给定值相等的上下限的两个迭代器</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    insert</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">           // 在集合中插入元素 </span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    erase</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">            // 删除集合中的元素</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    find</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">             // 返回一个指向被查找到元素的迭代器</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    get_allocator</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">    // 返回集合的分配器</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    upper_bound</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">      // 返回大于某个值元素的迭代器</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    lower_bound</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">      // 返回指向大于（或等于）某值的第一个元素的迭代器</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    key_comp</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">         // 返回一个用于元素键值比较的函数</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    value_comp</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">       // 返回一个用于比较元素间的值的函数</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    max_size</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">         // 返回集合能容纳的元素的最大限值</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    rbegin</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">           // 返回set反转后的开始指针(即原来的end-1)</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    rend</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">             // 返回set反转后的结束指针(即原来的begin-1)</span></span>
+<span class="line"><span style="color:#59873A;--shiki-dark:#80A665">    swap</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span><span style="color:#A0ADA0;--shiki-dark:#758575DD">             // 交换两个集合变量</span></span></code></pre>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="tags/stl/" style="color: #ff7d73">stl</a>
+        </span>
+        
+    </div>
+    <a href="2026/03/28/Stl-set/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="2026/03/27/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/">
+        <h2 class="post-title">类与对象</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/3/27
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="2026/03/27/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="2026/03/27/Stl-vector/">
         <h2 class="post-title">Stl-vector</h2>
     </a>
@@ -306,7 +492,7 @@
         
         <span class="tag">
             
-            <a href="tags/stl/" style="color: #00a596">stl</a>
+            <a href="tags/stl/" style="color: #03a9f4">stl</a>
         </span>
         
     </div>
@@ -596,7 +782,7 @@
         
         <span class="tag">
             
-            <a href="tags/Algorithm/" style="color: #00a596">Algorithm</a>
+            <a href="tags/Algorithm/" style="color: #ff7d73">Algorithm</a>
         </span>
         
     </div>
@@ -663,7 +849,7 @@
         
         <span class="tag">
             
-            <a href="tags/leetcode/" style="color: #ffa2c4">leetcode</a>
+            <a href="tags/leetcode/" style="color: #00a596">leetcode</a>
         </span>
         
     </div>
@@ -775,7 +961,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         
         <span class="tag">
             
-            <a href="tags/note/" style="color: #03a9f4">note</a>
+            <a href="tags/note/" style="color: #00a596">note</a>
         </span>
         
     </div>
@@ -824,7 +1010,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         
         <span class="tag">
             
-            <a href="tags/leetcode/" style="color: #00bcd4">leetcode</a>
+            <a href="tags/leetcode/" style="color: #ffa2c4">leetcode</a>
         </span>
         
     </div>
@@ -864,7 +1050,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         
         <span class="tag">
             
-            <a href="tags/note/" style="color: #03a9f4">note</a>
+            <a href="tags/note/" style="color: #ff7d73">note</a>
         </span>
         
     </div>
@@ -993,152 +1179,11 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         
         <span class="tag">
             
-            <a href="tags/diary/" style="color: #03a9f4">diary</a>
-        </span>
-        
-    </div>
-    <a href="2026/01/15/1-15/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="2025/12/06/12-6/">
-        <h2 class="post-title">四级复习记录12,6</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/12/6
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p><em><strong>一.翻译题（106.5）</strong></em>【25min】</p>
-<p>距离四级考试还有一周，本周的复习重点在于翻译题的词汇积累，以及可能考的重点的预测，对其词汇一固定句式搭配都有所记录，在下周的水课上应该着重复习，<code>留存的几个翻译题可以作为每天的一个练手</code>，这个不能断，一定要保持手感，模拟题最高写出来过90分的翻译，正式上场起码要保证75</p>
-<hr>
-<p><em><strong>二.听力（248.5）</strong></em></p>
-<p>听力这方面挺头疼的，按照网上说的听到什么选什么确实可以保证较高的正确率，差不多能有个177.5分左右，但是错的都是后面14.2的大分值题，但是完全只靠听原文说了什么就选什么我觉得这并不现实，如果遇到陷阱是没有办法应对的，我觉得在男女对话上有必要记录一下每句话对应是男性还是女性说的，我会在下周一或者二，或者这周日就进行尝试，听力作为重点拿分项目，也是最不稳定的，必须保证正确率，听力在考试之前不能断，每天哪怕只听一半也必须继续，<code>务必记得边听边涂卡</code></p>
-<hr>
-<p><em><strong>三.阅读题（248.5）</strong></em></p>
-<p><code>选词填空【剩余时间】</code>，我真是没得话说，这玩意看天命吧，反正让我自己去做对不了几个的，我承认你赢了，我拿你一点办法没有</p>
-<p><code>段落匹配【15min】</code>，<strong>正确率保证在两个以内</strong>，时间上必须精准把握，分数非常好拿，做到不失误不心急就可以了</p>
-<p><code>仔细阅读【25min】</code>分数很高，尽量还是每篇只错一题，速度可以慢一点，毕竟分值非常大</p>
-<hr>
-<p><em><strong>四.作文（106.5）</strong></em>【25min】</p>
-<p>下周的后几天要回头复习语法知识，<code>确保作文内不会出现非常低级的语法错误</code>，在保证语法正确的情况下再去使用高级句式，作文的分数要保证在70，冲80，<code>保证作文段落与段落，句与句之间的连接不生硬</code>，模板不再背诵，精力可以放在同义词的高级替换上，有必要多积累一点</p>
-<hr>
-<blockquote>
-<p>就到此为止了，祝福自己的四级高分通过，wish you and believe yourself !</p>
-</blockquote>
-<p>
-    <div id="aplayer-WdxQqWrJ" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1417055605" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
             <a href="tags/diary/" style="color: #ff7d73">diary</a>
         </span>
         
     </div>
-    <a href="2025/12/06/12-6/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="2025/12/02/12-2/">
-        <h2 class="post-title">闲言12.2</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/12/2
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>​                                                                                                    <strong>一些闲言碎语</strong></p>
-<p>[TOC]</p>
-<p><em>一.关于英语四级</em></p>
-<p><em>二.有关未来规划</em></p>
-<p><em>三.关于竞赛方面的准备</em></p>
-<hr>
-<p><strong>一.关于英语四级</strong></p>
-<p>距离CET4不到10天了，最近两天也没有研究什么算法，在上一次把快速排序写完之后就没有续集了，压力还是有的，但是必然不像高中的时候那么的高压，四级也从原来的只要求自己过线到希望自己能过500分来免修下学期的英语（主要是大学的英语课感觉比高中的还没用）</p>
-<hr>
-<p><strong>二.有关未来规划</strong></p>
-<p>1.最重要的：<code>考研</code></p>
-<p>现在大一，其实时间也并不充裕，大一下学期不仅要准备六级的考试，更要开始着手竞赛的训练，大二更是攻打竞赛的关键一年，而大三，为了考研而努力，大四要为了自己的毕业设计而努力，似乎我的每一年都有着自己需要奋斗的目标，关于院校的选择可能还需要到考研实战去准备的时候才能保证选择的有效性，这里也只能给到自己初步的规划，对于院校的选择也是需要区分地域性和等级性的，那么分类如下：</p>
-<table>
-<thead>
-<tr>
-<th>等级/地域</th>
-<th>上海</th>
-<th>江苏</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>第一梯队</td>
-<td>华北理工大学</td>
-<td>南京理工大学/南京航空航天大学</td>
-</tr>
-<tr>
-<td>第二梯队</td>
-<td>/</td>
-<td>河海大学/江南大学/中国矿业大学</td>
-</tr>
-<tr>
-<td>第三梯队</td>
-<td>/</td>
-<td>南京信息工程大学/南京工业大学</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p><strong>三.关于竞赛方面的准备</strong></p>
-<p>有时间还是尽量参加竞赛，但是我个人觉得最基础的大创和大挑就可以算了，我并不觉得这两个竞赛有多高的含金量，对于我这个专业，我觉得<code>数学建模，数学竞赛，物理竞赛，ACM，蓝桥杯</code>等更具备含金量</p>
-<p>不过相比盲目的准备竞赛，我觉得还是得先在此声明一下准备竞赛的意义：为了让自己在考研复试的时候更具备竞争优势，让面试的老师觉得自己更具备科研能力，更重要的是准备竞赛的过程，可能是未来面对考研，面对研究生生活的一种早日的习惯，毕竟我现在觉得研究生的压力不亚于备战高考时的压力（这句话也送给未来的自己，如果未来的我觉得压力过大，觉得迷茫了，不妨回来再看看这篇文章，说不定未来的我会因为当时大一的自己的无知而感到可笑，也可能因为大一就已经为自己的未来铺好了后路而感到骄傲，我不知道未来的我看到这篇文章是什么反应，我无从考究，我也不得而知，我只知道写这篇文章的时候：2025年12月2日17点53，此时我的目标明确，但也正是因为我对自己的熟知，我不知道未来我是否能把以上的规划都实现，但我希望自己的人生中能有几个亮点）</p>
-<p>
-    <div id="aplayer-hzDnnxiU" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1372188635" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="tags/diary/" style="color: #00a596">diary</a>
-        </span>
-        
-    </div>
-    <a href="2025/12/02/12-2/" class="go-post">阅读全文</a>
+    <a href="2026/01/15/1-15/" class="go-post">阅读全文</a>
 </div>
 
 
