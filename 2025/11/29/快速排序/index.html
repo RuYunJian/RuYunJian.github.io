@@ -42,6 +42,9 @@
 
 
 
+<script src="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.css" />
+
 
 
 
@@ -178,7 +181,7 @@
             
             <span class="tag">
                 
-                <a href="../../../../tags/Algorithm/" style="color: #ff7d73">
+                <a href="../../../../tags/Algorithm/" style="color: #00a596">
                     Algorithm
                 </a>
             </span>
@@ -369,11 +372,15 @@ j 从 low 开始，逐个检查 <code>arr[j]</code> 与 <code>pivot</code> 的�
 <span class="line"></span>
 <span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">n</span><span style="color:#999999;--shiki-dark:#666666">=</span><span style="color:#AB5959;--shiki-dark:#CB7676">sizeof</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">arr</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#AB5959;--shiki-dark:#CB7676">/sizeof</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#B07D48;--shiki-dark:#BD976A">arr</span><span style="color:#1e754f;--shiki-dark:#4d9375">[</span><span style="color:#2F798A;--shiki-dark:#4C9A91">0</span><span style="color:#1e754f;--shiki-dark:#4d9375">]</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span></code></pre>
 <p>
-    <div id="aplayer-xZeEXhlF" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1436961077" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
+    <div id="aplayer-FFKLjSTU" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1436961077" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#00BFFF;loop:one;volume:0.6"></div></p>
 
     </div>
     
     
+    
+    <div id="comment">
+        <div id="gitalk-container"></div>
+    </div>
     
     
     
@@ -414,6 +421,22 @@ j 从 low 开始，逐个检查 <code>arr[j]</code> 与 <code>pivot</code> 的�
     <script src="../../../../js/main.js"></script>
     
     
+
+<script>
+    const gitalk = new Gitalk({
+        clientID: "Ov23lib9xKYSem8GXBfF",
+        clientSecret: "09adbc33407ac1e33d79c32f8251eb73e39d02d2",
+        repo: "blog-comments",
+        owner: "RuYunJian",
+        admin: "RuYunJian".split(","),
+        language: "zh-CN",
+        id: location.pathname,
+        
+        proxy: "https://git.richfan.cn/login/oauth/access_token",
+        
+    })
+    gitalk.render("gitalk-container");
+</script>
 
 
 

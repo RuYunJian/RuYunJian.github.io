@@ -42,6 +42,9 @@
 
 
 
+<script src="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.css" />
+
 
 
 
@@ -175,7 +178,7 @@
             
             <span class="tag">
                 
-                <a href="../../../../tags/diary/" style="color: #03a9f4">
+                <a href="../../../../tags/diary/" style="color: #00bcd4">
                     diary
                 </a>
             </span>
@@ -192,6 +195,10 @@
     </div>
     
     
+    
+    <div id="comment">
+        <div id="gitalk-container"></div>
+    </div>
     
     
     
@@ -232,6 +239,22 @@
     <script src="../../../../js/main.js"></script>
     
     
+
+<script>
+    const gitalk = new Gitalk({
+        clientID: "Ov23lib9xKYSem8GXBfF",
+        clientSecret: "09adbc33407ac1e33d79c32f8251eb73e39d02d2",
+        repo: "blog-comments",
+        owner: "RuYunJian",
+        admin: "RuYunJian".split(","),
+        language: "zh-CN",
+        id: location.pathname,
+        
+        proxy: "https://git.richfan.cn/login/oauth/access_token",
+        
+    })
+    gitalk.render("gitalk-container");
+</script>
 
 
 
