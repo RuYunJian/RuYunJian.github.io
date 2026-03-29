@@ -5,13 +5,61 @@
         <link>https://ruyunjian.github.io</link>
         <description>别弯腰 接受时间躲不开的那一刀</description>
         <language>zh-CN</language>
-        <pubDate>Thu, 26 Mar 2026 21:58:59 +0800</pubDate>
-        <lastBuildDate>Thu, 26 Mar 2026 21:58:59 +0800</lastBuildDate>
+        <pubDate>Sun, 29 Mar 2026 19:25:37 +0800</pubDate>
+        <lastBuildDate>Sun, 29 Mar 2026 19:25:37 +0800</lastBuildDate>
         <category>diary</category>
         <category>leetcode</category>
         <category>note</category>
         <category>stl</category>
         <category>Algorithm</category>
+        <item>
+            <guid isPermalink="true">https://ruyunjian.github.io/2026/03/29/%E5%8F%8C%E6%8C%87%E9%92%88/</guid>
+            <title>双指针与滑动窗口</title>
+            <link>https://ruyunjian.github.io/2026/03/29/%E5%8F%8C%E6%8C%87%E9%92%88/</link>
+            <category>Algorithm</category>
+            <pubDate>Sun, 29 Mar 2026 19:25:37 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;双指针与滑动窗口&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#双指针与滑动窗口&#34;&gt;#&lt;/a&gt; 双指针与滑动窗口&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#题目描述&#34;&gt;#&lt;/a&gt; 题目描述&lt;/h3&gt;
+&lt;p&gt;给定一个整数数组 &lt;code&gt;nums&lt;/code&gt; 和一个整数 &lt;code&gt;k&lt;/code&gt;，请你返回数组中&lt;strong&gt;不同&lt;/strong&gt;的 &lt;strong&gt;k-diff 数对&lt;/strong&gt;的数目。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;k-diff 数对&lt;/strong&gt;定义为一个整数对 &lt;code&gt;(nums[i], nums[j])&lt;/code&gt;，需满足以下全部条件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;0 &amp;lt;= i, j &amp;lt; nums.length&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;i != j&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;nums&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt; -&lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt; nums&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt; ==&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt; k&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;双指针是一个解决暴力枚举的技巧，实则应该连算法都算不上，双指针的一般使用前提是数组内部自然有序，也可以后期自主排列&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;那么就本题而言，假设存在一个数组&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt; arr&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#A0ADA0;--shiki-dark:#758575DD&#34;&gt;//假设我要使得两个数字的相减的差为3&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#A0ADA0;--shiki-dark:#758575DD&#34;&gt;//第一个指针落在1上，第二个落在2上，因为2-1=1，也就是说差值1&amp;#x3C;3,所以需要2更大，那么右边的指针向右滑动&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#A0ADA0;--shiki-dark:#758575DD&#34;&gt;//同理，如果相减出来的值比如4&gt;3,则说明减的数字太大，那么左边的指针向左滑动即可&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;洛谷-p1638-逛画展完整题目&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#洛谷-p1638-逛画展完整题目&#34;&gt;#&lt;/a&gt; 洛谷 P1638 逛画展（完整题目）&lt;/h1&gt;
+&lt;h3 id=&#34;题目描述-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#题目描述-2&#34;&gt;#&lt;/a&gt; 题目描述&lt;/h3&gt;
+&lt;p&gt;博览馆正在展出由世上最佳的 &lt;strong&gt;m&lt;/strong&gt; 位画家所画的图画。&lt;/p&gt;
+&lt;p&gt;游客在购买门票时必须说明两个数字 &lt;strong&gt;x&lt;/strong&gt; 和 &lt;strong&gt;y&lt;/strong&gt;，代表他要看展览中的第 &lt;strong&gt;x&lt;/strong&gt; 幅至第 &lt;strong&gt;y&lt;/strong&gt; 幅画（包含 x, y）之间的所有图画，而门票的价钱就是一张图画一元。&lt;/p&gt;
+&lt;p&gt;Sept 希望入场后可以看到&lt;strong&gt;所有名师&lt;/strong&gt;的图画（每位画家至少一幅）。当然，他想&lt;strong&gt;最小化购买门票的价格&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;请求出他购买门票时应选择的 &lt;strong&gt;x, y&lt;/strong&gt;，数据保证一定有解。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;若存在多组解，输出 x 最小的那组。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;输入格式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#输入格式&#34;&gt;#&lt;/a&gt; 输入格式&lt;/h3&gt;
+&lt;p&gt;第一行两个整数 &lt;strong&gt;n, m&lt;/strong&gt;，分别表示博览馆内的图画总数及画家的数量。&lt;/p&gt;
+&lt;p&gt;第二行包含 &lt;strong&gt;n&lt;/strong&gt; 个整数 &lt;strong&gt;a₁, a₂, ..., aₙ&lt;/strong&gt;，代表第 i 幅画的名师编号（编号介于 1~m 之间）。&lt;/p&gt;
+&lt;h3 id=&#34;解答&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解答&#34;&gt;#&lt;/a&gt; 解答&lt;/h3&gt;
+&lt;p&gt;这是典型的 &lt;strong&gt;滑动窗口（双指针）&lt;/strong&gt; 题目：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用 &lt;strong&gt;l, r&lt;/strong&gt; 维护窗口 [l, r]，保证窗口内包含所有 m 种画家&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;r 右移&lt;/strong&gt;扩大窗口，直到满足条件&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;l 尽可能右移&lt;/strong&gt;缩小窗口，同时保持条件满足，更新最优解&lt;/li&gt;
+&lt;li&gt;统计画家出现次数，用计数器判断是否集齐所有 m 种&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://ruyunjian.github.io/2026/03/26/%E5%93%88%E5%B8%8C%E8%A1%A8%E8%AF%A6%E8%A7%A3/</guid>
             <title>哈希表详解</title>
@@ -458,7 +506,7 @@ j 从 low 开始，逐个检查 &lt;code&gt;arr[j]&lt;/code&gt; 与 &lt;code&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;sizeof&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;arr&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;/sizeof&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;arr&lt;/span&gt;&lt;span style=&#34;color:#1e754f;--shiki-dark:#4d9375&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#1e754f;--shiki-dark:#4d9375&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;
-    &lt;div id=&#34;aplayer-EujSIIhc&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1436961077&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+    &lt;div id=&#34;aplayer-xZeEXhlF&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1436961077&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

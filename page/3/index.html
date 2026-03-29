@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>Cpp两数之和 | 新世界</title>
+    <title>新世界</title>
     <meta name="author" content="南风知我意" />
     <meta name="description" content="别弯腰 接受时间躲不开的那一刀" />
     <meta name="keywords" content="吹梦到西周" />
@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
-    <link rel="icon" href="../../../../images/avatar.jpg" />
+    <link rel="icon" href="../../images/avatar.jpg" />
     <link rel="preconnect" href="https://s4.zstatic.net" />
 <script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
 <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
@@ -32,21 +32,19 @@
     rel="stylesheet"
     href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
 />
-<script src="../../../../js/lib/highlight.js"></script>
+<script src="../../js/lib/highlight.js"></script>
 
 
 
-<script src="../../../../js/lib/preview.js"></script>
-
-
-
-
+<script src="../../js/lib/preview.js"></script>
 
 
 
 
 
-<link rel="stylesheet" href="../../../../css/main.css" />
+<script src="../../js/lib/home.js"></script>
+
+<link rel="stylesheet" href="../../css/main.css" />
 
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body>
@@ -56,7 +54,7 @@
                 <div id="loading-circle">
                     <h2>LOADING</h2>
                     <p>加载过慢请开启缓存 浏览器默认开启</p>
-                    <img src="../../../../images/loading.gif" />
+                    <img src="../../images/loading.gif" />
                 </div>
             </div>
         </transition>
@@ -66,27 +64,27 @@
             <span>新世界</span>
         </a>
         
-        <a href="../../../../index.html">
+        <a href="../../index.html">
             <i class="fa-solid fa-house fa-fw"></i>
             <span>&ensp;Home</span>
         </a>
         
-        <a href="../../../../about">
+        <a href="../../about">
             <i class="fa-solid fa-id-card fa-fw"></i>
             <span>&ensp;About</span>
         </a>
         
-        <a href="../../../../archives">
+        <a href="../../archives">
             <i class="fa-solid fa-box-archive fa-fw"></i>
             <span>&ensp;Archives</span>
         </a>
         
-        <a href="../../../../categories">
+        <a href="../../categories">
             <i class="fa-solid fa-bookmark fa-fw"></i>
             <span>&ensp;Categories</span>
         </a>
         
-        <a href="../../../../tags">
+        <a href="../../tags">
             <i class="fa-solid fa-tags fa-fw"></i>
             <span>&ensp;Tags</span>
         </a>
@@ -100,7 +98,7 @@
         <transition name="slide">
             <div class="items" v-show="showMenuItems">
                 
-                <a href="../../../../index.html">
+                <a href="../../index.html">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-house fa-fw"></i>
@@ -109,7 +107,7 @@
                     </div>
                 </a>
                 
-                <a href="../../../../about">
+                <a href="../../about">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-id-card fa-fw"></i>
@@ -118,7 +116,7 @@
                     </div>
                 </a>
                 
-                <a href="../../../../archives">
+                <a href="../../archives">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-box-archive fa-fw"></i>
@@ -127,7 +125,7 @@
                     </div>
                 </a>
                 
-                <a href="../../../../categories">
+                <a href="../../categories">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-bookmark fa-fw"></i>
@@ -136,7 +134,7 @@
                     </div>
                 </a>
                 
-                <a href="../../../../tags">
+                <a href="../../tags">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-tags fa-fw"></i>
@@ -154,55 +152,121 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div class="article">
-    <div>
-        <h1>Cpp两数之和</h1>
+            <div id="home-head">
+    <div
+        id="home-background"
+        ref="homeBackground"
+        data-images="../../images/background.jpg"
+    ></div>
+    <div id="home-info" @click="homeClick">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>新世界</h1>
+                <h3>看太行 历风霜 万古腔 任我唱</h3>
+                <h5>别弯腰 接受时间躲不开的那一刀</h5>
+            </div>
+        </span>
     </div>
-    <div class="info">
+</div>
+<div
+    id="home-posts-wrap"
+    ref="homePostsWrap"
+    true
+>
+    <div id="home-posts">
+        
+
+<div class="post">
+    <a href="../../2025/11/13/hello-world/">
+        <h2 class="post-title">Hello World</h2>
+    </a>
+    <div class="category-and-date">
+        
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2026/3/22
+            2025/11/13
         </span>
         
-        
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            
-            <span class="tag">
-                
-                <a href="../../../../tags/leetcode/" style="color: #ff7d73">
-                    leetcode
-                </a>
-            </span>
-            
-        </span>
         
     </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start"><a class="anchor" href="#quick-start">#</a> Quick Start</h2>
+<h3 id="create-a-new-post"><a class="anchor" href="#create-a-new-post">#</a> Create a new post</h3>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-bash"><span class="line"><span style="color:#59873A;--shiki-dark:#80A665">$</span><span style="color:#B56959;--shiki-dark:#C98A7D"> hexo</span><span style="color:#B56959;--shiki-dark:#C98A7D"> new</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">My New Post</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span></span></code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server"><a class="anchor" href="#run-server">#</a> Run server</h3>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-bash"><span class="line"><span style="color:#59873A;--shiki-dark:#80A665">$</span><span style="color:#B56959;--shiki-dark:#C98A7D"> hexo</span><span style="color:#B56959;--shiki-dark:#C98A7D"> server</span></span></code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files"><a class="anchor" href="#generate-static-files">#</a> Generate static files</h3>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-bash"><span class="line"><span style="color:#59873A;--shiki-dark:#80A665">$</span><span style="color:#B56959;--shiki-dark:#C98A7D"> hexo</span><span style="color:#B56959;--shiki-dark:#C98A7D"> generate</span></span></code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites"><a class="anchor" href="#deploy-to-remote-sites">#</a> Deploy to remote sites</h3>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-bash"><span class="line"><span style="color:#59873A;--shiki-dark:#80A665">$</span><span style="color:#B56959;--shiki-dark:#C98A7D"> hexo</span><span style="color:#B56959;--shiki-dark:#C98A7D"> deploy</span></span></code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="../../2025/11/13/hello-world/" class="go-post">阅读全文</a>
+</div>
+
+
+        <div class="page-current">
     
-    <div class="content" v-pre>
-        <p>leecode 1 的两数之和使用Cpp的map更好写，也更易于思考</p>
-<p>首先是Cpp中自带map（键值对）类型的变量，只需要<code>#include &lt;map&gt;</code>即可</p>
-<p>在迭代器中学过一个方法名叫find，完整形式为<code>arr.find(date)</code>唯一需要明确的一个点是这个方法的返回值是一个<strong>指针</strong></p>
-<p>相比于C语言的hash_map,它不具备find的方法，在映射追踪方面难以实现，导致在C语言完成两数之和使用哈希表方法的时候非常难理解</p>
-<p>Cpp使用hash_map可以将双循环的O（n2）降低成O（n）</p>
-<p>class sulotion应该是作为封装，但是还没有学到，后续需要跟进</p>
-<hr>
-<p><img src="/../Cpp%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-03-22%20221823.png" alt></p>
-<p>3.22  完成函数与操作符重载（简单来说就是同函数名不同类型的参数）</p>
-<p>类似于int_swap(int,int)&amp;double_swap(double,double)，函数名都是swap，而后面的参数类型可以不同，感觉很方便（第六感）</p>
+    <a class="page-num" href="../2/">
+        <i class="fa-solid fa-caret-left fa-fw"></i>
+    </a>
+    <a class="page-num" href="/">1</a>
+    <span class="page-omit">...</span>
+    
+    <span class="current">3</span>
+    
+    
+    
+    
+</div>
 
     </div>
     
-    
-    
-    
-    
-    
+    <div id="home-card">
+        <div id="card-style">
+    <div id="card-div">
+        <div class="avatar">
+            <img src="../../images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name">南风知我意</div>
+        <div class="description">
+            <p>Description<br>…</p>
+
+        </div>
+        
+        
+        <div class="friend-links">
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://argvchs.github.io">Argvchs</a>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+    </div>
     
 </div>
 
@@ -236,13 +300,7 @@
         </transition>
         
     </div>
-    <script src="../../../../js/main.js"></script>
-    
-    
-
-
-
-
+    <script src="../../js/main.js"></script>
     
 </body>
 </html>
