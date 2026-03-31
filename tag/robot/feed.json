@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "新世界 • All posts by \"robot\" tag",
+    "description": "别弯腰 接受时间躲不开的那一刀",
+    "home_page_url": "https://ruyunjian.github.io",
+    "items": [
+        {
+            "id": "https://ruyunjian.github.io/2026/03/31/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/",
+            "url": "https://ruyunjian.github.io/2026/03/31/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/",
+            "title": "机器人竞赛",
+            "date_published": "2026-03-31T08:17:38.000Z",
+            "content_html": "<link rel=\"stylesheet\" class=\"aplayer-secondary-style-marker\" href=\"\\assets\\css\\APlayer.min.css\"><script src=\"\\assets\\js\\APlayer.min.js\" class=\"aplayer-secondary-script-marker\"></script><script class=\"meting-secondary-script-marker\" src=\"\\assets\\js\\Meting.min.js\"></script><h1 id=\"机器人竞赛相关知识储备\"><a class=\"anchor\" href=\"#机器人竞赛相关知识储备\">#</a> 机器人竞赛相关知识储备</h1>\n<hr>\n<h3 id=\"一机器人竞赛的结构脑图\"><a class=\"anchor\" href=\"#一机器人竞赛的结构脑图\">#</a> 一.机器人竞赛的结构脑图</h3>\n<p><img src=\"/../%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/exported_image.png\" alt></p>\n<hr>\n<h3 id=\"二名词解释\"><a class=\"anchor\" href=\"#二名词解释\">#</a> 二.名词解释</h3>\n<table>\n<thead>\n<tr>\n<th>名词</th>\n<th>说明</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>LUA</td>\n<td>一种脚本语言，可被 C/C++ 调用，也可调用 C/C++ 函数，易理解维护</td>\n</tr>\n<tr>\n<td>SOM</td>\n<td>乐博小型足球机器人操作管理系统</td>\n</tr>\n<tr>\n<td>SRB</td>\n<td>乐博小型足球机器人仿真模拟裁判盒软件</td>\n</tr>\n<tr>\n<td>SV</td>\n<td>乐博小型足球机器人视觉系统</td>\n</tr>\n<tr>\n<td>play</td>\n<td>对多台机器人下达的一次运动决策</td>\n</tr>\n<tr>\n<td>task</td>\n<td>单个机器人所需执行的任务</td>\n</tr>\n<tr>\n<td>skill</td>\n<td>机器人所能完成的一个单项动作</td>\n</tr>\n<tr>\n<td>worldmodel_lib.lib</td>\n<td>官方提供的静态库，用于获取球场信息</td>\n</tr>\n<tr>\n<td>utils</td>\n<td>官方提供的工具包，提供算法与常量接口</td>\n</tr>\n</tbody>\n</table>\n<hr>\n<h3 id=\"三赛事规则及操作简介\"><a class=\"anchor\" href=\"#三赛事规则及操作简介\">#</a> 三.赛事规则及操作简介</h3>\n<p><img src=\"/../%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/exported_image%20(1).png\" alt></p>\n<hr>\n<h3 id=\"四机器人编程相关操作\"><a class=\"anchor\" href=\"#四机器人编程相关操作\">#</a> 四.机器人编程相关操作</h3>\n<p><img src=\"/../%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/exported_image%20(2).png\" alt></p>\n",
+            "tags": [
+                "robot"
+            ]
+        }
+    ]
+}

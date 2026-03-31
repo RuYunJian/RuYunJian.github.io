@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://ruyunjian.github.io</id>
+    <title>新世界 • Posts by &#34;robot&#34; tag</title>
+    <link href="https://ruyunjian.github.io" />
+    <updated>2026-03-31T08:17:38.000Z</updated>
+    <category term="leetcode" />
+    <category term="diary" />
+    <category term="note" />
+    <category term="stl" />
+    <category term="Algorithm" />
+    <category term="robot" />
+    <entry>
+        <id>https://ruyunjian.github.io/2026/03/31/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/</id>
+        <title>机器人竞赛</title>
+        <link rel="alternate" href="https://ruyunjian.github.io/2026/03/31/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;机器人竞赛相关知识储备&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#机器人竞赛相关知识储备&#34;&gt;#&lt;/a&gt; 机器人竞赛相关知识储备&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;一机器人竞赛的结构脑图&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一机器人竞赛的结构脑图&#34;&gt;#&lt;/a&gt; 一.机器人竞赛的结构脑图&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;/../%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/exported_image.png&#34; alt&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;二名词解释&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#二名词解释&#34;&gt;#&lt;/a&gt; 二.名词解释&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名词&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;LUA&lt;/td&gt;
+&lt;td&gt;一种脚本语言，可被 C/C++ 调用，也可调用 C/C++ 函数，易理解维护&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SOM&lt;/td&gt;
+&lt;td&gt;乐博小型足球机器人操作管理系统&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SRB&lt;/td&gt;
+&lt;td&gt;乐博小型足球机器人仿真模拟裁判盒软件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SV&lt;/td&gt;
+&lt;td&gt;乐博小型足球机器人视觉系统&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;play&lt;/td&gt;
+&lt;td&gt;对多台机器人下达的一次运动决策&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;task&lt;/td&gt;
+&lt;td&gt;单个机器人所需执行的任务&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;skill&lt;/td&gt;
+&lt;td&gt;机器人所能完成的一个单项动作&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;worldmodel_lib.lib&lt;/td&gt;
+&lt;td&gt;官方提供的静态库，用于获取球场信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;utils&lt;/td&gt;
+&lt;td&gt;官方提供的工具包，提供算法与常量接口&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;三赛事规则及操作简介&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三赛事规则及操作简介&#34;&gt;#&lt;/a&gt; 三.赛事规则及操作简介&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;/../%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/exported_image%20(1).png&#34; alt&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;四机器人编程相关操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#四机器人编程相关操作&#34;&gt;#&lt;/a&gt; 四.机器人编程相关操作&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;/../%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/exported_image%20(2).png&#34; alt&gt;&lt;/p&gt;
+</content>
+        <category term="robot" />
+        <updated>2026-03-31T08:17:38.000Z</updated>
+    </entry>
+</feed>

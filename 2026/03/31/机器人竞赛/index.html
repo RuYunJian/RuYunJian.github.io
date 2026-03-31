@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>Tags: note | 新世界</title>
+    <title>机器人竞赛 | 新世界</title>
     <meta name="author" content="南风知我意" />
     <meta name="description" content="别弯腰 接受时间躲不开的那一刀" />
     <meta name="keywords" content="吹梦到西周" />
@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
-    <link rel="icon" href="../../images/avatar.jpg" />
+    <link rel="icon" href="../../../../images/avatar.jpg" />
     <link rel="preconnect" href="https://s4.zstatic.net" />
 <script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
 <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
@@ -32,17 +32,24 @@
     rel="stylesheet"
     href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
 />
-<script src="../../js/lib/highlight.js"></script>
+<script src="../../../../js/lib/highlight.js"></script>
 
 
 
-<script src="../../js/lib/preview.js"></script>
+<script src="../../../../js/lib/preview.js"></script>
 
 
 
 
 
-<link rel="stylesheet" href="../../css/main.css" />
+<script src="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.css" />
+
+
+
+
+
+<link rel="stylesheet" href="../../../../css/main.css" />
 
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body>
@@ -52,7 +59,7 @@
                 <div id="loading-circle">
                     <h2>LOADING</h2>
                     <p>加载过慢请开启缓存 浏览器默认开启</p>
-                    <img src="../../images/loading.gif" />
+                    <img src="../../../../images/loading.gif" />
                 </div>
             </div>
         </transition>
@@ -62,27 +69,27 @@
             <span>新世界</span>
         </a>
         
-        <a href="../../index.html">
+        <a href="../../../../index.html">
             <i class="fa-solid fa-house fa-fw"></i>
             <span>&ensp;Home</span>
         </a>
         
-        <a href="../../about">
+        <a href="../../../../about">
             <i class="fa-solid fa-id-card fa-fw"></i>
             <span>&ensp;About</span>
         </a>
         
-        <a href="../../archives">
+        <a href="../../../../archives">
             <i class="fa-solid fa-box-archive fa-fw"></i>
             <span>&ensp;Archives</span>
         </a>
         
-        <a href="../../categories">
+        <a href="../../../../categories">
             <i class="fa-solid fa-bookmark fa-fw"></i>
             <span>&ensp;Categories</span>
         </a>
         
-        <a href="../../tags">
+        <a href="../../../../tags">
             <i class="fa-solid fa-tags fa-fw"></i>
             <span>&ensp;Tags</span>
         </a>
@@ -96,7 +103,7 @@
         <transition name="slide">
             <div class="items" v-show="showMenuItems">
                 
-                <a href="../../index.html">
+                <a href="../../../../index.html">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-house fa-fw"></i>
@@ -105,7 +112,7 @@
                     </div>
                 </a>
                 
-                <a href="../../about">
+                <a href="../../../../about">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-id-card fa-fw"></i>
@@ -114,7 +121,7 @@
                     </div>
                 </a>
                 
-                <a href="../../archives">
+                <a href="../../../../archives">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-box-archive fa-fw"></i>
@@ -123,7 +130,7 @@
                     </div>
                 </a>
                 
-                <a href="../../categories">
+                <a href="../../../../categories">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-bookmark fa-fw"></i>
@@ -132,7 +139,7 @@
                     </div>
                 </a>
                 
-                <a href="../../tags">
+                <a href="../../../../tags">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-tags fa-fw"></i>
@@ -150,196 +157,107 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        
-        <span>
-            <a href="../leetcode/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                leetcode
-            </a>
+            <div class="article">
+    <div>
+        <h1>机器人竞赛</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/3/31
         </span>
         
         
-        
-        <span>
-            <a href="../diary/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                diary
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="../../../../tags/robot/" style="color: #00bcd4">
+                    robot
+                </a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                note
-            </a>
-        </span>
-        
-        
-        
-        
-        
-        <span>
-            <a href="../stl/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                stl
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="../Algorithm/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Algorithm
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="../robot/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                robot
-            </a>
-        </span>
-        
         
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2026/3/23</div>
-            <a href="../../2026/03/23/Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/">
-                <h3>Cpp笔记总结S1</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="" style="color: #ff7d73">
-                            note
-                        </a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
+    <div class="content" v-pre>
+        <h1 id="机器人竞赛相关知识储备"><a class="anchor" href="#机器人竞赛相关知识储备">#</a> 机器人竞赛相关知识储备</h1>
+<hr>
+<h3 id="一机器人竞赛的结构脑图"><a class="anchor" href="#一机器人竞赛的结构脑图">#</a> 一.机器人竞赛的结构脑图</h3>
+<p><img src="/../%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/exported_image.png" alt></p>
+<hr>
+<h3 id="二名词解释"><a class="anchor" href="#二名词解释">#</a> 二.名词解释</h3>
+<table>
+<thead>
+<tr>
+<th>名词</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LUA</td>
+<td>一种脚本语言，可被 C/C++ 调用，也可调用 C/C++ 函数，易理解维护</td>
+</tr>
+<tr>
+<td>SOM</td>
+<td>乐博小型足球机器人操作管理系统</td>
+</tr>
+<tr>
+<td>SRB</td>
+<td>乐博小型足球机器人仿真模拟裁判盒软件</td>
+</tr>
+<tr>
+<td>SV</td>
+<td>乐博小型足球机器人视觉系统</td>
+</tr>
+<tr>
+<td>play</td>
+<td>对多台机器人下达的一次运动决策</td>
+</tr>
+<tr>
+<td>task</td>
+<td>单个机器人所需执行的任务</td>
+</tr>
+<tr>
+<td>skill</td>
+<td>机器人所能完成的一个单项动作</td>
+</tr>
+<tr>
+<td>worldmodel_lib.lib</td>
+<td>官方提供的静态库，用于获取球场信息</td>
+</tr>
+<tr>
+<td>utils</td>
+<td>官方提供的工具包，提供算法与常量接口</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="三赛事规则及操作简介"><a class="anchor" href="#三赛事规则及操作简介">#</a> 三.赛事规则及操作简介</h3>
+<p><img src="/../%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/exported_image%20(1).png" alt></p>
+<hr>
+<h3 id="四机器人编程相关操作"><a class="anchor" href="#四机器人编程相关操作">#</a> 四.机器人编程相关操作</h3>
+<p><img src="/../%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/exported_image%20(2).png" alt></p>
+
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2026/3/21</div>
-            <a href="../../2026/03/21/Cpp%E5%85%A5%E9%97%A8/">
-                <h3>Cpp入门</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="" style="color: #ffa2c4">
-                            note
-                        </a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
+    
+    
+    <div id="comment">
+        <div id="gitalk-container"></div>
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2025/11/29</div>
-            <a href="../../2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/">
-                <h3>数组元素个数的动态分配</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="" style="color: #ff7d73">
-                            note
-                        </a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
-    </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2025/11/22</div>
-            <a href="../../2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">
-                <h3>冒泡排序</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="" style="color: #ffa2c4">
-                            note
-                        </a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
-    </div>
+    
+    
     
 </div>
 
@@ -373,7 +291,29 @@
         </transition>
         
     </div>
-    <script src="../../js/main.js"></script>
+    <script src="../../../../js/main.js"></script>
+    
+    
+
+<script>
+    const gitalk = new Gitalk({
+        clientID: "Ov23lib9xKYSem8GXBfF",
+        clientSecret: "09adbc33407ac1e33d79c32f8251eb73e39d02d2",
+        repo: "blog-comments",
+        owner: "RuYunJian",
+        admin: "RuYunJian".split(","),
+        language: "zh-CN",
+        id: location.pathname,
+        
+        proxy: "https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token",
+        
+    })
+    gitalk.render("gitalk-container");
+</script>
+
+
+
+
     
 </body>
 </html>

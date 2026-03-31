@@ -7,11 +7,12 @@
         <language>zh-CN</language>
         <pubDate>Sat, 28 Mar 2026 11:41:17 +0800</pubDate>
         <lastBuildDate>Sat, 28 Mar 2026 11:41:17 +0800</lastBuildDate>
-        <category>diary</category>
         <category>leetcode</category>
+        <category>diary</category>
         <category>note</category>
         <category>stl</category>
         <category>Algorithm</category>
+        <category>robot</category>
         <item>
             <guid isPermalink="true">https://ruyunjian.github.io/2026/03/28/Stl-set/</guid>
             <title>Stl-set</title>
