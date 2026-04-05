@@ -5,14 +5,184 @@
         <link>https://ruyunjian.github.io</link>
         <description>别弯腰 接受时间躲不开的那一刀</description>
         <language>zh-CN</language>
-        <pubDate>Tue, 31 Mar 2026 16:17:38 +0800</pubDate>
-        <lastBuildDate>Tue, 31 Mar 2026 16:17:38 +0800</lastBuildDate>
+        <pubDate>Sun, 05 Apr 2026 17:07:52 +0800</pubDate>
+        <lastBuildDate>Sun, 05 Apr 2026 17:07:52 +0800</lastBuildDate>
         <category>diary</category>
         <category>leetcode</category>
         <category>note</category>
         <category>stl</category>
         <category>Algorithm</category>
         <category>robot</category>
+        <item>
+            <guid isPermalink="true">https://ruyunjian.github.io/2026/04/05/%E8%B5%9B%E5%89%8D%E5%87%86%E5%A4%87%E6%B8%85%E5%8D%95/</guid>
+            <title>赛前准备清单</title>
+            <link>https://ruyunjian.github.io/2026/04/05/%E8%B5%9B%E5%89%8D%E5%87%86%E5%A4%87%E6%B8%85%E5%8D%95/</link>
+            <category>robot</category>
+            <pubDate>Sun, 05 Apr 2026 17:07:52 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;机器人竞赛赛前准备文件清单&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#机器人竞赛赛前准备文件清单&#34;&gt;#&lt;/a&gt; 机器人竞赛赛前准备文件清单&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;一-lua-战术脚本文件lua&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一-lua-战术脚本文件lua&#34;&gt;#&lt;/a&gt; 一、Lua 战术脚本文件（&lt;code&gt;.lua&lt;/code&gt;）&lt;/h2&gt;
+&lt;p&gt;这些是你必须编写的战术脚本，放在 &lt;code&gt;Team/lua_scripts/play/Ref/&lt;/code&gt; 对应目录下：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文件名&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;存放目录&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;NormalPlayDefend.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;正常比赛战术&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Nor/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_KickOff.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;中场开球&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/KickOff/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_KickOffDef.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;中场开球防守&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/KickOffDef/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_BackKick.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;后场任意球&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/BackKick/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_BackDef.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;后场任意球防守&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/BackDef/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_MiddleKick.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;中场任意球&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/MiddleKick/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_MiddleDef.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;中场任意球防守&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/MiddleDef/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_FrontKick.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;前场任意球&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/FrontKick/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_FrontDef.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;前场任意球防守&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/FrontDef/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_CornerKick.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;角球任意球&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/CornerKick/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_CornerDef.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;角球防守&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/CornerDef/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_PenaltyKick.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;点球&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/PenaltyKick/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_PenaltyDef.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;点球防守&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/PenaltyDef/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_Stop.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;停止&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/GameStop/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;二-自定义-skill-技能文件dll&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#二-自定义-skill-技能文件dll&#34;&gt;#&lt;/a&gt; 二、自定义 Skill 技能文件（&lt;code&gt;.dll&lt;/code&gt;）&lt;/h2&gt;
+&lt;p&gt;如果你需要自定义技能（比官方13个skill更强），需要用 C++ 编写并编译：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文件名&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;存放目录&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;你的技能名.dll&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;自定义 skill 动态链接库&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Team/user_skills/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;对应的 C++ 源码文件（编译前）：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文件名&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;你的技能名.h&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;头文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;你的技能名.cpp&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;源文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;三-区域调度脚本lua可选修改&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三-区域调度脚本lua可选修改&#34;&gt;#&lt;/a&gt; 三、区域调度脚本（&lt;code&gt;.lua&lt;/code&gt;，可选修改）&lt;/h2&gt;
+&lt;p&gt;这两个文件已有默认版本，但你可以根据战术需要修改前/中/后场的区域划分参数：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文件名&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;OurIndirectKick.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;进攻任意球区域调度&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;TheirIndirectKick.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;防守任意球区域调度&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;四-总结&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#四-总结&#34;&gt;#&lt;/a&gt; 四、总结&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;最少准备清单（14个lua + 若干dll）：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-lua&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_KickOff&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_KickOffDef&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_BackKick&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_BackDef&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_MiddleKick&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_MiddleDef&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_FrontKick&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_FrontDef&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_CornerKick&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_CornerDef&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_PenaltyKick&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_PenaltyDef&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_Stop&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;NormalPlayDefend&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;└── 你的自定义skill.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;dll&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;（可选，放在user_skills目录）&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：如果你只用官方的13个task函数（如 &lt;code&gt;task.Shoot()&lt;/code&gt;、&lt;code&gt;task.GetBall()&lt;/code&gt; 等），就&lt;strong&gt;不需要写 .dll 文件&lt;/strong&gt;。只有当你觉得官方skill不够用、想自己设计更强的技能时，才需要写 C++ 编译成 &lt;code&gt;.dll&lt;/code&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://ruyunjian.github.io/2026/03/31/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/</guid>
             <title>机器人竞赛</title>

@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>机器人竞赛 | 新世界</title>
+    <title>赛前准备清单 | 新世界</title>
     <meta name="author" content="南风知我意" />
     <meta name="description" content="别弯腰 接受时间躲不开的那一刀" />
     <meta name="keywords" content="吹梦到西周" />
@@ -159,14 +159,14 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>机器人竞赛</h1>
+        <h1>赛前准备清单</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2026/3/31
+            2026/4/5
         </span>
         
         
@@ -178,7 +178,7 @@
             
             <span class="tag">
                 
-                <a href="../../../../tags/robot/" style="color: #00a596">
+                <a href="../../../../tags/robot/" style="color: #00bcd4">
                     robot
                 </a>
             </span>
@@ -188,64 +188,168 @@
     </div>
     
     <div class="content" v-pre>
-        <h1 id="机器人竞赛相关知识储备"><a class="anchor" href="#机器人竞赛相关知识储备">#</a> 机器人竞赛相关知识储备</h1>
+        <h1 id="机器人竞赛赛前准备文件清单"><a class="anchor" href="#机器人竞赛赛前准备文件清单">#</a> 机器人竞赛赛前准备文件清单</h1>
 <hr>
-<h3 id="一机器人竞赛的结构脑图"><a class="anchor" href="#一机器人竞赛的结构脑图">#</a> 一.机器人竞赛的结构脑图</h3>
-<p><img src="/../%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/exported_image.png" alt></p>
-<hr>
-<h3 id="二名词解释"><a class="anchor" href="#二名词解释">#</a> 二.名词解释</h3>
+<h2 id="一-lua-战术脚本文件lua"><a class="anchor" href="#一-lua-战术脚本文件lua">#</a> 一、Lua 战术脚本文件（<code>.lua</code>）</h2>
+<p>这些是你必须编写的战术脚本，放在 <code>Team/lua_scripts/play/Ref/</code> 对应目录下：</p>
 <table>
 <thead>
 <tr>
-<th>名词</th>
+<th>文件名</th>
+<th>说明</th>
+<th>存放目录</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NormalPlayDefend.lua</code></td>
+<td>正常比赛战术</td>
+<td><code>play/Nor/</code></td>
+</tr>
+<tr>
+<td><code>Ref_KickOff.lua</code></td>
+<td>中场开球</td>
+<td><code>play/Ref/KickOff/</code></td>
+</tr>
+<tr>
+<td><code>Ref_KickOffDef.lua</code></td>
+<td>中场开球防守</td>
+<td><code>play/Ref/KickOffDef/</code></td>
+</tr>
+<tr>
+<td><code>Ref_BackKick.lua</code></td>
+<td>后场任意球</td>
+<td><code>play/Ref/BackKick/</code></td>
+</tr>
+<tr>
+<td><code>Ref_BackDef.lua</code></td>
+<td>后场任意球防守</td>
+<td><code>play/Ref/BackDef/</code></td>
+</tr>
+<tr>
+<td><code>Ref_MiddleKick.lua</code></td>
+<td>中场任意球</td>
+<td><code>play/Ref/MiddleKick/</code></td>
+</tr>
+<tr>
+<td><code>Ref_MiddleDef.lua</code></td>
+<td>中场任意球防守</td>
+<td><code>play/Ref/MiddleDef/</code></td>
+</tr>
+<tr>
+<td><code>Ref_FrontKick.lua</code></td>
+<td>前场任意球</td>
+<td><code>play/Ref/FrontKick/</code></td>
+</tr>
+<tr>
+<td><code>Ref_FrontDef.lua</code></td>
+<td>前场任意球防守</td>
+<td><code>play/Ref/FrontDef/</code></td>
+</tr>
+<tr>
+<td><code>Ref_CornerKick.lua</code></td>
+<td>角球任意球</td>
+<td><code>play/Ref/CornerKick/</code></td>
+</tr>
+<tr>
+<td><code>Ref_CornerDef.lua</code></td>
+<td>角球防守</td>
+<td><code>play/Ref/CornerDef/</code></td>
+</tr>
+<tr>
+<td><code>Ref_PenaltyKick.lua</code></td>
+<td>点球</td>
+<td><code>play/Ref/PenaltyKick/</code></td>
+</tr>
+<tr>
+<td><code>Ref_PenaltyDef.lua</code></td>
+<td>点球防守</td>
+<td><code>play/Ref/PenaltyDef/</code></td>
+</tr>
+<tr>
+<td><code>Ref_Stop.lua</code></td>
+<td>停止</td>
+<td><code>play/Ref/GameStop/</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="二-自定义-skill-技能文件dll"><a class="anchor" href="#二-自定义-skill-技能文件dll">#</a> 二、自定义 Skill 技能文件（<code>.dll</code>）</h2>
+<p>如果你需要自定义技能（比官方13个skill更强），需要用 C++ 编写并编译：</p>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>说明</th>
+<th>存放目录</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>你的技能名.dll</code></td>
+<td>自定义 skill 动态链接库</td>
+<td><code>Team/user_skills/</code></td>
+</tr>
+</tbody>
+</table>
+<p>对应的 C++ 源码文件（编译前）：</p>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
 <th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>LUA</td>
-<td>一种脚本语言，可被 C/C++ 调用，也可调用 C/C++ 函数，易理解维护</td>
+<td><code>你的技能名.h</code></td>
+<td>头文件</td>
 </tr>
 <tr>
-<td>SOM</td>
-<td>乐博小型足球机器人操作管理系统</td>
-</tr>
-<tr>
-<td>SRB</td>
-<td>乐博小型足球机器人仿真模拟裁判盒软件</td>
-</tr>
-<tr>
-<td>SV</td>
-<td>乐博小型足球机器人视觉系统</td>
-</tr>
-<tr>
-<td>play</td>
-<td>对多台机器人下达的一次运动决策</td>
-</tr>
-<tr>
-<td>task</td>
-<td>单个机器人所需执行的任务</td>
-</tr>
-<tr>
-<td>skill</td>
-<td>机器人所能完成的一个单项动作</td>
-</tr>
-<tr>
-<td>worldmodel_lib.lib</td>
-<td>官方提供的静态库，用于获取球场信息</td>
-</tr>
-<tr>
-<td>utils</td>
-<td>官方提供的工具包，提供算法与常量接口</td>
+<td><code>你的技能名.cpp</code></td>
+<td>源文件</td>
 </tr>
 </tbody>
 </table>
-<hr>
-<h3 id="三赛事规则及操作简介"><a class="anchor" href="#三赛事规则及操作简介">#</a> 三.赛事规则及操作简介</h3>
-<p><img src="/../%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/exported_image%20(1).png" alt></p>
-<hr>
-<h3 id="四机器人编程相关操作"><a class="anchor" href="#四机器人编程相关操作">#</a> 四.机器人编程相关操作</h3>
-<p><img src="/../%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/exported_image%20(2).png" alt></p>
+<h2 id="三-区域调度脚本lua可选修改"><a class="anchor" href="#三-区域调度脚本lua可选修改">#</a> 三、区域调度脚本（<code>.lua</code>，可选修改）</h2>
+<p>这两个文件已有默认版本，但你可以根据战术需要修改前/中/后场的区域划分参数：</p>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OurIndirectKick.lua</code></td>
+<td>进攻任意球区域调度</td>
+</tr>
+<tr>
+<td><code>TheirIndirectKick.lua</code></td>
+<td>防守任意球区域调度</td>
+</tr>
+</tbody>
+</table>
+<h2 id="四-总结"><a class="anchor" href="#四-总结">#</a> 四、总结</h2>
+<p><strong>最少准备清单（14个lua + 若干dll）：</strong></p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-lua"><span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_KickOff</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_KickOffDef</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_BackKick</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_BackDef</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_MiddleKick</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_MiddleDef</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_FrontKick</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_FrontDef</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_CornerKick</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_CornerDef</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_PenaltyKick</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_PenaltyDef</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_Stop</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">NormalPlayDefend</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">└── 你的自定义skill.</span><span style="color:#59873A;--shiki-dark:#80A665">dll</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">（可选，放在user_skills目录）</span></span></code></pre>
+<blockquote>
+<p><strong>注意</strong>：如果你只用官方的13个task函数（如 <code>task.Shoot()</code>、<code>task.GetBall()</code> 等），就<strong>不需要写 .dll 文件</strong>。只有当你觉得官方skill不够用、想自己设计更强的技能时，才需要写 C++ 编译成 <code>.dll</code>。</p>
+</blockquote>
 
     </div>
     

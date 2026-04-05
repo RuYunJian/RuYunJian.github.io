@@ -5,14 +5,184 @@
         <link>https://ruyunjian.github.io</link>
         <description>别弯腰 接受时间躲不开的那一刀</description>
         <language>zh-CN</language>
-        <pubDate>Tue, 31 Mar 2026 16:17:38 +0800</pubDate>
-        <lastBuildDate>Tue, 31 Mar 2026 16:17:38 +0800</lastBuildDate>
+        <pubDate>Sun, 05 Apr 2026 17:07:52 +0800</pubDate>
+        <lastBuildDate>Sun, 05 Apr 2026 17:07:52 +0800</lastBuildDate>
         <category>diary</category>
         <category>leetcode</category>
         <category>note</category>
         <category>stl</category>
         <category>Algorithm</category>
         <category>robot</category>
+        <item>
+            <guid isPermalink="true">https://ruyunjian.github.io/2026/04/05/%E8%B5%9B%E5%89%8D%E5%87%86%E5%A4%87%E6%B8%85%E5%8D%95/</guid>
+            <title>赛前准备清单</title>
+            <link>https://ruyunjian.github.io/2026/04/05/%E8%B5%9B%E5%89%8D%E5%87%86%E5%A4%87%E6%B8%85%E5%8D%95/</link>
+            <category>robot</category>
+            <pubDate>Sun, 05 Apr 2026 17:07:52 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;机器人竞赛赛前准备文件清单&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#机器人竞赛赛前准备文件清单&#34;&gt;#&lt;/a&gt; 机器人竞赛赛前准备文件清单&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;一-lua-战术脚本文件lua&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一-lua-战术脚本文件lua&#34;&gt;#&lt;/a&gt; 一、Lua 战术脚本文件（&lt;code&gt;.lua&lt;/code&gt;）&lt;/h2&gt;
+&lt;p&gt;这些是你必须编写的战术脚本，放在 &lt;code&gt;Team/lua_scripts/play/Ref/&lt;/code&gt; 对应目录下：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文件名&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;存放目录&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;NormalPlayDefend.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;正常比赛战术&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Nor/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_KickOff.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;中场开球&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/KickOff/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_KickOffDef.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;中场开球防守&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/KickOffDef/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_BackKick.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;后场任意球&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/BackKick/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_BackDef.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;后场任意球防守&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/BackDef/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_MiddleKick.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;中场任意球&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/MiddleKick/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_MiddleDef.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;中场任意球防守&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/MiddleDef/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_FrontKick.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;前场任意球&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/FrontKick/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_FrontDef.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;前场任意球防守&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/FrontDef/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_CornerKick.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;角球任意球&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/CornerKick/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_CornerDef.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;角球防守&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/CornerDef/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_PenaltyKick.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;点球&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/PenaltyKick/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_PenaltyDef.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;点球防守&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/PenaltyDef/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Ref_Stop.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;停止&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;play/Ref/GameStop/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;二-自定义-skill-技能文件dll&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#二-自定义-skill-技能文件dll&#34;&gt;#&lt;/a&gt; 二、自定义 Skill 技能文件（&lt;code&gt;.dll&lt;/code&gt;）&lt;/h2&gt;
+&lt;p&gt;如果你需要自定义技能（比官方13个skill更强），需要用 C++ 编写并编译：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文件名&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;存放目录&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;你的技能名.dll&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;自定义 skill 动态链接库&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Team/user_skills/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;对应的 C++ 源码文件（编译前）：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文件名&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;你的技能名.h&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;头文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;你的技能名.cpp&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;源文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;三-区域调度脚本lua可选修改&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三-区域调度脚本lua可选修改&#34;&gt;#&lt;/a&gt; 三、区域调度脚本（&lt;code&gt;.lua&lt;/code&gt;，可选修改）&lt;/h2&gt;
+&lt;p&gt;这两个文件已有默认版本，但你可以根据战术需要修改前/中/后场的区域划分参数：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文件名&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;OurIndirectKick.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;进攻任意球区域调度&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;TheirIndirectKick.lua&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;防守任意球区域调度&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;四-总结&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#四-总结&#34;&gt;#&lt;/a&gt; 四、总结&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;最少准备清单（14个lua + 若干dll）：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-lua&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_KickOff&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_KickOffDef&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_BackKick&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_BackDef&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_MiddleKick&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_MiddleDef&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_FrontKick&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_FrontDef&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_CornerKick&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_CornerDef&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_PenaltyKick&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_PenaltyDef&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;Ref_Stop&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;├── &lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;NormalPlayDefend&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;lua&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;└── 你的自定义skill.&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt;dll&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;（可选，放在user_skills目录）&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：如果你只用官方的13个task函数（如 &lt;code&gt;task.Shoot()&lt;/code&gt;、&lt;code&gt;task.GetBall()&lt;/code&gt; 等），就&lt;strong&gt;不需要写 .dll 文件&lt;/strong&gt;。只有当你觉得官方skill不够用、想自己设计更强的技能时，才需要写 C++ 编译成 &lt;code&gt;.dll&lt;/code&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://ruyunjian.github.io/2026/03/31/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/</guid>
             <title>机器人竞赛</title>
@@ -855,7 +1025,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
 &lt;p&gt;就到此为止了，祝福自己的四级高分通过，wish you and believe yourself !&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;
-    &lt;div id=&#34;aplayer-vbNGjPoC&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1417055605&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+    &lt;div id=&#34;aplayer-RIhcKRPZ&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1417055605&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -907,7 +1077,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
 &lt;p&gt;有时间还是尽量参加竞赛，但是我个人觉得最基础的大创和大挑就可以算了，我并不觉得这两个竞赛有多高的含金量，对于我这个专业，我觉得&lt;code&gt;数学建模，数学竞赛，物理竞赛，ACM，蓝桥杯&lt;/code&gt;等更具备含金量&lt;/p&gt;
 &lt;p&gt;不过相比盲目的准备竞赛，我觉得还是得先在此声明一下准备竞赛的意义：为了让自己在考研复试的时候更具备竞争优势，让面试的老师觉得自己更具备科研能力，更重要的是准备竞赛的过程，可能是未来面对考研，面对研究生生活的一种早日的习惯，毕竟我现在觉得研究生的压力不亚于备战高考时的压力（这句话也送给未来的自己，如果未来的我觉得压力过大，觉得迷茫了，不妨回来再看看这篇文章，说不定未来的我会因为当时大一的自己的无知而感到可笑，也可能因为大一就已经为自己的未来铺好了后路而感到骄傲，我不知道未来的我看到这篇文章是什么反应，我无从考究，我也不得而知，我只知道写这篇文章的时候：2025年12月2日17点53，此时我的目标明确，但也正是因为我对自己的熟知，我不知道未来我是否能把以上的规划都实现，但我希望自己的人生中能有几个亮点）&lt;/p&gt;
 &lt;p&gt;
-    &lt;div id=&#34;aplayer-ejvOKkSZ&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1372188635&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+    &lt;div id=&#34;aplayer-NfIkoGzh&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1372188635&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -1130,7 +1300,7 @@ j 从 low 开始，逐个检查 &lt;code&gt;arr[j]&lt;/code&gt; 与 &lt;code&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;sizeof&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;arr&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;/sizeof&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#B07D48;--shiki-dark:#BD976A&#34;&gt;arr&lt;/span&gt;&lt;span style=&#34;color:#1e754f;--shiki-dark:#4d9375&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#1e754f;--shiki-dark:#4d9375&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;
-    &lt;div id=&#34;aplayer-bKAQzyyQ&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1436961077&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
+    &lt;div id=&#34;aplayer-hahSUCSq&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34; data-id=&#34;1436961077&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;auto&#34; data-theme=&#34;#00BFFF;loop:one;volume:0.6&#34;&gt;&lt;/div&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>

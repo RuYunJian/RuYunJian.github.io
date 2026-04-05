@@ -181,6 +181,207 @@
         
 
 <div class="post">
+    <a href="2026/04/05/%E8%B5%9B%E5%89%8D%E5%87%86%E5%A4%87%E6%B8%85%E5%8D%95/">
+        <h2 class="post-title">赛前准备清单</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/4/5
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="机器人竞赛赛前准备文件清单"><a class="anchor" href="#机器人竞赛赛前准备文件清单">#</a> 机器人竞赛赛前准备文件清单</h1>
+<hr>
+<h2 id="一-lua-战术脚本文件lua"><a class="anchor" href="#一-lua-战术脚本文件lua">#</a> 一、Lua 战术脚本文件（<code>.lua</code>）</h2>
+<p>这些是你必须编写的战术脚本，放在 <code>Team/lua_scripts/play/Ref/</code> 对应目录下：</p>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>说明</th>
+<th>存放目录</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NormalPlayDefend.lua</code></td>
+<td>正常比赛战术</td>
+<td><code>play/Nor/</code></td>
+</tr>
+<tr>
+<td><code>Ref_KickOff.lua</code></td>
+<td>中场开球</td>
+<td><code>play/Ref/KickOff/</code></td>
+</tr>
+<tr>
+<td><code>Ref_KickOffDef.lua</code></td>
+<td>中场开球防守</td>
+<td><code>play/Ref/KickOffDef/</code></td>
+</tr>
+<tr>
+<td><code>Ref_BackKick.lua</code></td>
+<td>后场任意球</td>
+<td><code>play/Ref/BackKick/</code></td>
+</tr>
+<tr>
+<td><code>Ref_BackDef.lua</code></td>
+<td>后场任意球防守</td>
+<td><code>play/Ref/BackDef/</code></td>
+</tr>
+<tr>
+<td><code>Ref_MiddleKick.lua</code></td>
+<td>中场任意球</td>
+<td><code>play/Ref/MiddleKick/</code></td>
+</tr>
+<tr>
+<td><code>Ref_MiddleDef.lua</code></td>
+<td>中场任意球防守</td>
+<td><code>play/Ref/MiddleDef/</code></td>
+</tr>
+<tr>
+<td><code>Ref_FrontKick.lua</code></td>
+<td>前场任意球</td>
+<td><code>play/Ref/FrontKick/</code></td>
+</tr>
+<tr>
+<td><code>Ref_FrontDef.lua</code></td>
+<td>前场任意球防守</td>
+<td><code>play/Ref/FrontDef/</code></td>
+</tr>
+<tr>
+<td><code>Ref_CornerKick.lua</code></td>
+<td>角球任意球</td>
+<td><code>play/Ref/CornerKick/</code></td>
+</tr>
+<tr>
+<td><code>Ref_CornerDef.lua</code></td>
+<td>角球防守</td>
+<td><code>play/Ref/CornerDef/</code></td>
+</tr>
+<tr>
+<td><code>Ref_PenaltyKick.lua</code></td>
+<td>点球</td>
+<td><code>play/Ref/PenaltyKick/</code></td>
+</tr>
+<tr>
+<td><code>Ref_PenaltyDef.lua</code></td>
+<td>点球防守</td>
+<td><code>play/Ref/PenaltyDef/</code></td>
+</tr>
+<tr>
+<td><code>Ref_Stop.lua</code></td>
+<td>停止</td>
+<td><code>play/Ref/GameStop/</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="二-自定义-skill-技能文件dll"><a class="anchor" href="#二-自定义-skill-技能文件dll">#</a> 二、自定义 Skill 技能文件（<code>.dll</code>）</h2>
+<p>如果你需要自定义技能（比官方13个skill更强），需要用 C++ 编写并编译：</p>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>说明</th>
+<th>存放目录</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>你的技能名.dll</code></td>
+<td>自定义 skill 动态链接库</td>
+<td><code>Team/user_skills/</code></td>
+</tr>
+</tbody>
+</table>
+<p>对应的 C++ 源码文件（编译前）：</p>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>你的技能名.h</code></td>
+<td>头文件</td>
+</tr>
+<tr>
+<td><code>你的技能名.cpp</code></td>
+<td>源文件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="三-区域调度脚本lua可选修改"><a class="anchor" href="#三-区域调度脚本lua可选修改">#</a> 三、区域调度脚本（<code>.lua</code>，可选修改）</h2>
+<p>这两个文件已有默认版本，但你可以根据战术需要修改前/中/后场的区域划分参数：</p>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OurIndirectKick.lua</code></td>
+<td>进攻任意球区域调度</td>
+</tr>
+<tr>
+<td><code>TheirIndirectKick.lua</code></td>
+<td>防守任意球区域调度</td>
+</tr>
+</tbody>
+</table>
+<h2 id="四-总结"><a class="anchor" href="#四-总结">#</a> 四、总结</h2>
+<p><strong>最少准备清单（14个lua + 若干dll）：</strong></p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-lua"><span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_KickOff</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_KickOffDef</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_BackKick</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_BackDef</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_MiddleKick</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_MiddleDef</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_FrontKick</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_FrontDef</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_CornerKick</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_CornerDef</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_PenaltyKick</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_PenaltyDef</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">Ref_Stop</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">├── </span><span style="color:#B07D48;--shiki-dark:#BD976A">NormalPlayDefend</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">.</span><span style="color:#59873A;--shiki-dark:#80A665">lua</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">└── 你的自定义skill.</span><span style="color:#59873A;--shiki-dark:#80A665">dll</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">（可选，放在user_skills目录）</span></span></code></pre>
+<blockquote>
+<p><strong>注意</strong>：如果你只用官方的13个task函数（如 <code>task.Shoot()</code>、<code>task.GetBall()</code> 等），就<strong>不需要写 .dll 文件</strong>。只有当你觉得官方skill不够用、想自己设计更强的技能时，才需要写 C++ 编译成 <code>.dll</code>。</p>
+</blockquote>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="tags/robot/" style="color: #ff7d73">robot</a>
+        </span>
+        
+    </div>
+    <a href="2026/04/05/%E8%B5%9B%E5%89%8D%E5%87%86%E5%A4%87%E6%B8%85%E5%8D%95/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="2026/03/31/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/">
         <h2 class="post-title">机器人竞赛</h2>
     </a>
@@ -270,7 +471,7 @@
         
         <span class="tag">
             
-            <a href="tags/robot/" style="color: #00bcd4">robot</a>
+            <a href="tags/robot/" style="color: #ff7d73">robot</a>
         </span>
         
     </div>
@@ -349,7 +550,7 @@
         
         <span class="tag">
             
-            <a href="tags/Algorithm/" style="color: #ff7d73">Algorithm</a>
+            <a href="tags/Algorithm/" style="color: #00a596">Algorithm</a>
         </span>
         
     </div>
@@ -508,7 +709,7 @@
         
         <span class="tag">
             
-            <a href="tags/stl/" style="color: #03a9f4">stl</a>
+            <a href="tags/stl/" style="color: #00a596">stl</a>
         </span>
         
     </div>
@@ -668,7 +869,7 @@
         
         <span class="tag">
             
-            <a href="tags/stl/" style="color: #00bcd4">stl</a>
+            <a href="tags/stl/" style="color: #ff7d73">stl</a>
         </span>
         
     </div>
@@ -958,7 +1159,7 @@
         
         <span class="tag">
             
-            <a href="tags/Algorithm/" style="color: #03a9f4">Algorithm</a>
+            <a href="tags/Algorithm/" style="color: #00bcd4">Algorithm</a>
         </span>
         
     </div>
@@ -1025,7 +1226,7 @@
         
         <span class="tag">
             
-            <a href="tags/leetcode/" style="color: #00a596">leetcode</a>
+            <a href="tags/leetcode/" style="color: #ffa2c4">leetcode</a>
         </span>
         
     </div>
@@ -1186,51 +1387,11 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         
         <span class="tag">
             
-            <a href="tags/leetcode/" style="color: #ffa2c4">leetcode</a>
+            <a href="tags/leetcode/" style="color: #ff7d73">leetcode</a>
         </span>
         
     </div>
     <a href="2026/03/22/Cpp%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="2026/03/21/Cpp%E5%85%A5%E9%97%A8/">
-        <h2 class="post-title">Cpp入门</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/3/21
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p><img src="/../test/C%20%E8%BD%AC%20C++.png" alt></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="tags/note/" style="color: #03a9f4">note</a>
-        </span>
-        
-    </div>
-    <a href="2026/03/21/Cpp%E5%85%A5%E9%97%A8/" class="go-post">阅读全文</a>
 </div>
 
 
