@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>1.15 | 新世界</title>
+    <title>Tags: AI | 新世界</title>
     <meta name="author" content="南风知我意" />
     <meta name="description" content="别弯腰 接受时间躲不开的那一刀" />
     <meta name="keywords" content="吹梦到西周" />
@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
-    <link rel="icon" href="../../../../images/avatar.jpg" />
+    <link rel="icon" href="../../images/avatar.jpg" />
     <link rel="preconnect" href="https://s4.zstatic.net" />
 <script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
 <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
@@ -32,24 +32,17 @@
     rel="stylesheet"
     href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
 />
-<script src="../../../../js/lib/highlight.js"></script>
+<script src="../../js/lib/highlight.js"></script>
 
 
 
-<script src="../../../../js/lib/preview.js"></script>
-
-
-
-
-
-<script src="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.css" />
+<script src="../../js/lib/preview.js"></script>
 
 
 
 
 
-<link rel="stylesheet" href="../../../../css/main.css" />
+<link rel="stylesheet" href="../../css/main.css" />
 
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body>
@@ -59,7 +52,7 @@
                 <div id="loading-circle">
                     <h2>LOADING</h2>
                     <p>加载过慢请开启缓存 浏览器默认开启</p>
-                    <img src="../../../../images/loading.gif" />
+                    <img src="../../images/loading.gif" />
                 </div>
             </div>
         </transition>
@@ -69,27 +62,27 @@
             <span>新世界</span>
         </a>
         
-        <a href="../../../../index.html">
+        <a href="../../index.html">
             <i class="fa-solid fa-house fa-fw"></i>
             <span>&ensp;Home</span>
         </a>
         
-        <a href="../../../../about">
+        <a href="../../about">
             <i class="fa-solid fa-id-card fa-fw"></i>
             <span>&ensp;About</span>
         </a>
         
-        <a href="../../../../archives">
+        <a href="../../archives">
             <i class="fa-solid fa-box-archive fa-fw"></i>
             <span>&ensp;Archives</span>
         </a>
         
-        <a href="../../../../categories">
+        <a href="../../categories">
             <i class="fa-solid fa-bookmark fa-fw"></i>
             <span>&ensp;Categories</span>
         </a>
         
-        <a href="../../../../tags">
+        <a href="../../tags">
             <i class="fa-solid fa-tags fa-fw"></i>
             <span>&ensp;Tags</span>
         </a>
@@ -103,7 +96,7 @@
         <transition name="slide">
             <div class="items" v-show="showMenuItems">
                 
-                <a href="../../../../index.html">
+                <a href="../../index.html">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-house fa-fw"></i>
@@ -112,7 +105,7 @@
                     </div>
                 </a>
                 
-                <a href="../../../../about">
+                <a href="../../about">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-id-card fa-fw"></i>
@@ -121,7 +114,7 @@
                     </div>
                 </a>
                 
-                <a href="../../../../archives">
+                <a href="../../archives">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-box-archive fa-fw"></i>
@@ -130,7 +123,7 @@
                     </div>
                 </a>
                 
-                <a href="../../../../categories">
+                <a href="../../categories">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-bookmark fa-fw"></i>
@@ -139,7 +132,7 @@
                     </div>
                 </a>
                 
-                <a href="../../../../tags">
+                <a href="../../tags">
                     <div class="item">
                         <div style="min-width: 20px; max-width: 50px; width: 10%">
                             <i class="fa-solid fa-tags fa-fw"></i>
@@ -157,52 +150,120 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div class="article">
-    <div>
-        <h1>1.15</h1>
-    </div>
-    <div class="info">
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/1/15
+            <div id="archives">
+    
+    <div class="categories-tags">
+        
+        
+        
+        <span>
+            <a href="../diary/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                diary
+            </a>
         </span>
         
         
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            
-            <span class="tag">
+        
+        <span>
+            <a href="../leetcode/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                leetcode
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="../stl/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                stl
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="../note/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                note
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                AI
+            </a>
+        </span>
+        
+        
+        
+        
+        
+        <span>
+            <a href="../Algorithm/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                Algorithm
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="../robot/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                robot
+            </a>
+        </span>
+        
+        
+    </div>
+    
+    <div class="timeline">
+        <div class="timeline-tail"></div>
+        <div class="timeline-content">
+            <div class="item-time">2026/5/8</div>
+            <a href="../../2026/05/08/AI/">
+                <h3>AI</h3>
+            </a>
+            <div class="info">
                 
-                <a href="../../../../tags/diary/" style="color: #ff7d73">
-                    diary
-                </a>
-            </span>
-            
-        </span>
-        
+                
+                <span class="tags">
+                    <span class="icon">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </span>
+                    
+                    
+                    <span class="tag">
+                        
+                        <a href="" style="color: #ffa2c4">
+                            AI
+                        </a>
+                    </span>
+                    
+                </span>
+                
+            </div>
+        </div>
     </div>
-    
-    <div class="content" v-pre>
-        <p>闲置了将近一个月的主页，终于复出了，一个月过的不比高三舒服多少，从之后的四级复习到后来的期末考试复习，快忙死了！！！！</p>
-<p>一月之后疯狂的泡在图书馆里，好在最后考试感觉考的还不错，英语四级保佑我过500吧，反正我是不想上大学英语课了，要多无聊有多无聊，今天是大学寒假的第一天，是的，把期末考试写在C语言里的屎山代码转移到了电脑上并且尝试运行，发现错误不少，没招了！寒假准备攻克一下C++，OK到此为止吧</p>
-<h1 id="qwq我想小蛋糕了我已经27小时没见到他了现在是20251151535"><a class="anchor" href="#qwq我想小蛋糕了我已经27小时没见到他了现在是20251151535">#</a> QWQ，我想小蛋糕了!!!（我已经27小时没见到他了!!!现在是2025/1/15/15:35）</h1>
-
-    </div>
-    
-    
-    
-    <div id="comment">
-        <div id="gitalk-container"></div>
-    </div>
-    
-    
-    
-    
     
 </div>
 
@@ -236,29 +297,7 @@
         </transition>
         
     </div>
-    <script src="../../../../js/main.js"></script>
-    
-    
-
-<script>
-    const gitalk = new Gitalk({
-        clientID: "Ov23lib9xKYSem8GXBfF",
-        clientSecret: "09adbc33407ac1e33d79c32f8251eb73e39d02d2",
-        repo: "blog-comments",
-        owner: "RuYunJian",
-        admin: "RuYunJian".split(","),
-        language: "zh-CN",
-        id: location.pathname,
-        
-        proxy: "https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token",
-        
-    })
-    gitalk.render("gitalk-container");
-</script>
-
-
-
-
+    <script src="../../js/main.js"></script>
     
 </body>
 </html>

@@ -1,0 +1,1073 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>AI | 新世界</title>
+    <meta name="author" content="南风知我意" />
+    <meta name="description" content="别弯腰 接受时间躲不开的那一刀" />
+    <meta name="keywords" content="吹梦到西周" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="../../../../images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="../../../../js/lib/highlight.js"></script>
+
+
+
+<script src="../../../../js/lib/preview.js"></script>
+
+
+
+
+
+<script src="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.css" />
+
+
+
+
+
+<link rel="stylesheet" href="../../../../css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="../../../../images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>新世界</span>
+        </a>
+        
+        <a href="../../../../index.html">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="../../../../about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="../../../../archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="../../../../categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="../../../../tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;新世界</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="../../../../index.html">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="../../../../about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="../../../../archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="../../../../categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="../../../../tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>AI</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/8
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="../../../../tags/AI/" style="color: #ff7d73">
+                    AI
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="ai-专业名词解释"><a class="anchor" href="#ai-专业名词解释">#</a> AI 专业名词解释</h1>
+<blockquote>
+<p>这份文档用于快速理解 AI、LLM、API、Agent、MCP、Skill 等相关概念。术语按主题分组，适合初学者、产品经理、开发者和需要与 AI 系统协作的人阅读。</p>
+</blockquote>
+<h2 id="1-基础概念"><a class="anchor" href="#1-基础概念">#</a> 1. 基础概念</h2>
+<h3 id="ai"><a class="anchor" href="#ai">#</a> AI</h3>
+<p>AI 是 Artificial Intelligence 的缩写，中文通常称为“人工智能”。它泛指让机器具备感知、理解、推理、生成、决策或执行任务能力的技术体系。</p>
+<p>常见应用包括：</p>
+<ul>
+<li>文本生成</li>
+<li>图像生成</li>
+<li>语音识别</li>
+<li>智能客服</li>
+<li>推荐系统</li>
+<li>自动驾驶</li>
+<li>数据分析</li>
+<li>代码生成</li>
+</ul>
+<h3 id="machine-learning"><a class="anchor" href="#machine-learning">#</a> Machine Learning</h3>
+<p>Machine Learning，简称 ML，中文是“机器学习”。它是 AI 的一个重要分支，核心思想是让模型从数据中学习规律，而不是完全依赖人工编写规则。</p>
+<p>例如：给模型大量图片和标签，模型可以学习识别猫、狗、汽车等对象。</p>
+<h3 id="deep-learning"><a class="anchor" href="#deep-learning">#</a> Deep Learning</h3>
+<p>Deep Learning，中文是“深度学习”。它是机器学习的一类方法，通常使用多层神经网络来处理复杂数据。</p>
+<p>深度学习常用于：</p>
+<ul>
+<li>图像识别</li>
+<li>语音识别</li>
+<li>自然语言处理</li>
+<li>大模型训练</li>
+<li>自动驾驶感知</li>
+</ul>
+<h3 id="model"><a class="anchor" href="#model">#</a> Model</h3>
+<p>Model，中文是“模型”。在 AI 中，模型可以理解为经过训练后具备某种能力的程序。</p>
+<p>例如：</p>
+<ul>
+<li>文本模型可以回答问题、写文章、写代码</li>
+<li>图像模型可以生成图片</li>
+<li>语音模型可以识别或合成声音</li>
+<li>多模态模型可以同时理解文本、图片、音频、视频</li>
+</ul>
+<h3 id="llm"><a class="anchor" href="#llm">#</a> LLM</h3>
+<p>LLM 是 Large Language Model 的缩写，中文是“大语言模型”。它是一类能够理解和生成自然语言的 AI 模型。</p>
+<p>常见能力包括：</p>
+<ul>
+<li>对话</li>
+<li>总结</li>
+<li>翻译</li>
+<li>写作</li>
+<li>代码生成</li>
+<li>信息抽取</li>
+<li>推理</li>
+<li>工具调用</li>
+</ul>
+<h3 id="multimodal-model"><a class="anchor" href="#multimodal-model">#</a> Multimodal Model</h3>
+<p>Multimodal Model，中文是“多模态模型”。它可以处理多种类型的信息，例如文本、图片、音频、视频、表格等。</p>
+<p>例如：用户上传一张截图并提问，模型能够读取图片内容并给出解释。</p>
+<h3 id="generative-ai"><a class="anchor" href="#generative-ai">#</a> Generative AI</h3>
+<p>Generative AI，中文是“生成式 AI”。它指能够生成新内容的 AI，例如文字、图片、音乐、视频、代码等。</p>
+<p>典型例子：</p>
+<ul>
+<li>生成文章</li>
+<li>生成海报</li>
+<li>生成 PPT</li>
+<li>生成程序代码</li>
+<li>生成短视频脚本</li>
+</ul>
+<h2 id="2-token-与上下文"><a class="anchor" href="#2-token-与上下文">#</a> 2. Token 与上下文</h2>
+<h3 id="token"><a class="anchor" href="#token">#</a> Token</h3>
+<p>Token 是 AI 模型处理文本时的基本单位。它不一定等于一个字、一个词或一个字符，而是模型分词后得到的小片段。</p>
+<p>例如：</p>
+<ul>
+<li>英文中，一个单词可能是一个 token，也可能被拆成多个 token</li>
+<li>中文中，一个汉字、词语或标点都可能成为 token</li>
+<li>空格、换行、标点也可能被计算为 token</li>
+</ul>
+<p>Token 影响：</p>
+<ul>
+<li>输入长度</li>
+<li>输出长度</li>
+<li>费用计算</li>
+<li>模型能记住的上下文范围</li>
+<li>接口调用速度</li>
+</ul>
+<h3 id="tokenization"><a class="anchor" href="#tokenization">#</a> Tokenization</h3>
+<p>Tokenization，中文可称为“分词”或“标记化”。它是把文本转换为 token 的过程。</p>
+<p>例如一句话：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-text"><span class="line"><span>I love AI.</span></span></code></pre>
+<p>模型不会直接按人类阅读方式理解，而是先转换成一组 token，再进行计算。</p>
+<h3 id="input-token"><a class="anchor" href="#input-token">#</a> Input Token</h3>
+<p>Input Token 是用户输入给模型的 token，包括问题、上下文、系统指令、历史对话、工具返回内容等。</p>
+<p>输入越长，消耗的 token 越多，成本通常也越高。</p>
+<h3 id="output-token"><a class="anchor" href="#output-token">#</a> Output Token</h3>
+<p>Output Token 是模型生成回答时产生的 token。</p>
+<p>例如模型写了一篇 1000 字文章，这些生成内容就会被计算为输出 token。</p>
+<h3 id="context-window"><a class="anchor" href="#context-window">#</a> Context Window</h3>
+<p>Context Window，中文常称为“上下文窗口”。它表示模型一次调用中最多能处理多少 token。</p>
+<p>上下文窗口越大，模型能同时参考的信息越多。</p>
+<p>例如：</p>
+<ul>
+<li>短上下文模型适合简单问答</li>
+<li>长上下文模型适合阅读长文档、分析代码库、处理合同、总结会议记录</li>
+</ul>
+<h3 id="max-tokens"><a class="anchor" href="#max-tokens">#</a> Max Tokens</h3>
+<p>Max Tokens 通常表示一次调用中允许模型最多生成多少 token。</p>
+<p>如果设置过小，模型回答可能被截断；如果设置过大，成本和响应时间可能增加。</p>
+<h2 id="3-prompt-与消息角色"><a class="anchor" href="#3-prompt-与消息角色">#</a> 3. Prompt 与消息角色</h2>
+<h3 id="prompt"><a class="anchor" href="#prompt">#</a> Prompt</h3>
+<p>Prompt，中文常称为“提示词”或“提示”。它是用户给 AI 的输入指令，用来告诉模型要完成什么任务。</p>
+<p>好的 prompt 通常包含：</p>
+<ul>
+<li>目标</li>
+<li>背景</li>
+<li>输入材料</li>
+<li>输出格式</li>
+<li>约束条件</li>
+<li>示例</li>
+</ul>
+<h3 id="system-prompt"><a class="anchor" href="#system-prompt">#</a> System Prompt</h3>
+<p>System Prompt 是系统级指令，通常用于定义模型的身份、行为边界、回答风格和优先规则。</p>
+<p>例如：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-text"><span class="line"><span>你是一名严谨的法律助理，请用简洁、准确的语言回答。</span></span></code></pre>
+<h3 id="user-message"><a class="anchor" href="#user-message">#</a> User Message</h3>
+<p>User Message 是用户发给模型的内容，也就是用户问题或任务说明。</p>
+<h3 id="assistant-message"><a class="anchor" href="#assistant-message">#</a> Assistant Message</h3>
+<p>Assistant Message 是模型生成的回复内容。</p>
+<h3 id="developer-message"><a class="anchor" href="#developer-message">#</a> Developer Message</h3>
+<p>Developer Message 是开发者给模型的中高优先级指令，通常用于控制应用中的模型行为，例如输出格式、安全规则、工具使用方式等。</p>
+<h3 id="prompt-engineering"><a class="anchor" href="#prompt-engineering">#</a> Prompt Engineering</h3>
+<p>Prompt Engineering，中文是“提示词工程”。它是设计、优化和测试 prompt 的方法，使模型更稳定、更准确地完成任务。</p>
+<p>常见技巧包括：</p>
+<ul>
+<li>明确角色</li>
+<li>指定输出格式</li>
+<li>提供示例</li>
+<li>拆分复杂任务</li>
+<li>说明边界条件</li>
+<li>要求模型先分析再输出</li>
+</ul>
+<h3 id="few-shot-prompting"><a class="anchor" href="#few-shot-prompting">#</a> Few-shot Prompting</h3>
+<p>Few-shot Prompting 是在 prompt 中提供少量示例，让模型模仿示例完成类似任务。</p>
+<h3 id="zero-shot-prompting"><a class="anchor" href="#zero-shot-prompting">#</a> Zero-shot Prompting</h3>
+<p>Zero-shot Prompting 是不给示例，直接让模型完成任务。</p>
+<h2 id="4-api-与开发接入"><a class="anchor" href="#4-api-与开发接入">#</a> 4. API 与开发接入</h2>
+<h3 id="api"><a class="anchor" href="#api">#</a> API</h3>
+<p>API 是 Application Programming Interface 的缩写，中文是“应用程序编程接口”。它允许一个程序调用另一个服务的能力。</p>
+<p>在 AI 场景中，API 通常用于：</p>
+<ul>
+<li>调用大模型生成文本</li>
+<li>调用图像生成模型</li>
+<li>调用语音识别服务</li>
+<li>上传文件让模型分析</li>
+<li>让模型调用工具或函数</li>
+</ul>
+<h3 id="api-key"><a class="anchor" href="#api-key">#</a> API Key</h3>
+<p>API Key 是访问 API 服务的密钥。它相当于一把“访问凭证”，用于证明调用者有权限使用某个服务。</p>
+<p>注意事项：</p>
+<ul>
+<li>不要把 API Key 写进公开代码仓库</li>
+<li>不要截图或公开分享 API Key</li>
+<li>生产环境应使用环境变量或密钥管理服务保存</li>
+<li>如果泄露，应立即删除或轮换</li>
+</ul>
+<h3 id="key"><a class="anchor" href="#key">#</a> Key</h3>
+<p>Key 在不同语境中含义不同。在 AI 开发中，通常指 API Key、访问密钥、加密密钥或配置项中的键名。</p>
+<p>常见含义：</p>
+<ul>
+<li>API Key：访问接口的凭证</li>
+<li>Secret Key：敏感密钥</li>
+<li>Public Key：公钥</li>
+<li>Private Key：私钥</li>
+<li>Config Key：配置字段名</li>
+</ul>
+<h3 id="endpoint"><a class="anchor" href="#endpoint">#</a> Endpoint</h3>
+<p>Endpoint，中文可称为“接口地址”或“服务端点”。它是 API 请求发送到的 URL。</p>
+<p>例如：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-text"><span class="line"><span>https://api.example.com/v1/chat/completions</span></span></code></pre>
+<h3 id="request"><a class="anchor" href="#request">#</a> Request</h3>
+<p>Request 是“请求”。当程序调用 AI API 时，会向服务端发送 request，其中通常包含模型名称、用户输入、参数、文件或工具配置。</p>
+<h3 id="response"><a class="anchor" href="#response">#</a> Response</h3>
+<p>Response 是“响应”。它是 API 返回的结果，通常包含模型生成内容、状态信息、错误信息、token 用量等。</p>
+<h3 id="sdk"><a class="anchor" href="#sdk">#</a> SDK</h3>
+<p>SDK 是 Software Development Kit 的缩写，中文是“软件开发工具包”。它封装了底层 API 调用，让开发者更方便地使用某个平台。</p>
+<p>例如使用 SDK 时，开发者可能只需要写几行代码就能调用模型。</p>
+<h3 id="rate-limit"><a class="anchor" href="#rate-limit">#</a> Rate Limit</h3>
+<p>Rate Limit 是“速率限制”。它限制一定时间内最多可以调用多少次 API，或者最多可以消耗多少 token。</p>
+<p>常见限制包括：</p>
+<ul>
+<li>每分钟请求数</li>
+<li>每分钟 token 数</li>
+<li>每天调用额度</li>
+<li>并发请求数量</li>
+</ul>
+<h3 id="quota"><a class="anchor" href="#quota">#</a> Quota</h3>
+<p>Quota 是“配额”。它表示账户、项目或服务在某个周期内可使用的资源上限。</p>
+<h3 id="billing"><a class="anchor" href="#billing">#</a> Billing</h3>
+<p>Billing 是“计费”。AI 服务通常按照输入 token、输出 token、图片数量、音频时长、模型类型或工具使用量计费。</p>
+<h2 id="5-模型调用参数"><a class="anchor" href="#5-模型调用参数">#</a> 5. 模型调用参数</h2>
+<h3 id="temperature"><a class="anchor" href="#temperature">#</a> Temperature</h3>
+<p>Temperature 是控制模型输出随机性的参数。</p>
+<p>一般理解：</p>
+<ul>
+<li>数值低：回答更稳定、更保守</li>
+<li>数值高：回答更多样、更有创造性</li>
+</ul>
+<p>常见用法：</p>
+<ul>
+<li>事实问答、代码、数据分析：使用较低 temperature</li>
+<li>创意写作、头脑风暴：可以使用较高 temperature</li>
+</ul>
+<h3 id="top-p"><a class="anchor" href="#top-p">#</a> Top P</h3>
+<p>Top P 是另一种控制输出随机性的参数，也叫 nucleus sampling。</p>
+<p>它控制模型在生成下一个 token 时，从概率累计达到某个阈值的候选集合中选择。</p>
+<h3 id="stop-sequence"><a class="anchor" href="#stop-sequence">#</a> Stop Sequence</h3>
+<p>Stop Sequence 是“停止序列”。当模型生成内容遇到指定字符串时，会停止继续生成。</p>
+<h3 id="seed"><a class="anchor" href="#seed">#</a> Seed</h3>
+<p>Seed 是随机种子。某些模型支持设置 seed，使输出更容易复现。</p>
+<p>注意：即使设置 seed，模型服务更新或参数变化后，也不一定完全一致。</p>
+<h3 id="streaming"><a class="anchor" href="#streaming">#</a> Streaming</h3>
+<p>Streaming 是“流式输出”。模型不是等完整回答生成完才返回，而是一边生成一边返回。</p>
+<p>适合：</p>
+<ul>
+<li>聊天应用</li>
+<li>长文本生成</li>
+<li>需要更快首字响应的产品</li>
+</ul>
+<h2 id="6-agent-tool-与函数调用"><a class="anchor" href="#6-agent-tool-与函数调用">#</a> 6. Agent、Tool 与函数调用</h2>
+<h3 id="agent"><a class="anchor" href="#agent">#</a> Agent</h3>
+<p>Agent，中文常称为“智能体”。它不仅能回答问题，还能根据目标规划步骤、调用工具、读取文件、执行操作，并根据结果继续调整。</p>
+<p>简单理解：</p>
+<ul>
+<li>普通聊天模型：主要负责回答</li>
+<li>Agent：可以围绕目标持续行动</li>
+</ul>
+<p>例如一个代码 Agent 可以：</p>
+<ul>
+<li>阅读项目文件</li>
+<li>修改代码</li>
+<li>运行测试</li>
+<li>分析错误</li>
+<li>继续修复</li>
+</ul>
+<h3 id="tool"><a class="anchor" href="#tool">#</a> Tool</h3>
+<p>Tool 是“工具”。它是模型可以调用的外部能力。</p>
+<p>常见工具包括：</p>
+<ul>
+<li>搜索网页</li>
+<li>读取文件</li>
+<li>写入文件</li>
+<li>查询数据库</li>
+<li>调用 API</li>
+<li>执行代码</li>
+<li>生成图片</li>
+</ul>
+<h3 id="function-calling"><a class="anchor" href="#function-calling">#</a> Function Calling</h3>
+<p>Function Calling，中文常称为“函数调用”。它允许模型按照开发者定义的函数结构输出参数，由程序执行对应函数。</p>
+<p>例如用户说：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-text"><span class="line"><span>帮我查一下今天上海天气。</span></span></code></pre>
+<p>模型可以生成类似：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-json"><span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span></span>
+<span class="line"><span style="color:#99841877;--shiki-dark:#B8A96577">  "</span><span style="color:#998418;--shiki-dark:#B8A965">function</span><span style="color:#99841877;--shiki-dark:#B8A96577">"</span><span style="color:#999999;--shiki-dark:#666666">:</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">get_weather</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">,</span></span>
+<span class="line"><span style="color:#99841877;--shiki-dark:#B8A96577">  "</span><span style="color:#998418;--shiki-dark:#B8A965">arguments</span><span style="color:#99841877;--shiki-dark:#B8A96577">"</span><span style="color:#999999;--shiki-dark:#666666">:</span><span style="color:#999999;--shiki-dark:#666666"> </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#123;</span></span>
+<span class="line"><span style="color:#99841877;--shiki-dark:#B8A96577">    "</span><span style="color:#998418;--shiki-dark:#B8A965">city</span><span style="color:#99841877;--shiki-dark:#B8A96577">"</span><span style="color:#999999;--shiki-dark:#666666">:</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">Shanghai</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="color:#999999;--shiki-dark:#666666">,</span></span>
+<span class="line"><span style="color:#99841877;--shiki-dark:#B8A96577">    "</span><span style="color:#998418;--shiki-dark:#B8A965">date</span><span style="color:#99841877;--shiki-dark:#B8A96577">"</span><span style="color:#999999;--shiki-dark:#666666">:</span><span style="color:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="color:#B56959;--shiki-dark:#C98A7D">today</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">"</span></span>
+<span class="line"><span style="color:#999999;--shiki-dark:#666666">  </span><span style="color:#1e754f;--shiki-dark:#4d9375">&#125;</span></span>
+<span class="line"><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span></code></pre>
+<p>然后应用程序调用天气接口并把结果返回给模型。</p>
+<h3 id="tool-calling"><a class="anchor" href="#tool-calling">#</a> Tool Calling</h3>
+<p>Tool Calling 是更宽泛的“工具调用”。它不只包括函数，还可以包括搜索、文件系统、数据库、浏览器、代码执行器等工具。</p>
+<h3 id="planner"><a class="anchor" href="#planner">#</a> Planner</h3>
+<p>Planner 是“规划器”。在 Agent 系统中，它负责把复杂目标拆解成多个步骤。</p>
+<p>例如：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-text"><span class="line"><span>目标：分析竞品网站</span></span>
+<span class="line"><span>步骤：</span></span>
+<span class="line"><span>1. 收集竞品列表</span></span>
+<span class="line"><span>2. 抓取官网信息</span></span>
+<span class="line"><span>3. 比较功能、价格、定位</span></span>
+<span class="line"><span>4. 总结机会点</span></span></code></pre>
+<h3 id="executor"><a class="anchor" href="#executor">#</a> Executor</h3>
+<p>Executor 是“执行器”。它负责执行规划器生成的步骤，例如调用搜索工具、运行代码、写文件等。</p>
+<h3 id="memory"><a class="anchor" href="#memory">#</a> Memory</h3>
+<p>Memory 是“记忆”。它用于让 AI 系统在多次对话或长期使用中保留信息。</p>
+<p>常见类型：</p>
+<ul>
+<li>短期记忆：当前对话上下文</li>
+<li>长期记忆：用户偏好、项目背景、历史任务</li>
+<li>外部记忆：数据库、向量库、文件系统</li>
+</ul>
+<h2 id="7-skill-与插件"><a class="anchor" href="#7-skill-与插件">#</a> 7. Skill 与插件</h2>
+<h3 id="skill"><a class="anchor" href="#skill">#</a> Skill</h3>
+<p>Skill，中文可理解为“技能”。在 AI Agent 系统中，Skill 通常是一组专门的操作说明、流程、脚本或资源，用来让 AI 更擅长完成某类任务。</p>
+<p>例如：</p>
+<ul>
+<li>数据分析 Skill</li>
+<li>写作 Skill</li>
+<li>做 PPT Skill</li>
+<li>安全审计 Skill</li>
+<li>Excel 处理 Skill</li>
+<li>网页搜索 Skill</li>
+</ul>
+<p>一个 Skill 可能包含：</p>
+<ul>
+<li>使用规则</li>
+<li>工作流程</li>
+<li>示例</li>
+<li>模板</li>
+<li>脚本</li>
+<li>参考资料</li>
+</ul>
+<h3 id="plugin"><a class="anchor" href="#plugin">#</a> Plugin</h3>
+<p>Plugin，中文是“插件”。插件通常是一组可安装的扩展能力，可以为 AI 应用增加工具、技能、界面或外部服务连接能力。</p>
+<p>Skill 更偏“让 AI 学会一种工作方式”，Plugin 更偏“给系统安装一组能力”。</p>
+<h3 id="workflow"><a class="anchor" href="#workflow">#</a> Workflow</h3>
+<p>Workflow，中文是“工作流”。它表示完成某个任务的一套固定步骤。</p>
+<p>例如“会议纪要工作流”可能包括：</p>
+<ul>
+<li>读取会议记录</li>
+<li>提取议题</li>
+<li>总结决策</li>
+<li>提取行动项</li>
+<li>标注负责人和截止日期</li>
+</ul>
+<h3 id="automation"><a class="anchor" href="#automation">#</a> Automation</h3>
+<p>Automation，中文是“自动化”。它指让系统在特定时间、条件或事件触发时自动执行任务。</p>
+<p>例如：</p>
+<ul>
+<li>每周生成周报</li>
+<li>每天早上汇总待办</li>
+<li>每小时检查网站状态</li>
+<li>定期扫描安全风险</li>
+</ul>
+<h2 id="8-mcp-相关概念"><a class="anchor" href="#8-mcp-相关概念">#</a> 8. MCP 相关概念</h2>
+<h3 id="mcp"><a class="anchor" href="#mcp">#</a> MCP</h3>
+<p>MCP 是 Model Context Protocol 的缩写，中文可称为“模型上下文协议”。它是一种让 AI 应用与外部工具、数据源、服务进行标准化连接的协议。</p>
+<p>简单理解：MCP 像是 AI 应用和外部世界之间的统一连接标准。</p>
+<p>通过 MCP，模型可以更容易地访问：</p>
+<ul>
+<li>文件</li>
+<li>数据库</li>
+<li>代码仓库</li>
+<li>浏览器</li>
+<li>企业系统</li>
+<li>搜索服务</li>
+<li>本地工具</li>
+</ul>
+<h3 id="mcp-server"><a class="anchor" href="#mcp-server">#</a> MCP Server</h3>
+<p>MCP Server 是提供能力的一端。它把某些工具、资源或数据源暴露给 AI 应用使用。</p>
+<p>例如：</p>
+<ul>
+<li>文件系统 MCP Server</li>
+<li>GitHub MCP Server</li>
+<li>数据库 MCP Server</li>
+<li>浏览器 MCP Server</li>
+</ul>
+<h3 id="mcp-client"><a class="anchor" href="#mcp-client">#</a> MCP Client</h3>
+<p>MCP Client 是连接 MCP Server 的客户端。通常由 AI 应用、编辑器、Agent 平台或桌面应用承担。</p>
+<h3 id="mcp-host"><a class="anchor" href="#mcp-host">#</a> MCP Host</h3>
+<p>MCP Host 是运行和管理 MCP Client 的宿主应用。</p>
+<p>例如一个 AI 桌面应用可以作为 Host，负责连接多个 MCP Server，并把可用工具提供给模型。</p>
+<h3 id="mcp-resource"><a class="anchor" href="#mcp-resource">#</a> MCP Resource</h3>
+<p>MCP Resource 是 MCP Server 提供的资源，例如文件内容、数据库 schema、文档片段、项目配置等。</p>
+<h3 id="mcp-tool"><a class="anchor" href="#mcp-tool">#</a> MCP Tool</h3>
+<p>MCP Tool 是 MCP Server 暴露出来的可执行操作，例如查询数据库、读取文件、创建 issue、搜索文档等。</p>
+<h3 id="mcp-prompt"><a class="anchor" href="#mcp-prompt">#</a> MCP Prompt</h3>
+<p>MCP Prompt 是 MCP Server 提供的可复用提示模板，用于帮助模型完成特定任务。</p>
+<h2 id="9-rag-embedding-与向量数据库"><a class="anchor" href="#9-rag-embedding-与向量数据库">#</a> 9. RAG、Embedding 与向量数据库</h2>
+<h3 id="rag"><a class="anchor" href="#rag">#</a> RAG</h3>
+<p>RAG 是 Retrieval-Augmented Generation 的缩写，中文常称为“检索增强生成”。</p>
+<p>它的核心流程是：</p>
+<ol>
+<li>用户提问</li>
+<li>系统从知识库中检索相关资料</li>
+<li>把资料连同问题一起交给模型</li>
+<li>模型基于资料生成回答</li>
+</ol>
+<p>RAG 常用于：</p>
+<ul>
+<li>企业知识库问答</li>
+<li>文档助手</li>
+<li>客服机器人</li>
+<li>法律、医疗、金融资料查询</li>
+<li>私有数据问答</li>
+</ul>
+<h3 id="retrieval"><a class="anchor" href="#retrieval">#</a> Retrieval</h3>
+<p>Retrieval 是“检索”。它指从数据库、搜索引擎、向量库或文件系统中找到与问题相关的信息。</p>
+<h3 id="embedding"><a class="anchor" href="#embedding">#</a> Embedding</h3>
+<p>Embedding，中文常称为“嵌入”或“向量表示”。它是把文本、图片、音频等内容转换成一串数字向量。</p>
+<p>这些向量可以表示内容之间的语义相似度。</p>
+<p>例如：</p>
+<ul>
+<li>“苹果手机”</li>
+<li>“iPhone”</li>
+<li>“Apple mobile phone”</li>
+</ul>
+<p>它们文字不同，但语义接近，向量距离也可能较近。</p>
+<h3 id="vector"><a class="anchor" href="#vector">#</a> Vector</h3>
+<p>Vector 是“向量”。在 AI 中，它通常是一组数字，用来表示文本、图片、音频等内容的特征。</p>
+<h3 id="vector-database"><a class="anchor" href="#vector-database">#</a> Vector Database</h3>
+<p>Vector Database，中文是“向量数据库”。它专门用于存储和检索向量数据。</p>
+<p>常见用途：</p>
+<ul>
+<li>语义搜索</li>
+<li>文档问答</li>
+<li>推荐系统</li>
+<li>相似图片搜索</li>
+<li>RAG 知识库</li>
+</ul>
+<h3 id="similarity-search"><a class="anchor" href="#similarity-search">#</a> Similarity Search</h3>
+<p>Similarity Search 是“相似度搜索”。它根据向量之间的距离或相似度，找出最接近的内容。</p>
+<h3 id="chunk"><a class="anchor" href="#chunk">#</a> Chunk</h3>
+<p>Chunk 是“文本块”或“分片”。在 RAG 中，长文档通常会被切分成多个 chunk，再分别进行 embedding 和检索。</p>
+<p>切分过大可能导致检索不精准；切分过小可能丢失上下文。</p>
+<h3 id="reranking"><a class="anchor" href="#reranking">#</a> Reranking</h3>
+<p>Reranking 是“重排序”。在初步检索出一批候选内容后，系统会再次评估这些内容与问题的相关性，并重新排序。</p>
+<h2 id="10-训练-微调与推理"><a class="anchor" href="#10-训练-微调与推理">#</a> 10. 训练、微调与推理</h2>
+<h3 id="training"><a class="anchor" href="#training">#</a> Training</h3>
+<p>Training 是“训练”。它指使用大量数据调整模型参数，使模型学习某种能力。</p>
+<h3 id="pretraining"><a class="anchor" href="#pretraining">#</a> Pretraining</h3>
+<p>Pretraining 是“预训练”。大模型通常先在海量通用数据上训练，学习语言、知识和推理基础。</p>
+<h3 id="fine-tuning"><a class="anchor" href="#fine-tuning">#</a> Fine-tuning</h3>
+<p>Fine-tuning 是“微调”。它是在已有模型基础上，用特定数据进一步训练，使模型更适合某个场景。</p>
+<p>例如：</p>
+<ul>
+<li>客服话术</li>
+<li>法律文书</li>
+<li>医疗问答</li>
+<li>企业内部风格</li>
+<li>特定代码规范</li>
+</ul>
+<h3 id="supervised-fine-tuning"><a class="anchor" href="#supervised-fine-tuning">#</a> Supervised Fine-tuning</h3>
+<p>Supervised Fine-tuning，简称 SFT，中文是“监督微调”。它使用人工标注的输入输出样本来训练模型。</p>
+<h3 id="rlhf"><a class="anchor" href="#rlhf">#</a> RLHF</h3>
+<p>RLHF 是 Reinforcement Learning from Human Feedback 的缩写，中文常称为“基于人类反馈的强化学习”。</p>
+<p>它通过人类偏好数据帮助模型生成更符合人类期望的回答。</p>
+<h3 id="inference"><a class="anchor" href="#inference">#</a> Inference</h3>
+<p>Inference，中文是“推理”或“推断”。它指模型已经训练好之后，接收输入并生成输出的过程。</p>
+<p>用户日常调用 AI 写作、问答、生成代码，大多属于 inference。</p>
+<h3 id="parameters"><a class="anchor" href="#parameters">#</a> Parameters</h3>
+<p>Parameters 是“参数”。在模型中，它们是经过训练得到的数值，用来决定模型如何处理输入和生成输出。</p>
+<p>模型参数越多，通常表示容量越大，但并不一定代表在所有任务上都更好。</p>
+<h3 id="weights"><a class="anchor" href="#weights">#</a> Weights</h3>
+<p>Weights 是“权重”。它是模型参数的一种说法，指神经网络中用于计算的数值。</p>
+<h2 id="11-评估与质量"><a class="anchor" href="#11-评估与质量">#</a> 11. 评估与质量</h2>
+<h3 id="evaluation"><a class="anchor" href="#evaluation">#</a> Evaluation</h3>
+<p>Evaluation，简称 Eval，中文是“评估”。它用于测试模型或 AI 系统在某些任务上的表现。</p>
+<p>评估指标可能包括：</p>
+<ul>
+<li>准确率</li>
+<li>召回率</li>
+<li>幻觉率</li>
+<li>响应速度</li>
+<li>成本</li>
+<li>用户满意度</li>
+<li>安全性</li>
+</ul>
+<h3 id="benchmark"><a class="anchor" href="#benchmark">#</a> Benchmark</h3>
+<p>Benchmark 是“基准测试”。它是一组标准化任务，用于比较不同模型或系统的能力。</p>
+<h3 id="hallucination"><a class="anchor" href="#hallucination">#</a> Hallucination</h3>
+<p>Hallucination，中文常称为“幻觉”。它指模型生成看似合理但实际错误、无来源或捏造的内容。</p>
+<p>减少幻觉的方法：</p>
+<ul>
+<li>使用 RAG 提供可靠资料</li>
+<li>要求模型引用来源</li>
+<li>限制模型只基于给定材料回答</li>
+<li>对关键结果做人工审核</li>
+<li>使用工具验证事实</li>
+</ul>
+<h3 id="grounding"><a class="anchor" href="#grounding">#</a> Grounding</h3>
+<p>Grounding，中文可称为“依据化”或“落地到事实”。它指让模型回答建立在明确数据、文档、工具结果或真实上下文上。</p>
+<h3 id="guardrail"><a class="anchor" href="#guardrail">#</a> Guardrail</h3>
+<p>Guardrail，中文是“护栏”。它是限制模型行为、降低风险的一套规则或系统。</p>
+<p>例如：</p>
+<ul>
+<li>拒绝危险请求</li>
+<li>过滤敏感信息</li>
+<li>限制输出格式</li>
+<li>防止泄露隐私</li>
+<li>对高风险领域增加人工审核</li>
+</ul>
+<h2 id="12-安全-隐私与权限"><a class="anchor" href="#12-安全-隐私与权限">#</a> 12. 安全、隐私与权限</h2>
+<h3 id="secret"><a class="anchor" href="#secret">#</a> Secret</h3>
+<p>Secret 是“机密信息”。它包括 API Key、数据库密码、访问令牌、私钥等。</p>
+<p>Secret 不应出现在：</p>
+<ul>
+<li>公共代码仓库</li>
+<li>日志</li>
+<li>截图</li>
+<li>前端代码</li>
+<li>明文配置文件</li>
+</ul>
+<h3 id="environment-variable"><a class="anchor" href="#environment-variable">#</a> Environment Variable</h3>
+<p>Environment Variable，中文是“环境变量”。它常用于保存配置和密钥，让程序运行时读取，而不是把敏感信息写死在代码中。</p>
+<p>例如：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-text"><span class="line"><span>OPENAI_API_KEY=your_api_key_here</span></span></code></pre>
+<h3 id="access-token"><a class="anchor" href="#access-token">#</a> Access Token</h3>
+<p>Access Token 是“访问令牌”。它用于证明某个用户、应用或服务有权限访问资源。</p>
+<h3 id="authentication"><a class="anchor" href="#authentication">#</a> Authentication</h3>
+<p>Authentication，中文是“身份认证”。它回答的问题是：“你是谁？”</p>
+<p>例如登录账号、验证密码、使用 API Key。</p>
+<h3 id="authorization"><a class="anchor" href="#authorization">#</a> Authorization</h3>
+<p>Authorization，中文是“授权”。它回答的问题是：“你能做什么？”</p>
+<p>例如某个用户可以读取文件，但不能删除文件。</p>
+<h3 id="data-privacy"><a class="anchor" href="#data-privacy">#</a> Data Privacy</h3>
+<p>Data Privacy，中文是“数据隐私”。它关注用户数据如何被收集、存储、使用、共享和删除。</p>
+<p>AI 应用尤其需要注意：</p>
+<ul>
+<li>用户输入是否包含敏感信息</li>
+<li>数据是否会用于训练</li>
+<li>日志是否保存明文</li>
+<li>是否符合企业或地区合规要求</li>
+</ul>
+<h3 id="pii"><a class="anchor" href="#pii">#</a> PII</h3>
+<p>PII 是 Personally Identifiable Information 的缩写，中文是“个人身份识别信息”。</p>
+<p>例如：</p>
+<ul>
+<li>姓名</li>
+<li>手机号</li>
+<li>身份证号</li>
+<li>邮箱</li>
+<li>地址</li>
+<li>银行卡信息</li>
+<li>面部照片</li>
+</ul>
+<h2 id="13-模型部署与工程"><a class="anchor" href="#13-模型部署与工程">#</a> 13. 模型部署与工程</h2>
+<h3 id="deployment"><a class="anchor" href="#deployment">#</a> Deployment</h3>
+<p>Deployment，中文是“部署”。它指把模型或 AI 应用发布到可使用的环境中。</p>
+<h3 id="latency"><a class="anchor" href="#latency">#</a> Latency</h3>
+<p>Latency 是“延迟”。它表示从用户发出请求到收到响应之间的时间。</p>
+<p>AI 应用中常见延迟来源：</p>
+<ul>
+<li>模型推理时间</li>
+<li>网络传输</li>
+<li>工具调用</li>
+<li>数据库检索</li>
+<li>长文本生成</li>
+</ul>
+<h3 id="throughput"><a class="anchor" href="#throughput">#</a> Throughput</h3>
+<p>Throughput 是“吞吐量”。它表示系统在单位时间内能处理多少请求或 token。</p>
+<h3 id="concurrency"><a class="anchor" href="#concurrency">#</a> Concurrency</h3>
+<p>Concurrency 是“并发”。它表示系统同时处理多个请求的能力。</p>
+<h3 id="caching"><a class="anchor" href="#caching">#</a> Caching</h3>
+<p>Caching，中文是“缓存”。它把常用结果临时保存起来，以减少重复计算、降低成本、提高速度。</p>
+<h3 id="observability"><a class="anchor" href="#observability">#</a> Observability</h3>
+<p>Observability，中文可称为“可观测性”。它用于监控系统运行状态，帮助发现错误、性能问题和成本异常。</p>
+<p>常见手段：</p>
+<ul>
+<li>日志</li>
+<li>指标</li>
+<li>链路追踪</li>
+<li>错误告警</li>
+<li>token 用量统计</li>
+</ul>
+<h3 id="logging"><a class="anchor" href="#logging">#</a> Logging</h3>
+<p>Logging 是“日志记录”。AI 应用通常会记录请求、响应、错误、耗时、token 用量等。</p>
+<p>注意：日志中不要保存敏感信息或完整隐私数据。</p>
+<h2 id="14-常见缩写"><a class="anchor" href="#14-常见缩写">#</a> 14. 常见缩写</h2>
+<table>
+<thead>
+<tr>
+<th>缩写</th>
+<th>全称</th>
+<th>中文含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI</td>
+<td>Artificial Intelligence</td>
+<td>人工智能</td>
+</tr>
+<tr>
+<td>ML</td>
+<td>Machine Learning</td>
+<td>机器学习</td>
+</tr>
+<tr>
+<td>DL</td>
+<td>Deep Learning</td>
+<td>深度学习</td>
+</tr>
+<tr>
+<td>LLM</td>
+<td>Large Language Model</td>
+<td>大语言模型</td>
+</tr>
+<tr>
+<td>NLP</td>
+<td>Natural Language Processing</td>
+<td>自然语言处理</td>
+</tr>
+<tr>
+<td>API</td>
+<td>Application Programming Interface</td>
+<td>应用程序编程接口</td>
+</tr>
+<tr>
+<td>SDK</td>
+<td>Software Development Kit</td>
+<td>软件开发工具包</td>
+</tr>
+<tr>
+<td>MCP</td>
+<td>Model Context Protocol</td>
+<td>模型上下文协议</td>
+</tr>
+<tr>
+<td>RAG</td>
+<td>Retrieval-Augmented Generation</td>
+<td>检索增强生成</td>
+</tr>
+<tr>
+<td>SFT</td>
+<td>Supervised Fine-tuning</td>
+<td>监督微调</td>
+</tr>
+<tr>
+<td>RLHF</td>
+<td>Reinforcement Learning from Human Feedback</td>
+<td>基于人类反馈的强化学习</td>
+</tr>
+<tr>
+<td>PII</td>
+<td>Personally Identifiable Information</td>
+<td>个人身份识别信息</td>
+</tr>
+<tr>
+<td>Eval</td>
+<td>Evaluation</td>
+<td>评估</td>
+</tr>
+<tr>
+<td>UI</td>
+<td>User Interface</td>
+<td>用户界面</td>
+</tr>
+<tr>
+<td>UX</td>
+<td>User Experience</td>
+<td>用户体验</td>
+</tr>
+</tbody>
+</table>
+<h2 id="15-容易混淆的概念"><a class="anchor" href="#15-容易混淆的概念">#</a> 15. 容易混淆的概念</h2>
+<h3 id="api-sdk-mcp-的区别"><a class="anchor" href="#api-sdk-mcp-的区别">#</a> API、SDK、MCP 的区别</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>简单理解</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API</td>
+<td>服务提供的接口</td>
+<td>让程序能调用某项能力</td>
+</tr>
+<tr>
+<td>SDK</td>
+<td>封装好的开发工具包</td>
+<td>让开发者更方便地调用 API</td>
+</tr>
+<tr>
+<td>MCP</td>
+<td>连接 AI 与工具/数据源的协议</td>
+<td>让 AI 应用标准化访问外部能力</td>
+</tr>
+</tbody>
+</table>
+<h3 id="token-字符-单词的区别"><a class="anchor" href="#token-字符-单词的区别">#</a> Token、字符、单词的区别</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字符</td>
+<td>人类看到的单个文字、字母、数字或符号</td>
+</tr>
+<tr>
+<td>单词</td>
+<td>自然语言中的词</td>
+</tr>
+<tr>
+<td>Token</td>
+<td>模型处理文本的基本单位，可能是字、词、词的一部分或符号</td>
+</tr>
+</tbody>
+</table>
+<h3 id="prompt-context-memory-的区别"><a class="anchor" href="#prompt-context-memory-的区别">#</a> Prompt、Context、Memory 的区别</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prompt</td>
+<td>当前给模型的任务指令</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>当前调用中模型能看到的全部上下文</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>跨对话或长期保存的信息</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tool-skill-plugin-的区别"><a class="anchor" href="#tool-skill-plugin-的区别">#</a> Tool、Skill、Plugin 的区别</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>简单理解</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tool</td>
+<td>一个可执行能力</td>
+<td>搜索网页、读文件、查数据库</td>
+</tr>
+<tr>
+<td>Skill</td>
+<td>一套完成任务的方法</td>
+<td>数据分析流程、PPT 制作流程</td>
+</tr>
+<tr>
+<td>Plugin</td>
+<td>一组可安装扩展</td>
+<td>包含工具、技能、配置和资源</td>
+</tr>
+</tbody>
+</table>
+<h3 id="training-fine-tuning-inference-的区别"><a class="anchor" href="#training-fine-tuning-inference-的区别">#</a> Training、Fine-tuning、Inference 的区别</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training</td>
+<td>从大量数据中训练模型</td>
+</tr>
+<tr>
+<td>Fine-tuning</td>
+<td>在已有模型基础上针对特定场景继续训练</td>
+</tr>
+<tr>
+<td>Inference</td>
+<td>使用训练好的模型生成结果</td>
+</tr>
+</tbody>
+</table>
+<h2 id="16-实用建议"><a class="anchor" href="#16-实用建议">#</a> 16. 实用建议</h2>
+<h3 id="使用-ai-api-时"><a class="anchor" href="#使用-ai-api-时">#</a> 使用 AI API 时</h3>
+<ul>
+<li>保护 API Key，不要公开</li>
+<li>控制输入和输出 token，避免成本失控</li>
+<li>对关键任务设置日志和错误处理</li>
+<li>高风险内容要加入人工审核</li>
+<li>不要默认相信模型生成的事实</li>
+</ul>
+<h3 id="写-prompt-时"><a class="anchor" href="#写-prompt-时">#</a> 写 Prompt 时</h3>
+<ul>
+<li>明确目标</li>
+<li>给足背景</li>
+<li>说明输出格式</li>
+<li>提供好坏示例</li>
+<li>对复杂任务分步骤</li>
+<li>明确不允许做什么</li>
+</ul>
+<h3 id="做知识库问答时"><a class="anchor" href="#做知识库问答时">#</a> 做知识库问答时</h3>
+<ul>
+<li>优先保证文档质量</li>
+<li>合理切分 chunk</li>
+<li>使用 embedding 做语义检索</li>
+<li>对检索结果进行 reranking</li>
+<li>要求模型基于来源回答</li>
+<li>对答案提供引用或出处</li>
+</ul>
+<h3 id="构建-agent-时"><a class="anchor" href="#构建-agent-时">#</a> 构建 Agent 时</h3>
+<ul>
+<li>限制工具权限</li>
+<li>记录关键操作</li>
+<li>对写入、删除、支付、发消息等操作加确认</li>
+<li>给 Agent 明确目标和边界</li>
+<li>设计失败恢复机制</li>
+</ul>
+<h2 id="17-延伸学习路线"><a class="anchor" href="#17-延伸学习路线">#</a> 17. 延伸学习路线</h2>
+<p>如果从零开始学习 AI 工程，可以按下面顺序理解：</p>
+<ol>
+<li>AI、机器学习、大语言模型是什么</li>
+<li>Prompt、Token、上下文窗口如何影响输出</li>
+<li>API、API Key、SDK 如何接入模型</li>
+<li>Tool Calling、Agent 如何让模型执行任务</li>
+<li>RAG、Embedding、向量数据库如何连接私有知识</li>
+<li>MCP、Skill、Plugin 如何扩展 AI 应用能力</li>
+<li>安全、隐私、权限、成本如何在真实项目中控制</li>
+<li>评估、监控、日志如何保障系统质量</li>
+</ol>
+
+    </div>
+    
+    
+    
+    <div id="comment">
+        <div id="gitalk-container"></div>
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2026 新世界
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;南风知我意
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+     <div id="music_player">
+	<div class="aplayer no-destroy" data-id="17504027519" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-lrcType="-1"> </div>
+     </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="../../../../js/main.js"></script>
+    
+    
+
+<script>
+    const gitalk = new Gitalk({
+        clientID: "Ov23lib9xKYSem8GXBfF",
+        clientSecret: "09adbc33407ac1e33d79c32f8251eb73e39d02d2",
+        repo: "blog-comments",
+        owner: "RuYunJian",
+        admin: "RuYunJian".split(","),
+        language: "zh-CN",
+        id: location.pathname,
+        
+        proxy: "https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token",
+        
+    })
+    gitalk.render("gitalk-container");
+</script>
+
+
+
+
+    
+</body>
+</html>
