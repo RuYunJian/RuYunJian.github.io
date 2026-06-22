@@ -1,0 +1,140 @@
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>确定性口令派生器 | 新世界</title>
+    <link rel="stylesheet" href="./assets/password-tool.css">
+    <script defer src="./assets/argon2-bundled.min.js"></script>
+    <script defer src="./assets/password-tool.js"></script>
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="/" aria-label="返回首页">
+            <span class="brand-mark">新</span>
+            <span>新世界</span>
+        </a>
+        <div class="status-pill">
+            <span class="dot" aria-hidden="true"></span>
+            <span>本地计算</span>
+        </div>
+    </header>
+
+    <main class="tool-shell">
+        <section class="intro">
+            <p class="eyebrow">UIN-DetPW v1</p>
+            <h1>确定性口令派生器</h1>
+            <p class="lede">网址或 App 名称会按原样参与派生，大小写、符号、路径和空格都不会被自动改写。</p>
+        </section>
+
+        <section class="workspace" aria-label="口令派生工具">
+            <form class="panel input-panel" id="password-form" autocomplete="off">
+                <div class="section-head">
+                    <h2>输入</h2>
+                    <div class="segmented" role="tablist" aria-label="标识类型">
+                        <button class="segment active" type="button" data-mode="url" aria-selected="true">网址</button>
+                        <button class="segment" type="button" data-mode="app" aria-selected="false">App</button>
+                    </div>
+                </div>
+
+                <label class="field span-all" for="target">
+                    <span>标识</span>
+                    <input id="target" name="target" type="text" required spellcheck="false" autocomplete="off" placeholder="https://example.com/login">
+                </label>
+
+                <div class="field-grid">
+                    <label class="field" for="initials">
+                        <span>3 位首字母</span>
+                        <input id="initials" name="initials" type="text" inputmode="latin" minlength="3" maxlength="3" pattern="[A-Za-z]{3}" required autocomplete="off" placeholder="AbC">
+                    </label>
+
+                    <label class="field" for="digits">
+                        <span>8 位数字</span>
+                        <input id="digits" name="digits" type="text" inputmode="numeric" minlength="8" maxlength="8" pattern="[0-9]{8}" required autocomplete="off" placeholder="00001234">
+                    </label>
+                </div>
+
+                <label class="field span-all" for="master-key">
+                    <span>主密钥</span>
+                    <div class="secret-row">
+                        <input id="master-key" name="masterKey" type="password" required autocomplete="new-password" spellcheck="false" placeholder="只在浏览器内临时使用">
+                        <button class="icon-button" type="button" id="toggle-master" aria-label="显示或隐藏主密钥">显</button>
+                    </div>
+                </label>
+
+                <div class="field-grid">
+                    <label class="field" for="length">
+                        <span>长度</span>
+                        <input id="length" name="length" type="number" min="15" max="64" value="20" required>
+                    </label>
+
+                    <label class="field" for="alphabet">
+                        <span>字符集</span>
+                        <select id="alphabet" name="alphabet">
+                            <option value="base64url">base64url</option>
+                            <option value="base62">base62</option>
+                            <option value="hex">hex</option>
+                        </select>
+                    </label>
+                </div>
+
+                <label class="field span-all" for="profile">
+                    <span>计算档位</span>
+                    <select id="profile" name="profile">
+                        <option value="balanced">平衡默认：64 MiB / 3 次 / p=4</option>
+                        <option value="light">轻量兼容：32 MiB / 3 次 / p=1</option>
+                    </select>
+                </label>
+
+                <button class="primary-button" id="derive-button" type="submit">
+                    <span id="derive-label">生成口令</span>
+                    <span class="button-meter" id="button-meter" aria-hidden="true"></span>
+                </button>
+
+                <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+            </form>
+
+            <aside class="panel result-panel">
+                <div class="section-head">
+                    <h2>输出</h2>
+                    <span class="algorithm-tag">Argon2id + HKDF</span>
+                </div>
+
+                <label class="field span-all" for="result">
+                    <span>站点口令</span>
+                    <div class="secret-row">
+                        <input id="result" type="password" readonly spellcheck="false" autocomplete="off" placeholder="生成后显示">
+                        <button class="icon-button" type="button" id="toggle-result" aria-label="显示或隐藏生成口令">显</button>
+                    </div>
+                </label>
+
+                <div class="result-actions">
+                    <button class="secondary-button" type="button" id="copy-result" disabled>复制</button>
+                    <button class="ghost-button" type="button" id="clear-result">清空</button>
+                </div>
+
+                <dl class="audit-list">
+                    <div>
+                        <dt>版本</dt>
+                        <dd>UIN-DetPW v1</dd>
+                    </div>
+                    <div>
+                        <dt>盐摘要</dt>
+                        <dd id="salt-preview">-</dd>
+                    </div>
+                    <div>
+                        <dt>上下文</dt>
+                        <dd id="context-preview">-</dd>
+                    </div>
+                </dl>
+
+                <div class="notice">
+                    <strong>不保存主密钥。</strong>
+                    <span>页面不会发起网络请求；生成结果只存在于当前浏览器会话里。</span>
+                </div>
+            </aside>
+        </section>
+    </main>
+</body>
+</html>
