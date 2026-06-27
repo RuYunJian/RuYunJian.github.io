@@ -442,6 +442,28 @@ app.mount("#layout");
         }, 5200);
     };
 
+    const revealSite = () => {
+        const audio = getAudio();
+        if (audio) audio.pause();
+        stopLyrics();
+
+        const loading = getLoading();
+        if (loading) {
+            loading.setAttribute("aria-hidden", "true");
+            loading.style.display = "none";
+            loading.style.pointerEvents = "none";
+        }
+
+        const main = document.querySelector("#main");
+        if (main) {
+            main.classList.remove("into-enter-from");
+            main.classList.add("into-enter-active");
+            main.style.opacity = "1";
+            main.style.transform = "none";
+        }
+        document.body.classList.add("intro-finished");
+    };
+
     const attachAudioSync = () => {
         const audio = getAudio();
         if (!audio || audio.dataset.lyricSyncAttached) return;
@@ -457,15 +479,15 @@ app.mount("#layout");
             clearTimer();
             if ((audio.currentTime || 0) < 0.1 && introIsVisible()) showPreviewLyric();
         });
-        audio.addEventListener("ended", stopLyrics);
+        audio.addEventListener("ended", revealSite);
     };
 
     document.addEventListener("click", (event) => {
         const button = event.target.closest("button");
         if (!button) return;
         const text = button.textContent.trim();
-        if (text === "进入主页" || text === "直接进入") stopLyrics();
-    });
+        if (text === "进入主页" || text === "直接进入") revealSite();
+    }, true);
 
     window.addEventListener("load", () => {
         if (!document.querySelector(".intro-loading")) return;

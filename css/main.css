@@ -409,6 +409,14 @@
     opacity: 0.92;
     pointer-events: auto;
 }
+body.intro-finished #loading.intro-loading {
+    display: none !important;
+    pointer-events: none !important;
+}
+body.intro-finished #main {
+    opacity: 1 !important;
+    transform: none !important;
+}
 .intro-bg,
 .intro-grid,
 .intro-lyrics,
