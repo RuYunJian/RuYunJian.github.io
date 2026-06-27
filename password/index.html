@@ -23,7 +23,7 @@
 
     <main class="tool-shell">
         <section class="intro">
-            <p class="eyebrow">UIN-DetPW v1</p>
+            <p class="eyebrow">UIN-DetPW v2</p>
             <h1>确定性口令派生器</h1>
             <p class="lede">网址或 App 名称会按原样参与派生，大小写、符号、路径和空格都不会被自动改写。</p>
         </section>
@@ -70,11 +70,9 @@
                     </label>
 
                     <label class="field" for="alphabet">
-                        <span>字符集</span>
+                        <span>字符集策略</span>
                         <select id="alphabet" name="alphabet">
-                            <option value="base64url">base64url</option>
-                            <option value="base62">base62</option>
-                            <option value="hex">hex</option>
+                            <option value="compatible">强兼容集</option>
                         </select>
                     </label>
                 </div>
@@ -98,7 +96,7 @@
             <aside class="panel result-panel">
                 <div class="section-head">
                     <h2>输出</h2>
-                    <span class="algorithm-tag">Argon2id + HKDF</span>
+                    <span class="algorithm-tag">Argon2id + HKDF + 策略采样</span>
                 </div>
 
                 <label class="field span-all" for="result">
@@ -117,7 +115,7 @@
                 <dl class="audit-list">
                     <div>
                         <dt>版本</dt>
-                        <dd>UIN-DetPW v1</dd>
+                        <dd>UIN-DetPW v2</dd>
                     </div>
                     <div>
                         <dt>盐摘要</dt>

@@ -54,12 +54,13 @@
 
 
 
-<link rel="stylesheet" href="../../../../css/main.css" />
+<link rel="stylesheet" href="../../../../css/main.css?v=20260627-intro-sync3" />
 
 <meta name="generator" content="Hexo 7.3.0"></head>
-<body>
+<body data-intro-mode="plain">
     <div id="layout">
         <transition name="fade">
+            
             <div id="loading" v-show="loading">
                 <div id="loading-circle">
                     <h2>LOADING</h2>
@@ -67,6 +68,7 @@
                     <img src="../../../../images/loading.gif" />
                 </div>
             </div>
+            
         </transition>
         <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <nav id="desktop-menu">
@@ -581,7 +583,7 @@
         </transition>
         
     </div>
-    <script src="../../../../js/main.js"></script>
+    <script src="../../../../js/main.js?v=20260627-intro-sync3"></script>
     
     
 

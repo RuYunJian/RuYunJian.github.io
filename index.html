@@ -49,19 +49,137 @@
 
 <script src="/js/lib/home.js"></script>
 
-<link rel="stylesheet" href="/css/main.css" />
+<link rel="stylesheet" href="/css/main.css?v=20260627-intro-sync3" />
 
 <meta name="generator" content="Hexo 7.3.0"></head>
-<body>
+<body data-intro-mode="home">
     <div id="layout">
         <transition name="fade">
-            <div id="loading" v-show="loading">
-                <div id="loading-circle">
-                    <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 浏览器默认开启</p>
-                    <img src="/images/loading.gif" />
+            
+            <div
+                id="loading"
+                class="intro-loading"
+                :class="{
+                    'intro-started': introStarted,
+                    'intro-ready': pageLoaded,
+                    'intro-detail-open': selectedSchool !== null,
+                    'intro-audio-fallback': introAudioFallback
+                }"
+                v-show="loading"
+            >
+                <audio
+                    ref="introAudio"
+                    src="/audio/hexo%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90.mp3"
+                    preload="auto"
+                    controls
+                    @play="introAudioPlaying = true; introAudioFallback = false"
+                    @pause="introAudioPlaying = false"
+                    @ended="enterSite"
+                ></audio>
+                <div class="intro-bg"></div>
+                <div class="intro-grid"></div>
+                <ul class="intro-lyrics" aria-hidden="true"></ul>
+                <div class="intro-topbar">
+                    <button
+                        class="intro-icon-btn"
+                        type="button"
+                        @click="toggleIntroAudio"
+                        :aria-label="introAudioPlaying ? '暂停音乐' : '播放音乐'"
+                    >
+                        <i :class="introAudioPlaying ? 'fa-solid fa-volume-high' : 'fa-solid fa-play'"></i>
+                    </button>
+                    <button class="intro-skip" type="button" @click="enterSite">
+                        进入主页
+                    </button>
                 </div>
+                <section class="intro-cover" v-show="!introStarted">
+                    <p class="intro-kicker">UNIVERSITY ARCHIVE</p>
+                    <h1>名校档案启动</h1>
+                    <p class="intro-lead">拖动校徽环，点开一所学校，听完序曲后进入新世界。</p>
+                    <div class="intro-actions">
+                        <button class="intro-primary" type="button" @click="startIntro">
+                            启动展厅并播放音乐
+                        </button>
+                        <button class="intro-secondary" type="button" @click="enterSite">
+                            直接进入
+                        </button>
+                    </div>
+                    <p class="intro-status">{{ introStatus }}</p>
+                </section>
+                <section class="intro-gallery" v-show="introStarted" aria-label="学校校徽展厅">
+                    <div class="intro-copy">
+                        <p class="intro-kicker">DRAG TO ROTATE</p>
+                        <h1>选择一枚校徽</h1>
+                        <p>{{ introStatus }}</p>
+                    </div>
+                    <div
+                        class="intro-stage"
+                        @pointerdown="introPointerDown"
+                        @touchmove.prevent
+                    >
+                        <div
+                            class="school-ring"
+                            :class="{ dragging: draggingRing }"
+                            :style="{ transform: 'rotateY(' + ringRotation + 'deg)' }"
+                        >
+                            <button
+                                v-for="(school, index) in introSchools"
+                                :key="school.name"
+                                class="school-panel"
+                                type="button"
+                                :style="getSchoolPanelStyle(index)"
+                                :aria-label="'查看' + school.name"
+                                @click.stop="openSchool(index)"
+                            >
+                                <span class="school-logo-wrap">
+                                    <img :src="school.logo" :alt="school.name + '校徽'" />
+                                </span>
+                                <span class="school-name">{{ school.short }}</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <transition name="fade">
+                    <div
+                        class="school-dialog-backdrop"
+                        v-show="activeSchool"
+                        @click.self="closeSchool"
+                    >
+                        <article
+                            class="school-dialog"
+                            role="dialog"
+                            aria-modal="true"
+                            :aria-label="activeSchool ? activeSchool.name : '学校详情'"
+                        >
+                            <button
+                                class="school-dialog-close"
+                                type="button"
+                                aria-label="返回展厅"
+                                @click="closeSchool"
+                            >
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+                            <img
+                                v-if="activeSchool"
+                                :src="activeSchool.logo"
+                                :alt="activeSchool.name + '校徽'"
+                            />
+                            <p class="intro-kicker">{{ activeSchool && activeSchool.english }}</p>
+                            <h2>{{ activeSchool && activeSchool.name }}</h2>
+                            <p class="school-line">{{ activeSchool && activeSchool.line }}</p>
+                            <div class="school-dialog-actions">
+                                <button class="intro-secondary" type="button" @click="closeSchool">
+                                    返回展厅
+                                </button>
+                                <button class="intro-primary" type="button" @click="enterSite">
+                                    进入主页
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </transition>
             </div>
+            
         </transition>
         <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <nav id="desktop-menu">
@@ -2148,7 +2266,7 @@ a^*, &amp; U(a^*)-U(a_{t-1})\ge h
         
         <span class="tag">
             
-            <a href="tags/AI/" style="color: #ffa2c4">AI</a>
+            <a href="tags/AI/" style="color: #00bcd4">AI</a>
         </span>
         
     </div>
@@ -2349,7 +2467,7 @@ a^*, &amp; U(a^*)-U(a_{t-1})\ge h
         
         <span class="tag">
             
-            <a href="tags/robot/" style="color: #03a9f4">robot</a>
+            <a href="tags/robot/" style="color: #ffa2c4">robot</a>
         </span>
         
     </div>
@@ -2446,7 +2564,7 @@ a^*, &amp; U(a^*)-U(a_{t-1})\ge h
         
         <span class="tag">
             
-            <a href="tags/robot/" style="color: #ffa2c4">robot</a>
+            <a href="tags/robot/" style="color: #00bcd4">robot</a>
         </span>
         
     </div>
@@ -2525,7 +2643,7 @@ a^*, &amp; U(a^*)-U(a_{t-1})\ge h
         
         <span class="tag">
             
-            <a href="tags/Algorithm/" style="color: #ffa2c4">Algorithm</a>
+            <a href="tags/Algorithm/" style="color: #00a596">Algorithm</a>
         </span>
         
     </div>
@@ -2684,7 +2802,7 @@ a^*, &amp; U(a^*)-U(a_{t-1})\ge h
         
         <span class="tag">
             
-            <a href="tags/stl/" style="color: #00a596">stl</a>
+            <a href="tags/stl/" style="color: #ff7d73">stl</a>
         </span>
         
     </div>
@@ -2844,7 +2962,7 @@ a^*, &amp; U(a^*)-U(a_{t-1})\ge h
         
         <span class="tag">
             
-            <a href="tags/stl/" style="color: #00a596">stl</a>
+            <a href="tags/stl/" style="color: #ffa2c4">stl</a>
         </span>
         
     </div>
@@ -3134,7 +3252,7 @@ a^*, &amp; U(a^*)-U(a_{t-1})\ge h
         
         <span class="tag">
             
-            <a href="tags/Algorithm/" style="color: #03a9f4">Algorithm</a>
+            <a href="tags/Algorithm/" style="color: #00a596">Algorithm</a>
         </span>
         
     </div>
@@ -3227,7 +3345,7 @@ a^*, &amp; U(a^*)-U(a_{t-1})\ge h
         </transition>
         
     </div>
-    <script src="/js/main.js"></script>
+    <script src="/js/main.js?v=20260627-intro-sync3"></script>
     
 </body>
 </html>

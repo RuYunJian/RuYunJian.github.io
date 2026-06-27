@@ -1,13 +1,17 @@
 (() => {
     "use strict";
 
-    const VERSION = "UIN-DetPW v1";
+    const VERSION = "UIN-DetPW v2";
     const encoder = new TextEncoder();
     const alphabets = {
-        base64url: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_",
-        base62: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
-        hex: "0123456789abcdef",
+        compatible: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*-_=+",
     };
+    const requiredClasses = [
+        { label: "大写字母", chars: "ABCDEFGHIJKLMNOPQRSTUVWXYZ" },
+        { label: "小写字母", chars: "abcdefghijklmnopqrstuvwxyz" },
+        { label: "数字", chars: "0123456789" },
+        { label: "特殊符号", chars: "!@#$%^&*-_=+" },
+    ];
     const profiles = {
         balanced: { mem: 65536, time: 3, parallelism: 4 },
         light: { mem: 32768, time: 3, parallelism: 1 },
@@ -170,7 +174,26 @@
         return null;
     }
 
-    async function encodePassword(prk, info, alphabet, outputLength) {
+    function hasAny(text, chars) {
+        for (const char of chars) {
+            if (text.includes(char)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function missingRequiredClasses(text) {
+        return requiredClasses
+            .filter((group) => !hasAny(text, group.chars))
+            .map((group) => group.label);
+    }
+
+    function passwordMeetsPolicy(password) {
+        return missingRequiredClasses(password).length === 0;
+    }
+
+    async function samplePasswordCandidate(prk, info, alphabet, outputLength) {
         const threshold = Math.floor(256 / alphabet.length) * alphabet.length;
         let byteLength = Math.max(32, Math.ceil((outputLength * 256) / threshold) + 16);
 
@@ -185,6 +208,25 @@
         }
 
         throw new Error("输出编码采样失败，请降低长度或更换字符集。");
+    }
+
+    async function encodePassword(prk, info, alphabet, outputLength) {
+        const missingFromAlphabet = missingRequiredClasses(alphabet);
+        if (missingFromAlphabet.length > 0) {
+            throw new Error(`字符集缺少${missingFromAlphabet.join("、")}，无法满足站点强制规则。`);
+        }
+
+        // Generate a full-string uniform candidate first, then reject the whole string
+        // unless it contains upper, lower, digit and special characters.
+        for (let attempt = 0; attempt < 64; attempt += 1) {
+            const attemptInfo = concatBytes(info, bytes("UDPG/policy/v2"), i2osp32(attempt));
+            const password = await samplePasswordCandidate(prk, attemptInfo, alphabet, outputLength);
+            if (passwordMeetsPolicy(password)) {
+                return password;
+            }
+        }
+
+        throw new Error("输出策略采样失败，请稍后重试。");
     }
 
     async function derivePassword(input, progress) {
@@ -223,7 +265,7 @@
         }
 
         const finalState = concatBytes(left, right);
-        const encInfo = concatBytes(bytes("UDPG/enc/v1"), finalState, i2osp8(input.outputLength));
+        const encInfo = concatBytes(bytes("UDPG/enc/v2"), finalState, i2osp8(input.outputLength));
 
         progress("正在编码输出...");
         const password = await encodePassword(prk, encInfo, input.alphabet, input.outputLength);
@@ -292,6 +334,15 @@
             throw new Error("主密钥不能为空。");
         }
 
+        const alphabet = alphabets[alphabetInput.value];
+        const params = profiles[profileInput.value];
+        if (!alphabet) {
+            throw new Error("请选择有效字符集。");
+        }
+        if (!params) {
+            throw new Error("请选择有效计算档位。");
+        }
+
         return {
             target: target.value,
             targetMode,
@@ -299,8 +350,8 @@
             digits: digits.value,
             masterKey: masterKey.value,
             outputLength,
-            alphabet: alphabets[alphabetInput.value],
-            params: profiles[profileInput.value],
+            alphabet,
+            params,
         };
     }
 
@@ -371,7 +422,7 @@
             saltPreview.textContent = output.saltHex;
             contextPreview.textContent = `${input.targetMode === "app" ? "App" : "URL"} / ${input.target.length} 字符 / ${output.contextHex}`;
             const spaceNote = /^\s|\s$/.test(input.target) ? " 标识包含首尾空格，已按原样计算。" : "";
-            setMessage(`已生成 ${input.outputLength} 位口令。${spaceNote}`);
+            setMessage(`已生成 ${input.outputLength} 位口令，包含大小写、数字和特殊符号。${spaceNote}`);
         } catch (error) {
             console.error(error);
             setMessage(error && error.message ? error.message : "生成失败。", "error");
