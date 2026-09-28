@@ -1,0 +1,57 @@
+#butterfly-loading[hidden] { display: none; }
+#butterfly-loading {
+    position: fixed; inset: 0; z-index: 10000; isolation: isolate;
+    color: #f0e7ff; overflow: hidden;
+    transition: opacity .65s ease, visibility .65s;
+}
+.entrance-paper {
+    position: absolute; inset: 0; z-index: -1;
+    background: radial-gradient(ellipse at 32% 65%, #241637 0, #120d20 45%, #08070f 100%);
+    transition: opacity .65s ease;
+}
+.entrance-flight { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+#butterfly-loading button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+#butterfly-loading:focus, #butterfly-loading button:focus { outline: none; }
+#butterfly-loading.keyboard-navigation button:focus-visible { outline: 2px solid #dbc1ff; outline-offset: 6px; }
+#butterfly-loading .entrance-skip {
+    position: absolute; z-index: 4; top: max(24px, env(safe-area-inset-top)); right: max(28px, env(safe-area-inset-right));
+    min-height: 44px; padding: 8px 12px; font-size: 13px; color: #bdb0ce; transition: color .2s;
+}
+#butterfly-loading .entrance-skip:hover { color: #fff5ff; }
+.entrance-skip span { margin-left: 12px; }
+.entrance-invitation {
+    position: absolute; inset: 3% 1% 12%;
+    text-align: center; transition: opacity .55s, transform .7s;
+}
+#butterfly-loading .entrance-gesture { width: 100%; height: 100%; display: block; padding: 0; touch-action: none; cursor: grab; }
+#butterfly-loading .entrance-gesture:active { cursor: grabbing; }
+.entrance-gesture svg { width: 100%; height: 100%; overflow: visible; display: block; }
+.flight-guide, .flight-progress { fill: none; stroke-width: 1.5; stroke-linecap: round; }
+.flight-guide { stroke: #746385; stroke-dasharray: 2 8; }
+.flight-progress { stroke: #e1caff; stroke-width: 2.5; }
+.flight-origin { fill: #271c39; stroke: #d4b6fa; stroke-width: 1.5; }
+.flight-arrow { fill: none; stroke: #b197ce; stroke-width: 1.2; }
+.flight-finger { fill: #e9d7ff; offset-path: path('M100 575 C350 410 660 250 900 85'); animation: gesture-hint 3.4s cubic-bezier(.4, 0, .2, 1) infinite; }
+.entrance-prompt { position: absolute; bottom: 0; left: 0; right: 0; display: block; margin: 0; font-size: 16px; letter-spacing: .16em; }
+#butterfly-loading .entrance-device-hint { position: absolute; left: 0; right: 0; bottom: -28px; margin: 0; color: #b2a4c4; font-size: 12px; letter-spacing: .06em; }
+.entrance-writing {
+    position: absolute; width: min(800px, 91vw); left: 50%; top: 50%; transform: translate(-50%, -50%);
+    opacity: 0; transition: opacity .3s; pointer-events: none;
+}
+.entrance-writing svg { width: 100%; display: block; overflow: visible; }
+#butterfly-loading.is-playing .entrance-invitation { opacity: 0; pointer-events: none; }
+#butterfly-loading.is-writing .entrance-writing { opacity: 1; }
+#butterfly-loading.is-revealing .entrance-paper { opacity: 0; }
+#butterfly-loading.is-finished { opacity: 0; visibility: hidden; pointer-events: none; }
+.entrance-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@keyframes gesture-hint { 0%, 12% { offset-distance: 0%; opacity: 0; } 20% { opacity: 1; } 72% { offset-distance: 100%; opacity: 1; } 85%, 100% { offset-distance: 100%; opacity: 0; } }
+@media (max-width: 600px) {
+    .entrance-invitation { inset: 5% 1% 14%; }
+    .entrance-writing { top: 50%; width: 94vw; }
+    .entrance-prompt { font-size: 14px; margin-top: 20px; }
+    #butterfly-loading .entrance-skip { right: 16px; top: max(16px, env(safe-area-inset-top)); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .flight-finger { animation: none; display: none; }
+    #butterfly-loading, .entrance-paper, .entrance-writing, .entrance-invitation { transition-duration: .2s; }
+}

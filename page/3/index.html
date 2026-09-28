@@ -51,136 +51,48 @@
 
 <link rel="stylesheet" href="../../css/main.css?v=20260628-enter-fix1" />
 
+    
+    <link rel="stylesheet" href="../../css/butterfly-loading.css?v=20260928-model5" />
+    
 <meta name="generator" content="Hexo 7.3.0"></head>
-<body data-intro-mode="home">
+<body data-home="true">
+    
+    <section id="butterfly-loading" hidden aria-label="蝴蝶与手写开场"
+    data-model="../../models/artistic-butterfly/scene.gltf">
+    <div class="entrance-paper"></div>
+    <canvas class="entrance-flight" aria-hidden="true"></canvas>
+    <button class="entrance-skip" type="button">跳过开场 <span aria-hidden="true">↗</span></button>
+    <div class="entrance-invitation">
+        <button class="entrance-gesture" type="button" aria-label="沿轨迹滑动唤起蝴蝶，也可按回车播放">
+            <svg viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true">
+                <path class="flight-guide" d="M100 575 C350 410 660 250 900 85" />
+                <path class="flight-progress" d="M100 575 C350 410 660 250 900 85" />
+                <circle class="flight-origin" cx="100" cy="575" r="6" />
+                <path class="flight-arrow" d="M882 88 L900 85 L895 103" />
+                <circle class="flight-finger" r="4" />
+            </svg>
+            <span class="entrance-prompt">从左下，划向右上</span>
+        </button>
+        <p class="entrance-device-hint">拖动鼠标，或用手指划过</p>
+    </div>
+    <div class="entrance-writing" role="img" aria-label="我与我周旋久，宁做我。">
+        <svg viewBox="10 24 415 54" aria-hidden="true">
+            <defs>
+                <filter id="handwriting-ink" color-interpolation-filters="sRGB">
+                    <feColorMatrix type="matrix" values="0 0 0 0 .95  0 0 0 0 .90  0 0 0 0 1  -.333 -.333 -.333 0 1" />
+                </filter>
+                <mask id="handwriting-reveal" maskUnits="userSpaceOnUse" x="0" y="0" width="430" height="144"></mask>
+            </defs>
+            <image href="../../images/entrance/handwriting.png" width="430" height="144" filter="url(#handwriting-ink)" mask="url(#handwriting-reveal)" />
+        </svg>
+    </div>
+    <p class="entrance-status" role="status" aria-live="polite"></p>
+</section>
+<script defer src="../../js/butterfly-loading.js?v=20260928-model5"></script>
+
+    
     <div id="layout">
-        <transition name="fade">
-            
-            <div
-                id="loading"
-                class="intro-loading"
-                :class="{
-                    'intro-started': introStarted,
-                    'intro-ready': pageLoaded,
-                    'intro-detail-open': selectedSchool !== null,
-                    'intro-audio-fallback': introAudioFallback
-                }"
-                v-show="loading"
-            >
-                <audio
-                    ref="introAudio"
-                    src="../../audio/hexo%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90.mp3"
-                    preload="auto"
-                    controls
-                    @play="introAudioPlaying = true; introAudioFallback = false"
-                    @pause="introAudioPlaying = false"
-                    @ended="enterSite"
-                ></audio>
-                <div class="intro-bg"></div>
-                <div class="intro-grid"></div>
-                <ul class="intro-lyrics" aria-hidden="true"></ul>
-                <div class="intro-topbar">
-                    <button
-                        class="intro-icon-btn"
-                        type="button"
-                        @click="toggleIntroAudio"
-                        :aria-label="introAudioPlaying ? '暂停音乐' : '播放音乐'"
-                    >
-                        <i :class="introAudioPlaying ? 'fa-solid fa-volume-high' : 'fa-solid fa-play'"></i>
-                    </button>
-                    <button class="intro-skip" type="button" @click="enterSite">
-                        进入主页
-                    </button>
-                </div>
-                <section class="intro-cover" v-show="!introStarted">
-                    <p class="intro-kicker">UNIVERSITY ARCHIVE</p>
-                    <h1>名校档案启动</h1>
-                    <p class="intro-lead">拖动校徽环，点开一所学校，听完序曲后进入新世界。</p>
-                    <div class="intro-actions">
-                        <button class="intro-primary" type="button" @click="startIntro">
-                            启动展厅并播放音乐
-                        </button>
-                        <button class="intro-secondary" type="button" @click="enterSite">
-                            直接进入
-                        </button>
-                    </div>
-                    <p class="intro-status">{{ introStatus }}</p>
-                </section>
-                <section class="intro-gallery" v-show="introStarted" aria-label="学校校徽展厅">
-                    <div class="intro-copy">
-                        <p class="intro-kicker">DRAG TO ROTATE</p>
-                        <h1>选择一枚校徽</h1>
-                        <p>{{ introStatus }}</p>
-                    </div>
-                    <div
-                        class="intro-stage"
-                        @pointerdown="introPointerDown"
-                        @touchmove.prevent
-                    >
-                        <div
-                            class="school-ring"
-                            :class="{ dragging: draggingRing }"
-                            :style="{ transform: 'rotateY(' + ringRotation + 'deg)' }"
-                        >
-                            <button
-                                v-for="(school, index) in introSchools"
-                                :key="school.name"
-                                class="school-panel"
-                                type="button"
-                                :style="getSchoolPanelStyle(index)"
-                                :aria-label="'查看' + school.name"
-                                @click.stop="openSchool(index)"
-                            >
-                                <span class="school-logo-wrap">
-                                    <img :src="school.logo" :alt="school.name + '校徽'" />
-                                </span>
-                                <span class="school-name">{{ school.short }}</span>
-                            </button>
-                        </div>
-                    </div>
-                </section>
-                <transition name="fade">
-                    <div
-                        class="school-dialog-backdrop"
-                        v-show="activeSchool"
-                        @click.self="closeSchool"
-                    >
-                        <article
-                            class="school-dialog"
-                            role="dialog"
-                            aria-modal="true"
-                            :aria-label="activeSchool ? activeSchool.name : '学校详情'"
-                        >
-                            <button
-                                class="school-dialog-close"
-                                type="button"
-                                aria-label="返回展厅"
-                                @click="closeSchool"
-                            >
-                                <i class="fa-solid fa-arrow-left"></i>
-                            </button>
-                            <img
-                                v-if="activeSchool"
-                                :src="activeSchool.logo"
-                                :alt="activeSchool.name + '校徽'"
-                            />
-                            <p class="intro-kicker">{{ activeSchool && activeSchool.english }}</p>
-                            <h2>{{ activeSchool && activeSchool.name }}</h2>
-                            <p class="school-line">{{ activeSchool && activeSchool.line }}</p>
-                            <div class="school-dialog-actions">
-                                <button class="intro-secondary" type="button" @click="closeSchool">
-                                    返回展厅
-                                </button>
-                                <button class="intro-primary" type="button" @click="enterSite">
-                                    进入主页
-                                </button>
-                            </div>
-                        </article>
-                    </div>
-                </transition>
-            </div>
-            
-        </transition>
+        
         <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <nav id="desktop-menu">
         <a class="title" href="/">
@@ -288,7 +200,7 @@
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
 
-        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+        <div id="main" class="into-enter-active">
             <div id="home-head">
     <div
         id="home-background"
@@ -405,7 +317,7 @@
         
         <span class="tag">
             
-            <a href="../../tags/leetcode/" style="color: #00bcd4">leetcode</a>
+            <a href="../../tags/leetcode/" style="color: #00a596">leetcode</a>
         </span>
         
     </div>
@@ -475,7 +387,7 @@
         
         <span class="tag">
             
-            <a href="../../tags/leetcode/" style="color: #ff7d73">leetcode</a>
+            <a href="../../tags/leetcode/" style="color: #00bcd4">leetcode</a>
         </span>
         
     </div>
@@ -546,7 +458,7 @@
         
         <span class="tag">
             
-            <a href="../../tags/note/" style="color: #00bcd4">note</a>
+            <a href="../../tags/note/" style="color: #ffa2c4">note</a>
         </span>
         
     </div>
@@ -586,7 +498,7 @@
         
         <span class="tag">
             
-            <a href="../../tags/diary/" style="color: #ffa2c4">diary</a>
+            <a href="../../tags/diary/" style="color: #00a596">diary</a>
         </span>
         
     </div>
@@ -626,7 +538,7 @@
         
         <span class="tag">
             
-            <a href="../../tags/diary/" style="color: #00a596">diary</a>
+            <a href="../../tags/diary/" style="color: #ff7d73">diary</a>
         </span>
         
     </div>
@@ -742,6 +654,13 @@
             <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
         </div>
         
+        <div class="entrance-credit">
+            Butterfly: <a target="_blank" rel="noopener" href="https://sketchfab.com/3d-models/animated-butterfly-d4fbcbaab845402999f30c5aa75851e6">Animated Butterfly</a>
+            by <a target="_blank" rel="noopener" href="https://sketchfab.com/leorehman333">Artistic_side</a> ·
+            <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Lighting and choreography adapted
+        </div>
+        
+        
     </div>
      <div id="music_player">
 	<div class="aplayer no-destroy" data-id="17504027519" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-lrcType="-1"> </div>
@@ -757,7 +676,7 @@
         </transition>
         
     </div>
-    <script src="../../js/main.js?v=20260628-enter-fix1"></script>
+    <script src="../../js/main.js?v=20260928-direct-home"></script>
     
 </body>
 </html>
