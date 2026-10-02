@@ -12,7 +12,8 @@
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
     <link rel="icon" href="../../images/avatar.jpg" />
-    <link rel="stylesheet" href="../../css/imperial-loading.css?v=20261002" />
+    <link rel="stylesheet" href="../../css/imperial-loading.css?v=20261002-fast2" />
+<link rel="preload" as="image" type="image/webp" fetchpriority="high" href="../../images/imperial/background.webp" />
 <script>
 (() => {
     const key = 'imperial-internal-navigation';
@@ -23,9 +24,17 @@
         sessionStorage.removeItem(key);
         internal = marker && marker.url === location.href && Date.now() - marker.time < 30000;
     } catch (_) {}
-    if (!internal && navigation?.type !== 'reload' && navigation?.type !== 'back_forward'
+    if (!internal && navigation?.type !== 'back_forward'
         && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
         document.documentElement.classList.add('imperial-opening');
+        const script = document.createElement('link');
+        script.rel = 'preload'; script.as = 'script';
+        script.href = "../../js/imperial-loading.js?v=20261002-fast2";
+        document.head.appendChild(script);
+        const edges = document.createElement('link');
+        edges.rel = 'preload'; edges.as = 'image'; edges.type = 'image/webp';
+        edges.href = "../../images/imperial/edges.webp";
+        document.head.appendChild(edges);
         window.imperialEntranceTimeout = setTimeout(() => {
             if (window.finishImperialEntrance) window.finishImperialEntrance();
             else document.documentElement.classList.remove('imperial-opening');
@@ -45,42 +54,43 @@
 })();
 </script>
 
-    <link rel="preconnect" href="https://s4.zstatic.net" />
-<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <script> const mixins = {}; </script>
+<link rel="preconnect" href="https://s4.zstatic.net" />
+<script defer src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.googleapis.cn" />
 <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
 <link
-    rel="stylesheet"
+    rel="stylesheet" media="print" onload="this.media='all'"
     href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
 />
-<script> const mixins = {}; </script>
-
-<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
 
 
-<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script defer src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script defer src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script defer src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 <link
-    rel="stylesheet"
+    rel="stylesheet" media="print" onload="this.media='all'"
     href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
 />
-<script src="../../js/lib/highlight.js"></script>
+<script defer src="../../js/lib/highlight.js"></script>
 
 
-<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
-<script src="../../js/lib/math.js"></script>
+<script defer src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script defer src="../../js/lib/math.js"></script>
 
 
-<script src="../../js/lib/preview.js"></script>
+<script defer src="../../js/lib/preview.js"></script>
 
 
 
 
 
-<script src="../../js/lib/home.js"></script>
+<script defer src="../../js/lib/home.js?v=20261002-fast2"></script>
 
 <link rel="stylesheet" href="../../css/main.css?v=20261002-imperial-home" />
 
@@ -93,7 +103,7 @@
     data-assets="../../images/imperial/">
     <canvas id="imperial-scene" role="img" aria-label="金色粒子聚合成宫殿线稿，随后逐渐上色"></canvas>
 </section>
-<script defer src="../../js/imperial-loading.js?v=20261002"></script>
+<script async src="../../js/imperial-loading.js?v=20261002-fast2"></script>
 
     <div id="layout">
         
@@ -209,8 +219,8 @@
     <div
         id="home-background"
         ref="homeBackground"
-        data-images="../../images/imperial/background.jpg"
-        style="background-image: url('../../images/imperial/background.jpg')"
+        data-images="../../images/imperial/background.webp"
+        style="background-image: url('../../images/imperial/background.webp'), url('data:image/webp;base64,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')"
     ></div>
     <div id="home-info" @click="homeClick">
         <span class="loop"></span>
@@ -293,7 +303,7 @@
         
         <span class="tag">
             
-            <a href="../../tags/leetcode/" style="color: #03a9f4">leetcode</a>
+            <a href="../../tags/leetcode/" style="color: #ff7d73">leetcode</a>
         </span>
         
     </div>
@@ -405,7 +415,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         
         <span class="tag">
             
-            <a href="../../tags/note/" style="color: #ffa2c4">note</a>
+            <a href="../../tags/note/" style="color: #ff7d73">note</a>
         </span>
         
     </div>
@@ -454,7 +464,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         
         <span class="tag">
             
-            <a href="../../tags/leetcode/" style="color: #ffa2c4">leetcode</a>
+            <a href="../../tags/leetcode/" style="color: #03a9f4">leetcode</a>
         </span>
         
     </div>
@@ -494,7 +504,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         
         <span class="tag">
             
-            <a href="../../tags/note/" style="color: #03a9f4">note</a>
+            <a href="../../tags/note/" style="color: #ff7d73">note</a>
         </span>
         
     </div>
@@ -581,7 +591,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         
         <span class="tag">
             
-            <a href="../../tags/leetcode/" style="color: #03a9f4">leetcode</a>
+            <a href="../../tags/leetcode/" style="color: #00a596">leetcode</a>
         </span>
         
     </div>
@@ -623,7 +633,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         
         <span class="tag">
             
-            <a href="../../tags/diary/" style="color: #00a596">diary</a>
+            <a href="../../tags/diary/" style="color: #00bcd4">diary</a>
         </span>
         
     </div>
@@ -681,7 +691,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         
         <span class="tag">
             
-            <a href="../../tags/diary/" style="color: #03a9f4">diary</a>
+            <a href="../../tags/diary/" style="color: #ffa2c4">diary</a>
         </span>
         
     </div>
@@ -1049,7 +1059,7 @@ j 从 low 开始，逐个检查 <code>arr[j]</code> 与 <code>pivot</code> 的�
         
         <span class="tag">
             
-            <a href="../../tags/Algorithm/" style="color: #00a596">Algorithm</a>
+            <a href="../../tags/Algorithm/" style="color: #00bcd4">Algorithm</a>
         </span>
         
     </div>
@@ -1144,7 +1154,7 @@ j 从 low 开始，逐个检查 <code>arr[j]</code> 与 <code>pivot</code> 的�
         </transition>
         
     </div>
-    <script src="../../js/main.js?v=20260928-direct-home"></script>
+    <script defer src="../../js/main.js?v=20261002-fast2"></script>
     
 </body>
 </html>

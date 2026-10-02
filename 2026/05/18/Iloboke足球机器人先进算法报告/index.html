@@ -12,7 +12,8 @@
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
     <link rel="icon" href="../../../../images/avatar.jpg" />
-    <link rel="stylesheet" href="../../../../css/imperial-loading.css?v=20261002" />
+    <link rel="stylesheet" href="../../../../css/imperial-loading.css?v=20261002-fast2" />
+<link rel="preload" as="image" type="image/webp" fetchpriority="high" href="../../../../images/imperial/background.webp" />
 <script>
 (() => {
     const key = 'imperial-internal-navigation';
@@ -23,9 +24,17 @@
         sessionStorage.removeItem(key);
         internal = marker && marker.url === location.href && Date.now() - marker.time < 30000;
     } catch (_) {}
-    if (!internal && navigation?.type !== 'reload' && navigation?.type !== 'back_forward'
+    if (!internal && navigation?.type !== 'back_forward'
         && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
         document.documentElement.classList.add('imperial-opening');
+        const script = document.createElement('link');
+        script.rel = 'preload'; script.as = 'script';
+        script.href = "../../../../js/imperial-loading.js?v=20261002-fast2";
+        document.head.appendChild(script);
+        const edges = document.createElement('link');
+        edges.rel = 'preload'; edges.as = 'image'; edges.type = 'image/webp';
+        edges.href = "../../../../images/imperial/edges.webp";
+        document.head.appendChild(edges);
         window.imperialEntranceTimeout = setTimeout(() => {
             if (window.finishImperialEntrance) window.finishImperialEntrance();
             else document.documentElement.classList.remove('imperial-opening');
@@ -45,43 +54,44 @@
 })();
 </script>
 
-    <link rel="preconnect" href="https://s4.zstatic.net" />
-<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <script> const mixins = {}; </script>
+<link rel="preconnect" href="https://s4.zstatic.net" />
+<script defer src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.googleapis.cn" />
 <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
 <link
-    rel="stylesheet"
+    rel="stylesheet" media="print" onload="this.media='all'"
     href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
 />
-<script> const mixins = {}; </script>
-
-<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
 
 
-<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script defer src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script defer src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script defer src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 <link
-    rel="stylesheet"
+    rel="stylesheet" media="print" onload="this.media='all'"
     href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
 />
-<script src="../../../../js/lib/highlight.js"></script>
+<script defer src="../../../../js/lib/highlight.js"></script>
 
 
-<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
-<script src="../../../../js/lib/math.js"></script>
+<script defer src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+<script defer src="../../../../js/lib/math.js"></script>
 
 
-<script src="../../../../js/lib/preview.js"></script>
+<script defer src="../../../../js/lib/preview.js"></script>
 
 
 
 
 
-<script src="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.css" />
+<script defer src="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.css" />
 
 
 
@@ -95,7 +105,7 @@
     data-assets="../../../../images/imperial/">
     <canvas id="imperial-scene" role="img" aria-label="金色粒子聚合成宫殿线稿，随后逐渐上色"></canvas>
 </section>
-<script defer src="../../../../js/imperial-loading.js?v=20261002"></script>
+<script async src="../../../../js/imperial-loading.js?v=20261002-fast2"></script>
 
     <div id="layout">
         
@@ -622,11 +632,11 @@
         </transition>
         
     </div>
-    <script src="../../../../js/main.js?v=20260928-direct-home"></script>
+    <script defer src="../../../../js/main.js?v=20261002-fast2"></script>
     
     
 
-<script>
+<script>document.addEventListener("DOMContentLoaded", () => {
     const gitalk = new Gitalk({
         clientID: "Ov23lib9xKYSem8GXBfF",
         clientSecret: "09adbc33407ac1e33d79c32f8251eb73e39d02d2",
@@ -640,7 +650,7 @@
         
     })
     gitalk.render("gitalk-container");
-</script>
+}, { once: true });</script>
 
 
 

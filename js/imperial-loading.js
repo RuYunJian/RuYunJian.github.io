@@ -5,14 +5,13 @@
   if(!document.documentElement.classList.contains('imperial-opening')){
     clearTimeout(window.imperialEntranceTimeout);root.remove();return;
   }
-  const previousFocus=document.activeElement,previousInert=layout?.inert;
+  const previousFocus=document.activeElement;
   const events=new AbortController();
   function finish(){
     ended=true;
     clearTimeout(window.imperialEntranceTimeout);
     events.abort();cancelAnimationFrame(raf);
     document.documentElement.classList.remove('imperial-opening');
-    if(layout)layout.inert=previousInert;
     if(root.contains(document.activeElement)){
       const target=previousFocus!==document.body&&previousFocus?.isConnected?previousFocus:layout?.querySelector('a');
       target?.focus({preventScroll:true});
@@ -23,7 +22,6 @@
   const canvas=document.getElementById('imperial-scene');
   const ctx=canvas.getContext('2d',{alpha:false});
   const q=new URLSearchParams(),assets=root.dataset.assets;
-  if(layout)layout.inert=true;
   root.focus({preventScroll:true});
   const capture=q.has('time'),waiting=q.get('wait')==='1',duration=8000;
   let image,edges,particles=[],width=1,height=1,dpr=1,start=null,raf=0,ended=false,loaded=false,frames=0;
@@ -63,8 +61,10 @@
   addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();complete(true)}},{signal:events.signal});
   
   if(!ctx){complete(true);return;}
-  Promise.all([loadImage(assets+'background.jpg'),loadImage(assets+'edges.png'),fetch(assets+'particles.json',{signal:events.signal}).then(r=>{if(!r.ok)throw Error('Particle load failed');return r.json()})]).then(([im,ed,points])=>{
+  Promise.all([loadImage(assets+'background.webp'),loadImage(assets+'edges.webp'),fetch(assets+'particles.json',{signal:events.signal}).then(r=>{if(!r.ok)throw Error('Particle load failed');return r.json()})]).then(([im,ed,points])=>{
     if(ended)return;image=im;edges=ed;particles=points.map(p=>({tx:p[0],ty:p[1],angle:p[2],sx:random(),sy:random(),delay:random()*.42,len:random()*2.7,group:Math.floor(random()*3)}));loaded=true;resize();
+    clearTimeout(window.imperialEntranceTimeout);
+    window.imperialEntranceTimeout=setTimeout(window.finishImperialEntrance,9000);
     window.imperial={render,complete,replay,stats:()=>({loaded,ended,frames,particles:particles.length,duration,width,height,viewport:[innerWidth,innerHeight],display:[canvas.clientWidth,canvas.clientHeight],buffer:[canvas.width,canvas.height],dpr})};
     render(capture?Number(q.get('time')):0);document.body.dataset.ready='true';message({type:'ready',particles:particles.length});if(!capture&&!waiting)replay();
   }).catch(error=>{if(!ended){console.error(error);message({type:'error',message:error.message})}});
