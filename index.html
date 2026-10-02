@@ -3,15 +3,48 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>新世界</title>
+    <title>查士丁尼之梦</title>
     <meta name="author" content="南风知我意" />
-    <meta name="description" content="别弯腰 接受时间躲不开的那一刀" />
+    <meta name="description" content="后来，夕阳落在地中海上，也落在查士丁尼那场终究未完成的梦里" />
     <meta name="keywords" content="吹梦到西周" />
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
     <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="stylesheet" href="/css/imperial-loading.css?v=20261002" />
+<script>
+(() => {
+    const key = 'imperial-internal-navigation';
+    const navigation = performance.getEntriesByType('navigation')[0];
+    let internal = false;
+    try {
+        const marker = JSON.parse(sessionStorage.getItem(key) || 'null');
+        sessionStorage.removeItem(key);
+        internal = marker && marker.url === location.href && Date.now() - marker.time < 30000;
+    } catch (_) {}
+    if (!internal && navigation?.type !== 'reload' && navigation?.type !== 'back_forward'
+        && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('imperial-opening');
+        window.imperialEntranceTimeout = setTimeout(() => {
+            if (window.finishImperialEntrance) window.finishImperialEntrance();
+            else document.documentElement.classList.remove('imperial-opening');
+        }, 15000);
+    }
+    document.addEventListener('click', event => {
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        const link = event.target.closest?.('a[href]');
+        if (!link || link.hasAttribute('download')) return;
+        const target = link.target || document.querySelector('base[target]')?.target || '_self';
+        if (target !== '_self') return;
+        const url = new URL(link.href, location.href);
+        if (url.origin !== location.origin) return;
+        if (url.pathname === location.pathname && url.search === location.search && url.hash !== location.hash) return;
+        try { sessionStorage.setItem(key, JSON.stringify({ url: url.href, time: Date.now() })); } catch (_) {}
+    });
+})();
+</script>
+
     <link rel="preconnect" href="https://s4.zstatic.net" />
 <script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
 <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
@@ -49,54 +82,22 @@
 
 <script src="/js/lib/home.js"></script>
 
-<link rel="stylesheet" href="/css/main.css?v=20260628-enter-fix1" />
+<link rel="stylesheet" href="/css/main.css?v=20261002-imperial-home" />
 
-    
-    <link rel="stylesheet" href="/css/butterfly-loading.css?v=20260928-model5" />
-    
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body data-home="true">
-    
-    <section id="butterfly-loading" hidden aria-label="蝴蝶与手写开场"
-    data-model="/models/artistic-butterfly/scene.gltf">
-    <div class="entrance-paper"></div>
-    <canvas class="entrance-flight" aria-hidden="true"></canvas>
-    <button class="entrance-skip" type="button">跳过开场 <span aria-hidden="true">↗</span></button>
-    <div class="entrance-invitation">
-        <button class="entrance-gesture" type="button" aria-label="沿轨迹滑动唤起蝴蝶，也可按回车播放">
-            <svg viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true">
-                <path class="flight-guide" d="M100 575 C350 410 660 250 900 85" />
-                <path class="flight-progress" d="M100 575 C350 410 660 250 900 85" />
-                <circle class="flight-origin" cx="100" cy="575" r="6" />
-                <path class="flight-arrow" d="M882 88 L900 85 L895 103" />
-                <circle class="flight-finger" r="4" />
-            </svg>
-            <span class="entrance-prompt">从左下，划向右上</span>
-        </button>
-        <p class="entrance-device-hint">拖动鼠标，或用手指划过</p>
-    </div>
-    <div class="entrance-writing" role="img" aria-label="我与我周旋久，宁做我。">
-        <svg viewBox="10 24 415 54" aria-hidden="true">
-            <defs>
-                <filter id="handwriting-ink" color-interpolation-filters="sRGB">
-                    <feColorMatrix type="matrix" values="0 0 0 0 .95  0 0 0 0 .90  0 0 0 0 1  -.333 -.333 -.333 0 1" />
-                </filter>
-                <mask id="handwriting-reveal" maskUnits="userSpaceOnUse" x="0" y="0" width="430" height="144"></mask>
-            </defs>
-            <image href="/images/entrance/handwriting.png" width="430" height="144" filter="url(#handwriting-ink)" mask="url(#handwriting-reveal)" />
-        </svg>
-    </div>
-    <p class="entrance-status" role="status" aria-live="polite"></p>
+    <section id="imperial-loading" role="dialog" aria-modal="true" aria-label="宫殿粒子开场动画" tabindex="-1"
+    data-assets="/images/imperial/">
+    <canvas id="imperial-scene" role="img" aria-label="金色粒子聚合成宫殿线稿，随后逐渐上色"></canvas>
 </section>
-<script defer src="/js/butterfly-loading.js?v=20260928-model5"></script>
+<script defer src="/js/imperial-loading.js?v=20261002"></script>
 
-    
     <div id="layout">
         
         <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <nav id="desktop-menu">
         <a class="title" href="/">
-            <span>新世界</span>
+            <span>查士丁尼之梦</span>
         </a>
         
         <a href="index.html">
@@ -133,7 +134,7 @@
     <nav id="mobile-menu">
         <div class="title" @click="showMenuItems = !showMenuItems">
             <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;新世界</span>
+            <span>&emsp;查士丁尼之梦</span>
         </div>
         <transition name="slide">
             <div class="items" v-show="showMenuItems">
@@ -205,7 +206,8 @@
     <div
         id="home-background"
         ref="homeBackground"
-        data-images="/images/background.jpg"
+        data-images="/images/imperial/background.jpg"
+        style="background-image: url('/images/imperial/background.jpg')"
     ></div>
     <div id="home-info" @click="homeClick">
         <span class="loop"></span>
@@ -214,9 +216,8 @@
         <span class="loop"></span>
         <span class="info">
             <div class="wrap">
-                <h1>新世界</h1>
-                <h3>看太行 历风霜 万古腔 任我唱</h3>
-                <h5>别弯腰 接受时间躲不开的那一刀</h5>
+                <h1>查士丁尼之梦</h1>
+                <p class="home-poem">后来<br />夕阳落在地中海上<br />也落在查士丁尼那场终究未完成的梦里</p>
             </div>
         </span>
     </div>
@@ -2178,7 +2179,7 @@ a^*, &amp; U(a^*)-U(a_{t-1})\ge h
         
         <span class="tag">
             
-            <a href="tags/AI/" style="color: #00a596">AI</a>
+            <a href="tags/AI/" style="color: #03a9f4">AI</a>
         </span>
         
     </div>
@@ -2379,7 +2380,7 @@ a^*, &amp; U(a^*)-U(a_{t-1})\ge h
         
         <span class="tag">
             
-            <a href="tags/robot/" style="color: #03a9f4">robot</a>
+            <a href="tags/robot/" style="color: #ffa2c4">robot</a>
         </span>
         
     </div>
@@ -2476,7 +2477,7 @@ a^*, &amp; U(a^*)-U(a_{t-1})\ge h
         
         <span class="tag">
             
-            <a href="tags/robot/" style="color: #00bcd4">robot</a>
+            <a href="tags/robot/" style="color: #00a596">robot</a>
         </span>
         
     </div>
@@ -2714,7 +2715,7 @@ a^*, &amp; U(a^*)-U(a_{t-1})\ge h
         
         <span class="tag">
             
-            <a href="tags/stl/" style="color: #03a9f4">stl</a>
+            <a href="tags/stl/" style="color: #ffa2c4">stl</a>
         </span>
         
     </div>
@@ -2874,7 +2875,7 @@ a^*, &amp; U(a^*)-U(a_{t-1})\ge h
         
         <span class="tag">
             
-            <a href="tags/stl/" style="color: #00a596">stl</a>
+            <a href="tags/stl/" style="color: #ffa2c4">stl</a>
         </span>
         
     </div>
@@ -3164,7 +3165,7 @@ a^*, &amp; U(a^*)-U(a_{t-1})\ge h
         
         <span class="tag">
             
-            <a href="tags/Algorithm/" style="color: #00bcd4">Algorithm</a>
+            <a href="tags/Algorithm/" style="color: #03a9f4">Algorithm</a>
         </span>
         
     </div>
@@ -3231,7 +3232,7 @@ a^*, &amp; U(a^*)-U(a_{t-1})\ge h
     <div id="footer-wrap">
         <div>
             &copy;
-            2022 - 2026 新世界
+            2022 - 2026 查士丁尼之梦
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
@@ -3241,13 +3242,6 @@ a^*, &amp; U(a^*)-U(a_{t-1})\ge h
             Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
             <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
         </div>
-        
-        <div class="entrance-credit">
-            Butterfly: <a target="_blank" rel="noopener" href="https://sketchfab.com/3d-models/animated-butterfly-d4fbcbaab845402999f30c5aa75851e6">Animated Butterfly</a>
-            by <a target="_blank" rel="noopener" href="https://sketchfab.com/leorehman333">Artistic_side</a> ·
-            <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Lighting and choreography adapted
-        </div>
-        
         
     </div>
      <div id="music_player">

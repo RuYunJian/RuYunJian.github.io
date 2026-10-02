@@ -3,15 +3,48 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>Tags: stl | 新世界</title>
+    <title>Tags: stl | 查士丁尼之梦</title>
     <meta name="author" content="南风知我意" />
-    <meta name="description" content="别弯腰 接受时间躲不开的那一刀" />
+    <meta name="description" content="后来，夕阳落在地中海上，也落在查士丁尼那场终究未完成的梦里" />
     <meta name="keywords" content="吹梦到西周" />
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
     <link rel="icon" href="../../images/avatar.jpg" />
+    <link rel="stylesheet" href="../../css/imperial-loading.css?v=20261002" />
+<script>
+(() => {
+    const key = 'imperial-internal-navigation';
+    const navigation = performance.getEntriesByType('navigation')[0];
+    let internal = false;
+    try {
+        const marker = JSON.parse(sessionStorage.getItem(key) || 'null');
+        sessionStorage.removeItem(key);
+        internal = marker && marker.url === location.href && Date.now() - marker.time < 30000;
+    } catch (_) {}
+    if (!internal && navigation?.type !== 'reload' && navigation?.type !== 'back_forward'
+        && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('imperial-opening');
+        window.imperialEntranceTimeout = setTimeout(() => {
+            if (window.finishImperialEntrance) window.finishImperialEntrance();
+            else document.documentElement.classList.remove('imperial-opening');
+        }, 15000);
+    }
+    document.addEventListener('click', event => {
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        const link = event.target.closest?.('a[href]');
+        if (!link || link.hasAttribute('download')) return;
+        const target = link.target || document.querySelector('base[target]')?.target || '_self';
+        if (target !== '_self') return;
+        const url = new URL(link.href, location.href);
+        if (url.origin !== location.origin) return;
+        if (url.pathname === location.pathname && url.search === location.search && url.hash !== location.hash) return;
+        try { sessionStorage.setItem(key, JSON.stringify({ url: url.href, time: Date.now() })); } catch (_) {}
+    });
+})();
+</script>
+
     <link rel="preconnect" href="https://s4.zstatic.net" />
 <script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
 <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
@@ -47,12 +80,16 @@
 
 
 
-<link rel="stylesheet" href="../../css/main.css?v=20260628-enter-fix1" />
+<link rel="stylesheet" href="../../css/main.css?v=20261002-imperial-home" />
 
-    
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body data-home="false">
-    
+    <section id="imperial-loading" role="dialog" aria-modal="true" aria-label="宫殿粒子开场动画" tabindex="-1"
+    data-assets="../../images/imperial/">
+    <canvas id="imperial-scene" role="img" aria-label="金色粒子聚合成宫殿线稿，随后逐渐上色"></canvas>
+</section>
+<script defer src="../../js/imperial-loading.js?v=20261002"></script>
+
     <div id="layout">
         
         <transition name="fade">
@@ -68,7 +105,7 @@
         <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <nav id="desktop-menu">
         <a class="title" href="/">
-            <span>新世界</span>
+            <span>查士丁尼之梦</span>
         </a>
         
         <a href="../../index.html">
@@ -105,7 +142,7 @@
     <nav id="mobile-menu">
         <div class="title" @click="showMenuItems = !showMenuItems">
             <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;新世界</span>
+            <span>&emsp;查士丁尼之梦</span>
         </div>
         <transition name="slide">
             <div class="items" v-show="showMenuItems">
@@ -191,7 +228,7 @@
         
         
         <span>
-            <a href="../diary/" style="background: #00a596">
+            <a href="../diary/" style="background: #03a9f4">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -202,7 +239,7 @@
         
         
         <span>
-            <a href="../note/" style="background: #ffa2c4">
+            <a href="../note/" style="background: #ff7d73">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -213,7 +250,7 @@
         
         
         <span>
-            <a href="../AI/" style="background: #00bcd4">
+            <a href="../AI/" style="background: #03a9f4">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -237,7 +274,7 @@
         
         
         <span>
-            <a href="../Algorithm/" style="background: #ff7d73">
+            <a href="../Algorithm/" style="background: #00a596">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -277,7 +314,7 @@
                     
                     <span class="tag">
                         
-                        <a href="" style="color: #ffa2c4">
+                        <a href="" style="color: #00a596">
                             stl
                         </a>
                     </span>
@@ -323,7 +360,7 @@
     <div id="footer-wrap">
         <div>
             &copy;
-            2022 - 2026 新世界
+            2022 - 2026 查士丁尼之梦
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
@@ -333,7 +370,6 @@
             Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
             <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
         </div>
-        
         
     </div>
      <div id="music_player">

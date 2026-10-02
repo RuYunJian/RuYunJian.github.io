@@ -1456,3 +1456,32 @@ ol li {
         padding-left: 20px;
     }
 }
+
+/* Keep the three authored lines together inside the existing home medallion. */
+#home-head #home-info .info .wrap .home-poem {
+    color: #243b3b;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 2;
+    margin: 24px 0 0;
+    white-space: pre-line;
+}
+@media (max-width: 900px) {
+    #home-head #home-info,
+    #home-head #home-info .info {
+        width: min(350px, calc(100vw - 32px));
+        height: min(350px, calc(100vw - 32px));
+    }
+    #home-head #home-info .info .wrap {
+        padding: 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    #home-head #home-info .info .wrap h1 {
+        font-size: clamp(26px, 8vw, 34px);
+    }
+    #home-head #home-info .info .wrap .home-poem {
+        font-size: clamp(12px, 3.6vw, 14px);
+        margin-top: 20px;
+    }
+}
