@@ -1,0 +1,45 @@
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="Rain Island 原始 Three.js 雨景的交互预览，使用模拟降水数据。">
+  <title>Rain Island · 3D 雨景预览</title>
+  <link rel="stylesheet" href="./assets/preview.css">
+  <script defer src="./assets/preview.bundle.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <div><h1>Rain Island</h1><p>用代码还原一场雨。</p></div>
+      <a href="/2026/10/04/rain-island/" target="_top">阅读项目介绍</a>
+    </header>
+    <section class="island" aria-label="三维降雨预览">
+      <div class="scene-heading"><span>3D 雨景</span><span>模拟数据 · 非实时预报</span></div>
+      <div id="webgl" role="img" aria-label="由原项目代码实时渲染的雨丝、地面涟漪和弹起水滴">
+        <img id="poster" src="/./assets/rain-preview.webp" alt="Rain Island 实际渲染的雨丝与地面涟漪" width="1440" height="620">
+        <p id="graphicsError" hidden>当前浏览器无法显示 3D 雨景，可查看上方实机截图。请启用硬件加速后重新加载。</p>
+      </div>
+      <div class="readout"><output id="rate">中雨，4.8 mm/h</output><span id="previewTime">演示 +45 分钟</span></div>
+      <div class="timeline">
+        <label for="progress">降雨过程 <span>拖动预览，键盘方向键微调</span></label>
+        <svg viewbox="0 0 656 52" preserveaspectratio="none" aria-hidden="true"><path id="area"/><path id="curve"/><line id="cursor" x1="0" x2="0" y1="0" y2="52"/></svg>
+        <input id="progress" type="range" min="0" max="115" step="0.5" value="45" aria-label="模拟降雨过程，单位分钟">
+        <div class="ticks"><span>+0 分钟</span><span>+30</span><span>+60</span><span>+90</span><span>+115</span></div>
+      </div>
+      <div class="controls">
+        <div class="presets" role="group" aria-label="选择雨势">
+          <button data-rate="0.6" aria-pressed="false">小雨</button>
+          <button data-rate="4.8" aria-pressed="false">中雨</button>
+          <button data-rate="13.6" aria-pressed="false">大雨</button>
+        </div>
+        <div class="playback"><button id="play" aria-pressed="false">播放过程</button><button id="orbit">环绕镜头</button></div>
+      </div>
+    </section>
+    <p class="note">mm/h 表示五分钟平均降水强度。小 / 中 / 大为本项目的视觉档位，非气象部门累计雨量等级。全部演示数据均为模拟。</p>
+    <noscript><p>启用 JavaScript 后可体验交互式 3D 雨景。</p></noscript>
+    <footer><a href="./assets/rain-scene.js" download>下载原始渲染代码</a><span>Three.js · WebGL · GLSL</span></footer>
+  </main>
+</body>
+</html>
