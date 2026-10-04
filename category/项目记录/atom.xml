@@ -30,7 +30,12 @@
 &lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;/rain-island/&#34;&gt;独立打开 3D 预览&lt;/a&gt; · &lt;a href=&#34;/rain-island/assets/rain-scene.js&#34;&gt;下载原始雨景渲染代码&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;预览只在浏览器本地运行，不查询真实天气，不请求定位。页面不包含实际地点、经纬度、个人天气接口地址、密钥或观测记录。&lt;/p&gt;
-&lt;h2 id=&#34;项目介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#项目介绍&#34;&gt;#&lt;/a&gt; 项目介绍&lt;/h2&gt;
+&lt;h2 id=&#34;安卓测试版&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安卓测试版&#34;&gt;#&lt;/a&gt; 安卓测试版&lt;/h2&gt;
+&lt;p&gt;现在也提供安卓安装包，可在应用内查看同一份 3D 雨景，也可使用顶部悬浮雨景和后台降雨提醒。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;/downloads/rain-island/RainIsland-Android-0.1.0.apk&#34;&gt;下载 Rain Island 安卓测试版 0.1.0&lt;/a&gt; · &lt;a href=&#34;/downloads/rain-island/SHA256.txt&#34;&gt;SHA-256 校验值&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装后先运行演示，再在设置中启用通知和悬浮窗。需要真实监测时，在手机内填写地点和天气服务凭证并开启后台监测。安装包没有预置真实地点、私人服务地址或密钥，本机设置使用 Android Keystore 加密保存。支持 Android 8.0 及以上；3D 渲染需要较新的系统 WebView。&lt;/p&gt;
+&lt;p&gt;这是可安装的测试版：已通过构建、签名、提醒规则测试和 Android 静态检查，尚未完成手机实机验证。OriginOS 的后台限制可能影响提醒时效。当前实现独立的悬浮胶囊，&lt;strong&gt;尚未接入 vivo 原生原子岛&lt;/strong&gt;；原生接入需要对应的场景权限，不能保证普通通知自动上岛。&lt;/p&gt;
+&lt;h2 id=&#34;桌面项目介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#桌面项目介绍&#34;&gt;#&lt;/a&gt; 桌面项目介绍&lt;/h2&gt;
 &lt;p&gt;桌面版使用 Electron 承载透明置顶窗口，以胶囊展开的方式显示雨景、降水时间轴和提醒信息。Three.js 负责三维场景，GLSL 着色器负责雨丝下落、涟漪扩散以及水滴弹起的动画。雨声则是另一个独立模块，桌面版支持程序合成雨声与自选录音。&lt;/p&gt;
 &lt;p&gt;这次博客展示只提取雨景渲染层。原项目的桌面窗口、天气服务连接、设置存储和雨声模块没有打包进网页，访客无需安装桌面程序即可查看模型效果。&lt;/p&gt;
 &lt;p&gt;这里的“3D 模型”是通过代码生成的场景：没有加载现成的雨景模型文件，也没有用 GIF 或视频代替三维渲染。雨丝是线段，涟漪是实例化平面，弹起的水滴是点精灵，透视相机提供空间深度。&lt;/p&gt;
