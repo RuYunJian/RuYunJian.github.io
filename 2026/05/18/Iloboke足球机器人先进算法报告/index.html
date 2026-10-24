@@ -1,249 +1,26 @@
 
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="utf-8" />
-    <title> | 查士丁尼之梦</title>
-    <meta name="author" content="南风知我意" />
-    <meta name="description" content="后来，夕阳落在地中海上，也落在查士丁尼那场终究未完成的梦里" />
-    <meta name="keywords" content="吹梦到西周" />
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-    />
-    <link rel="icon" href="../../../../images/avatar.jpg" />
-    <link rel="stylesheet" href="../../../../css/imperial-loading.css?v=20261002-fast2" />
-<link rel="preload" as="image" type="image/webp" fetchpriority="high" href="../../../../images/imperial/background.webp" />
-<script>
-(() => {
-    const key = 'imperial-internal-navigation';
-    const navigation = performance.getEntriesByType('navigation')[0];
-    let internal = false;
-    try {
-        const marker = JSON.parse(sessionStorage.getItem(key) || 'null');
-        sessionStorage.removeItem(key);
-        internal = marker && marker.url === location.href && Date.now() - marker.time < 30000;
-    } catch (_) {}
-    if (!internal && navigation?.type !== 'back_forward'
-        && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        document.documentElement.classList.add('imperial-opening');
-        const script = document.createElement('link');
-        script.rel = 'preload'; script.as = 'script';
-        script.href = "../../../../js/imperial-loading.js?v=20261002-fast2";
-        document.head.appendChild(script);
-        const edges = document.createElement('link');
-        edges.rel = 'preload'; edges.as = 'image'; edges.type = 'image/webp';
-        edges.href = "../../../../images/imperial/edges.webp";
-        document.head.appendChild(edges);
-        window.imperialEntranceTimeout = setTimeout(() => {
-            if (window.finishImperialEntrance) window.finishImperialEntrance();
-            else document.documentElement.classList.remove('imperial-opening');
-        }, 15000);
-    }
-    document.addEventListener('click', event => {
-        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-        const link = event.target.closest?.('a[href]');
-        if (!link || link.hasAttribute('download')) return;
-        const target = link.target || document.querySelector('base[target]')?.target || '_self';
-        if (target !== '_self') return;
-        const url = new URL(link.href, location.href);
-        if (url.origin !== location.origin) return;
-        if (url.pathname === location.pathname && url.search === location.search && url.hash !== location.hash) return;
-        try { sessionStorage.setItem(key, JSON.stringify({ url: url.href, time: Date.now() })); } catch (_) {}
-    });
-})();
-</script>
-
-    <script> const mixins = {}; </script>
-<link rel="preconnect" href="https://s4.zstatic.net" />
-<script defer src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" media="print" onload="this.media='all'" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-<link rel="preconnect" href="https://fonts.googleapis.cn" />
-<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
-<link
-    rel="stylesheet" media="print" onload="this.media='all'"
-    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
-/>
-
-
-<script defer src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
-
-
-<script defer src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script defer src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
-<link
-    rel="stylesheet" media="print" onload="this.media='all'"
-    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
-/>
-<script defer src="../../../../js/lib/highlight.js"></script>
-
-
-<script defer src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
-<script defer src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" media="print" onload="this.media='all'" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
-<script defer src="../../../../js/lib/math.js"></script>
-
-
-<script defer src="../../../../js/lib/preview.js"></script>
-
-
-
-
-
-<script defer src="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
-<link rel="stylesheet" media="print" onload="this.media='all'" href="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.css" />
-
-
-
-
-
-<link rel="stylesheet" href="../../../../css/main.css?v=20261002-imperial-home" />
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#03050b" />
+  <title> | 查士丁尼之梦</title>
+  <meta name="description" content="# iLoboke足球机器人比赛先进算法报告
+检索日期：2026-05-18
+资料范围：本文只使用网上公开资料，包括比赛规则文件、赛事报道、SOM/iLoboke相关文章、RoboCup Small Size League 公开资料、Rocos文档以及公开论文。报告中对 getballopp 的解释" />
+  <meta name="author" content="南风知我意" />
+  <link rel="icon" href="../../../../images/avatar.jpg" />
+  <link rel="canonical" href="https://ruyunjian.github.io/2026/05/18/Iloboke%E8%B6%B3%E7%90%83%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%85%88%E8%BF%9B%E7%AE%97%E6%B3%95%E6%8A%A5%E5%91%8A/" />
+  <link rel="preload" href="../../../../fonts/observatory-poetry.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="stylesheet" href="../../../../css/observatory.css" />
+  
+  <script id="observatory-data" type="application/json">{"title":"查士丁尼之梦","author":"南风知我意","description":"后来，夕阳落在地中海上，也落在查士丁尼那场终究未完成的梦里","home":"/","musicEnabled":false,"posts":[{"title":"Rain Island：用 Three.js 复现雨天的 3D 降水场景","url":"/2026/10/04/rain-island/","slug":"rain-island","tags":["Three.js","WebGL","JavaScript","可视化"],"date":"2026.10.04","category":"项目记录","summary":"从雨丝、涟漪到弹起水滴，用程序构建三维雨景，再让降水强度驱动画面。附实际渲染预览与核心代码。"},{"title":"AI","url":"/2026/05/08/AI/","slug":"AI","tags":["AI"],"date":"2026.05.08","category":"AI","summary":"# AI 专业名词解释 这份文档用于快速理解 AI、LLM、API、Agent、MCP、Skill 等相关概念。术语按主题分组，适合初学者、产品经理、开发者和需要与 AI 系统协作的人阅读。 # 1."},{"title":"机器人竞赛","url":"/2026/03/31/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/","slug":"机器人竞赛","tags":["robot"],"date":"2026.03.31","category":"robot","summary":"# 机器人竞赛相关知识储备 # 一.机器人竞赛的结构脑图 # 二.名词解释 名词 说明 LUA 一种脚本语言，可被 C/C++ 调用，也可调用 C/C++ 函数，易理解维护 SOM 乐博小型足球机器人"},{"title":"双指针与滑动窗口","url":"/2026/03/29/%E5%8F%8C%E6%8C%87%E9%92%88/","slug":"双指针","tags":["Algorithm"],"date":"2026.03.29","category":"Algorithm","summary":"# 双指针与滑动窗口 # 题目描述 给定一个整数数组 nums 和一个整数 k，请你返回数组中不同的 k-diff 数对的数目。 k-diff 数对定义为一个整数对 (nums[i], nums[j]"},{"title":"Stl-set","url":"/2026/03/28/Stl-set/","slug":"Stl-set","tags":["stl"],"date":"2026.03.28","category":"stl","summary":"# set **集合（set）**是一个内部自动有序且不含重复元素的容器，它可以在需要删除重复元素的情况下大放异彩，节省时间，减少思维量。 set 就是关键字的简单集合，当只是想知道一个值是否存在时，"},{"title":"","url":"/2026/05/18/Iloboke%E8%B6%B3%E7%90%83%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%A0%B8%E5%BF%83%E4%BB%BB%E5%8A%A1%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B/","slug":"Iloboke足球机器人核心任务数学模型","tags":[],"date":"2026.05.18","category":"随记","summary":"# iLoboke足球机器人核心任务数学模型 检索日期：2026-05-18 说明：本文只基于网上公开资料和机器人足球常用建模方法整理。iLoboke公开规则明确了场地、SOM平台、定位球/3V3比赛"},{"title":"","url":"/2026/05/18/Iloboke%E8%B6%B3%E7%90%83%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%85%88%E8%BF%9B%E7%AE%97%E6%B3%95%E6%8A%A5%E5%91%8A/","slug":"Iloboke足球机器人先进算法报告","tags":[],"date":"2026.05.18","category":"随记","summary":"# iLoboke足球机器人比赛先进算法报告 检索日期：2026-05-18 资料范围：本文只使用网上公开资料，包括比赛规则文件、赛事报道、SOM/iLoboke相关文章、RoboCup Small "},{"title":"赛前准备清单","url":"/2026/04/05/%E8%B5%9B%E5%89%8D%E5%87%86%E5%A4%87%E6%B8%85%E5%8D%95/","slug":"赛前准备清单","tags":["robot"],"date":"2026.04.05","category":"robot","summary":"# 机器人竞赛赛前准备文件清单 # 一、Lua 战术脚本文件（.lua） 这些是你必须编写的战术脚本，放在 Team/lua_scripts/play/Ref/ 对应目录下： 文件名 说明 存放目录 "},{"title":"类与对象","url":"/2026/03/27/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/","slug":"类与对象","tags":[],"date":"2026.03.27","category":"随记","summary":""},{"title":"Stl-vector","url":"/2026/03/27/Stl-vector/","slug":"Stl-vector","tags":["stl"],"date":"2026.03.27","category":"stl","summary":"# Vector 向量（Vector）是一个封装了动态大小数组的顺序容器（Sequence Container）,跟任意其它类型容器一样，它能够存放各种类型的对象。可以简单的认为，向量是一个能够存放任"},{"title":"哈希表详解","url":"/2026/03/26/%E5%93%88%E5%B8%8C%E8%A1%A8%E8%AF%A6%E8%A7%A3/","slug":"哈希表详解","tags":["Algorithm"],"date":"2026.03.26","category":"Algorithm","summary":"# 哈希表 # map简介 map是STL的一个关联容器，它提供一对一的hash。 第一个可以称为关键字(key)，每个关键字只能在map中出现一次； 第二个可能称为该关键字的值(value)；map"},{"title":"leetcode-62-路径规划","url":"/2026/03/24/leetcode-62-%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/","slug":"leetcode-62-路径规划","tags":["leetcode"],"date":"2026.03.24","category":"leetcode","summary":" #include &#x3C;vector> using namespace std; class Solution &#123; public: int uniquePaths(int m, in"},{"title":"Cpp笔记总结S1","url":"/2026/03/23/Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/","slug":"Cpp笔记总结S1","tags":["note"],"date":"2026.03.23","category":"note","summary":"# 一.string类型 1.求长度：arr.length()或者是arr.size() 2.字符串的连接可以直接使用+号，形如c=a+b（eg：a=hello,b=world,c=a+b=hello"},{"title":"Cpp两数之和","url":"/2026/03/22/Cpp%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/","slug":"Cpp两数之和","tags":["leetcode"],"date":"2026.03.22","category":"leetcode","summary":"leecode 1 的两数之和使用Cpp的map更好写，也更易于思考 首先是Cpp中自带map（键值对）类型的变量，只需要#include &lt;map&gt;即可 在迭代器中学过一个方法名叫fin"},{"title":"Cpp入门","url":"/2026/03/21/Cpp%E5%85%A5%E9%97%A8/","slug":"Cpp入门","tags":["note"],"date":"2026.03.21","category":"note","summary":" "},{"title":"Leetcode-3最长不重复子串","url":"/2026/01/17/1-17/","slug":"1-17","tags":["leetcode"],"date":"2026.01.17","category":"leetcode","summary":"# Leetcode-3最长不重复子串 #include &#x3C;stdio.h> int LongestUniqueSubstring(char *arr, int arrsize) &#123"},{"title":"1.15","url":"/2026/01/15/1-15/","slug":"1-15","tags":["diary"],"date":"2026.01.15","category":"diary","summary":"闲置了将近一个月的主页，终于复出了，一个月过的不比高三舒服多少，从之后的四级复习到后来的期末考试复习，快忙死了！！！！ 一月之后疯狂的泡在图书馆里，好在最后考试感觉考的还不错，英语四级保佑我过500吧"},{"title":"四级复习记录12,6","url":"/2025/12/06/12-6/","slug":"12-6","tags":["diary"],"date":"2025.12.06","category":"diary","summary":"一.翻译题（106.5）【25min】 距离四级考试还有一周，本周的复习重点在于翻译题的词汇积累，以及可能考的重点的预测，对其词汇一固定句式搭配都有所记录，在下周的水课上应该着重复习，留存的几个翻译题"},{"title":"闲言12.2","url":"/2025/12/02/12-2/","slug":"12-2","tags":["diary"],"date":"2025.12.02","category":"diary","summary":"​ 一些闲言碎语 [TOC] 一.关于英语四级 二.有关未来规划 三.关于竞赛方面的准备 一.关于英语四级 距离CET4不到10天了，最近两天也没有研究什么算法，在上一次把快速排序写完之后就没有续集了"},{"title":"数组元素个数的动态分配","url":"/2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/","slug":"数组元素个数的动态分配","tags":["note"],"date":"2025.11.29","category":"note","summary":"产率很高啊，一下子解决了两个心头大患，嘿嘿嘿嘿嘿嘿 对于数组，之前有如下的问题： int n=0; scanf_s(\"%d\",&#x26;n); int arr[n]; 首先要明确：以上写法是完全错误"},{"title":"快速排序","url":"/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/","slug":"快速排序","tags":["Algorithm"],"date":"2025.11.29","category":"Algorithm","summary":"# 快速排序 #include &#x3C;stdio.h> #include &#x3C;stdlib.h> // 交换函数 void swap(int* a, int* b) &#123; int"},{"title":"leetcode-7-整数倒转","url":"/2025/11/26/leetcode-7-%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC/","slug":"leetcode-7-整数倒转","tags":["leetcode"],"date":"2025.11.26","category":"leetcode","summary":" //正确案例 #include &#x3C;stdio.h> int main() &#123; int x = 0; printf(\"输入一个有符号整数：\"); scanf_s(\"%d\", &#x"},{"title":"leetcode-1-寻找两数之和","url":"/2025/11/23/leetcode-1-%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/","slug":"leetcode-1-寻找两数之和","tags":["leetcode"],"date":"2025.11.23","category":"leetcode","summary":"今天是2025.11.23，今天一天和xjz在自习教室度过，下午复习了C语言和CET4还有一些高等数学， 效率并不是很高吧，但是总比坐在宿舍里混日子强吧qvq，晚上回来又决心搞了一下leecode的第"},{"title":"冒泡排序","url":"/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/","slug":"冒泡排序","tags":["note"],"date":"2025.11.22","category":"note","summary":"11.22，首次在C语言中完成冒泡排序的编写，编写过程中带有瑕疵，借助ai修改了一次，完成代码如下 `#include &#x3C;stdio.h>` `int main()` `&#123;` `i"},{"title":"11.2","url":"/2025/11/20/11-20/","slug":"11-20","tags":["diary"],"date":"2025.11.20","category":"diary","summary":"感觉还不太会写这个，额QvQ "},{"title":"11.13","url":"/2025/11/13/11-13/","slug":"11-13","tags":["diary"],"date":"2025.11.13","category":"diary","summary":"记录一下，2025.11.13第一次小窝搭建成功 "},{"title":"Hello World","url":"/2025/11/13/hello-world/","slug":"hello-world","tags":[],"date":"2025.11.13","category":"随记","summary":"Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro"}],"initialView":"reader","initialFilter":"","textFlow":"往事越千年　　魏武挥鞭　　东临碣石有遗篇　　萧瑟秋风今又是　　换了人间\n林花谢了春红　　太匆匆　　无奈朝来寒雨晚来风　　胭脂泪　　相留醉　　几时重　　自是人生长恨水长东\n","textFlowSpeed":1.2,"treeHold":7000,"cubeHold":5500,"foliaURL":"/folia/","playlist":"17504027519","rainCover":"/rain-island/assets/rain-preview.webp","tools":[{"title":"Rain Island","description":"在三维雨景中调整风、雨与夜色。","url":"../../../../rain-island/"},{"title":"密码工具","description":"打开已有的密码工具。","url":"../../../../password/"}]}</script>
+  <script defer src="../../../../js/observatory.bundle.js"></script>
 <meta name="generator" content="Hexo 7.3.0"></head>
-<body data-home="false">
-    <section id="imperial-loading" role="dialog" aria-modal="true" aria-label="宫殿粒子开场动画" tabindex="-1"
-    data-assets="../../../../images/imperial/">
-    <canvas id="imperial-scene" role="img" aria-label="金色粒子聚合成宫殿线稿，随后逐渐上色"></canvas>
-</section>
-<script async src="../../../../js/imperial-loading.js?v=20261002-fast2"></script>
-
-    <div id="layout">
-        
-        <transition name="fade">
-            <div id="loading" v-show="loading">
-                <div id="loading-circle">
-                    <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 浏览器默认开启</p>
-                    <img src="../../../../images/loading.gif" />
-                </div>
-            </div>
-        </transition>
-        
-        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
-    <nav id="desktop-menu">
-        <a class="title" href="/">
-            <span>查士丁尼之梦</span>
-        </a>
-        
-        <a href="../../../../index.html">
-            <i class="fa-solid fa-house fa-fw"></i>
-            <span>&ensp;Home</span>
-        </a>
-        
-        <a href="../../../../about">
-            <i class="fa-solid fa-id-card fa-fw"></i>
-            <span>&ensp;About</span>
-        </a>
-        
-        <a href="../../../../archives">
-            <i class="fa-solid fa-box-archive fa-fw"></i>
-            <span>&ensp;Archives</span>
-        </a>
-        
-        <a href="../../../../categories">
-            <i class="fa-solid fa-bookmark fa-fw"></i>
-            <span>&ensp;Categories</span>
-        </a>
-        
-        <a href="../../../../tags">
-            <i class="fa-solid fa-tags fa-fw"></i>
-            <span>&ensp;Tags</span>
-        </a>
-        
-        <a href="../../../../password">
-            <i class="fa-solid fa-key fa-fw"></i>
-            <span>&ensp;Password</span>
-        </a>
-        
-    </nav>
-    <nav id="mobile-menu">
-        <div class="title" @click="showMenuItems = !showMenuItems">
-            <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;查士丁尼之梦</span>
-        </div>
-        <transition name="slide">
-            <div class="items" v-show="showMenuItems">
-                
-                <a href="../../../../index.html">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-house fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
-                    </div>
-                </a>
-                
-                <a href="../../../../about">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-id-card fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
-                    </div>
-                </a>
-                
-                <a href="../../../../archives">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-box-archive fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
-                    </div>
-                </a>
-                
-                <a href="../../../../categories">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
-                    </div>
-                </a>
-                
-                <a href="../../../../tags">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
-                    </div>
-                </a>
-                
-                <a href="../../../../password">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-key fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Password</div>
-                    </div>
-                </a>
-                
-            </div>
-        </transition>
-    </nav>
-</div>
-<transition name="fade">
-    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
-</transition>
-
-        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div class="article">
-    <div>
-        <h1></h1>
-    </div>
-    <div class="info">
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/5/18
-        </span>
-        
-        
-    </div>
-    
-    <div class="content" v-pre>
-        <h1 id="iloboke足球机器人比赛先进算法报告"><a class="anchor" href="#iloboke足球机器人比赛先进算法报告">#</a> iLoboke足球机器人比赛先进算法报告</h1>
+<body class="observatory-page">
+  <template id="observatory-article"><div class="content"><h1 id="iloboke足球机器人比赛先进算法报告"><a class="anchor" href="#iloboke足球机器人比赛先进算法报告">#</a> iLoboke足球机器人比赛先进算法报告</h1>
 <p>检索日期：2026-05-18<br>
 资料范围：本文只使用网上公开资料，包括比赛规则文件、赛事报道、SOM/iLoboke相关文章、RoboCup Small Size League 公开资料、Rocos文档以及公开论文。报告中对 <code>getballopp</code> 的解释属于基于任务命名和比赛语境的工程推断，未把它写成官方公开定义。</p>
 <h2 id="摘要"><a class="anchor" href="#摘要">#</a> 摘要</h2>
@@ -587,74 +364,441 @@
 <a target="_blank" rel="noopener" href="https://rocos.readthedocs.io/zh-cn/latest/posts/1_rocos_basic/1_3_6_task.html">11</a> Rocos文档：《Play - 框架：解析task》。<br>
 <a target="_blank" rel="noopener" href="https://rocos.readthedocs.io/zh-cn/latest/posts/1_rocos_basic/1_3_1_rule_match.html">12</a> Rocos文档：《Play - 角色匹配规则》。<br>
 <a target="_blank" rel="noopener" href="https://xyh.univs.cn/a/xyh_xyh_bzrxq/251110/2023426.shtml?source=xyh">13</a> 中国大学生在线：《3名东电大三学生，拿下睿抗机器人开发者大赛全国一等奖》。</p>
-
-    </div>
-    
-    
-    
-    <div id="comment">
-        <div id="gitalk-container"></div>
-    </div>
-    
-    
-    
-    
-    
-</div>
-
-            <footer id="footer">
-    <div id="footer-wrap">
-        <div>
-            &copy;
-            2022 - 2026 查士丁尼之梦
-            <span id="footer-icon">
-                <i class="fa-solid fa-font-awesome fa-fw"></i>
-            </span>
-            &commat;南风知我意
-        </div>
-        <div>
-            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
-            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
-        </div>
+</div></template>
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" class="obs-symbols" aria-hidden="true"><defs>
+    <symbol id="obs-icon-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="obs-icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="obs-icon-left" viewBox="0 0 24 24"><path d="m14 5-7 7 7 7"/></symbol>
+    <symbol id="obs-icon-right" viewBox="0 0 24 24"><path d="m10 5 7 7-7 7"/></symbol>
+    <symbol id="obs-icon-arrow" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+    <symbol id="obs-icon-play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8Z"/></symbol>
+    <symbol id="obs-icon-pause" viewBox="0 0 24 24"><path d="M8 4v16M16 4v16"/></symbol>
+    <symbol id="obs-icon-replay" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 7M4 3v7h7"/></symbol>
+    <symbol id="obs-icon-audio" viewBox="0 0 24 24"><path d="M3 9h4l5-5v16l-5-5H3ZM16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="obs-icon-muted" viewBox="0 0 24 24"><path d="M3 9h4l5-5v16l-5-5H3Zm13 0 6 6m0-6-6 6"/></symbol>
+    <symbol id="obs-icon-next" viewBox="0 0 24 24"><path d="m5 5 11 7-11 7ZM19 5v14"/></symbol>
+  </defs></svg>
+  <a class="obs-skip" href="#articles-panel">浏览文章</a>
+  <main id="observatory" class="observatory" data-phase="tree" data-view="home">
+    <canvas id="observatory-canvas" aria-hidden="true"></canvas>
+    <header class="obs-header">
+      <a href="../../../../index.html" class="obs-brand" data-home>
+        <svg class="obs-logo" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M17 44c7-1 6-8 7-14 1-7-7-10-11-14M31 44c-7-1-6-8-7-14 0-8 7-11 12-16M24 32V13M24 25 17 10m7 15 6-14M24 28 8 20m16 9 16-9"/></g><g fill="currentColor"><circle cx="4" cy="17" r="1.2"/><circle cx="7" cy="12" r="0.9"/><circle cx="11" cy="8" r="0.9"/><circle cx="16" cy="6" r="1.2"/><circle cx="21" cy="4" r="0.9"/><circle cx="27" cy="4" r="0.9"/><circle cx="33" cy="6" r="1.2"/><circle cx="38" cy="9" r="0.9"/><circle cx="42" cy="13" r="0.9"/><circle cx="45" cy="18" r="1.2"/><circle cx="5" cy="22" r="0.9"/><circle cx="10" cy="25" r="0.9"/><circle cx="14" cy="21" r="1.2"/><circle cx="10" cy="16" r="0.9"/><circle cx="15" cy="13" r="0.9"/><circle cx="20" cy="10" r="1.2"/><circle cx="25" cy="9" r="0.9"/><circle cx="30" cy="11" r="0.9"/><circle cx="35" cy="14" r="1.2"/><circle cx="39" cy="18" r="0.9"/><circle cx="35" cy="23" r="0.9"/><circle cx="30" cy="20" r="1.2"/><circle cx="25" cy="17" r="0.9"/><circle cx="20" cy="17" r="0.9"/><circle cx="19" cy="23" r="1.2"/><circle cx="29" cy="25" r="0.9"/><circle cx="24" cy="23" r="0.9"/><circle cx="15" cy="17" r="1.2"/><circle cx="32" cy="16" r="0.9"/></g></svg>
+        <span class="obs-brand-name">查士丁尼之梦</span><small class="obs-author">南风知我意</small>
+      </a>
+      <nav class="obs-nav" aria-label="主导航">
+        <button type="button" class="is-active" data-view="home" aria-current="page">首页</button>
+        <button type="button" data-view="articles">文章</button>
         
-    </div>
-     <div id="music_player">
-	<div class="aplayer no-destroy" data-id="17504027519" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-lrcType="-1"> </div>
-     </div>
-</footer>
+        <button type="button" data-view="tools">工具</button>
+      </nav>
+      <div class="obs-header-actions"><button type="button" id="open-search" class="obs-icon-button" aria-label="搜索文章"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-search"></use></svg></button><button type="button" data-view="about">关于</button></div>
+    </header>
 
-        </div>
-        
-        <transition name="fade">
-            <div id="preview" ref="preview" v-show="previewShow">
-                <img id="preview-content" ref="previewContent" />
-            </div>
-        </transition>
-        
-    </div>
-    <script defer src="../../../../js/main.js?v=20261002-fast2"></script>
-    
+    <button type="button" id="scene-toggle" class="obs-scene-target" aria-label="切换为粒子方块" title="点击切换树与方块"></button>
+    <div class="obs-fallback" hidden><p>当前设备无法显示粒子场景，仍可浏览文章。</p></div>
     
 
-<script>document.addEventListener("DOMContentLoaded", () => {
-    const gitalk = new Gitalk({
-        clientID: "Ov23lib9xKYSem8GXBfF",
-        clientSecret: "09adbc33407ac1e33d79c32f8251eb73e39d02d2",
-        repo: "blog-comments",
-        owner: "RuYunJian",
-        admin: "RuYunJian".split(","),
-        language: "zh-CN",
-        id: location.pathname,
-        
-        proxy: "https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token",
-        
-    })
-    gitalk.render("gitalk-container");
-}, { once: true });</script>
+    <section class="obs-orbit" aria-label="精选文章"><div class="obs-cards">
+      
+      <article class="obs-card" data-index="0" data-slot="0">
+        <div class="obs-card-cover"><img src="../../../../rain-island/assets/rain-preview.webp" alt="Rain Island 三维雨景" width="220" height="180" /></div>
+        <div class="obs-card-copy"><h2 class="obs-card-title">Rain Island</h2><p class="obs-card-summary">用 Three.js 复现雨天的 3D 降水场景</p><time>2026.10.04</time><a class="obs-read-link" href="/2026/10/04/rain-island/" data-article>阅读文章 <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-arrow"></use></svg></a></div>
+      </article>
+      
+      <article class="obs-card" data-index="1" data-slot="-1">
+        <div class="obs-card-cover"><canvas class="obs-art-canvas" data-art="wave" width="360" height="300" aria-hidden="true"></canvas></div>
+        <div class="obs-card-copy"><h2 class="obs-card-title">AI</h2><p class="obs-card-summary">AI</p><time>2026.05.08</time><a class="obs-read-link" href="/2026/05/08/AI/" data-article>阅读文章 <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-arrow"></use></svg></a></div>
+      </article>
+      
+      <article class="obs-card" data-index="2" data-slot="1">
+        <div class="obs-card-cover"><canvas class="obs-art-canvas" data-art="network" width="360" height="300" aria-hidden="true"></canvas></div>
+        <div class="obs-card-copy"><h2 class="obs-card-title">机器人竞赛</h2><p class="obs-card-summary">robot</p><time>2026.03.31</time><a class="obs-read-link" href="/2026/03/31/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/" data-article>阅读文章 <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-arrow"></use></svg></a></div>
+      </article>
+      
+      <article class="obs-card" data-index="3" data-slot="-2">
+        <div class="obs-card-cover"><canvas class="obs-art-canvas" data-art="terrain" width="360" height="300" aria-hidden="true"></canvas></div>
+        <div class="obs-card-copy"><h2 class="obs-card-title">双指针与滑动窗口</h2><p class="obs-card-summary">Algorithm</p><time>2026.03.29</time><a class="obs-read-link" href="/2026/03/29/%E5%8F%8C%E6%8C%87%E9%92%88/" data-article>阅读文章 <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-arrow"></use></svg></a></div>
+      </article>
+      
+      <article class="obs-card" data-index="4" data-slot="2">
+        <div class="obs-card-cover"><canvas class="obs-art-canvas" data-art="terrain" width="360" height="300" aria-hidden="true"></canvas></div>
+        <div class="obs-card-copy"><h2 class="obs-card-title">Stl-set</h2><p class="obs-card-summary">stl</p><time>2026.03.28</time><a class="obs-read-link" href="/2026/03/28/Stl-set/" data-article>阅读文章 <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-arrow"></use></svg></a></div>
+      </article>
+      
+    </div></section>
 
+    <footer class="obs-bottom">
+      
+      <div class="obs-scene-controls" aria-label="场景动画控制"><button id="scene-motion" class="obs-icon-button" type="button" aria-label="暂停场景动画" aria-pressed="false"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-pause"></use></svg></button><button id="scene-replay" class="obs-icon-button" type="button" aria-label="重播开场动画"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-replay"></use></svg></button></div>
+      <div class="obs-carousel-controls"><span class="obs-count" aria-live="polite">01 / 05</span><button type="button" id="article-prev" class="obs-icon-button" aria-label="上一篇精选文章"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-left"></use></svg></button><button type="button" id="article-next" class="obs-icon-button" aria-label="下一篇精选文章"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-right"></use></svg></button></div>
+    </footer>
 
-
-
-    
+    <section id="articles-panel" class="obs-panel" hidden aria-labelledby="articles-title">
+      <header class="obs-panel-head"><h1 id="articles-title" tabindex="-1">文章</h1><button type="button" class="close-panel obs-icon-button" aria-label="关闭文章列表"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-close"></use></svg></button></header>
+      <label class="obs-search-field"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-search"></use></svg><input id="article-search" type="search" placeholder="搜索标题、标签或文字…" autocomplete="off" aria-label="搜索文章" /></label>
+      <p id="search-count" class="obs-search-count"></p><div class="obs-article-list"></div>
+    </section>
+    <section id="reader-panel" class="obs-panel obs-reader" hidden aria-labelledby="reader-title">
+      <header class="obs-panel-head"><button type="button" id="reader-back"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-left"></use></svg> 文章</button><button type="button" class="close-panel obs-icon-button" aria-label="关闭文章，返回场景"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-close"></use></svg></button></header>
+      <article class="obs-reader-content"><h1 id="reader-title" tabindex="-1"></h1><div class="obs-reader-meta"></div><div class="obs-reader-body"></div></article>
+    </section>
+    <section id="tools-panel" class="obs-panel" hidden aria-labelledby="tools-title">
+      <header class="obs-panel-head"><h1 id="tools-title" tabindex="-1">工具与作品</h1><button type="button" class="close-panel obs-icon-button" aria-label="关闭工具"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-close"></use></svg></button></header>
+      <div class="obs-tools-list"><a href="../../../../rain-island/" target="_blank" rel="noopener"><div><h2>Rain Island</h2><p>在三维雨景中调整风、雨与夜色。</p></div><span>新窗口打开 <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-arrow"></use></svg></span></a><a href="../../../../password/" target="_blank" rel="noopener"><div><h2>密码工具</h2><p>打开已有的密码工具。</p></div><span>新窗口打开 <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-arrow"></use></svg></span></a></div>
+    </section>
+    <section id="about-panel" class="obs-panel" hidden aria-labelledby="about-title">
+      <header class="obs-panel-head"><h1 id="about-title" tabindex="-1">查士丁尼之梦</h1><button type="button" class="close-panel obs-icon-button" aria-label="关闭关于"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-close"></use></svg></button></header>
+      <p class="obs-about-quote">后来，夕阳落在地中海上，也落在查士丁尼那场终究未完成的梦里</p><p class="obs-about-author">南风知我意</p><a href="../../../../archives/">查看全部归档 <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#obs-icon-arrow"></use></svg></a>
+    </section>
+    <p id="observatory-status" class="visually-hidden" role="status" aria-live="polite"></p>
+  </main>
+  <noscript><style>.observatory{display:none!important}body{overflow:auto!important;height:auto!important}</style><section style="position:relative;padding:60px 8vw"><h1></h1><article><h1 id="iloboke足球机器人比赛先进算法报告"><a class="anchor" href="#iloboke足球机器人比赛先进算法报告">#</a> iLoboke足球机器人比赛先进算法报告</h1>
+<p>检索日期：2026-05-18<br>
+资料范围：本文只使用网上公开资料，包括比赛规则文件、赛事报道、SOM/iLoboke相关文章、RoboCup Small Size League 公开资料、Rocos文档以及公开论文。报告中对 <code>getballopp</code> 的解释属于基于任务命名和比赛语境的工程推断，未把它写成官方公开定义。</p>
+<h2 id="摘要"><a class="anchor" href="#摘要">#</a> 摘要</h2>
+<p>iLoboke足球机器人比赛本质上是一个小型多智能体足球系统：机器人依赖上方视觉系统获得球、己方机器人和对方机器人的位置；策略端依据比赛状态运行脚本；技能和规划层把“拿球、传球、射门、接球、拦截、防守”等任务转换成速度、朝向、踢球和吸球等底层动作。第二十七届中国机器人及人工智能大赛规则明确指出，创非凡iLoboke足球项目重点考察图像处理、自动决策、路径规划、自主避障、C++/Lua混合程序设计，以及多智能体协同和动态环境控制能力<a target="_blank" rel="noopener" href="https://jqrcyxy.cczu.edu.cn/_upload/article/files/85/0a/48734ec649d781a899f52f7e73bf/c813589f-8d89-4f23-b2e6-c854a8c25600.pdf">1</a>。</p>
+<p>从比赛任务看，省赛常见目标是两个进攻机器人在五个固定点位完成定位球战术，除点球外射门前至少传接一次，且要求在15秒内完成<a target="_blank" rel="noopener" href="https://jqrcyxy.cczu.edu.cn/_upload/article/files/85/0a/48734ec649d781a899f52f7e73bf/c813589f-8d89-4f23-b2e6-c854a8c25600.pdf">1</a>。国赛则升级到3V3对抗，要求在原有配合基础上增加对抗、防守等策略<a target="_blank" rel="noopener" href="https://jqrcyxy.cczu.edu.cn/_upload/article/files/85/0a/48734ec649d781a899f52f7e73bf/c813589f-8d89-4f23-b2e6-c854a8c25600.pdf">1</a>。因此，先进算法不应只理解为某个单独函数，而应理解为“感知、状态估计、任务切换、角色分配、路径规划、传射决策、防守压迫、实时调参”的组合系统。</p>
+<h2 id="一-比赛平台与系统基础"><a class="anchor" href="#一-比赛平台与系统基础">#</a> 一、比赛平台与系统基础</h2>
+<h3 id="11-iloboke与som平台"><a class="anchor" href="#11-iloboke与som平台">#</a> 1.1 iLoboke与SOM平台</h3>
+<p>iLoboke挑战赛规则文件说明，参赛学校使用 iLoboke足球机器人专用软件 SOM3.4.2 编写程序并在现场运行，平台提供虚拟仿真环境，因此无实物也可进行调试<a target="_blank" rel="noopener" href="https://jqrcyxy.cczu.edu.cn/_upload/article/files/85/0a/48734ec649d781a899f52f7e73bf/c813589f-8d89-4f23-b2e6-c854a8c25600.pdf">1</a>。较早的iLoboke挑战赛方案也说明，SOM软件是与北京启创远景科技有限公司iLoboke足球机器人配套的操作管理软件，为用户提供人机交互和二次开发平台<a target="_blank" rel="noopener" href="https://sme.hit.edu.cn/_upload/article/files/8e/55/1ac2cff1478da94b84eb7bc143c3/e5c860b8-acf6-4262-8395-558bbd214d5a.pdf">2</a>。</p>
+<p>在软件结构上，SOM后端主要实现决策调度，并分为策略脚本层、技能规划层和基础SDK层；其中策略脚本层使用 Lua，技能规划层和基础SDK层使用 C++<a target="_blank" rel="noopener" href="https://sme.hit.edu.cn/_upload/article/files/8e/55/1ac2cff1478da94b84eb7bc143c3/e5c860b8-acf6-4262-8395-558bbd214d5a.pdf">2</a>。这说明 <code>getball</code>、<code>passball</code> 一类任务通常不是孤立动作，而是 Lua 层组织比赛状态、C++ 层执行运动和踢球技能的协作结果。</p>
+<h3 id="12-典型硬件与赛场约束"><a class="anchor" href="#12-典型硬件与赛场约束">#</a> 1.2 典型硬件与赛场约束</h3>
+<p>第二十七届规则规定，iLoboke赛场有效尺寸为6m×4m，场地上方约3.2m处架设高速相机采集图像，比赛用球为橘黄色高尔夫球<a target="_blank" rel="noopener" href="https://jqrcyxy.cczu.edu.cn/_upload/article/files/85/0a/48734ec649d781a899f52f7e73bf/c813589f-8d89-4f23-b2e6-c854a8c25600.pdf">1</a>。省赛中通常由2台进攻机器人完成5个固定点位的定位球进攻，防守侧包含守门员和场景放置的防守机器人；决赛阶段则为双方各3台机器人对抗<a target="_blank" rel="noopener" href="https://jqrcyxy.cczu.edu.cn/_upload/article/files/85/0a/48734ec649d781a899f52f7e73bf/c813589f-8d89-4f23-b2e6-c854a8c25600.pdf">1</a>。</p>
+<p>这些规则直接决定算法目标：省赛强调稳定、快速、少犯规的定位球战术；国赛强调对抗条件下的持球、传球、拦截、压迫和防守转换。赛事报道也显示，优秀队伍会围绕“传球速度优化”“精准识别位置”“高速传递”等方面持续调试运动算法<a target="_blank" rel="noopener" href="https://zj.cnr.cn/mlnb/mlnb/fh2025/kfcx/20250616/t20250616_527213213.shtml">3</a>。</p>
+<h2 id="二-整体算法架构"><a class="anchor" href="#二-整体算法架构">#</a> 二、整体算法架构</h2>
+<p>小型足球机器人系统通常可拆为四个闭环：视觉感知、策略决策、通信下发、机器人执行。Rocos文档对小型足球机器人系统的描述与iLoboke场景高度相似：外部全局图像系统完成识别，核心决策系统部署策略与规划，通信模块下发指令，机器人硬件执行运动、踢球、吸球盘带等动作<a target="_blank" rel="noopener" href="https://rocos.readthedocs.io/zh-cn/latest/posts/0_introduction/0_0.html">4</a>。RoboCup SSL官方技术概览也说明，SSL-Vision负责把场上相机图像转换为机器人和球的坐标，再通过网络广播给队伍；同时原始视觉检测会有噪声、丢失和无速度信息，因此还需要进一步处理或跟踪<a target="_blank" rel="noopener" href="https://ssl.robocup.org/technical-overview-of-the-small-size-league/">5</a>。</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-mermaid"><span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">flowchart LR</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    A</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"高速相机 / 公共视觉"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> B</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"坐标识别与状态估计"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    B --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> C</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"策略脚本层 Lua"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    C --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> D</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"任务层 Task"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    D --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> E</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"技能层 Skill / C++"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    E --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> F</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"轨迹规划与避障"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    F --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> G</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"无线通信与底层控制"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    G --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> H</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"机器人运动、吸球、踢球"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    H --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> A</span></span></code></pre>
+<p>在策略层上，Rocos把核心策略拆为 Tactic、Play、Task、Skill、Plan 五层：Play 是多机器人配合策略，Task 是对泛化 Skill 的具体封装，Skill 是移动、射门、传球、拦截等上层控制，Plan 负责把目标点转化为速度和角速度<a target="_blank" rel="noopener" href="https://rocos.readthedocs.io/zh-cn/latest/posts/0_introduction/0_1.html">6</a>。虽然Rocos不是SOM官方手册，但它反映了小型足球机器人领域常用的软件分层方式，可用于解释iLoboke中“脚本状态、任务函数、C++技能、轨迹规划”之间的关系。</p>
+<h2 id="三-核心任务与先进算法矩阵"><a class="anchor" href="#三-核心任务与先进算法矩阵">#</a> 三、核心任务与先进算法矩阵</h2>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>比赛作用</th>
+<th>关键输入</th>
+<th>典型先进算法</th>
+<th>输出动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>getball</code> / <code>GetBall</code></td>
+<td>让己方机器人获得球权</td>
+<td>球坐标、机器人姿态、目标方向、对手位置</td>
+<td>抓球前置点计算、姿态对准、动态避障、吸球状态判断、异常恢复</td>
+<td>移动到球后方、朝向接收/射门目标、吸球</td>
+</tr>
+<tr>
+<td><code>passball</code> / <code>PassBall</code></td>
+<td>完成规则要求的传接配合并创造射门机会</td>
+<td>持球者、接球者、对手拦截时间、球速模型</td>
+<td>传球点搜索、传球力度计算、接球同步、拦截风险评估</td>
+<td>踢球、接球站位、传后跑位</td>
+</tr>
+<tr>
+<td><code>getballopp</code></td>
+<td>对方可能控球时的抢球、封堵或压迫</td>
+<td>对手最近球员、球速、传球线、禁区约束</td>
+<td>预测对手触球时间、封堵传球线、抢占拦截点、碰撞风险控制</td>
+<td>压迫、截球、卡位或退防</td>
+</tr>
+<tr>
+<td><code>shoot</code> / <code>Shoot</code></td>
+<td>在低风险窗口射门</td>
+<td>球门角度、守门员位置、障碍机器人、射门距离</td>
+<td>有效射门角计算、拦截预测、射门功率控制、假射/传射切换</td>
+<td>面向球门、踢球</td>
+</tr>
+<tr>
+<td><code>receiveball</code></td>
+<td>保证传球后稳定接球</td>
+<td>来球方向、来球速度、接球者可达时间</td>
+<td>到达时间匹配、接球朝向控制、缓冲区策略</td>
+<td>接球站位、吸球</td>
+</tr>
+<tr>
+<td><code>defend</code> / <code>RefDef</code> / <code>Goalie</code></td>
+<td>防守、守门、封堵禁区前空间</td>
+<td>对手持球者、球门、禁区、射门线</td>
+<td>防守扇区、威胁评分、守门员横向预测、禁区外约束</td>
+<td>卡位、扑救、盯防</td>
+</tr>
+<tr>
+<td>off-ball running</td>
+<td>无球跑位，提升下一次传射质量</td>
+<td>球位置、队友位置、对手防守、球门方向</td>
+<td>区域栅格评分、跑位点价值函数、反盯防移动</td>
+<td>前插、拉边、回撤</td>
+</tr>
+</tbody>
+</table>
+<p>公开SOM技术笔记中可见 <code>task.GetBall(&quot;Kicker&quot;,&quot;Kicker&quot;)</code> 这样的基础抓球写法，并说明它常用于让指定角色拿球并朝向指定角色或目标<a target="_blank" rel="noopener" href="https://blog.51cto.com/u_13354/12406384">7</a>。另一个SOM二次开发笔记展示了 <code>Receiver=task.PassBall(&quot;Receiver&quot;,&quot;Kicker&quot;)</code>、<code>Kicker=task.Shoot(&quot;Kicker&quot;)</code>、<code>Goalie=task.Goalie()</code> 等脚本片段，可作为理解常见任务名的公开参考<a target="_blank" rel="noopener" href="https://blog.51cto.com/u_16099196/10745783">8</a>。这些博客属于经验资料，不等同于官方手册，因此本文只用它们辅助解释任务名，不把其中观点作为唯一依据。</p>
+<h2 id="四-getball从冲向球到稳定控球"><a class="anchor" href="#四-getball从冲向球到稳定控球">#</a> 四、<code>getball</code>：从“冲向球”到“稳定控球”</h2>
+<h3 id="41-任务定义"><a class="anchor" href="#41-任务定义">#</a> 4.1 任务定义</h3>
+<p><code>getball</code> 的目标是让机器人从当前位姿到达合适的抓球位姿，并在不犯规、不把球顶飞、不被对手抢先触球的情况下获得控球权。基础写法可能只是让机器人朝球移动，但比赛中的先进 <code>getball</code> 应至少解决四个问题：从哪一侧接近球、以什么朝向接近球、何时启动吸球/盘带、失败后如何恢复。</p>
+<h3 id="42-抓球前置点算法"><a class="anchor" href="#42-抓球前置点算法">#</a> 4.2 抓球前置点算法</h3>
+<p>简单追球容易出现“从侧面或后方顶球”的问题。更稳的做法是根据后续动作确定目标方向，例如传球给队友、射门到球门或避开防守者，然后在球的反方向生成一个前置点：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-text"><span class="line"><span>目标方向 dir = normalize(target - ball)</span></span>
+<span class="line"><span>抓球前置点 pre = ball - d_pre * dir</span></span>
+<span class="line"><span>机器人目标朝向 theta = angle(target - robot)</span></span></code></pre>
+<p>其中 <code>target</code> 可以是接球队友、球门空档或下一状态需要的目标点。机器人先到 <code>pre</code>，再沿 <code>dir</code> 方向小速度贴近球。这样做的好处是，机器人头部、球和后续传射目标大致共线，拿到球后可以直接进入 <code>passball</code> 或 <code>shoot</code>。</p>
+<h3 id="43-状态切换与容错"><a class="anchor" href="#43-状态切换与容错">#</a> 4.3 状态切换与容错</h3>
+<p>Rocos文档说明，Play中的 <code>switch</code> 函数每帧执行，可依据距离、角度、速度、位置、是否持球、是否踢球、球出界、球消失、机器人数量变化、裁判盒信息和时间等条件切换状态<a target="_blank" rel="noopener" href="https://rocos.readthedocs.io/zh-cn/latest/posts/1_rocos_basic/1_3_2_switch_function.html">9</a>。在 <code>getball</code> 中，先进状态机不应只判断“离球距离小于阈值”，而应综合判断：</p>
+<ol>
+<li>球是否位于机器人前方可吸球扇区。</li>
+<li>机器人朝向与球-目标方向夹角是否足够小。</li>
+<li>红外或控球状态是否表明球已被吸住。</li>
+<li>机器人和球是否接近边界或禁区。</li>
+<li>对手是否会更早到达球。</li>
+</ol>
+<p>推荐状态机如下：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-mermaid"><span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">stateDiagram-v2</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    </span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">*</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> ApproachBehindBall</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    ApproachBehindBall --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> AlignToTarget: 到达抓球前置点</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    AlignToTarget --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> SlowCapture: 朝向误差小</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    SlowCapture --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> Controlled: 控球成功</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    SlowCapture --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> Recover: 球侧偏或顶球</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    Recover --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> ApproachBehindBall: 重算前置点</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    Controlled --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> PassBall: 传球窗口打开</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    Controlled --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> Shoot: 射门窗口打开</span></span></code></pre>
+<h3 id="44-关键改进点"><a class="anchor" href="#44-关键改进点">#</a> 4.4 关键改进点</h3>
+<p>第一，<code>getball</code> 要和路径规划联动。禁区、边界、对方机器人和己方队友都应进入代价地图，避免为了拿球而进入禁区或碰撞防守机器人。第二，<code>getball</code> 要具备低速末端控制，接近球时降低速度并锁定朝向，减少把球推偏的风险。第三，<code>getball</code> 应对视觉噪声鲁棒：SSL官方资料指出视觉检测有噪声和丢失问题<a target="_blank" rel="noopener" href="https://ssl.robocup.org/technical-overview-of-the-small-size-league/">5</a>，因此工程上应加入位置滤波、球速估计、短时丢球保持和异常重规划。</p>
+<h2 id="五-passball从把球踢给队友到动态传射决策"><a class="anchor" href="#五-passball从把球踢给队友到动态传射决策">#</a> 五、<code>passball</code>：从“把球踢给队友”到“动态传射决策”</h2>
+<h3 id="51-规则驱动的传球价值"><a class="anchor" href="#51-规则驱动的传球价值">#</a> 5.1 规则驱动的传球价值</h3>
+<p>省赛定位球规则要求，除点球外，射门前至少完成一次传接配合<a target="_blank" rel="noopener" href="https://jqrcyxy.cczu.edu.cn/_upload/article/files/85/0a/48734ec649d781a899f52f7e73bf/c813589f-8d89-4f23-b2e6-c854a8c25600.pdf">1</a>。这意味着 <code>passball</code> 不是可选动作，而是得分链路的一部分。公开赛事报道中也提到，参赛队会围绕传球速度优化、位置识别和高速传递进行调试<a target="_blank" rel="noopener" href="https://zj.cnr.cn/mlnb/mlnb/fh2025/kfcx/20250616/t20250616_527213213.shtml">3</a>。</p>
+<h3 id="52-传球力度与球模型"><a class="anchor" href="#52-传球力度与球模型">#</a> 5.2 传球力度与球模型</h3>
+<p>ZJUNlict在RoboCup SSL 2019冠军论文中指出，传球力度过小会给对手足够时间拦截，力度过大则可能导致队友无法在有限时间内接球，因此需要基于球模型计算合适传球力度<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1909.07717">10</a>。论文把传球时间拆为接球机器人到达时间和到达后的调整缓冲时间，并结合传球距离估计初速度<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1909.07717">10</a>。</p>
+<p>映射到iLoboke比赛中，<code>passball</code> 可以采用如下计算框架：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-text"><span class="line"><span>候选接球点 p</span></span>
+<span class="line"><span>传球距离 d = |p - passer|</span></span>
+<span class="line"><span>接球者到达时间 t_robot = time_to_reach(receiver, p)</span></span>
+<span class="line"><span>缓冲时间 t_buffer = 0.2s ~ 0.4s</span></span>
+<span class="line"><span>目标传球时间 t_pass = t_robot + t_buffer</span></span>
+<span class="line"><span>传球速度 v = ball_model_inverse(d, t_pass)</span></span></code></pre>
+<p>在省赛中，两个进攻机器人通常预设“拿球者-接球者-射门者”的链路。先进做法不是固定传球点，而是在每个固定点位启动后，根据球、守门员、防守机器人和己方接球者的位置实时选择接球点。</p>
+<h3 id="53-传球点搜索与拦截风险"><a class="anchor" href="#53-传球点搜索与拦截风险">#</a> 5.3 传球点搜索与拦截风险</h3>
+<p>ZJUNlict论文提出的动态传射算法包括四个模块：传球点模块计算所有传球点可行性并选择最佳点，跑位点模块寻找进攻威胁更高的位置，决策模块判断何时传球或射门，技能模块保证动作执行准确<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1909.07717">10</a>。该论文还以拦截时间、接球点射门角度、接球点到球门距离、射门折射角、己方先到与对方先到的时间差等特征评价传球策略<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1909.07717">10</a>。</p>
+<p>因此，<code>passball</code> 的先进评分函数可写为：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-text"><span class="line"><span>score(p) =</span></span>
+<span class="line"><span>  w1 * pass_safety(p)</span></span>
+<span class="line"><span>+ w2 * receiver_arrival_margin(p)</span></span>
+<span class="line"><span>+ w3 * shooting_angle_after_receive(p)</span></span>
+<span class="line"><span>+ w4 * distance_to_goal_value(p)</span></span>
+<span class="line"><span>+ w5 * no_foul_margin(p)</span></span>
+<span class="line"><span>- w6 * collision_risk(p)</span></span></code></pre>
+<p>其中 <code>pass_safety</code> 由“对手是否能在球到达前截到球”决定，<code>receiver_arrival_margin</code> 表示己方接球者比对手更早到达的时间差，<code>no_foul_margin</code> 用于避免进攻机器人进入禁区、二次触球或碰撞防守机器人等犯规。</p>
+<h3 id="54-接球同步"><a class="anchor" href="#54-接球同步">#</a> 5.4 接球同步</h3>
+<p><code>passball</code> 不只是传球者动作，还包括接球者的 <code>receiveball</code>。Rocos的任务解析文档显示，一个Task可以返回执行函数和匹配位置，Lua层还可配置踢球模式、目标朝向、踢球精度、力度和特殊flag，从而把非运动指令与运动本身解耦<a target="_blank" rel="noopener" href="https://rocos.readthedocs.io/zh-cn/latest/posts/1_rocos_basic/1_3_6_task.html">11</a>。这启发我们把传球设计为“双机器人同步任务”：</p>
+<ol>
+<li>传球者根据接球者预计到达时间计算球速。</li>
+<li>接球者提前移动到接球点，并朝向来球方向。</li>
+<li>接球者在球到达前进入低速等待或微调状态。</li>
+<li>传球者踢球后，接球者切换到吸球或一脚射门状态。</li>
+</ol>
+<h2 id="六-getballopp对手控球场景下的抢球-封堵与压迫"><a class="anchor" href="#六-getballopp对手控球场景下的抢球-封堵与压迫">#</a> 六、<code>getballopp</code>：对手控球场景下的抢球、封堵与压迫</h2>
+<h3 id="61-资料边界"><a class="anchor" href="#61-资料边界">#</a> 6.1 资料边界</h3>
+<p>本次在线检索没有找到 <code>getballopp</code> 的官方公开定义。按常见命名习惯，它很可能表示 “get ball opponent” 或“对方控球/对方取球时的处理任务”。在报告中，<code>getballopp</code> 被定义为：当对手更接近球、对手准备接球、或对手即将形成射门/传球威胁时，己方机器人执行抢球、截球、封堵传球线或压迫持球人的综合任务。</p>
+<h3 id="62-对手触球时间预测"><a class="anchor" href="#62-对手触球时间预测">#</a> 6.2 对手触球时间预测</h3>
+<p>先进 <code>getballopp</code> 的第一步是判断“谁会先碰到球”。ZJUNlict论文中把控球率计算与双方拦截时间联系起来：若一方拦截时间更短，则球被认为由该方控制<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1909.07717">10</a>。这给 <code>getballopp</code> 一个清晰指标：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-text"><span class="line"><span>t_our = min time_to_intercept(己方机器人, ball_trajectory)</span></span>
+<span class="line"><span>t_opp = min time_to_intercept(对方机器人, ball_trajectory)</span></span>
+<span class="line"><span>if t_opp + margin &#x3C; t_our:</span></span>
+<span class="line"><span>    进入 getballopp / 压迫防守</span></span>
+<span class="line"><span>else:</span></span>
+<span class="line"><span>    进入 getball / 主动拿球</span></span></code></pre>
+<p>若对手先到，直接冲球往往会造成碰撞或被轻松过掉，更好的动作是抢占对手下一步传球/射门路径。</p>
+<h3 id="63-三类策略"><a class="anchor" href="#63-三类策略">#</a> 6.3 三类策略</h3>
+<p><strong>第一类：抢截球。</strong> 当球是滚动球或无人稳定控球时，己方机器人计算球轨迹与自身可达区域的交点，选择最早可达且不越界、不入禁区的拦截点。</p>
+<p><strong>第二类：封传球线。</strong> 当对手持球但射门角度不大时，机器人站到“对手持球点-潜在接球者”或“对手持球点-球门”的连线上，优先阻断高威胁传球路线。</p>
+<p><strong>第三类：压迫持球人。</strong> 当对手拿球且转身空间有限时，机器人从侧前方逼近，迫使对手向低威胁方向移动。这里不能直接撞击对方机器人，因为第二十七届规则把进攻机器人碰撞防守机器人列为犯规之一<a target="_blank" rel="noopener" href="https://jqrcyxy.cczu.edu.cn/_upload/article/files/85/0a/48734ec649d781a899f52f7e73bf/c813589f-8d89-4f23-b2e6-c854a8c25600.pdf">1</a>；在3V3对抗中也需要用规则安全的方式防守。</p>
+<h3 id="64-getballopp-状态机"><a class="anchor" href="#64-getballopp-状态机">#</a> 6.4 <code>getballopp</code> 状态机</h3>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-mermaid"><span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">stateDiagram-v2</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    </span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">*</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> EstimatePossession</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    EstimatePossession --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> InterceptBall: 球未被稳定控制</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    EstimatePossession --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> BlockLane: 对手准备传球</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    EstimatePossession --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> PressHolder: 对手稳定持球</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    InterceptBall --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> ClearOrPass: 己方截到球</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    BlockLane --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> GetBall: 对手传球被破坏</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    PressHolder --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> RetreatDefend: 对手突破或己方失位</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    ClearOrPass --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> </span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">*</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span></span></code></pre>
+<p><code>getballopp</code> 的先进性不在于“更快冲向对手”，而在于用预测和几何控制缩小对手选择空间。它需要和 <code>defend</code>、<code>goalie</code>、<code>passball</code> 共享同一套威胁评分：对手离球门越近、射门角越大、传球线越通畅，则防守动作越激进；反之则保持阵型，避免无谓出击。</p>
+<h2 id="七-射门-定位球与无球跑位算法"><a class="anchor" href="#七-射门-定位球与无球跑位算法">#</a> 七、射门、定位球与无球跑位算法</h2>
+<h3 id="71-射门决策"><a class="anchor" href="#71-射门决策">#</a> 7.1 射门决策</h3>
+<p>射门不是越早越好。ZJUNlict论文指出，随意射门可能导致丢失球权，条件过严又会降低进攻效率，因此需要结合射门角和拦截预测来判断是否射门<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1909.07717">10</a>。iLoboke省赛中，射门前还要满足传接配合要求，且直接射门会被判犯规或进球无效<a target="_blank" rel="noopener" href="https://jqrcyxy.cczu.edu.cn/_upload/article/files/85/0a/48734ec649d781a899f52f7e73bf/c813589f-8d89-4f23-b2e6-c854a8c25600.pdf">1</a>。</p>
+<p>推荐射门判断：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-text"><span class="line"><span>can_shoot =</span></span>
+<span class="line"><span>    has_required_pass</span></span>
+<span class="line"><span>and shot_angle > angle_threshold</span></span>
+<span class="line"><span>and opponent_intercept_time(ball_to_goal) > ball_arrival_time + margin</span></span>
+<span class="line"><span>and robot_not_in_penalty_area</span></span>
+<span class="line"><span>and shot_power_within_limit</span></span></code></pre>
+<h3 id="72-定位球战术"><a class="anchor" href="#72-定位球战术">#</a> 7.2 定位球战术</h3>
+<p>省赛的五个点位包含后场区、开球点、前场区、角球区、点球点，具体点位赛前不公布<a target="_blank" rel="noopener" href="https://jqrcyxy.cczu.edu.cn/_upload/article/files/85/0a/48734ec649d781a899f52f7e73bf/c813589f-8d89-4f23-b2e6-c854a8c25600.pdf">1</a>。这要求算法不能只写死坐标，而应根据开赛后裁判放球点实时生成战术。一个稳健的省赛流程是：</p>
+<ol>
+<li>读取球点和障碍机器人位置。</li>
+<li>由最近且角度最优的机器人执行 <code>getball</code>。</li>
+<li>另一台机器人计算接球点，避开防守机器人和禁区。</li>
+<li>持球者执行 <code>passball</code>。</li>
+<li>接球者判断直接射门或微调后射门。</li>
+<li>全程监控15秒倒计时，若超过安全时间则选择快速射门或弃守当前战术。</li>
+</ol>
+<h3 id="73-无球跑位"><a class="anchor" href="#73-无球跑位">#</a> 7.3 无球跑位</h3>
+<p>ZJUNlict论文把前场划分为动态区域，并根据球的位置改变区域；然后把区域栅格化，对每个点按接近球门、离球距离、面对球门角度、对手防守到达时间、避免陷入对手防守等标准评分<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1909.07717">10</a>。在iLoboke中，这类算法可用于 <code>GoRecePos</code>、<code>ReceiveBall</code> 或自定义跑位任务：接球者不是站在固定点，而是实时寻找“更容易接球、更容易射门、更不容易被拦截”的点。</p>
+<h3 id="74-反盯防移动"><a class="anchor" href="#74-反盯防移动">#</a> 7.4 反盯防移动</h3>
+<p>ZJUNlict还提出 Drag skill：当机器人到达目的地后容易被对手盯防时，通过先诱导防守者加速，再反向加速拉开距离，以提升安全接球概率<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1909.07717">10</a>。在iLoboke 3V3对抗中，类似思路可用于接球机器人：不要在接球点静止等待，而是在不越位、不入禁区、不撞人的前提下做小范围横移，使对手难以提前卡死传球线。</p>
+<h2 id="八-角色分配与多机器人协同"><a class="anchor" href="#八-角色分配与多机器人协同">#</a> 八、角色分配与多机器人协同</h2>
+<p>角色分配决定哪个机器人去拿球、哪个机器人接球、哪个机器人补防。Rocos文档说明，在多智能体场景中，匹配规则用于把角色任务分配给具体机器人；实时匹配可保证总代价最小，底层使用二分图匹配中的匈牙利算法<a target="_blank" rel="noopener" href="https://rocos.readthedocs.io/zh-cn/latest/posts/1_rocos_basic/1_3_1_rule_match.html">12</a>。这类机制对iLoboke也很重要，因为比赛中机器人可能因位置、电量、碰撞或识别异常导致最优执行者变化。</p>
+<p>一个高级角色分配代价函数可以包括：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-text"><span class="line"><span>cost(robot, role) =</span></span>
+<span class="line"><span>  a1 * 到任务目标距离</span></span>
+<span class="line"><span>+ a2 * 当前朝向误差</span></span>
+<span class="line"><span>+ a3 * 到达时间</span></span>
+<span class="line"><span>+ a4 * 可能碰撞风险</span></span>
+<span class="line"><span>+ a5 * 是否带球/是否刚踢球</span></span>
+<span class="line"><span>+ a6 * 禁区和边界惩罚</span></span>
+<span class="line"><span>+ a7 * 通信或硬件状态惩罚</span></span></code></pre>
+<p>在省赛中，角色可较稳定：一台主抓球/传球，一台主接球/射门，守门员由组委会或己方固定。国赛3V3中，角色应动态切换：前锋丢球后可立刻转为压迫者，中场可转为接应点，守门员在球远离危险区时可上提参与出球。</p>
+<h2 id="九-路径规划与避障"><a class="anchor" href="#九-路径规划与避障">#</a> 九、路径规划与避障</h2>
+<p>路径规划层把“去球后方”“去接球点”“封堵传球线”等目标转换为可执行轨迹。SOM规则要求场地有禁区、边界、球门和防守机器人，且进攻机器人进入禁区、二次触球、碰撞防守机器人都会影响成绩<a target="_blank" rel="noopener" href="https://jqrcyxy.cczu.edu.cn/_upload/article/files/85/0a/48734ec649d781a899f52f7e73bf/c813589f-8d89-4f23-b2e6-c854a8c25600.pdf">1</a>。因此，路径规划不仅要快，还要规则安全。</p>
+<p>推荐采用分层规划：</p>
+<ol>
+<li><strong>全局目标生成</strong>：由 <code>getball</code>、<code>passball</code>、<code>getballopp</code> 计算目标点。</li>
+<li><strong>规则过滤</strong>：删除禁区内、边界外、可能碰撞的目标点。</li>
+<li><strong>局部避障</strong>：对动态机器人设置膨胀半径，避免高速贴近。</li>
+<li><strong>速度规划</strong>：接近球、接近对手、接近边界时降速。</li>
+<li><strong>重规划触发</strong>：球速变化、视觉丢失、对手突然靠近、队友位置变化时重算路径。</li>
+</ol>
+<p>对比赛成绩而言，路径规划的评价指标不是单纯最短路径，而是“最短时间内完成有效传射且不犯规”。这也是为什么优秀算法常把路径规划和传球决策合并考虑：某个传球点看似角度好，但如果接球者到达时间太长或路径穿过对手防守区，就不是好点。</p>
+<h2 id="十-针对不同赛段的策略建议"><a class="anchor" href="#十-针对不同赛段的策略建议">#</a> 十、针对不同赛段的策略建议</h2>
+<h3 id="101-省赛定位球"><a class="anchor" href="#101-省赛定位球">#</a> 10.1 省赛定位球</h3>
+<p>省赛目标清晰：五个点位、15秒、至少一次传接配合、进球优先、用时次之<a target="_blank" rel="noopener" href="https://jqrcyxy.cczu.edu.cn/_upload/article/files/85/0a/48734ec649d781a899f52f7e73bf/c813589f-8d89-4f23-b2e6-c854a8c25600.pdf">1</a>。建议采用“少状态、高确定性”的策略：</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>首选策略</th>
+<th>重点算法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>后场区</td>
+<td>稳定传球后远射或推进射门</td>
+<td>长距离传球力度、接球者提前跑位</td>
+</tr>
+<tr>
+<td>开球点</td>
+<td>快速一传一射</td>
+<td>固定开球模板、射门角选择</td>
+</tr>
+<tr>
+<td>前场区</td>
+<td>短传后低延迟射门</td>
+<td>接球同步、守门员角度判断</td>
+</tr>
+<tr>
+<td>角球区</td>
+<td>斜传到门前空档</td>
+<td>传球线避障、接球者横向跑位</td>
+</tr>
+<tr>
+<td>点球点</td>
+<td>直接射门或假动作射门</td>
+<td>射门角、守门员位置预测</td>
+</tr>
+</tbody>
+</table>
+<h3 id="102-国赛3v3对抗"><a class="anchor" href="#102-国赛3v3对抗">#</a> 10.2 国赛3V3对抗</h3>
+<p>中国大学生在线报道提到，相关赛事决赛阶段需要自行携带机器人，并且国赛赛制升级为3V3对抗，每队派出3台机器人进行约5分钟比赛，并新增防守策略设计<a target="_blank" rel="noopener" href="https://xyh.univs.cn/a/xyh_xyh_bzrxq/251110/2023426.shtml?source=xyh">13</a>。规则文件也说明，国赛3V3中双方共有六台机器人，参赛队需在原有配合基础上增加对抗和防守策略<a target="_blank" rel="noopener" href="https://jqrcyxy.cczu.edu.cn/_upload/article/files/85/0a/48734ec649d781a899f52f7e73bf/c813589f-8d89-4f23-b2e6-c854a8c25600.pdf">1</a>。</p>
+<p>3V3中建议使用“攻防状态机”：</p>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-mermaid"><span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">flowchart TD</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    A</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"开球 / 普通比赛"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> B</span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"己方是否先到球"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    B --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">|是| C</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"getball 控球"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    C --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> D</span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"传球窗口是否安全"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    D --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">|是| E</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"passball + receiveball"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    D --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">|否| F</span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"射门窗口是否安全"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    F --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">|是| G</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"shoot"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    F --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">|否| H</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"off-ball running / 重新组织"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    B --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">|否| I</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"getballopp 压迫或截球"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    I --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE"> J</span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#123;</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"对手威胁等级"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">&#125;</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    J --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">|高| K</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"block lane / goalie 协防"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span></span>
+<span class="line"><span style="color:#393A34;--shiki-dark:#DBD7CAEE">    J --</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">></span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">|低| L</span><span style="color:#2993a3;--shiki-dark:#5eaab5">[</span><span style="color:#393A34;--shiki-dark:#DBD7CAEE">"保持阵型 / 等待失误"</span><span style="color:#2993a3;--shiki-dark:#5eaab5">]</span></span></code></pre>
+<h2 id="十一-主要风险与改进方向"><a class="anchor" href="#十一-主要风险与改进方向">#</a> 十一、主要风险与改进方向</h2>
+<table>
+<thead>
+<tr>
+<th>风险</th>
+<th>现象</th>
+<th>改进方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>视觉误差</td>
+<td>球坐标跳动、机器人误判持球</td>
+<td>滤波、短时预测、状态滞回</td>
+</tr>
+<tr>
+<td>抓球不稳</td>
+<td>机器人绕球、顶球、错过球</td>
+<td>前置点、低速末端、朝向闭环</td>
+</tr>
+<tr>
+<td>传球失败</td>
+<td>球速过大或过小、队友没到位</td>
+<td>球模型、到达时间预测、传球缓冲</td>
+</tr>
+<tr>
+<td>被对手拦截</td>
+<td>传球线被封堵</td>
+<td>拦截时间评估、传球点搜索</td>
+</tr>
+<tr>
+<td>犯规</td>
+<td>入禁区、二次触球、碰撞</td>
+<td>规则约束加入规划代价</td>
+</tr>
+<tr>
+<td>状态切换抖动</td>
+<td>反复在getball/passball之间切换</td>
+<td>状态滞回、最短状态保持时间</td>
+</tr>
+<tr>
+<td>国赛对抗不适应</td>
+<td>只会定位球，不会防守</td>
+<td><code>getballopp</code>、盯防、守门、阵型切换</td>
+</tr>
+</tbody>
+</table>
+<p>未来可以重点改进三方面。第一，用在线日志自动调参：记录每次传球距离、力度、接球成败、射门角度和用时，回放后优化权重。第二，引入对手建模：统计对手常用传球方向、守门员移动习惯、压迫强度，让 <code>getballopp</code> 更像“预判”而不是“追赶”。第三，提高技能层鲁棒性：针对抓球、接球、踢球分别做小规模测试集，使任务在仿真和实物之间表现更一致。</p>
+<h2 id="结论"><a class="anchor" href="#结论">#</a> 结论</h2>
+<p>iLoboke足球机器人比赛的先进算法不是单个函数的堆叠，而是围绕比赛目标形成的闭环系统。<code>getball</code> 的核心是稳定获得球权，关键在于前置点、朝向控制、吸球判断和异常恢复；<code>passball</code> 的核心是满足规则并创造高质量射门机会，关键在于球模型、传球点搜索、接球同步和拦截风险评估；<code>getballopp</code> 虽未找到官方公开定义，但从3V3对抗需求看，它应被设计为对手控球时的抢截、封堵和压迫任务，核心在于预测双方拦截时间、控制传球线和避免犯规。</p>
+<p>如果要在比赛中取得稳定成绩，建议把算法优先级排为：先保证 <code>getball</code> 和 <code>passball</code> 的成功率，再优化射门决策和定位球模板，最后加入 <code>getballopp</code>、防守阵型和无球跑位。省赛靠稳定传射拿分，国赛靠攻防切换和对抗决策拉开差距。</p>
+<h2 id="参考资料"><a class="anchor" href="#参考资料">#</a> 参考资料</h2>
+<p><a target="_blank" rel="noopener" href="https://jqrcyxy.cczu.edu.cn/_upload/article/files/85/0a/48734ec649d781a899f52f7e73bf/c813589f-8d89-4f23-b2e6-c854a8c25600.pdf">1</a> 第二十七届中国机器人及人工智能大赛比赛规则：机器人竞技赛（创非凡iLoboke足球）线下规则。<br>
+<a target="_blank" rel="noopener" href="https://sme.hit.edu.cn/_upload/article/files/8e/55/1ac2cff1478da94b84eb7bc143c3/e5c860b8-acf6-4262-8395-558bbd214d5a.pdf">2</a> 小型足球机器人iLoboke挑战赛比赛方案，哈尔滨工业大学相关页面。<br>
+<a target="_blank" rel="noopener" href="https://zj.cnr.cn/mlnb/mlnb/fh2025/kfcx/20250616/t20250616_527213213.shtml">3</a> 央广网：《中国机器人及人工智能大赛浙江省选拔赛举行》。<br>
+<a target="_blank" rel="noopener" href="https://rocos.readthedocs.io/zh-cn/latest/posts/0_introduction/0_0.html">4</a> Rocos文档：《小型足球机器人比赛介绍》。<br>
+<a target="_blank" rel="noopener" href="https://ssl.robocup.org/technical-overview-of-the-small-size-league/">5</a> RoboCup Small Size League: Technical Overview。<br>
+<a target="_blank" rel="noopener" href="https://rocos.readthedocs.io/zh-cn/latest/posts/0_introduction/0_1.html">6</a> Rocos文档：《Rocos模块架构》。<br>
+<a target="_blank" rel="noopener" href="https://blog.51cto.com/u_13354/12406384">7</a> 51CTO博客：《lua语法分号》，SOM v3.3.3 Lua脚本基础记录。<br>
+<a target="_blank" rel="noopener" href="https://blog.51cto.com/u_16099196/10745783">8</a> 51CTO博客：《lua如何跳到指定行运行 lua跳转函数》，SOM Lua状态跳转与传射脚本记录。<br>
+<a target="_blank" rel="noopener" href="https://rocos.readthedocs.io/zh-cn/latest/posts/1_rocos_basic/1_3_2_switch_function.html">9</a> Rocos文档：《Play - 状态跳转函数》。<br>
+<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1909.07717">10</a> Chen et al., “Champion Team Paper: Dynamic Passing-Shooting Algorithm Based on CUDA of The RoboCup SSL 2019 Champion,” arXiv:1909.07717。<br>
+<a target="_blank" rel="noopener" href="https://rocos.readthedocs.io/zh-cn/latest/posts/1_rocos_basic/1_3_6_task.html">11</a> Rocos文档：《Play - 框架：解析task》。<br>
+<a target="_blank" rel="noopener" href="https://rocos.readthedocs.io/zh-cn/latest/posts/1_rocos_basic/1_3_1_rule_match.html">12</a> Rocos文档：《Play - 角色匹配规则》。<br>
+<a target="_blank" rel="noopener" href="https://xyh.univs.cn/a/xyh_xyh_bzrxq/251110/2023426.shtml?source=xyh">13</a> 中国大学生在线：《3名东电大三学生，拿下睿抗机器人开发者大赛全国一等奖》。</p>
+</article><p>启用 JavaScript 可查看动态场景，也可以直接阅读文章。</p><ul><li><a href="/2026/10/04/rain-island/">Rain Island：用 Three.js 复现雨天的 3D 降水场景</a></li><li><a href="/2026/05/08/AI/">AI</a></li><li><a href="/2026/03/31/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/">机器人竞赛</a></li><li><a href="/2026/03/29/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针与滑动窗口</a></li><li><a href="/2026/03/28/Stl-set/">Stl-set</a></li><li><a href="/2026/05/18/Iloboke%E8%B6%B3%E7%90%83%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%A0%B8%E5%BF%83%E4%BB%BB%E5%8A%A1%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B/"></a></li><li><a href="/2026/05/18/Iloboke%E8%B6%B3%E7%90%83%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%85%88%E8%BF%9B%E7%AE%97%E6%B3%95%E6%8A%A5%E5%91%8A/"></a></li><li><a href="/2026/04/05/%E8%B5%9B%E5%89%8D%E5%87%86%E5%A4%87%E6%B8%85%E5%8D%95/">赛前准备清单</a></li><li><a href="/2026/03/27/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/">类与对象</a></li><li><a href="/2026/03/27/Stl-vector/">Stl-vector</a></li><li><a href="/2026/03/26/%E5%93%88%E5%B8%8C%E8%A1%A8%E8%AF%A6%E8%A7%A3/">哈希表详解</a></li><li><a href="/2026/03/24/leetcode-62-%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/">leetcode-62-路径规划</a></li><li><a href="/2026/03/23/Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/">Cpp笔记总结S1</a></li><li><a href="/2026/03/22/Cpp%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">Cpp两数之和</a></li><li><a href="/2026/03/21/Cpp%E5%85%A5%E9%97%A8/">Cpp入门</a></li><li><a href="/2026/01/17/1-17/">Leetcode-3最长不重复子串</a></li><li><a href="/2026/01/15/1-15/">1.15</a></li><li><a href="/2025/12/06/12-6/">四级复习记录12,6</a></li><li><a href="/2025/12/02/12-2/">闲言12.2</a></li><li><a href="/2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/">数组元素个数的动态分配</a></li><li><a href="/2025/11/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">快速排序</a></li><li><a href="/2025/11/26/leetcode-7-%E6%95%B4%E6%95%B0%E5%80%92%E8%BD%AC/">leetcode-7-整数倒转</a></li><li><a href="/2025/11/23/leetcode-1-%E5%AF%BB%E6%89%BE%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode-1-寻找两数之和</a></li><li><a href="/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">冒泡排序</a></li><li><a href="/2025/11/20/11-20/">11.2</a></li><li><a href="/2025/11/13/11-13/">11.13</a></li><li><a href="/2025/11/13/hello-world/">Hello World</a></li></ul></section></noscript>
 </body>
 </html>
+
+

@@ -4,18 +4,22 @@
     <title>查士丁尼之梦 • Posts by &#34;note&#34; tag</title>
     <link href="https://ruyunjian.github.io" />
     <updated>2026-03-23T09:18:03.000Z</updated>
-    <category term="leetcode" />
     <category term="diary" />
+    <category term="leetcode" />
     <category term="note" />
     <category term="AI" />
     <category term="stl" />
+    <category term="Three.js" />
+    <category term="WebGL" />
+    <category term="JavaScript" />
+    <category term="可视化" />
     <category term="Algorithm" />
     <category term="robot" />
     <entry>
         <id>https://ruyunjian.github.io/2026/03/23/Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/</id>
         <title>Cpp笔记总结S1</title>
         <link rel="alternate" href="https://ruyunjian.github.io/2026/03/23/Cpp%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93S1/"/>
-        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;h3 id=&#34;一string类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一string类型&#34;&gt;#&lt;/a&gt; 一.string类型&lt;/h3&gt;
+        <content type="html">&lt;h3 id=&#34;一string类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一string类型&#34;&gt;#&lt;/a&gt; 一.string类型&lt;/h3&gt;
 &lt;hr&gt;
 &lt;p&gt;1.求长度：arr.length()或者是arr.size()&lt;/p&gt;
 &lt;p&gt;2.字符串的连接可以直接使用+号，形如c=a+b（eg：a=hello,b=world,c=a+b=hello world）&lt;/p&gt;
@@ -96,7 +100,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         <id>https://ruyunjian.github.io/2026/03/21/Cpp%E5%85%A5%E9%97%A8/</id>
         <title>Cpp入门</title>
         <link rel="alternate" href="https://ruyunjian.github.io/2026/03/21/Cpp%E5%85%A5%E9%97%A8/"/>
-        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;&lt;img src=&#34;/../test/C%20%E8%BD%AC%20C++.png&#34; alt&gt;&lt;/p&gt;
+        <content type="html">&lt;p&gt;&lt;img src=&#34;/../test/C%20%E8%BD%AC%20C++.png&#34; alt&gt;&lt;/p&gt;
 </content>
         <category term="note" />
         <updated>2026-03-21T14:07:02.000Z</updated>
@@ -105,7 +109,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         <id>https://ruyunjian.github.io/2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/</id>
         <title>数组元素个数的动态分配</title>
         <link rel="alternate" href="https://ruyunjian.github.io/2025/11/29/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/"/>
-        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;产率很高啊，一下子解决了两个心头大患，嘿嘿嘿嘿嘿嘿&lt;/p&gt;
+        <content type="html">&lt;p&gt;产率很高啊，一下子解决了两个心头大患，嘿嘿嘿嘿嘿嘿&lt;/p&gt;
 &lt;p&gt;对于数组，之前有如下的问题：&lt;/p&gt;
 &lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt; n&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#2F798A;--shiki-dark:#4C9A91&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#999999;--shiki-dark:#666666&#34;&gt;;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;/span&gt;
@@ -138,7 +142,7 @@ sort含有三个参数sort（begin,end,cmp）,其中begin为指向待sort（）�
         <id>https://ruyunjian.github.io/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</id>
         <title>冒泡排序</title>
         <link rel="alternate" href="https://ruyunjian.github.io/2025/11/22/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/"/>
-        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;11.22，首次在C语言中完成冒泡排序的编写，编写过程中带有瑕疵，借助ai修改了一次，完成代码如下&lt;/p&gt;
+        <content type="html">&lt;p&gt;11.22，首次在C语言中完成冒泡排序的编写，编写过程中带有瑕疵，借助ai修改了一次，完成代码如下&lt;/p&gt;
 &lt;pre class=&#34;shiki shiki-themes vitesse-light vitesse-dark&#34; style=&#34;background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee&#34; tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`#include &lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;stdio.h&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;&gt;&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#AB5959;--shiki-dark:#CB7676&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#59873A;--shiki-dark:#80A665&#34;&gt; main&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#2993a3;--shiki-dark:#5eaab5&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&#34;line&#34;&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:rgba(255, 18, 18, 0.8);--shiki-dark:rgba(255, 18, 18, 0.8)&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span style=&#34;color:#393A34;--shiki-dark:#DBD7CAEE&#34;&gt;`&lt;/span&gt;&lt;/span&gt;

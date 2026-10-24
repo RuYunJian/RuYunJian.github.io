@@ -4,18 +4,22 @@
     <title>查士丁尼之梦 • Posts by &#34;ai&#34; tag</title>
     <link href="https://ruyunjian.github.io" />
     <updated>2026-05-08T04:34:47.000Z</updated>
-    <category term="leetcode" />
     <category term="diary" />
+    <category term="leetcode" />
     <category term="note" />
     <category term="AI" />
     <category term="stl" />
+    <category term="Three.js" />
+    <category term="WebGL" />
+    <category term="JavaScript" />
+    <category term="可视化" />
     <category term="Algorithm" />
     <category term="robot" />
     <entry>
         <id>https://ruyunjian.github.io/2026/05/08/AI/</id>
         <title>AI</title>
         <link rel="alternate" href="https://ruyunjian.github.io/2026/05/08/AI/"/>
-        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;ai-专业名词解释&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ai-专业名词解释&#34;&gt;#&lt;/a&gt; AI 专业名词解释&lt;/h1&gt;
+        <content type="html">&lt;h1 id=&#34;ai-专业名词解释&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ai-专业名词解释&#34;&gt;#&lt;/a&gt; AI 专业名词解释&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;这份文档用于快速理解 AI、LLM、API、Agent、MCP、Skill 等相关概念。术语按主题分组，适合初学者、产品经理、开发者和需要与 AI 系统协作的人阅读。&lt;/p&gt;
 &lt;/blockquote&gt;

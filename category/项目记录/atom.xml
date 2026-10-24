@@ -4,22 +4,22 @@
     <title>查士丁尼之梦 • Posts by &#34;项目记录&#34; category</title>
     <link href="https://ruyunjian.github.io" />
     <updated>2026-10-04T04:00:00.000Z</updated>
-    <category term="leetcode" />
     <category term="diary" />
+    <category term="leetcode" />
     <category term="note" />
     <category term="AI" />
     <category term="stl" />
-    <category term="Algorithm" />
-    <category term="robot" />
     <category term="Three.js" />
     <category term="WebGL" />
     <category term="JavaScript" />
     <category term="可视化" />
+    <category term="Algorithm" />
+    <category term="robot" />
     <entry>
         <id>https://ruyunjian.github.io/2026/10/04/rain-island/</id>
         <title>Rain Island：用 Three.js 复现雨天的 3D 降水场景</title>
         <link rel="alternate" href="https://ruyunjian.github.io/2026/10/04/rain-island/"/>
-        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;Rain Island 是我做的一个 Windows 降雨提醒项目。我想把天气预报中的数字变成能直接看懂的画面：雨从什么时候开始、雨势如何增强、又怎样逐渐减弱，都可以在一段三维雨景里看到。&lt;/p&gt;
+        <content type="html">&lt;p&gt;Rain Island 是我做的一个 Windows 降雨提醒项目。我想把天气预报中的数字变成能直接看懂的画面：雨从什么时候开始、雨势如何增强、又怎样逐渐减弱，都可以在一段三维雨景里看到。&lt;/p&gt;
 &lt;p&gt;这篇文章记录其中最主要的部分——用 Three.js 和 GLSL 复现雨天的降水场景。下面的图片和交互预览均来自项目原始渲染代码，使用模拟降水数据。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/rain-island/assets/rain-preview.webp&#34; alt=&#34;Rain Island 原始代码实际渲染的雨丝、地面涟漪和弹起水滴&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;&lt;/p&gt;

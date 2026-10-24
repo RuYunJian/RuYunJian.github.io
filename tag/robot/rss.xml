@@ -7,11 +7,15 @@
         <language>zh-CN</language>
         <pubDate>Sun, 05 Apr 2026 17:07:52 +0800</pubDate>
         <lastBuildDate>Sun, 05 Apr 2026 17:07:52 +0800</lastBuildDate>
-        <category>leetcode</category>
         <category>diary</category>
+        <category>leetcode</category>
         <category>note</category>
         <category>AI</category>
         <category>stl</category>
+        <category>Three.js</category>
+        <category>WebGL</category>
+        <category>JavaScript</category>
+        <category>可视化</category>
         <category>Algorithm</category>
         <category>robot</category>
         <item>
@@ -20,7 +24,7 @@
             <link>https://ruyunjian.github.io/2026/04/05/%E8%B5%9B%E5%89%8D%E5%87%86%E5%A4%87%E6%B8%85%E5%8D%95/</link>
             <category>robot</category>
             <pubDate>Sun, 05 Apr 2026 17:07:52 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;机器人竞赛赛前准备文件清单&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#机器人竞赛赛前准备文件清单&#34;&gt;#&lt;/a&gt; 机器人竞赛赛前准备文件清单&lt;/h1&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;机器人竞赛赛前准备文件清单&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#机器人竞赛赛前准备文件清单&#34;&gt;#&lt;/a&gt; 机器人竞赛赛前准备文件清单&lt;/h1&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;一-lua-战术脚本文件lua&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一-lua-战术脚本文件lua&#34;&gt;#&lt;/a&gt; 一、Lua 战术脚本文件（&lt;code&gt;.lua&lt;/code&gt;）&lt;/h2&gt;
 &lt;p&gt;这些是你必须编写的战术脚本，放在 &lt;code&gt;Team/lua_scripts/play/Ref/&lt;/code&gt; 对应目录下：&lt;/p&gt;
@@ -190,7 +194,7 @@
             <link>https://ruyunjian.github.io/2026/03/31/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/</link>
             <category>robot</category>
             <pubDate>Tue, 31 Mar 2026 16:17:38 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;机器人竞赛相关知识储备&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#机器人竞赛相关知识储备&#34;&gt;#&lt;/a&gt; 机器人竞赛相关知识储备&lt;/h1&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;机器人竞赛相关知识储备&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#机器人竞赛相关知识储备&#34;&gt;#&lt;/a&gt; 机器人竞赛相关知识储备&lt;/h1&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;一机器人竞赛的结构脑图&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一机器人竞赛的结构脑图&#34;&gt;#&lt;/a&gt; 一.机器人竞赛的结构脑图&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;/../%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AB%9E%E8%B5%9B/exported_image.png&#34; alt&gt;&lt;/p&gt;

@@ -7,11 +7,15 @@
         <language>zh-CN</language>
         <pubDate>Sat, 28 Mar 2026 11:41:17 +0800</pubDate>
         <lastBuildDate>Sat, 28 Mar 2026 11:41:17 +0800</lastBuildDate>
-        <category>leetcode</category>
         <category>diary</category>
+        <category>leetcode</category>
         <category>note</category>
         <category>AI</category>
         <category>stl</category>
+        <category>Three.js</category>
+        <category>WebGL</category>
+        <category>JavaScript</category>
+        <category>可视化</category>
         <category>Algorithm</category>
         <category>robot</category>
         <item>
@@ -20,7 +24,7 @@
             <link>https://ruyunjian.github.io/2026/03/28/Stl-set/</link>
             <category>stl</category>
             <pubDate>Sat, 28 Mar 2026 11:41:17 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;set&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#set&#34;&gt;#&lt;/a&gt; set&lt;/h1&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;set&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#set&#34;&gt;#&lt;/a&gt; set&lt;/h1&gt;
 &lt;hr&gt;
 &lt;p&gt;**集合（set）**是一个内部自动有序且不含重复元素的容器，它可以在需要删除重复元素的情况下大放异彩，节省时间，减少思维量。&lt;/p&gt;
 &lt;p&gt;set 就是关键字的简单集合，当只是想知道一个值是否存在时，set 是最有用的。set 内部采用的是一种非常高效的平衡检索二叉树 ：红黑树（Red-Black Tree），也称为 RB 树，RB 树的统计性能要好于一般平衡二叉树。在 set 中每个元素的值都唯一，而且系统能根据元素的值自动进行排序，set 中元素的值不能直接被改变。&lt;/p&gt;
@@ -148,7 +152,7 @@
             <link>https://ruyunjian.github.io/2026/03/27/Stl-vector/</link>
             <category>stl</category>
             <pubDate>Fri, 27 Mar 2026 11:47:45 +0800</pubDate>
-            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;vector&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vector&#34;&gt;#&lt;/a&gt; Vector&lt;/h1&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;vector&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vector&#34;&gt;#&lt;/a&gt; Vector&lt;/h1&gt;
 &lt;hr&gt;
 &lt;p&gt;向量（Vector）是一个封装了动态大小数组的顺序容器（Sequence Container）,跟任意其它类型容器一样，它能够存放各种类型的对象。可以简单的认为，向量是一个能够存放任意类型的动态数组&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Vector&lt;/strong&gt;的数据安排以及操作方式，与&lt;strong&gt;array(数组)&lt;strong&gt;非常&lt;/strong&gt;相似&lt;/strong&gt;，两者的&lt;strong&gt;唯一差别&lt;/strong&gt;在于&lt;strong&gt;空间的运用的灵活性&lt;/strong&gt;。&lt;/p&gt;
